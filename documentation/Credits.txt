@@ -1,0 +1,7 @@
+Bart Broersma and Flying Sheep Inc.|https://svn.code.sf.net/p/flyingsheep/code/trunk/MijnLib/fsiconv.pp
+FreePascal Wiki|https://wiki.freepascal.org/Base_converting
+Ícone de mesquita|href="https://icons8.com/icon/15582/mosque"
+Ícone de definições|href="https://www.flaticon.com/free-icons/settings" title="settings icons"
+Ícone de agradecimentos|https://www.freepik.com/icon/response_16856087#fromView=keyword&page=1&position=9&uuid=1ece30f9-b2b0-41a0-a3b3-af535626c9d0
+Ícone de calculadora|https://www.flaticon.com/free-icon/calculator_548251
+Íconde de ajuda|https://www.flaticon.com/free-icon/help_9796369
