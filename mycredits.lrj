@@ -2,6 +2,16 @@
 {"hash":128194317,"name":"tfrmcredits.tbshtcreditscredits.hint","sourcebytes":[68,105,115,112,108,97,121,32,97,32,108,105,115,116,32,111,102,32,115,111,117,114,99,101,115,32,117,115,101,100,32,105,110,32,116,104,101,32,112,114,111,103,114,97,109],"value":"Display a list of sources used in the program"},
 {"hash":176926963,"name":"tfrmcredits.tbshtcreditscredits.caption","sourcebytes":[67,114,101,100,105,116,115],"value":"Credits"},
 {"hash":2029246,"name":"tfrmcredits.sttxtcredits1.caption","sourcebytes":[66,97,114,116,32,66,114,111,101,114,115,109,97,32,97,110,100,32,70,108,121,105,110,103,32,83,104,101,101,112,32,73,110,99,46],"value":"Bart Broersma and Flying Sheep Inc."},
+{"hash":205724681,"name":"tfrmcredits.sttxtcredits2.caption","sourcebytes":[70,114,101,101,80,97,115,99,97,108,32,87,105,107,105],"value":"FreePascal Wiki"},
+{"hash":186684638,"name":"tfrmcredits.sttxtcredits3.caption","sourcebytes":[77,111,115,113,117,101,32,73,99,111,110],"value":"Mosque Icon"},
+{"hash":127879758,"name":"tfrmcredits.sttxtcredits4.caption","sourcebytes":[83,101,116,116,105,110,103,115,32,73,99,111,110],"value":"Settings Icon"},
+{"hash":268190558,"name":"tfrmcredits.sttxtcredits5.caption","sourcebytes":[67,114,101,100,105,116,115,32,73,99,111,110],"value":"Credits Icon"},
+{"hash":82352494,"name":"tfrmcredits.sttxtcredits6.caption","sourcebytes":[67,97,108,99,117,108,97,116,111,114,32,73,99,111,110],"value":"Calculator Icon"},
+{"hash":52738206,"name":"tfrmcredits.sttxtcredits7.caption","sourcebytes":[72,101,108,112,32,73,99,111,110],"value":"Help Icon"},
+{"hash":41519369,"name":"tfrmcredits.sttxtcredits8.caption","sourcebytes":[109,97,105,108,116,111,32,112,114,111,99,101,100,117,114,101,32,45,32,98,97,108,97,122,115,115,122,101,107,101,108,121],"value":"mailto procedure - balazsszekely"},
+{"hash":265316306,"name":"tfrmcredits.statictext2.caption","sourcebytes":[83,116,97,116,105,99,84,101,120,116,50],"value":"StaticText2"},
+{"hash":265316307,"name":"tfrmcredits.statictext3.caption","sourcebytes":[83,116,97,116,105,99,84,101,120,116,51],"value":"StaticText3"},
 {"hash":107102275,"name":"tfrmcredits.tbshtcreditscontributors.hint","sourcebytes":[68,105,115,112,108,97,121,115,32,97,32,108,105,115,116,32,111,102,32,116,114,97,110,115,108,97,116,111,114,115,32,97,110,100,32,99,111,110,116,114,105,98,117,116,111,114,115],"value":"Displays a list of translators and contributors"},
-{"hash":188419347,"name":"tfrmcredits.tbshtcreditscontributors.caption","sourcebytes":[67,111,110,116,114,105,98,117,116,111,114,115],"value":"Contributors"}
+{"hash":188419347,"name":"tfrmcredits.tbshtcreditscontributors.caption","sourcebytes":[67,111,110,116,114,105,98,117,116,111,114,115],"value":"Contributors"},
+{"hash":162400997,"name":"tfrmcredits.sttxtcontributors1.caption","sourcebytes":[80,101,100,114,111,32,65,108,98,117,113,117,101,114,113,117,101],"value":"Pedro Albuquerque"}
 ]}

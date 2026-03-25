@@ -128,14 +128,6 @@ object frmCredits: TfrmCredits
         Caption = 'StaticText3'
         TabOrder = 9
       end
-      object ScrollBar1: TScrollBar
-        Left = 316
-        Height = 17
-        Top = 217
-        Width = 121
-        PageSize = 0
-        TabOrder = 10
-      end
     end
     object TbShtCreditsContributors: TTabSheet
       Hint = 'Displays a list of translators and contributors'
