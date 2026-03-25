@@ -14,7 +14,8 @@ type
 
     TfrmCredits = class(TForm)
         PgCtrlCredits: TPageControl;
-        ScrollBar1: TScrollBar;
+        ScrllBarCreditsVertical: TScrollBar;
+        ScrllBarContributorsVertical: TScrollBar;
         StTxtCredits8: TStaticText;
         StaticText2: TStaticText;
         StaticText3: TStaticText;

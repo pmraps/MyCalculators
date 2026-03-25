@@ -167,7 +167,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnMemoryMinus: TButton
       Left = 216
       Height = 25
-      Hint = ''
+      Hint = 'Subtrair à memória'
       Top = 0
       Width = 70
       Caption = 'M-'

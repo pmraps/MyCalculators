@@ -1,10 +1,10 @@
 object frmCredits: TfrmCredits
   Left = 488
-  Height = 256
+  Height = 261
   Top = 250
-  Width = 361
-  ClientHeight = 256
-  ClientWidth = 361
+  Width = 379
+  ClientHeight = 261
+  ClientWidth = 379
   ParentFont = True
   Position = poMainFormCenter
   LCLVersion = '4.4.0.0'
@@ -13,8 +13,8 @@ object frmCredits: TfrmCredits
     Height = 360
     Top = 0
     Width = 360
-    ActivePage = TbShtCreditsCredits
-    TabIndex = 0
+    ActivePage = TbShtCreditsContributors
+    TabIndex = 1
     TabOrder = 0
     object TbShtCreditsCredits: TTabSheet
       Hint = 'Display a list of sources used in the program'
@@ -124,9 +124,18 @@ object frmCredits: TfrmCredits
         Left = 0
         Height = 17
         Top = 216
-        Width = 65
+        Width = 352
         Caption = 'StaticText3'
         TabOrder = 9
+      end
+      object ScrllBarCreditsVertical: TScrollBar
+        Left = 352
+        Height = 233
+        Top = 0
+        Width = 17
+        Kind = sbVertical
+        PageSize = 0
+        TabOrder = 10
       end
     end
     object TbShtCreditsContributors: TTabSheet
@@ -145,9 +154,18 @@ object frmCredits: TfrmCredits
         Height = 17
         Top = 0
         Width = 352
-        Caption = 'Pedro Albuquerque'
+        Caption = 'Pedro Albuquerque - author, translator'
         TabOrder = 0
         OnClick = StTxtContributors1Click
+      end
+      object ScrllBarContributorsVertical: TScrollBar
+        Left = 352
+        Height = 233
+        Top = 0
+        Width = 17
+        Kind = sbVertical
+        PageSize = 0
+        TabOrder = 1
       end
     end
   end

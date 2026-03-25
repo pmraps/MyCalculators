@@ -1,10 +1,10 @@
 object frmCredits: TfrmCredits
   Left = 488
-  Height = 256
+  Height = 261
   Top = 250
-  Width = 361
-  ClientHeight = 256
-  ClientWidth = 361
+  Width = 379
+  ClientHeight = 261
+  ClientWidth = 379
   ParentFont = True
   Position = poMainFormCenter
   LCLVersion = '4.4.0.0'
@@ -124,15 +124,16 @@ object frmCredits: TfrmCredits
         Left = 0
         Height = 17
         Top = 216
-        Width = 65
+        Width = 352
         Caption = 'StaticText3'
         TabOrder = 9
       end
-      object ScrollBar1: TScrollBar
-        Left = 316
-        Height = 17
-        Top = 217
-        Width = 121
+      object ScrllBarCreditsVertical: TScrollBar
+        Left = 352
+        Height = 233
+        Top = 0
+        Width = 17
+        Kind = sbVertical
         PageSize = 0
         TabOrder = 10
       end
@@ -153,9 +154,18 @@ object frmCredits: TfrmCredits
         Height = 17
         Top = 0
         Width = 352
-        Caption = 'Pedro Albuquerque'
+        Caption = 'Pedro Albuquerque - author, translator'
         TabOrder = 0
         OnClick = StTxtContributors1Click
+      end
+      object ScrllBarContributorsVertical: TScrollBar
+        Left = 352
+        Height = 233
+        Top = 0
+        Width = 17
+        Kind = sbVertical
+        PageSize = 0
+        TabOrder = 1
       end
     end
   end
