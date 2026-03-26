@@ -11,88 +11,99 @@ msgstr ""
 "X-Generator: Poedit 3.9\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: tfrmmycalculators.btnacos1.caption
-msgctxt "tfrmmycalculators.btnacos1.caption"
+#: tfrmmycalculators.btnacos.caption
+msgctxt "tfrmmycalculators.btnacos.caption"
 msgid "ACos"
 msgstr ""
 
-#: tfrmmycalculators.btnacos1.hint
+#: tfrmmycalculators.btnacos.hint
+msgctxt "tfrmmycalculators.btnacos.hint"
 msgid "Calcular o arco cosseno"
 msgstr ""
 
-#: tfrmmycalculators.btnacosh1.caption
-msgctxt "tfrmmycalculators.btnacosh1.caption"
+#: tfrmmycalculators.btnacosh.caption
+msgctxt "tfrmmycalculators.btnacosh.caption"
 msgid "ACosH"
 msgstr ""
 
-#: tfrmmycalculators.btnacosh1.hint
+#: tfrmmycalculators.btnacosh.hint
+msgctxt "tfrmmycalculators.btnacosh.hint"
 msgid "Calcular o arco cosseno hiperbólico"
 msgstr ""
 
-#: tfrmmycalculators.btnacot1.caption
-msgctxt "tfrmmycalculators.btnacot1.caption"
+#: tfrmmycalculators.btnacot.caption
+msgctxt "tfrmmycalculators.btnacot.caption"
 msgid "ACot"
 msgstr ""
 
-#: tfrmmycalculators.btnacot1.hint
+#: tfrmmycalculators.btnacot.hint
+msgctxt "tfrmmycalculators.btnacot.hint"
 msgid "Calcular o arco cotangente"
 msgstr ""
 
-#: tfrmmycalculators.btnadd1.caption
+#: tfrmmycalculators.btnactualcalendar.hint
+msgid "Click to select the calendar"
+msgstr ""
+
+#: tfrmmycalculators.btnadd.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnadd.caption"
 msgid "+"
 msgstr "+"
 
-#: tfrmmycalculators.btnadd1.hint
-#, fuzzy
-#| msgid "Add"
-msgid "Adicionar"
-msgstr "Adicionar"
+#: tfrmmycalculators.btnadd.hint
+msgid "Add"
+msgstr ""
 
-#: tfrmmycalculators.btnasin1.caption
-msgctxt "tfrmmycalculators.btnasin1.caption"
+#: tfrmmycalculators.btnasin.caption
+msgctxt "tfrmmycalculators.btnasin.caption"
 msgid "ASin"
 msgstr ""
 
-#: tfrmmycalculators.btnasin1.hint
+#: tfrmmycalculators.btnasin.hint
+msgctxt "tfrmmycalculators.btnasin.hint"
 msgid "Calcular o arco seno"
 msgstr ""
 
-#: tfrmmycalculators.btnasinh1.caption
-msgctxt "tfrmmycalculators.btnasinh1.caption"
+#: tfrmmycalculators.btnasinh.caption
+msgctxt "tfrmmycalculators.btnasinh.caption"
 msgid "ASinH"
 msgstr ""
 
-#: tfrmmycalculators.btnasinh1.hint
+#: tfrmmycalculators.btnasinh.hint
+msgctxt "tfrmmycalculators.btnasinh.hint"
 msgid "Calcular o arco seno hiperbólico"
 msgstr ""
 
-#: tfrmmycalculators.btnatan1.caption
-msgctxt "tfrmmycalculators.btnatan1.caption"
+#: tfrmmycalculators.btnatan.caption
+msgctxt "tfrmmycalculators.btnatan.caption"
 msgid "ATan"
 msgstr ""
 
-#: tfrmmycalculators.btnatan1.hint
+#: tfrmmycalculators.btnatan.hint
+msgctxt "tfrmmycalculators.btnatan.hint"
 msgid "Calcular o arco tangente"
 msgstr ""
 
-#: tfrmmycalculators.btnatanh1.caption
-msgctxt "tfrmmycalculators.btnatanh1.caption"
+#: tfrmmycalculators.btnatanh.caption
+msgctxt "tfrmmycalculators.btnatanh.caption"
 msgid "ATanH"
 msgstr ""
 
-#: tfrmmycalculators.btnatanh1.hint
+#: tfrmmycalculators.btnatanh.hint
+msgctxt "tfrmmycalculators.btnatanh.hint"
 msgid "Calcular o arco tangente hiperbólico"
 msgstr ""
 
-#: tfrmmycalculators.btnbackspace1.caption
+#: tfrmmycalculators.btnbackspace.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnbackspace.caption"
 msgid ""
 msgstr ""
 
-#: tfrmmycalculators.btnbackspace1.hint
-#, fuzzy
-#| msgid "Erase a digit"
-msgid "Apagar um algarismo"
-msgstr "Apagar um algarismo"
+#: tfrmmycalculators.btnbackspace.hint
+msgid "Erase a digit"
+msgstr ""
 
 #: tfrmmycalculators.btnbintobase.caption
 msgid "Bin > N"
@@ -123,61 +134,66 @@ msgstr "CA"
 
 #: tfrmmycalculators.btnclearentry.hint
 msgctxt "tfrmmycalculators.btnclearentry.hint"
-msgid "Limpar todos os valores"
+msgid "Clear all entries"
 msgstr ""
 
-#: tfrmmycalculators.btncomma1.caption
+#: tfrmmycalculators.btncomma.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btncomma.caption"
 msgid ","
 msgstr ","
 
-#: tfrmmycalculators.btncomma1.hint
-#, fuzzy
-#| msgid "Decimal point"
-msgid "Ponto decimal"
-msgstr "Ponto decimal"
+#: tfrmmycalculators.btncomma.hint
+msgid "Decimal point"
+msgstr ""
 
-#: tfrmmycalculators.btncos1.caption
-msgctxt "tfrmmycalculators.btncos1.caption"
+#: tfrmmycalculators.btncos.caption
+msgctxt "tfrmmycalculators.btncos.caption"
 msgid "Cos"
 msgstr ""
 
-#: tfrmmycalculators.btncos1.hint
+#: tfrmmycalculators.btncos.hint
+msgctxt "tfrmmycalculators.btncos.hint"
 msgid "Calcular o cosseno"
 msgstr ""
 
-#: tfrmmycalculators.btncosecant1.caption
-msgctxt "tfrmmycalculators.btncosecant1.caption"
+#: tfrmmycalculators.btncosecant.caption
+msgctxt "tfrmmycalculators.btncosecant.caption"
 msgid "CSec"
 msgstr ""
 
-#: tfrmmycalculators.btncosecant1.hint
+#: tfrmmycalculators.btncosecant.hint
+msgctxt "tfrmmycalculators.btncosecant.hint"
 msgid "Calcular a cosecante"
 msgstr ""
 
-#: tfrmmycalculators.btncosh1.caption
-msgctxt "tfrmmycalculators.btncosh1.caption"
+#: tfrmmycalculators.btncosh.caption
+msgctxt "tfrmmycalculators.btncosh.caption"
 msgid "CosH"
 msgstr ""
 
-#: tfrmmycalculators.btncosh1.hint
+#: tfrmmycalculators.btncosh.hint
+msgctxt "tfrmmycalculators.btncosh.hint"
 msgid "Calcular o cosseno hiperbólico"
 msgstr ""
 
-#: tfrmmycalculators.btncoth1.caption
-msgctxt "tfrmmycalculators.btncoth1.caption"
+#: tfrmmycalculators.btncoth.caption
+msgctxt "tfrmmycalculators.btncoth.caption"
 msgid "CotH"
 msgstr ""
 
-#: tfrmmycalculators.btncoth1.hint
+#: tfrmmycalculators.btncoth.hint
+msgctxt "tfrmmycalculators.btncoth.hint"
 msgid "Calcular a cotangente hiperbólica"
 msgstr ""
 
-#: tfrmmycalculators.btnctan1.caption
-msgctxt "tfrmmycalculators.btnctan1.caption"
+#: tfrmmycalculators.btnctan.caption
+msgctxt "tfrmmycalculators.btnctan.caption"
 msgid "Cot"
 msgstr ""
 
-#: tfrmmycalculators.btnctan1.hint
+#: tfrmmycalculators.btnctan.hint
+msgctxt "tfrmmycalculators.btnctan.hint"
 msgid "Calcular a cotangente"
 msgstr ""
 
@@ -192,43 +208,45 @@ msgctxt "tfrmmycalculators.btndectobase.hint"
 msgid "Converter números entre diferentes bases"
 msgstr "Converter números entre diferentes bases"
 
-#: tfrmmycalculators.btndegreesgradians1.caption
-msgctxt "tfrmmycalculators.btndegreesgradians1.caption"
+#: tfrmmycalculators.btndegreesgradians.caption
+msgctxt "tfrmmycalculators.btndegreesgradians.caption"
 msgid "Deg-Grad"
 msgstr ""
 
-#: tfrmmycalculators.btndegreesgradians1.hint
+#: tfrmmycalculators.btndegreesgradians.hint
+msgctxt "tfrmmycalculators.btndegreesgradians.hint"
 msgid "Converter graus em gradianos"
 msgstr ""
 
-#: tfrmmycalculators.btndegreesradians1.caption
-msgctxt "tfrmmycalculators.btndegreesradians1.caption"
+#: tfrmmycalculators.btndegreesradians.caption
+msgctxt "tfrmmycalculators.btndegreesradians.caption"
 msgid "Deg-Rad"
 msgstr ""
 
-#: tfrmmycalculators.btndegreesradians1.hint
+#: tfrmmycalculators.btndegreesradians.hint
+msgctxt "tfrmmycalculators.btndegreesradians.hint"
 msgid "Converter graus em radianos"
 msgstr ""
 
-#: tfrmmycalculators.btndivide1.caption
+#: tfrmmycalculators.btndivide.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btndivide.caption"
 msgid "/"
 msgstr "/"
 
-#: tfrmmycalculators.btndivide1.hint
-#, fuzzy
-#| msgid "Divide"
-msgid "Dividir"
-msgstr "Dividir"
+#: tfrmmycalculators.btndivide.hint
+msgid "Divide"
+msgstr ""
 
-#: tfrmmycalculators.btneight1.caption
+#: tfrmmycalculators.btneight.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btneight.caption"
 msgid "8"
 msgstr "8"
 
-#: tfrmmycalculators.btneight1.hint
-#, fuzzy
-#| msgid "Number eight"
-msgid "Número 8"
-msgstr "Número oito"
+#: tfrmmycalculators.btneight.hint
+msgid "Eight"
+msgstr ""
 
 #: tfrmmycalculators.btneulerconstant.caption
 msgid "e"
@@ -270,25 +288,25 @@ msgstr "Fº"
 msgid "Converter para Fahrenheit"
 msgstr "Converter para Fahrenheit"
 
-#: tfrmmycalculators.btnfive1.caption
+#: tfrmmycalculators.btnfive.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnfive.caption"
 msgid "5"
 msgstr "5"
 
-#: tfrmmycalculators.btnfive1.hint
-#, fuzzy
-#| msgid "Number five"
-msgid "Número cinco"
-msgstr "Número cinco"
+#: tfrmmycalculators.btnfive.hint
+msgid "Five"
+msgstr ""
 
-#: tfrmmycalculators.btnfour1.caption
+#: tfrmmycalculators.btnfour.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnfour.caption"
 msgid "4"
 msgstr "4"
 
-#: tfrmmycalculators.btnfour1.hint
-#, fuzzy
-#| msgid "Number four"
-msgid "Número quatro"
-msgstr "Número quatro"
+#: tfrmmycalculators.btnfour.hint
+msgid "Four"
+msgstr ""
 
 #: tfrmmycalculators.btnfraction.caption
 msgid "1/x"
@@ -300,21 +318,23 @@ msgstr "1/x"
 msgid "Calcular a fracção de um"
 msgstr "Calcular a fracção de um"
 
-#: tfrmmycalculators.btngradiansdegrees1.caption
-msgctxt "tfrmmycalculators.btngradiansdegrees1.caption"
+#: tfrmmycalculators.btngradiansdegrees.caption
+msgctxt "tfrmmycalculators.btngradiansdegrees.caption"
 msgid "Grad-Deg"
 msgstr ""
 
-#: tfrmmycalculators.btngradiansdegrees1.hint
+#: tfrmmycalculators.btngradiansdegrees.hint
+msgctxt "tfrmmycalculators.btngradiansdegrees.hint"
 msgid "Converter gradianos em graus"
 msgstr ""
 
-#: tfrmmycalculators.btngradiansradians1.caption
-msgctxt "tfrmmycalculators.btngradiansradians1.caption"
+#: tfrmmycalculators.btngradiansradians.caption
+msgctxt "tfrmmycalculators.btngradiansradians.caption"
 msgid "Grad-Rad"
 msgstr ""
 
-#: tfrmmycalculators.btngradiansradians1.hint
+#: tfrmmycalculators.btngradiansradians.hint
+msgctxt "tfrmmycalculators.btngradiansradians.hint"
 msgid "Converter gradianos em radianos"
 msgstr ""
 
@@ -329,12 +349,13 @@ msgctxt "tfrmmycalculators.btnhextobase.hint"
 msgid "Converter números entre diferentes bases"
 msgstr "Converter números entre diferentes bases"
 
-#: tfrmmycalculators.btnhypotenuse1.caption
-msgctxt "tfrmmycalculators.btnhypotenuse1.caption"
+#: tfrmmycalculators.btnhypotenuse.caption
+msgctxt "tfrmmycalculators.btnhypotenuse.caption"
 msgid "Hip"
 msgstr ""
 
-#: tfrmmycalculators.btnhypotenuse1.hint
+#: tfrmmycalculators.btnhypotenuse.hint
+msgctxt "tfrmmycalculators.btnhypotenuse.hint"
 msgid "Calcular a hipótenusa dum triângulo recto"
 msgstr ""
 
@@ -348,10 +369,15 @@ msgstr "Log"
 msgid "Logaritmo decimal"
 msgstr "Logaritmo decimal"
 
-#: tfrmmycalculators.btnmemoryclear3.caption
-msgctxt "tfrmmycalculators.btnmemoryclear3.caption"
+#: tfrmmycalculators.btnmemoryclear.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnmemoryclear.caption"
 msgid "MC"
 msgstr "MC"
+
+#: tfrmmycalculators.btnmemoryclear.hint
+msgid "Clear memory"
+msgstr ""
 
 #: tfrmmycalculators.btnmemoryminus.caption
 #, fuzzy
@@ -359,40 +385,49 @@ msgctxt "tfrmmycalculators.btnmemoryminus.caption"
 msgid "M-"
 msgstr "M-"
 
-#: tfrmmycalculators.btnmemoryplus3.caption
-msgctxt "tfrmmycalculators.btnmemoryplus3.caption"
+#: tfrmmycalculators.btnmemoryminus.hint
+msgid "Subtract from memory"
+msgstr ""
+
+#: tfrmmycalculators.btnmemoryplus.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnmemoryplus.caption"
 msgid "M+"
 msgstr "M+"
 
-#: tfrmmycalculators.btnminus1.caption
+#: tfrmmycalculators.btnmemoryplus.hint
+msgid "Add to memory"
+msgstr ""
+
+#: tfrmmycalculators.btnminus.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnminus.caption"
 msgid "-"
 msgstr "-"
 
-#: tfrmmycalculators.btnminus1.hint
-#, fuzzy
-#| msgid "Subtract"
-msgid "Subtrair"
-msgstr "Subtrair"
+#: tfrmmycalculators.btnminus.hint
+msgid "Subtract"
+msgstr ""
 
-#: tfrmmycalculators.btnmultiply1.caption
+#: tfrmmycalculators.btnmultiply.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnmultiply.caption"
 msgid "*"
 msgstr "*"
 
-#: tfrmmycalculators.btnmultiply1.hint
-#, fuzzy
-#| msgid "Multiply"
-msgid "Multiplicar"
-msgstr "Multiplicar"
+#: tfrmmycalculators.btnmultiply.hint
+msgid "Multiply"
+msgstr ""
 
-#: tfrmmycalculators.btnnine1.caption
+#: tfrmmycalculators.btnnine.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnnine.caption"
 msgid "9"
 msgstr "9"
 
-#: tfrmmycalculators.btnnine1.hint
-#, fuzzy
-#| msgid "Number nine"
-msgid "Número 9"
-msgstr "Número nove"
+#: tfrmmycalculators.btnnine.hint
+msgid "Nine"
+msgstr ""
 
 #: tfrmmycalculators.btnocttobase.caption
 msgid "Oct > N"
@@ -405,15 +440,15 @@ msgctxt "tfrmmycalculators.btnocttobase.hint"
 msgid "Converter números entre diferentes bases"
 msgstr "Converter números entre diferentes bases"
 
-#: tfrmmycalculators.btnone1.caption
+#: tfrmmycalculators.btnone.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnone.caption"
 msgid "1"
 msgstr "1"
 
-#: tfrmmycalculators.btnone1.hint
-#, fuzzy
-#| msgid "Number one"
-msgid "Número um"
-msgstr "Número um"
+#: tfrmmycalculators.btnone.hint
+msgid "One"
+msgstr ""
 
 #: tfrmmycalculators.btnpercent.caption
 msgid "%"
@@ -445,45 +480,43 @@ msgstr "π"
 msgid "Constante Pi"
 msgstr "Constante Pi"
 
-#: tfrmmycalculators.btnplusminus1.caption
+#: tfrmmycalculators.btnplusminus.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnplusminus.caption"
 msgid "±"
 msgstr "±"
 
-#: tfrmmycalculators.btnplusminus1.hint
-#, fuzzy
-#| msgid "Invert the signal"
-msgid "Inverter o sinal"
-msgstr "Inverter o sinal"
+#: tfrmmycalculators.btnplusminus.hint
+msgid "Invert the signal"
+msgstr ""
 
-#: tfrmmycalculators.btnradiansdegrees1.caption
-msgctxt "tfrmmycalculators.btnradiansdegrees1.caption"
+#: tfrmmycalculators.btnradiansdegrees.caption
+msgctxt "tfrmmycalculators.btnradiansdegrees.caption"
 msgid "Rad-Deg"
 msgstr ""
 
-#: tfrmmycalculators.btnradiansdegrees1.hint
+#: tfrmmycalculators.btnradiansdegrees.hint
+msgctxt "tfrmmycalculators.btnradiansdegrees.hint"
 msgid "Converter radianos em graus"
 msgstr ""
 
-#: tfrmmycalculators.btnradiansgradians1.caption
-msgctxt "tfrmmycalculators.btnradiansgradians1.caption"
+#: tfrmmycalculators.btnradiansgradians.caption
+msgctxt "tfrmmycalculators.btnradiansgradians.caption"
 msgid "Rad.Grad"
 msgstr ""
 
-#: tfrmmycalculators.btnradiansgradians1.hint
+#: tfrmmycalculators.btnradiansgradians.hint
+msgctxt "tfrmmycalculators.btnradiansgradians.hint"
 msgid "Converter radianos em gradianos"
 msgstr ""
 
-#: tfrmmycalculators.btnremainder1.caption
-#, fuzzy
-#| msgid "Rem"
-msgid "Resto"
-msgstr "Resto"
+#: tfrmmycalculators.btnremainder.caption
+msgid "Remdr"
+msgstr ""
 
-#: tfrmmycalculators.btnremainder1.hint
-#, fuzzy
-#| msgid "Division remainder"
-msgid "Resto da divisão"
-msgstr "Resto da divisão"
+#: tfrmmycalculators.btnremainder.hint
+msgid "Division remainder"
+msgstr ""
 
 #: tfrmmycalculators.btnresult.caption
 #, fuzzy
@@ -493,7 +526,7 @@ msgstr "="
 
 #: tfrmmycalculators.btnresult.hint
 msgctxt "tfrmmycalculators.btnresult.hint"
-msgid "Resultado do cálculo"
+msgid "Equals"
 msgstr ""
 
 #: tfrmmycalculators.btnrisedto.caption
@@ -506,68 +539,73 @@ msgstr "x^y"
 msgid "Elevar a "
 msgstr "Elevar a "
 
-#: tfrmmycalculators.btnsecant1.caption
-msgctxt "tfrmmycalculators.btnsecant1.caption"
+#: tfrmmycalculators.btnsecant.caption
+msgctxt "tfrmmycalculators.btnsecant.caption"
 msgid "Sec"
 msgstr ""
 
-#: tfrmmycalculators.btnsecant1.hint
+#: tfrmmycalculators.btnsecant.hint
+msgctxt "tfrmmycalculators.btnsecant.hint"
 msgid "Calcular a secante"
 msgstr ""
 
-#: tfrmmycalculators.btnseven1.caption
+#: tfrmmycalculators.btnseven.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnseven.caption"
 msgid "7"
 msgstr "7"
 
-#: tfrmmycalculators.btnseven1.hint
-#, fuzzy
-#| msgid "Number seven"
-msgid "Número sete"
-msgstr "Número sete"
+#: tfrmmycalculators.btnseven.hint
+msgid "Seven"
+msgstr ""
 
-#: tfrmmycalculators.btnsin1.caption
-msgctxt "tfrmmycalculators.btnsin1.caption"
+#: tfrmmycalculators.btnsin.caption
+msgctxt "tfrmmycalculators.btnsin.caption"
 msgid "Sin"
 msgstr ""
 
-#: tfrmmycalculators.btnsin1.hint
+#: tfrmmycalculators.btnsin.hint
+msgctxt "tfrmmycalculators.btnsin.hint"
 msgid "Calcular o seno"
 msgstr ""
 
-#: tfrmmycalculators.btnsinh1.caption
-msgctxt "tfrmmycalculators.btnsinh1.caption"
+#: tfrmmycalculators.btnsinh.caption
+msgctxt "tfrmmycalculators.btnsinh.caption"
 msgid "SinH"
 msgstr ""
 
-#: tfrmmycalculators.btnsinh1.hint
+#: tfrmmycalculators.btnsinh.hint
+msgctxt "tfrmmycalculators.btnsinh.hint"
 msgid "Calcular o seno hiperbólico"
 msgstr ""
 
-#: tfrmmycalculators.btnsix1.caption
+#: tfrmmycalculators.btnsix.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnsix.caption"
 msgid "6"
 msgstr "6"
 
-#: tfrmmycalculators.btnsix1.hint
-#, fuzzy
-#| msgid "Number six"
-msgid "Número seis"
-msgstr "Número seis"
+#: tfrmmycalculators.btnsix.hint
+msgid "Six"
+msgstr ""
 
-#: tfrmmycalculators.btntan1.caption
-msgctxt "tfrmmycalculators.btntan1.caption"
+#: tfrmmycalculators.btntan.caption
+msgctxt "tfrmmycalculators.btntan.caption"
 msgid "Tan"
 msgstr ""
 
-#: tfrmmycalculators.btntan1.hint
+#: tfrmmycalculators.btntan.hint
+msgctxt "tfrmmycalculators.btntan.hint"
 msgid "Calcular a tangente"
 msgstr ""
 
-#: tfrmmycalculators.btntanh1.caption
-msgctxt "tfrmmycalculators.btntanh1.caption"
+#: tfrmmycalculators.btntanh.caption
+msgctxt "tfrmmycalculators.btntanh.caption"
 msgid "TanH"
 msgstr ""
 
-#: tfrmmycalculators.btntanh1.hint
+#: tfrmmycalculators.btntanh.hint
+msgctxt "tfrmmycalculators.btntanh.hint"
 msgid "Calcular a tangente hiperbólica"
 msgstr ""
 
@@ -581,25 +619,25 @@ msgstr "𝞽"
 msgid "Constante TAU"
 msgstr "Constante TAU"
 
-#: tfrmmycalculators.btnthree1.caption
+#: tfrmmycalculators.btnthree.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnthree.caption"
 msgid "3"
 msgstr "3"
 
-#: tfrmmycalculators.btnthree1.hint
-#, fuzzy
-#| msgid "Number three"
-msgid "Número três"
-msgstr "Número três"
+#: tfrmmycalculators.btnthree.hint
+msgid "Three"
+msgstr ""
 
-#: tfrmmycalculators.btntwo1.caption
+#: tfrmmycalculators.btntwo.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btntwo.caption"
 msgid "2"
 msgstr "2"
 
-#: tfrmmycalculators.btntwo1.hint
-#, fuzzy
-#| msgid "Number two"
-msgid "Número dois"
-msgstr "Número dois"
+#: tfrmmycalculators.btntwo.hint
+msgid "Two"
+msgstr ""
 
 #: tfrmmycalculators.btnxroot.caption
 msgid ""
@@ -611,15 +649,15 @@ msgstr ""
 msgid "Calcular a raiz cúbica"
 msgstr "Calcular a raiz n"
 
-#: tfrmmycalculators.btnzero1.caption
+#: tfrmmycalculators.btnzero.caption
+#, fuzzy
+msgctxt "tfrmmycalculators.btnzero.caption"
 msgid "0"
 msgstr "0"
 
-#: tfrmmycalculators.btnzero1.hint
-#, fuzzy
-#| msgid "Number zero\""
-msgid "Número zero"
-msgstr "Número zero"
+#: tfrmmycalculators.btnzero.hint
+msgid "Zero"
+msgstr ""
 
 #: tfrmmycalculators.caption
 msgid "Calculators"
@@ -644,20 +682,24 @@ msgstr "NULL"
 
 #: tfrmmycalculators.lblconvertto.caption
 msgctxt "tfrmmycalculators.lblconvertto.caption"
-msgid "Converter de"
+msgid "Convert"
 msgstr ""
 
 #: tfrmmycalculators.lblenddate.caption
 #, fuzzy
 #| msgid "Enter the final date"
-msgid "Data final"
+msgid "End Date"
 msgstr "Data final"
 
 #: tfrmmycalculators.lblstartdate.caption
 #, fuzzy
 #| msgid "Enter the start date"
-msgid "Data inicial"
+msgid "Start Date"
 msgstr "Data inicial"
+
+#: tfrmmycalculators.lbltocalendar.caption
+msgid "To"
+msgstr ""
 
 #: tfrmmycalculators.menuitem1.caption
 msgid "Exit"

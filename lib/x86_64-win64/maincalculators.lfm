@@ -135,16 +135,17 @@ object frmMyCalculators: TfrmMyCalculators
     object btnResult: TButton
       Left = 144
       Height = 25
-      Hint = 'Resultado do cálculo'
+      Hint = 'Equals'
       Top = 150
       Width = 142
       Caption = '='
       TabOrder = 0
       OnClick = btnResultClick
     end
-    object btnMemoryClear3: TButton
+    object btnMemoryClear: TButton
       Left = 72
       Height = 25
+      Hint = 'Clear memory'
       Top = 0
       Width = 70
       Caption = 'MC'
@@ -153,9 +154,10 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 1
       OnClick = btnMemoryClear2Click
     end
-    object btnMemoryPlus3: TButton
+    object btnMemoryPlus: TButton
       Left = 144
       Height = 25
+      Hint = 'Add to memory'
       Top = 0
       Width = 70
       Caption = 'M+'
@@ -165,6 +167,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnMemoryMinus: TButton
       Left = 216
       Height = 25
+      Hint = 'Subtract from memory'
       Top = 0
       Width = 70
       Caption = 'M-'
@@ -174,7 +177,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnClearEntry: TButton
       Left = 0
       Height = 25
-      Hint = 'Limpar todos os valores'
+      Hint = 'Clear all entries'
       Top = 0
       Width = 70
       Caption = 'CA'
@@ -183,10 +186,10 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 4
       OnClick = btnClearEntryClick
     end
-    object btnBackspace1: TButton
+    object btnBackspace: TButton
       Left = 0
       Height = 25
-      Hint = 'Apagar um algarismo'
+      Hint = 'Erase a digit'
       Top = 30
       Width = 70
       Caption = ''
@@ -200,70 +203,70 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 5
       OnClick = btnBackspaceClick
     end
-    object btnPlusMinus1: TButton
+    object btnPlusMinus: TButton
       Left = 72
       Height = 25
-      Hint = 'Inverter o sinal'
+      Hint = 'Invert the signal'
       Top = 30
       Width = 70
       Caption = '±'
       TabOrder = 6
       OnClick = btnPlusMinusClick
     end
-    object btnRemainder1: TButton
+    object btnRemainder: TButton
       Left = 144
       Height = 25
-      Hint = 'Resto da divisão'
+      Hint = 'Division remainder'
       Top = 30
       Width = 70
-      Caption = 'Resto'
+      Caption = 'Remdr'
       TabOrder = 7
       OnClick = btnRemainderClick
     end
-    object btnMinus1: TButton
+    object btnMinus: TButton
       Left = 216
       Height = 25
-      Hint = 'Subtrair'
+      Hint = 'Subtract'
       Top = 60
       Width = 70
       Caption = '-'
       TabOrder = 8
       OnClick = btnMinusClick
     end
-    object btnAdd1: TButton
+    object btnAdd: TButton
       Left = 216
       Height = 25
-      Hint = 'Adicionar'
+      Hint = 'Add'
       Top = 30
       Width = 70
       Caption = '+'
       TabOrder = 9
       OnClick = btnAddClick
     end
-    object btnNine1: TButton
+    object btnNine: TButton
       Left = 144
       Height = 25
-      Hint = 'Número 9'
+      Hint = 'Nine'
       Top = 60
       Width = 70
       Caption = '9'
       TabOrder = 10
       OnClick = btnNineClick
     end
-    object btnEight1: TButton
+    object btnEight: TButton
       Left = 72
       Height = 25
-      Hint = 'Número 8'
+      Hint = 'Eight'
       Top = 60
       Width = 70
       Caption = '8'
       TabOrder = 11
       OnClick = btnEightClick
     end
-    object btnSeven1: TButton
+    object btnSeven: TButton
       Left = 0
       Height = 25
-      Hint = 'Número sete'
+      Hint = 'Seven'
       Top = 60
       Width = 70
       Caption = '7'
@@ -272,10 +275,10 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 12
       OnClick = btnSevenClick
     end
-    object btnFour1: TButton
+    object btnFour: TButton
       Left = 0
       Height = 25
-      Hint = 'Número quatro'
+      Hint = 'Four'
       Top = 90
       Width = 70
       Caption = '4'
@@ -284,40 +287,40 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 13
       OnClick = btnFourClick
     end
-    object btnFive1: TButton
+    object btnFive: TButton
       Left = 72
       Height = 25
-      Hint = 'Número cinco'
+      Hint = 'Five'
       Top = 90
       Width = 70
       Caption = '5'
       TabOrder = 14
       OnClick = btnFiveClick
     end
-    object btnSix1: TButton
+    object btnSix: TButton
       Left = 144
       Height = 25
-      Hint = 'Número seis'
+      Hint = 'Six'
       Top = 90
       Width = 70
       Caption = '6'
       TabOrder = 15
       OnClick = btnSixClick
     end
-    object btnMultiply1: TButton
+    object btnMultiply: TButton
       Left = 216
       Height = 25
-      Hint = 'Multiplicar'
+      Hint = 'Multiply'
       Top = 90
       Width = 70
       Caption = '*'
       TabOrder = 16
       OnClick = btnMultiplyClick
     end
-    object btnOne1: TButton
+    object btnOne: TButton
       Left = 0
       Height = 25
-      Hint = 'Número um'
+      Hint = 'One'
       Top = 120
       Width = 70
       Caption = '1'
@@ -326,40 +329,40 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 17
       OnClick = btnOneClick
     end
-    object btnTwo1: TButton
+    object btnTwo: TButton
       Left = 72
       Height = 25
-      Hint = 'Número dois'
+      Hint = 'Two'
       Top = 120
       Width = 70
       Caption = '2'
       TabOrder = 18
       OnClick = btnTwoClick
     end
-    object btnThree1: TButton
+    object btnThree: TButton
       Left = 144
       Height = 25
-      Hint = 'Número três'
+      Hint = 'Three'
       Top = 120
       Width = 70
       Caption = '3'
       TabOrder = 19
       OnClick = btnThreeClick
     end
-    object btnDivide1: TButton
+    object btnDivide: TButton
       Left = 216
       Height = 25
-      Hint = 'Dividir'
+      Hint = 'Divide'
       Top = 120
       Width = 70
       Caption = '/'
       TabOrder = 20
       OnClick = btnDivideClick
     end
-    object btnZero1: TButton
+    object btnZero: TButton
       Left = 0
       Height = 25
-      Hint = 'Número zero'
+      Hint = 'Zero'
       Top = 150
       Width = 70
       Caption = '0'
@@ -368,10 +371,10 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 21
       OnClick = btnZeroClick
     end
-    object btnComma1: TButton
+    object btnComma: TButton
       Left = 72
       Height = 25
-      Hint = 'Ponto decimal'
+      Hint = 'Decimal point'
       Top = 150
       Width = 70
       Caption = ','
@@ -388,7 +391,7 @@ object frmMyCalculators: TfrmMyCalculators
     ClientHeight = 264
     ClientWidth = 288
     TabOrder = 3
-    object btnSin1: TButton
+    object btnSin: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular o seno'
@@ -400,7 +403,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 0
       OnClick = btnSinClick
     end
-    object btnSinH1: TButton
+    object btnSinH: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular o seno hiperbólico'
@@ -411,7 +414,7 @@ object frmMyCalculators: TfrmMyCalculators
       ShowHint = True
       TabOrder = 1
     end
-    object btnASin1: TButton
+    object btnASin: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular o arco seno'
@@ -422,7 +425,7 @@ object frmMyCalculators: TfrmMyCalculators
       ShowHint = True
       TabOrder = 2
     end
-    object btnCos1: TButton
+    object btnCos: TButton
       Left = 72
       Height = 25
       Hint = 'Calcular o cosseno'
@@ -432,7 +435,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 3
       OnClick = btnCosClick
     end
-    object btnASinH1: TButton
+    object btnASinH: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular o arco seno hiperbólico'
@@ -443,7 +446,7 @@ object frmMyCalculators: TfrmMyCalculators
       ShowHint = True
       TabOrder = 4
     end
-    object btnSecant1: TButton
+    object btnSecant: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular a secante'
@@ -454,7 +457,7 @@ object frmMyCalculators: TfrmMyCalculators
       ShowHint = True
       TabOrder = 5
     end
-    object btnCoSecant1: TButton
+    object btnCoSecant: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular a cosecante'
@@ -463,7 +466,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'CSec'
       TabOrder = 6
     end
-    object btnCosH1: TButton
+    object btnCosH: TButton
       Left = 72
       Height = 25
       Hint = 'Calcular o cosseno hiperbólico'
@@ -479,7 +482,7 @@ object frmMyCalculators: TfrmMyCalculators
       ParentFont = False
       TabOrder = 7
     end
-    object btnACos1: TButton
+    object btnACos: TButton
       Left = 72
       Height = 25
       Hint = 'Calcular o arco cosseno'
@@ -488,7 +491,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'ACos'
       TabOrder = 8
     end
-    object btnACosH1: TButton
+    object btnACosH: TButton
       Left = 72
       Height = 25
       Hint = 'Calcular o arco cosseno hiperbólico'
@@ -497,7 +500,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'ACosH'
       TabOrder = 9
     end
-    object btnDegreesRadians1: TButton
+    object btnDegreesRadians: TButton
       Left = 72
       Height = 25
       Hint = 'Converter graus em radianos'
@@ -513,7 +516,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 10
       OnClick = btnDegreesRadiansClick
     end
-    object btnDegreesGradians1: TButton
+    object btnDegreesGradians: TButton
       Left = 72
       Height = 25
       Hint = 'Converter graus em gradianos'
@@ -529,7 +532,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 11
       OnClick = btnDegreesGradiansClick
     end
-    object btnTan1: TButton
+    object btnTan: TButton
       Left = 144
       Height = 25
       Hint = 'Calcular a tangente'
@@ -538,7 +541,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'Tan'
       TabOrder = 12
     end
-    object btnCTan1: TButton
+    object btnCTan: TButton
       Left = 216
       Height = 25
       Hint = 'Calcular a cotangente'
@@ -547,7 +550,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'Cot'
       TabOrder = 13
     end
-    object btnTanH1: TButton
+    object btnTanH: TButton
       Left = 144
       Height = 25
       Hint = 'Calcular a tangente hiperbólica'
@@ -556,7 +559,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'TanH'
       TabOrder = 14
     end
-    object btnCotH1: TButton
+    object btnCotH: TButton
       Left = 216
       Height = 25
       Hint = 'Calcular a cotangente hiperbólica'
@@ -565,7 +568,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'CotH'
       TabOrder = 15
     end
-    object btnATan1: TButton
+    object btnATan: TButton
       Left = 144
       Height = 25
       Hint = 'Calcular o arco tangente'
@@ -574,7 +577,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'ATan'
       TabOrder = 16
     end
-    object btnATanH1: TButton
+    object btnATanH: TButton
       Left = 144
       Height = 25
       Hint = 'Calcular o arco tangente hiperbólico'
@@ -583,7 +586,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'ATanH'
       TabOrder = 17
     end
-    object btnRadiansDegrees1: TButton
+    object btnRadiansDegrees: TButton
       Left = 144
       Height = 25
       Hint = 'Converter radianos em graus'
@@ -599,7 +602,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 18
       OnClick = btnDegreesRadiansClick
     end
-    object btnRadiansGradians1: TButton
+    object btnRadiansGradians: TButton
       Left = 144
       Height = 25
       Hint = 'Converter radianos em gradianos'
@@ -615,7 +618,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 19
       OnClick = btnRadiansGradiansClick
     end
-    object btnACot1: TButton
+    object btnACot: TButton
       Left = 216
       Height = 25
       Hint = 'Calcular o arco cotangente'
@@ -624,7 +627,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'ACot'
       TabOrder = 20
     end
-    object btnHypotenuse1: TButton
+    object btnHypotenuse: TButton
       Left = 216
       Height = 25
       Hint = 'Calcular a hipótenusa dum triângulo recto'
@@ -633,7 +636,7 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = 'Hip'
       TabOrder = 21
     end
-    object btnGradiansDegrees1: TButton
+    object btnGradiansDegrees: TButton
       Left = 216
       Height = 25
       Hint = 'Converter gradianos em graus'
@@ -648,7 +651,7 @@ object frmMyCalculators: TfrmMyCalculators
       ParentFont = False
       TabOrder = 22
     end
-    object btnGradiansRadians1: TButton
+    object btnGradiansRadians: TButton
       Left = 216
       Height = 25
       Hint = 'Converter gradianos em radianos'
@@ -895,9 +898,9 @@ object frmMyCalculators: TfrmMyCalculators
     ClientWidth = 286
     TabOrder = 5
     object DTPickerPresent: TDateTimePicker
-      Left = 193
+      Left = 121
       Height = 25
-      Top = 32
+      Top = 0
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -925,7 +928,7 @@ object frmMyCalculators: TfrmMyCalculators
     object DTPickerStartDate: TDateTimePicker
       Left = 193
       Height = 25
-      Top = 144
+      Top = 80
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -949,11 +952,13 @@ object frmMyCalculators: TfrmMyCalculators
       UseDefaultSeparators = True
       HideDateTimeParts = []
       MonthNames = 'Long'
+      OnChange = DTPickerStartDateChange
     end
     object BtnActualCalendar: TBitBtn
-      Left = 136
+      Left = 261
       Height = 25
-      Top = 32
+      Hint = 'Click to select the calendar'
+      Top = 0
       Width = 25
       Glyph.Data = {
         D6020000424DD60200000000000036000000280000000C0000000E0000000100
@@ -989,10 +994,10 @@ object frmMyCalculators: TfrmMyCalculators
     object lblStartDate: TLabel
       Left = 0
       Height = 25
-      Top = 144
+      Top = 80
       Width = 170
       AutoSize = False
-      Caption = 'Data inicial'
+      Caption = 'Start Date'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1004,7 +1009,7 @@ object frmMyCalculators: TfrmMyCalculators
     object DTPickerEndDate: TDateTimePicker
       Left = 193
       Height = 25
-      Top = 184
+      Top = 112
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -1028,14 +1033,15 @@ object frmMyCalculators: TfrmMyCalculators
       UseDefaultSeparators = True
       HideDateTimeParts = []
       MonthNames = 'Long'
+      OnChange = DTPickerEndDateChange
     end
     object lblEndDate: TLabel
       Left = 0
       Height = 25
-      Top = 184
+      Top = 112
       Width = 170
       AutoSize = False
-      Caption = 'Data final'
+      Caption = 'End Date'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1047,26 +1053,38 @@ object frmMyCalculators: TfrmMyCalculators
     object lblConvertTo: TLabel
       Left = 0
       Height = 25
-      Top = 32
+      Top = 0
       Width = 120
       AutoSize = False
-      Caption = 'Converter de'
+      Caption = 'Convert'
       Layout = tlCenter
     end
     object StTxtCalendarConversion: TStaticText
       Left = 0
       Height = 25
-      Top = 72
+      Top = 40
       Width = 286
       Alignment = taCenter
+      BorderStyle = sbsSunken
       TabOrder = 4
     end
     object StTxtDateCalculation: TStaticText
       Left = 0
       Height = 25
-      Top = 224
+      Top = 152
       Width = 286
+      BorderStyle = sbsSunken
       TabOrder = 5
+    end
+    object lblToCalendar: TLabel
+      Left = 216
+      Height = 25
+      Top = 0
+      Width = 40
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'To'
+      Layout = tlCenter
     end
   end
   object mainMenu: TMainMenu

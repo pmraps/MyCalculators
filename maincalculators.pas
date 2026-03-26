@@ -5,7 +5,7 @@ unit mainCalculators;
 interface
 
 uses
-    SysUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
+    SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
     ExtCtrls, Buttons, DateTimePicker, Math, MyCredits, baseConvert, Classes;
 
 type
@@ -17,17 +17,10 @@ type
       btnACosH: TButton;
       btnACot: TButton;
       BtnActualCalendar: TBitBtn;
-      btnACos: TButton;
-      btnACosH: TButton;
-      btnACot: TButton;
       btnAdd: TButton;
       btnASin: TButton;
-      btnASin: TButton;
-      btnASinH: TButton;
       btnASinH: TButton;
       btnATan: TButton;
-      btnATan: TButton;
-      btnATanH: TButton;
       btnATanH: TButton;
       btnBackspace: TButton;
       btnClearEntry: TButton;
@@ -41,11 +34,6 @@ type
       btnCelsius: TButton;
       btnClearEntry3: TButton;
       btnComma: TButton;
-      btnCos: TButton;
-      btnCoSecant: TButton;
-      btnCosH: TButton;
-      btnCotH: TButton;
-      btnCTan: TButton;
       btnDegreesGradians: TButton;
       btnDegreesRadians: TButton;
       btnGradiansDegrees: TButton;
@@ -53,8 +41,6 @@ type
       btnHypotenuse: TButton;
       btnMemoryMinus: TButton;
       btnOctToBase: TButton;
-      btnDegreesGradians: TButton;
-      btnDegreesRadians: TButton;
       btnDivide: TButton;
       btnEight: TButton;
       btnEulerConstant: TButton;
@@ -64,9 +50,6 @@ type
       btnFive: TButton;
       btnFour: TButton;
       btnFraction: TButton;
-      btnGradiansDegrees: TButton;
-      btnGradiansRadians: TButton;
-      btnHypotenuse: TButton;
       btnLog: TButton;
       btnMemoryClear: TButton;
       btnMemoryMinus3: TButton;
@@ -81,24 +64,17 @@ type
       btnPI: TButton;
       btnPlusMinus: TButton;
       btnRadiansDegrees: TButton;
-      btnRadiansDegrees: TButton;
-      btnRadiansGradians: TButton;
       btnRadiansGradians: TButton;
       btnRemainder: TButton;
       btnResult: TButton;
       btnResult1: TButton;
       btnRisedTo: TButton;
       btnSecant: TButton;
-      btnSecant: TButton;
       btnSeven: TButton;
       btnSin: TButton;
-      btnSin: TButton;
-      btnSinH: TButton;
       btnSinH: TButton;
       btnSix: TButton;
       btnTan: TButton;
-      btnTan: TButton;
-      btnTanH: TButton;
       btnTanH: TButton;
       btnTAU: TButton;
       btnThree: TButton;
@@ -111,6 +87,7 @@ type
       DTPickerPresent: TDateTimePicker;
       DTPickerToCalendar: TDateTimePicker;
       ImageList: TImageList;
+      lblToCalendar: TLabel;
       lblConvertTo: TLabel;
       lblStartDate: TLabel;
       lblEndDate: TLabel;
@@ -193,6 +170,8 @@ type
         procedure btnTwoClick(Sender: TObject);
         procedure btnXRootClick(Sender: TObject);
         procedure btnZeroClick(Sender: TObject);
+        procedure DTPickerEndDateChange(Sender: TObject);
+        procedure DTPickerStartDateChange(Sender: TObject);
         procedure mnuHelpCreditsClick(Sender: TObject);
         procedure ppMenuArabClick(Sender: TObject);
         procedure ppMenuChineseClick(Sender: TObject);
@@ -211,6 +190,7 @@ type
       Memory : extended;
   public
         function CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
+        function DateDifference(firstDate, secondDate : TDate) : String;
   end;
 
 var
@@ -231,6 +211,7 @@ begin
     pnlTrigonometry.Visible := false;
     pnlDatulator.Visible := false;
     StTxtCalendarConversion.Caption := CalendarConversion(DTPickerPresent.Date, 'G', 'G');
+//    StTxtDateCalculation.Caption := DateDifference(DTPickerStartDate.Date, DTPickerEndDate.Date);
 end;
 
 procedure TfrmMyCalculators.btnSevenClick(Sender: TObject);
@@ -301,6 +282,16 @@ procedure TfrmMyCalculators.btnZeroClick(Sender: TObject);
 begin
     if txtFieldResult.Text = '' then txtFieldResult.Text := '0'
     else txtFieldResult.Text := txtFieldResult.Text + '0';
+end;
+
+procedure TfrmMyCalculators.DTPickerEndDateChange(Sender: TObject);
+begin
+    StTxtDateCalculation.Caption := DateDifference(DTPickerStartDate.Date, DTPickerEndDate.Date);
+end;
+
+procedure TfrmMyCalculators.DTPickerStartDateChange(Sender: TObject);
+begin
+    StTxtDateCalculation.Caption := DateDifference(DTPickerStartDate.Date, DTPickerEndDate.Date);
 end;
 
 procedure TfrmMyCalculators.mnuHelpCreditsClick(Sender: TObject);
@@ -807,6 +798,30 @@ begin
      SYear := IntToStr(NYear);
 
      CalendarConversion := SWDay + ', ' + SDay + ' of ' + SMonth + ' of ' + SYear;
+end;
+
+function TfrmMyCalculators.DateDifference(firstDate, secondDate : TDate) : String;
+var firstNDay, firstNMonth, firstNYear : Word;
+    secondNDay, secondNMonth, secondNYear : Word;
+    years, months, days : String;
+begin
+     DecodeDate(firstDate, firstNYear, firstNMonth, firstNDay);
+     DecodeDate(secondDate, secondNYear, secondNMonth, secondNDay);
+     if DaysBetween(firstDate, secondDate) = 0 then
+         StTxtDateCalculation.Caption := 'As datas são iguais'
+     else if firstDate < secondDate then
+             begin
+                  years := IntToStr(secondNYear - firstNYear);
+                  months := IntToStr(secondNMonth - firstNMonth);
+                  days := IntToStr(secondNDay - firstNDay);
+             end
+           else if firstDate > secondDate then
+                   begin
+                        years := IntToStr(firstNYear - secondNYear);
+                        months := IntToStr(firstNMonth - secondNMonth);
+                        days := IntToStr(firstNDay - secondNDay);
+                   end;
+     DateDifference := days + ' days, ' + months + ' months, ' + years + ' years.';
 end;
 
 end.

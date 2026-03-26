@@ -898,9 +898,9 @@ object frmMyCalculators: TfrmMyCalculators
     ClientWidth = 286
     TabOrder = 5
     object DTPickerPresent: TDateTimePicker
-      Left = 193
+      Left = 121
       Height = 25
-      Top = 32
+      Top = 0
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -928,7 +928,7 @@ object frmMyCalculators: TfrmMyCalculators
     object DTPickerStartDate: TDateTimePicker
       Left = 193
       Height = 25
-      Top = 144
+      Top = 80
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -952,11 +952,13 @@ object frmMyCalculators: TfrmMyCalculators
       UseDefaultSeparators = True
       HideDateTimeParts = []
       MonthNames = 'Long'
+      OnChange = DTPickerStartDateChange
     end
     object BtnActualCalendar: TBitBtn
-      Left = 136
+      Left = 261
       Height = 25
-      Top = 32
+      Hint = 'Click to select the calendar'
+      Top = 0
       Width = 25
       Glyph.Data = {
         D6020000424DD60200000000000036000000280000000C0000000E0000000100
@@ -992,10 +994,10 @@ object frmMyCalculators: TfrmMyCalculators
     object lblStartDate: TLabel
       Left = 0
       Height = 25
-      Top = 144
+      Top = 80
       Width = 170
       AutoSize = False
-      Caption = 'Data inicial'
+      Caption = 'Start Date'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1007,7 +1009,7 @@ object frmMyCalculators: TfrmMyCalculators
     object DTPickerEndDate: TDateTimePicker
       Left = 193
       Height = 25
-      Top = 184
+      Top = 112
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -1031,14 +1033,15 @@ object frmMyCalculators: TfrmMyCalculators
       UseDefaultSeparators = True
       HideDateTimeParts = []
       MonthNames = 'Long'
+      OnChange = DTPickerEndDateChange
     end
     object lblEndDate: TLabel
       Left = 0
       Height = 25
-      Top = 184
+      Top = 112
       Width = 170
       AutoSize = False
-      Caption = 'Data final'
+      Caption = 'End Date'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1050,26 +1053,38 @@ object frmMyCalculators: TfrmMyCalculators
     object lblConvertTo: TLabel
       Left = 0
       Height = 25
-      Top = 32
+      Top = 0
       Width = 120
       AutoSize = False
-      Caption = 'Converter de'
+      Caption = 'Convert'
       Layout = tlCenter
     end
     object StTxtCalendarConversion: TStaticText
       Left = 0
       Height = 25
-      Top = 72
+      Top = 40
       Width = 286
       Alignment = taCenter
+      BorderStyle = sbsSunken
       TabOrder = 4
     end
     object StTxtDateCalculation: TStaticText
       Left = 0
       Height = 25
-      Top = 224
+      Top = 152
       Width = 286
+      BorderStyle = sbsSunken
       TabOrder = 5
+    end
+    object lblToCalendar: TLabel
+      Left = 216
+      Height = 25
+      Top = 0
+      Width = 40
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'To'
+      Layout = tlCenter
     end
   end
   object mainMenu: TMainMenu
@@ -1121,32 +1136,32 @@ object frmMyCalculators: TfrmMyCalculators
     Left = 496
     Top = 312
     object ppMenuGregorian: TMenuItem
-      Caption = 'Gregoriano'
+      Caption = 'Gregorian'
       ImageIndex = 0
       OnClick = ppMenuGregorianClick
     end
     object ppMenuJulian: TMenuItem
-      Caption = 'Juliano'
+      Caption = 'Julian'
       ImageIndex = 1
       OnClick = ppMenuJulianClick
     end
     object ppMenuFrench: TMenuItem
-      Caption = 'Republicano francês'
+      Caption = 'French  Republican'
       ImageIndex = 2
       OnClick = ppMenuFrenchClick
     end
     object ppMenuHebrew: TMenuItem
-      Caption = 'Hebraico'
+      Caption = 'Hebrew'
       ImageIndex = 3
       OnClick = ppMenuHebrewClick
     end
     object ppMenuChinese: TMenuItem
-      Caption = 'Chinês'
+      Caption = 'Chinese'
       ImageIndex = 4
       OnClick = ppMenuChineseClick
     end
     object ppMenuArab: TMenuItem
-      Caption = 'Árabe'
+      Caption = 'Arab'
       ImageIndex = 5
       OnClick = ppMenuArabClick
     end

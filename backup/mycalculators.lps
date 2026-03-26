@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="37" Y="14"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="maincalculators.pas"/>
@@ -20,9 +20,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="724"/>
-        <CursorPos X="52" Y="741"/>
-        <UsageCount Value="29"/>
+        <TopLine Value="186"/>
+        <CursorPos X="3" Y="214"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>

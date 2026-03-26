@@ -135,7 +135,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnResult: TButton
       Left = 144
       Height = 25
-      Hint = 'Calculation Result'
+      Hint = 'Equals'
       Top = 150
       Width = 142
       Caption = '='
@@ -226,7 +226,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnMinus: TButton
       Left = 216
       Height = 25
-      Hint = 'Subtrair'
+      Hint = 'Subtract'
       Top = 60
       Width = 70
       Caption = '-'
@@ -246,7 +246,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnNine: TButton
       Left = 144
       Height = 25
-      Hint = 'Número 9'
+      Hint = 'Nine'
       Top = 60
       Width = 70
       Caption = '9'
@@ -256,7 +256,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnEight: TButton
       Left = 72
       Height = 25
-      Hint = 'Número 8'
+      Hint = 'Eight'
       Top = 60
       Width = 70
       Caption = '8'
@@ -266,7 +266,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnSeven: TButton
       Left = 0
       Height = 25
-      Hint = 'Número sete'
+      Hint = 'Seven'
       Top = 60
       Width = 70
       Caption = '7'
@@ -278,7 +278,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnFour: TButton
       Left = 0
       Height = 25
-      Hint = 'Número quatro'
+      Hint = 'Four'
       Top = 90
       Width = 70
       Caption = '4'
@@ -290,7 +290,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnFive: TButton
       Left = 72
       Height = 25
-      Hint = 'Número cinco'
+      Hint = 'Five'
       Top = 90
       Width = 70
       Caption = '5'
@@ -300,7 +300,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnSix: TButton
       Left = 144
       Height = 25
-      Hint = 'Número seis'
+      Hint = 'Six'
       Top = 90
       Width = 70
       Caption = '6'
@@ -310,7 +310,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnMultiply: TButton
       Left = 216
       Height = 25
-      Hint = 'Multiplicar'
+      Hint = 'Multiply'
       Top = 90
       Width = 70
       Caption = '*'
@@ -320,7 +320,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnOne: TButton
       Left = 0
       Height = 25
-      Hint = 'Número um'
+      Hint = 'One'
       Top = 120
       Width = 70
       Caption = '1'
@@ -332,7 +332,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnTwo: TButton
       Left = 72
       Height = 25
-      Hint = 'Número dois'
+      Hint = 'Two'
       Top = 120
       Width = 70
       Caption = '2'
@@ -342,7 +342,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnThree: TButton
       Left = 144
       Height = 25
-      Hint = 'Número três'
+      Hint = 'Three'
       Top = 120
       Width = 70
       Caption = '3'
@@ -352,7 +352,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnDivide: TButton
       Left = 216
       Height = 25
-      Hint = 'Dividir'
+      Hint = 'Divide'
       Top = 120
       Width = 70
       Caption = '/'
@@ -362,7 +362,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnZero: TButton
       Left = 0
       Height = 25
-      Hint = 'Número zero'
+      Hint = 'Zero'
       Top = 150
       Width = 70
       Caption = '0'
@@ -374,7 +374,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnComma: TButton
       Left = 72
       Height = 25
-      Hint = 'Ponto decimal'
+      Hint = 'Decimal point'
       Top = 150
       Width = 70
       Caption = ','
@@ -651,7 +651,7 @@ object frmMyCalculators: TfrmMyCalculators
       ParentFont = False
       TabOrder = 22
     end
-    object btnGradiansRadians1: TButton
+    object btnGradiansRadians: TButton
       Left = 216
       Height = 25
       Hint = 'Converter gradianos em radianos'
@@ -898,9 +898,9 @@ object frmMyCalculators: TfrmMyCalculators
     ClientWidth = 286
     TabOrder = 5
     object DTPickerPresent: TDateTimePicker
-      Left = 193
+      Left = 121
       Height = 25
-      Top = 32
+      Top = 0
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -928,7 +928,7 @@ object frmMyCalculators: TfrmMyCalculators
     object DTPickerStartDate: TDateTimePicker
       Left = 193
       Height = 25
-      Top = 144
+      Top = 80
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -952,11 +952,13 @@ object frmMyCalculators: TfrmMyCalculators
       UseDefaultSeparators = True
       HideDateTimeParts = []
       MonthNames = 'Long'
+      OnChange = DTPickerStartDateChange
     end
     object BtnActualCalendar: TBitBtn
-      Left = 136
+      Left = 261
       Height = 25
-      Top = 32
+      Hint = 'Click to select the calendar'
+      Top = 0
       Width = 25
       Glyph.Data = {
         D6020000424DD60200000000000036000000280000000C0000000E0000000100
@@ -992,10 +994,10 @@ object frmMyCalculators: TfrmMyCalculators
     object lblStartDate: TLabel
       Left = 0
       Height = 25
-      Top = 144
+      Top = 80
       Width = 170
       AutoSize = False
-      Caption = 'Data inicial'
+      Caption = 'Start Date'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1007,7 +1009,7 @@ object frmMyCalculators: TfrmMyCalculators
     object DTPickerEndDate: TDateTimePicker
       Left = 193
       Height = 25
-      Top = 184
+      Top = 112
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -1031,14 +1033,15 @@ object frmMyCalculators: TfrmMyCalculators
       UseDefaultSeparators = True
       HideDateTimeParts = []
       MonthNames = 'Long'
+      OnChange = DTPickerEndDateChange
     end
     object lblEndDate: TLabel
       Left = 0
       Height = 25
-      Top = 184
+      Top = 112
       Width = 170
       AutoSize = False
-      Caption = 'Data final'
+      Caption = 'End Date'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1050,26 +1053,38 @@ object frmMyCalculators: TfrmMyCalculators
     object lblConvertTo: TLabel
       Left = 0
       Height = 25
-      Top = 32
+      Top = 0
       Width = 120
       AutoSize = False
-      Caption = 'Converter de'
+      Caption = 'Convert'
       Layout = tlCenter
     end
     object StTxtCalendarConversion: TStaticText
       Left = 0
       Height = 25
-      Top = 72
+      Top = 40
       Width = 286
       Alignment = taCenter
+      BorderStyle = sbsSunken
       TabOrder = 4
     end
     object StTxtDateCalculation: TStaticText
       Left = 0
       Height = 25
-      Top = 224
+      Top = 152
       Width = 286
+      BorderStyle = sbsSunken
       TabOrder = 5
+    end
+    object lblToCalendar: TLabel
+      Left = 216
+      Height = 25
+      Top = 0
+      Width = 40
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'To'
+      Layout = tlCenter
     end
   end
   object mainMenu: TMainMenu
