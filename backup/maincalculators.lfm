@@ -1,13 +1,13 @@
 object frmMyCalculators: TfrmMyCalculators
   Left = 488
-  Height = 527
+  Height = 579
   Top = 250
   Width = 1007
   HelpType = htKeyword
   HelpKeyword = 'simpleHlp'
   HelpContext = 1
   Caption = 'Calculators'
-  ClientHeight = 527
+  ClientHeight = 579
   ClientWidth = 1007
   DefaultMonitor = dmMainForm
   Font.CharSet = ANSI_CHARSET
@@ -55,7 +55,7 @@ object frmMyCalculators: TfrmMyCalculators
       Top = 0
       Width = 70
       AutoSize = False
-      Caption = 'Simples'
+      Caption = 'Simple'
       Checked = True
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
@@ -111,7 +111,7 @@ object frmMyCalculators: TfrmMyCalculators
       Top = 0
       Width = 70
       AutoSize = False
-      Caption = 'Data'
+      Caption = 'Date'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -135,17 +135,17 @@ object frmMyCalculators: TfrmMyCalculators
     object btnResult: TButton
       Left = 144
       Height = 25
-      Hint = 'Resultado do cálculo'
+      Hint = 'Calculation Result'
       Top = 150
       Width = 142
       Caption = '='
       TabOrder = 0
       OnClick = btnResultClick
     end
-    object btnMemoryClear3: TButton
+    object btnMemoryClear: TButton
       Left = 72
       Height = 25
-      Hint = ''
+      Hint = 'Clear memory'
       Top = 0
       Width = 70
       Caption = 'MC'
@@ -154,10 +154,10 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 1
       OnClick = btnMemoryClear2Click
     end
-    object btnMemoryPlus3: TButton
+    object btnMemoryPlus: TButton
       Left = 144
       Height = 25
-      Hint = ''
+      Hint = 'Add to memory'
       Top = 0
       Width = 70
       Caption = 'M+'
@@ -167,7 +167,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnMemoryMinus: TButton
       Left = 216
       Height = 25
-      Hint = 'Subtrair à memória'
+      Hint = 'Subtract from memory'
       Top = 0
       Width = 70
       Caption = 'M-'
@@ -177,7 +177,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnClearEntry: TButton
       Left = 0
       Height = 25
-      Hint = 'Limpar todos os valores'
+      Hint = 'Clear all entries'
       Top = 0
       Width = 70
       Caption = 'CA'
@@ -186,10 +186,10 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 4
       OnClick = btnClearEntryClick
     end
-    object btnBackspace1: TButton
+    object btnBackspace: TButton
       Left = 0
       Height = 25
-      Hint = 'Apagar um algarismo'
+      Hint = 'Erase a digit'
       Top = 30
       Width = 70
       Caption = ''
@@ -203,27 +203,27 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 5
       OnClick = btnBackspaceClick
     end
-    object btnPlusMinus1: TButton
+    object btnPlusMinus: TButton
       Left = 72
       Height = 25
-      Hint = 'Inverter o sinal'
+      Hint = 'Invert the signal'
       Top = 30
       Width = 70
       Caption = '±'
       TabOrder = 6
       OnClick = btnPlusMinusClick
     end
-    object btnRemainder1: TButton
+    object btnRemainder: TButton
       Left = 144
       Height = 25
-      Hint = 'Resto da divisão'
+      Hint = 'Division remainder'
       Top = 30
       Width = 70
-      Caption = 'Resto'
+      Caption = 'Remdr'
       TabOrder = 7
       OnClick = btnRemainderClick
     end
-    object btnMinus1: TButton
+    object btnMinus: TButton
       Left = 216
       Height = 25
       Hint = 'Subtrair'
@@ -233,17 +233,17 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 8
       OnClick = btnMinusClick
     end
-    object btnAdd1: TButton
+    object btnAdd: TButton
       Left = 216
       Height = 25
-      Hint = 'Adicionar'
+      Hint = 'Add'
       Top = 30
       Width = 70
       Caption = '+'
       TabOrder = 9
       OnClick = btnAddClick
     end
-    object btnNine1: TButton
+    object btnNine: TButton
       Left = 144
       Height = 25
       Hint = 'Número 9'
@@ -253,7 +253,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 10
       OnClick = btnNineClick
     end
-    object btnEight1: TButton
+    object btnEight: TButton
       Left = 72
       Height = 25
       Hint = 'Número 8'
@@ -263,7 +263,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 11
       OnClick = btnEightClick
     end
-    object btnSeven1: TButton
+    object btnSeven: TButton
       Left = 0
       Height = 25
       Hint = 'Número sete'
@@ -275,7 +275,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 12
       OnClick = btnSevenClick
     end
-    object btnFour1: TButton
+    object btnFour: TButton
       Left = 0
       Height = 25
       Hint = 'Número quatro'
@@ -287,7 +287,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 13
       OnClick = btnFourClick
     end
-    object btnFive1: TButton
+    object btnFive: TButton
       Left = 72
       Height = 25
       Hint = 'Número cinco'
@@ -297,7 +297,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 14
       OnClick = btnFiveClick
     end
-    object btnSix1: TButton
+    object btnSix: TButton
       Left = 144
       Height = 25
       Hint = 'Número seis'
@@ -307,7 +307,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 15
       OnClick = btnSixClick
     end
-    object btnMultiply1: TButton
+    object btnMultiply: TButton
       Left = 216
       Height = 25
       Hint = 'Multiplicar'
@@ -317,7 +317,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 16
       OnClick = btnMultiplyClick
     end
-    object btnOne1: TButton
+    object btnOne: TButton
       Left = 0
       Height = 25
       Hint = 'Número um'
@@ -329,7 +329,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 17
       OnClick = btnOneClick
     end
-    object btnTwo1: TButton
+    object btnTwo: TButton
       Left = 72
       Height = 25
       Hint = 'Número dois'
@@ -339,7 +339,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 18
       OnClick = btnTwoClick
     end
-    object btnThree1: TButton
+    object btnThree: TButton
       Left = 144
       Height = 25
       Hint = 'Número três'
@@ -349,7 +349,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 19
       OnClick = btnThreeClick
     end
-    object btnDivide1: TButton
+    object btnDivide: TButton
       Left = 216
       Height = 25
       Hint = 'Dividir'
@@ -359,7 +359,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 20
       OnClick = btnDivideClick
     end
-    object btnZero1: TButton
+    object btnZero: TButton
       Left = 0
       Height = 25
       Hint = 'Número zero'
@@ -371,7 +371,7 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 21
       OnClick = btnZeroClick
     end
-    object btnComma1: TButton
+    object btnComma: TButton
       Left = 72
       Height = 25
       Hint = 'Ponto decimal'
@@ -391,134 +391,86 @@ object frmMyCalculators: TfrmMyCalculators
     ClientHeight = 264
     ClientWidth = 288
     TabOrder = 3
-    object btnMemoryClear1: TButton
-      Left = 72
-      Height = 25
-      Hint = 'Limpar a memória'
-      Top = 0
-      Width = 70
-      Caption = 'MC'
-      Enabled = False
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 0
-      OnClick = btnMemoryClear2Click
-    end
-    object btnMemoryPlus1: TButton
-      Left = 144
-      Height = 25
-      Hint = 'Adicionar à memória'
-      Top = 0
-      Width = 70
-      Caption = 'M+'
-      Enabled = False
-      TabOrder = 1
-      OnClick = btnMemoryPlus2Click
-    end
-    object btnMemoryMinus1: TButton
-      Left = 216
-      Height = 25
-      Hint = 'Subtrair à memória'
-      Top = 0
-      Width = 70
-      Caption = 'M-'
-      Enabled = False
-      TabOrder = 2
-      OnClick = btnMemoryMinus3Click
-    end
-    object btnClearEntry1: TButton
-      Left = 2
-      Height = 25
-      Hint = 'Limpar todos os valores'
-      Top = 0
-      Width = 70
-      Caption = 'CA'
-      Enabled = False
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 3
-      OnClick = btnClearEntryClick
-    end
-    object btnSin1: TButton
+    object btnSin: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular o seno'
-      Top = 30
+      Top = 0
       Width = 70
-      Caption = 'Sen'
+      Caption = 'Sin'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 4
+      TabOrder = 0
       OnClick = btnSinClick
     end
-    object btnSinH1: TButton
+    object btnSinH: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular o seno hiperbólico'
-      Top = 60
+      Top = 30
       Width = 70
-      Caption = 'SenH'
+      Caption = 'SinH'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 5
+      TabOrder = 1
     end
-    object btnASin1: TButton
+    object btnASin: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular o arco seno'
-      Top = 90
+      Top = 60
       Width = 70
-      Caption = 'ASen'
+      Caption = 'ASin'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 6
+      TabOrder = 2
     end
-    object btnCos1: TButton
+    object btnCos: TButton
       Left = 72
       Height = 25
       Hint = 'Calcular o cosseno'
-      Top = 30
+      Top = 0
       Width = 70
       Caption = 'Cos'
-      TabOrder = 7
+      TabOrder = 3
       OnClick = btnCosClick
     end
-    object btnASinH1: TButton
+    object btnASinH: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular o arco seno hiperbólico'
-      Top = 120
+      Top = 90
       Width = 70
-      Caption = 'ASenH'
+      Caption = 'ASinH'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 8
+      TabOrder = 4
     end
-    object btnSecant1: TButton
+    object btnSecant: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular a secante'
-      Top = 150
+      Top = 120
       Width = 70
       Caption = 'Sec'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 9
+      TabOrder = 5
     end
-    object btnCoSecant1: TButton
+    object btnCoSecant: TButton
       Left = 2
       Height = 25
       Hint = 'Calcular a cosecante'
-      Top = 180
+      Top = 150
       Width = 70
       Caption = 'CSec'
-      TabOrder = 10
+      TabOrder = 6
     end
-    object btnCosH1: TButton
+    object btnCosH: TButton
       Left = 72
       Height = 25
       Hint = 'Calcular o cosseno hiperbólico'
-      Top = 60
+      Top = 30
       Width = 70
       Caption = 'CosH'
       Font.CharSet = ANSI_CHARSET
@@ -528,31 +480,31 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 11
+      TabOrder = 7
     end
-    object btnACos1: TButton
+    object btnACos: TButton
       Left = 72
       Height = 25
       Hint = 'Calcular o arco cosseno'
-      Top = 90
+      Top = 60
       Width = 70
       Caption = 'ACos'
-      TabOrder = 12
+      TabOrder = 8
     end
-    object btnACosH1: TButton
+    object btnACosH: TButton
       Left = 72
       Height = 25
       Hint = 'Calcular o arco cosseno hiperbólico'
-      Top = 120
+      Top = 90
       Width = 70
       Caption = 'ACosH'
-      TabOrder = 13
+      TabOrder = 9
     end
-    object btnDegreesRadians1: TButton
+    object btnDegreesRadians: TButton
       Left = 72
       Height = 25
       Hint = 'Converter graus em radianos'
-      Top = 150
+      Top = 120
       Width = 70
       Caption = 'Deg-Rad'
       Font.CharSet = ANSI_CHARSET
@@ -561,14 +513,14 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 14
+      TabOrder = 10
       OnClick = btnDegreesRadiansClick
     end
-    object btnDegreesGradians1: TButton
+    object btnDegreesGradians: TButton
       Left = 72
       Height = 25
       Hint = 'Converter graus em gradianos'
-      Top = 180
+      Top = 150
       Width = 70
       Caption = 'Deg-Grad'
       Font.CharSet = ANSI_CHARSET
@@ -577,68 +529,68 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 15
+      TabOrder = 11
       OnClick = btnDegreesGradiansClick
     end
-    object btnTan1: TButton
+    object btnTan: TButton
       Left = 144
       Height = 25
       Hint = 'Calcular a tangente'
-      Top = 30
+      Top = 0
       Width = 70
       Caption = 'Tan'
-      TabOrder = 16
+      TabOrder = 12
     end
-    object btnCTan1: TButton
+    object btnCTan: TButton
       Left = 216
       Height = 25
       Hint = 'Calcular a cotangente'
-      Top = 30
+      Top = 0
       Width = 70
       Caption = 'Cot'
-      TabOrder = 17
+      TabOrder = 13
     end
-    object btnTanH1: TButton
+    object btnTanH: TButton
       Left = 144
       Height = 25
       Hint = 'Calcular a tangente hiperbólica'
-      Top = 60
+      Top = 30
       Width = 70
       Caption = 'TanH'
-      TabOrder = 18
+      TabOrder = 14
     end
-    object btnCotH1: TButton
+    object btnCotH: TButton
       Left = 216
       Height = 25
       Hint = 'Calcular a cotangente hiperbólica'
-      Top = 60
+      Top = 30
       Width = 70
       Caption = 'CotH'
-      TabOrder = 19
+      TabOrder = 15
     end
-    object btnATan1: TButton
+    object btnATan: TButton
       Left = 144
       Height = 25
       Hint = 'Calcular o arco tangente'
-      Top = 90
+      Top = 60
       Width = 70
       Caption = 'ATan'
-      TabOrder = 20
+      TabOrder = 16
     end
-    object btnATanH1: TButton
+    object btnATanH: TButton
       Left = 144
       Height = 25
       Hint = 'Calcular o arco tangente hiperbólico'
-      Top = 120
+      Top = 90
       Width = 70
       Caption = 'ATanH'
-      TabOrder = 21
+      TabOrder = 17
     end
-    object btnRadiansDegrees1: TButton
+    object btnRadiansDegrees: TButton
       Left = 144
       Height = 25
       Hint = 'Converter radianos em graus'
-      Top = 150
+      Top = 120
       Width = 70
       Caption = 'Rad-Deg'
       Font.CharSet = ANSI_CHARSET
@@ -647,14 +599,14 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 22
+      TabOrder = 18
       OnClick = btnDegreesRadiansClick
     end
-    object btnRadiansGradians1: TButton
+    object btnRadiansGradians: TButton
       Left = 144
       Height = 25
       Hint = 'Converter radianos em gradianos'
-      Top = 180
+      Top = 150
       Width = 70
       Caption = 'Rad.Grad'
       Font.CharSet = ANSI_CHARSET
@@ -663,32 +615,32 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 23
+      TabOrder = 19
       OnClick = btnRadiansGradiansClick
     end
-    object btnACot1: TButton
+    object btnACot: TButton
       Left = 216
       Height = 25
       Hint = 'Calcular o arco cotangente'
-      Top = 90
+      Top = 60
       Width = 70
       Caption = 'ACot'
-      TabOrder = 24
+      TabOrder = 20
     end
-    object btnHypotenuse1: TButton
+    object btnHypotenuse: TButton
       Left = 216
       Height = 25
       Hint = 'Calcular a hipótenusa dum triângulo recto'
-      Top = 120
+      Top = 88
       Width = 70
       Caption = 'Hip'
-      TabOrder = 25
+      TabOrder = 21
     end
-    object btnGradiansDegrees1: TButton
+    object btnGradiansDegrees: TButton
       Left = 216
       Height = 25
       Hint = 'Converter gradianos em graus'
-      Top = 150
+      Top = 120
       Width = 70
       Caption = 'Grad-Deg'
       Font.CharSet = ANSI_CHARSET
@@ -697,13 +649,13 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 26
+      TabOrder = 22
     end
     object btnGradiansRadians1: TButton
       Left = 216
       Height = 25
       Hint = 'Converter gradianos em radianos'
-      Top = 180
+      Top = 150
       Width = 70
       Caption = 'Grad-Rad'
       Font.CharSet = ANSI_CHARSET
@@ -712,7 +664,7 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 27
+      TabOrder = 23
     end
   end
   object pnlFunctions: TPanel
@@ -728,7 +680,7 @@ object frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Hint = 'Converter em percentagem'
-      Top = 30
+      Top = 0
       Width = 70
       Caption = '%'
       ParentShowHint = False
@@ -740,7 +692,7 @@ object frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Hint = 'Calcular a raiz cúbica'
-      Top = 60
+      Top = 30
       Width = 70
       Caption = ''
       ParentShowHint = False
@@ -752,7 +704,7 @@ object frmMyCalculators: TfrmMyCalculators
       Left = 72
       Height = 25
       Hint = 'Calcular o factorial'
-      Top = 60
+      Top = 30
       Width = 70
       Caption = 'n!'
       ParentShowHint = False
@@ -764,7 +716,7 @@ object frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Hint = 'Constante Pi'
-      Top = 90
+      Top = 60
       Width = 70
       Caption = 'π'
       TabOrder = 3
@@ -774,7 +726,7 @@ object frmMyCalculators: TfrmMyCalculators
       Left = 144
       Height = 25
       Hint = 'Calcular a fracção de um'
-      Top = 60
+      Top = 30
       Width = 70
       Caption = '1/x'
       ParentShowHint = False
@@ -782,80 +734,31 @@ object frmMyCalculators: TfrmMyCalculators
       TabOrder = 4
       OnClick = btnFractionClick
     end
-    object btnMemoryClear2: TButton
-      Left = 72
-      Height = 25
-      Hint = 'Limpar a memória'
-      Top = 0
-      Width = 70
-      Caption = 'MC'
-      Enabled = False
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 5
-      OnClick = btnMemoryClear2Click
-    end
-    object btnMemoryPlus2: TButton
-      Left = 144
-      Height = 25
-      Hint = 'Adicionar à memória'
-      Top = 0
-      Width = 70
-      Caption = 'M+'
-      Enabled = False
-      TabOrder = 6
-      OnClick = btnMemoryPlus2Click
-    end
-    object btnMemoryMinus2: TButton
-      Left = 216
-      Height = 25
-      Hint = 'Subtrair à memória'
-      Top = 0
-      Width = 70
-      Caption = 'M-'
-      Enabled = False
-      TabOrder = 7
-      OnClick = btnMemoryMinus3Click
-    end
-    object btnClearEntry2: TButton
-      Left = 0
-      Height = 25
-      Hint = 'Limpar todos os valores'
-      Top = 0
-      Width = 70
-      Cancel = True
-      Caption = 'CA'
-      Enabled = False
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 8
-      OnClick = btnClearEntryClick
-    end
     object btnPermilage: TButton
       Left = 72
       Height = 25
       Hint = 'Converter em permilagem'
-      Top = 30
+      Top = 0
       Width = 70
       Caption = '‰'
-      TabOrder = 9
+      TabOrder = 5
       OnClick = btnPermilageClick
     end
     object btnRisedTo: TButton
       Left = 144
       Height = 25
       Hint = 'Elevar a '
-      Top = 30
+      Top = 0
       Width = 70
       Caption = 'x^y'
-      TabOrder = 10
+      TabOrder = 6
       OnClick = btnRisedToClick
     end
     object btnEulerConstant: TButton
       Left = 72
       Height = 25
       Hint = 'Constante de Euler'
-      Top = 88
+      Top = 60
       Width = 70
       Caption = 'e'
       Font.CharSet = ANSI_CHARSET
@@ -865,14 +768,14 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 11
+      TabOrder = 7
       OnClick = btnEulerConstantClick
     end
     object btnDecToBase: TButton
       Left = 216
       Height = 25
       Hint = 'Converter números entre diferentes bases'
-      Top = 30
+      Top = 0
       Width = 70
       Caption = 'Dec > N'
       Font.CharSet = ANSI_CHARSET
@@ -881,66 +784,66 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 12
+      TabOrder = 8
       OnClick = btnDecToBaseClick
     end
     object btnCelsius: TButton
       Left = 0
       Height = 25
       Hint = 'Converter para centígrados'
-      Top = 150
+      Top = 120
       Width = 70
       Caption = 'Cº'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 13
+      TabOrder = 9
       OnClick = btnCelsiusClick
     end
     object btnTAU: TButton
       Left = 144
       Height = 25
       Hint = 'Constante TAU'
-      Top = 88
+      Top = 60
       Width = 70
       Caption = '𝞽'
-      TabOrder = 14
+      TabOrder = 10
       OnClick = btnTAUClick
     end
     object btnExponential: TButton
       Left = 0
       Height = 25
       Hint = 'Exponential'
-      Top = 120
+      Top = 88
       Width = 70
       Caption = 'Exp'
-      TabOrder = 15
+      TabOrder = 11
       OnClick = btnExponentialClick
     end
     object btnLog: TButton
       Left = 72
       Height = 25
       Hint = 'Logaritmo decimal'
-      Top = 120
+      Top = 88
       Width = 70
       Caption = 'Log'
-      TabOrder = 16
+      TabOrder = 12
       OnClick = btnLogClick
     end
     object btnFahrenheit: TButton
       Left = 72
       Height = 25
       Hint = 'Converter para Fahrenheit'
-      Top = 150
+      Top = 120
       Width = 70
       Caption = 'Fº'
-      TabOrder = 17
+      TabOrder = 13
       OnClick = btnFahrenheitClick
     end
     object btnBinToBase: TButton
       Left = 216
       Height = 25
       Hint = 'Converter números entre diferentes bases'
-      Top = 60
+      Top = 30
       Width = 70
       Caption = 'Bin > N'
       Font.CharSet = ANSI_CHARSET
@@ -949,14 +852,14 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 18
+      TabOrder = 14
       OnClick = btnBinToBaseClick
     end
     object btnOctToBase: TButton
       Left = 216
       Height = 25
       Hint = 'Converter números entre diferentes bases'
-      Top = 88
+      Top = 60
       Width = 70
       Caption = 'Oct > N'
       Font.CharSet = ANSI_CHARSET
@@ -965,14 +868,14 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 19
+      TabOrder = 15
       OnClick = btnOctToBaseClick
     end
     object btnHexToBase: TButton
       Left = 216
       Height = 25
       Hint = 'Converter números entre diferentes bases'
-      Top = 120
+      Top = 90
       Width = 70
       Caption = 'Hex > N'
       Font.CharSet = ANSI_CHARSET
@@ -981,7 +884,7 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 20
+      TabOrder = 16
       OnClick = btnHexToBaseClick
     end
   end
@@ -994,83 +897,8 @@ object frmMyCalculators: TfrmMyCalculators
     ClientHeight = 264
     ClientWidth = 286
     TabOrder = 5
-    object btnClearEntry4: TButton
-      Left = 0
-      Height = 25
-      Hint = 'Limpar todos os valores'
-      Top = 0
-      Width = 70
-      Caption = 'CA'
-      Enabled = False
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 0
-      OnClick = btnClearEntryClick
-    end
-    object btnMemoryClear4: TButton
-      Left = 72
-      Height = 25
-      Hint = 'Limpar a memória'
-      Top = 0
-      Width = 70
-      Caption = 'MC'
-      Enabled = False
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 1
-      OnClick = btnMemoryClear2Click
-    end
-    object btnMemoryPlus4: TButton
-      Left = 144
-      Height = 25
-      Hint = 'Adicionar à memória'
-      Top = 0
-      Width = 70
-      Caption = 'M+'
-      Enabled = False
-      TabOrder = 2
-      OnClick = btnMemoryPlus2Click
-    end
-    object btnMemoryMinus4: TButton
-      Left = 216
-      Height = 25
-      Hint = 'Subtrair à memória'
-      Top = 0
-      Width = 70
-      Caption = 'M-'
-      Enabled = False
-      TabOrder = 3
-      OnClick = btnMemoryMinus3Click
-    end
-    object cBoxCalendarList: TComboBox
-      Left = 0
-      Height = 25
-      Hint = 'Seleccione o calendário base'
-      Top = 64
-      Width = 168
-      AutoSize = False
-      Font.CharSet = ANSI_CHARSET
-      Font.Height = -13
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      ItemHeight = 17
-      ItemIndex = 0
-      Items.Strings = (
-        'Gregoriano'
-        'Juliano'
-        'Republicano francês'
-        'Hebraico'
-        'Chinês'
-        'Árabe'
-      )
-      ParentColor = True
-      ParentFont = False
-      TabOrder = 6
-      Text = 'Gregoriano'
-    end
     object DTPickerPresent: TDateTimePicker
-      Left = 40
+      Left = 193
       Height = 25
       Top = 32
       Width = 93
@@ -1083,7 +911,7 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 1
       TrailingSeparator = False
       TextForNullDate = 'NULL'
       LeadingZeros = True
@@ -1091,16 +919,16 @@ object frmMyCalculators: TfrmMyCalculators
       TimeFormat = tf24
       TimeDisplay = tdHMS
       DateMode = dmComboBox
-      Date = 46105
+      Date = 46107
       Time = 0.325277129632013
       UseDefaultSeparators = True
       HideDateTimeParts = []
       MonthNames = 'Long'
     end
-    object DateTimePicker2: TDateTimePicker
-      Left = 188
+    object DTPickerStartDate: TDateTimePicker
+      Left = 193
       Height = 25
-      Top = 64
+      Top = 144
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -1111,7 +939,7 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 7
+      TabOrder = 2
       TrailingSeparator = False
       TextForNullDate = 'NULL'
       LeadingZeros = True
@@ -1119,42 +947,14 @@ object frmMyCalculators: TfrmMyCalculators
       TimeFormat = tf24
       TimeDisplay = tdHMS
       DateMode = dmComboBox
-      Date = 46105
-      Time = 0.325277129632013
-      UseDefaultSeparators = True
-      HideDateTimeParts = []
-      MonthNames = 'Long'
-    end
-    object DateTimePicker3: TDateTimePicker
-      Left = 188
-      Height = 25
-      Top = 96
-      Width = 93
-      CenturyFrom = 1941
-      MaxDate = 2958465
-      MinDate = -53780
-      Font.CharSet = ANSI_CHARSET
-      Font.Height = -13
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 8
-      TrailingSeparator = False
-      TextForNullDate = 'NULL'
-      LeadingZeros = True
-      Kind = dtkDate
-      TimeFormat = tf24
-      TimeDisplay = tdHMS
-      DateMode = dmComboBox
-      Date = 46105
+      Date = 46107
       Time = 0.325277129632013
       UseDefaultSeparators = True
       HideDateTimeParts = []
       MonthNames = 'Long'
     end
     object BtnActualCalendar: TBitBtn
-      Left = 0
+      Left = 136
       Height = 25
       Top = 32
       Width = 25
@@ -1186,29 +986,13 @@ object frmMyCalculators: TfrmMyCalculators
       Images = ImageList
       ImageIndex = 0
       PopupMenu = ppMenuCalendars
-      TabOrder = 4
+      TabOrder = 0
       OnClick = BtnActualCalendarClick
-    end
-    object lblConvertTo: TLabel
-      Left = 144
-      Height = 25
-      Top = 32
-      Width = 137
-      Alignment = taCenter
-      AutoSize = False
-      Caption = 'Converter para'
-      Font.CharSet = ANSI_CHARSET
-      Font.Height = -13
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      Layout = tlCenter
-      ParentFont = False
     end
     object lblStartDate: TLabel
       Left = 0
       Height = 25
-      Top = 96
+      Top = 144
       Width = 170
       AutoSize = False
       Caption = 'Data inicial'
@@ -1220,10 +1004,10 @@ object frmMyCalculators: TfrmMyCalculators
       Layout = tlCenter
       ParentFont = False
     end
-    object DateTimePicker4: TDateTimePicker
-      Left = 188
+    object DTPickerEndDate: TDateTimePicker
+      Left = 193
       Height = 25
-      Top = 128
+      Top = 184
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -1234,7 +1018,7 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 9
+      TabOrder = 3
       TrailingSeparator = False
       TextForNullDate = 'NULL'
       LeadingZeros = True
@@ -1242,7 +1026,7 @@ object frmMyCalculators: TfrmMyCalculators
       TimeFormat = tf24
       TimeDisplay = tdHMS
       DateMode = dmComboBox
-      Date = 46105
+      Date = 46107
       Time = 0.325277129632013
       UseDefaultSeparators = True
       HideDateTimeParts = []
@@ -1251,7 +1035,7 @@ object frmMyCalculators: TfrmMyCalculators
     object lblEndDate: TLabel
       Left = 0
       Height = 25
-      Top = 128
+      Top = 184
       Width = 170
       AutoSize = False
       Caption = 'Data final'
@@ -1263,18 +1047,29 @@ object frmMyCalculators: TfrmMyCalculators
       Layout = tlCenter
       ParentFont = False
     end
-    object lblAgeDifference: TLabel
+    object lblConvertTo: TLabel
       Left = 0
       Height = 25
-      Top = 168
-      Width = 281
+      Top = 32
+      Width = 120
       AutoSize = False
-      Font.CharSet = ANSI_CHARSET
-      Font.Height = -13
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      ParentFont = False
+      Caption = 'Converter de'
+      Layout = tlCenter
+    end
+    object StTxtCalendarConversion: TStaticText
+      Left = 0
+      Height = 25
+      Top = 72
+      Width = 286
+      Alignment = taCenter
+      TabOrder = 4
+    end
+    object StTxtDateCalculation: TStaticText
+      Left = 0
+      Height = 25
+      Top = 224
+      Width = 286
+      TabOrder = 5
     end
   end
   object mainMenu: TMainMenu
@@ -1286,6 +1081,11 @@ object frmMyCalculators: TfrmMyCalculators
       Caption = '&File'
       Hint = 'File Menu'
       ShortCut = 32838
+      object MenuItem1: TMenuItem
+        Caption = 'Exit'
+        Hint = 'Close the calculator'
+        ShortCut = 32856
+      end
     end
     object mnuMainEdit: TMenuItem
       Caption = '&Edit'

@@ -1,0 +1,172 @@
+object frmCredits: TfrmCredits
+  Left = 488
+  Height = 261
+  Top = 250
+  Width = 379
+  ClientHeight = 261
+  ClientWidth = 379
+  ParentFont = True
+  Position = poMainFormCenter
+  LCLVersion = '4.4.0.0'
+  object PgCtrlCredits: TPageControl
+    Left = 0
+    Height = 360
+    Top = 0
+    Width = 360
+    ActivePage = TbShtCreditsCredits
+    TabIndex = 0
+    TabOrder = 0
+    object TbShtCreditsCredits: TTabSheet
+      Hint = 'Display a list of sources used in the program'
+      Caption = 'Credits'
+      ClientHeight = 332
+      ClientWidth = 352
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlue
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsUnderline]
+      ParentFont = False
+      object StTxtCredits1: TStaticText
+        Left = 0
+        Height = 17
+        Top = 0
+        Width = 352
+        Caption = 'Bart Broersma and Flying Sheep Inc.'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlue
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsUnderline]
+        ParentFont = False
+        TabOrder = 0
+        OnClick = StTxtCredits1Click
+      end
+      object StTxtCredits2: TStaticText
+        Left = 0
+        Height = 17
+        Top = 24
+        Width = 352
+        Caption = 'FreePascal Wiki'
+        TabOrder = 1
+        OnClick = StTxtCredits2Click
+        OnMouseEnter = StTxtCredits2MouseEnter
+      end
+      object StTxtCredits3: TStaticText
+        Left = 0
+        Height = 17
+        Top = 48
+        Width = 352
+        Caption = 'Mosque Icon'
+        TabOrder = 2
+        OnClick = StTxtCredits3Click
+        OnMouseEnter = StTxtCredits3MouseEnter
+      end
+      object StTxtCredits4: TStaticText
+        Left = 0
+        Height = 17
+        Top = 72
+        Width = 352
+        Caption = 'Settings Icon'
+        TabOrder = 3
+        OnClick = StTxtCredits4Click
+        OnMouseEnter = StTxtCredits4MouseEnter
+      end
+      object StTxtCredits5: TStaticText
+        Left = 0
+        Height = 17
+        Top = 96
+        Width = 352
+        Caption = 'Credits Icon'
+        TabOrder = 4
+        OnClick = StTxtCredits5Click
+        OnMouseEnter = StTxtCredits5MouseEnter
+      end
+      object StTxtCredits6: TStaticText
+        Left = 0
+        Height = 17
+        Top = 120
+        Width = 352
+        Caption = 'Calculator Icon'
+        TabOrder = 5
+        OnClick = StTxtCredits6Click
+        OnMouseEnter = StTxtCredits6MouseEnter
+      end
+      object StTxtCredits7: TStaticText
+        Left = 0
+        Height = 17
+        Top = 144
+        Width = 352
+        Caption = 'Help Icon'
+        TabOrder = 6
+        OnClick = StTxtCredits7Click
+        OnMouseEnter = StTxtCredits7MouseEnter
+      end
+      object StTxtCredits8: TStaticText
+        Left = 0
+        Height = 17
+        Top = 168
+        Width = 562
+        Caption = 'mailto procedure - balazsszekely'
+        TabOrder = 7
+        OnClick = StTxtCredits8Click
+        OnMouseEnter = StTxtCredits8MouseEnter
+      end
+      object StaticText2: TStaticText
+        Left = 0
+        Height = 17
+        Top = 192
+        Width = 65
+        Caption = 'StaticText2'
+        TabOrder = 8
+      end
+      object StaticText3: TStaticText
+        Left = 0
+        Height = 17
+        Top = 216
+        Width = 352
+        Caption = 'StaticText3'
+        TabOrder = 9
+      end
+      object ScrllBarCreditsVertical: TScrollBar
+        Left = 352
+        Height = 233
+        Top = 0
+        Width = 17
+        Kind = sbVertical
+        PageSize = 0
+        TabOrder = 10
+      end
+    end
+    object TbShtCreditsContributors: TTabSheet
+      Hint = 'Displays a list of translators and contributors'
+      Caption = 'Contributors'
+      ClientHeight = 332
+      ClientWidth = 352
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlue
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsUnderline]
+      ParentFont = False
+      object StTxtContributors1: TStaticText
+        Left = 0
+        Height = 17
+        Top = 0
+        Width = 352
+        Caption = 'Pedro Albuquerque - author, translator'
+        TabOrder = 0
+        OnClick = StTxtContributors1Click
+      end
+      object ScrllBarContributorsVertical: TScrollBar
+        Left = 352
+        Height = 233
+        Top = 0
+        Width = 17
+        Kind = sbVertical
+        PageSize = 0
+        TabOrder = 1
+      end
+    end
+  end
+end
