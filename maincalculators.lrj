@@ -148,6 +148,7 @@
 {"hash":73706597,"name":"tfrmmycalculators.lblenddate.caption","sourcebytes":[69,110,100,32,68,97,116,101],"value":"End Date"},
 {"hash":174443732,"name":"tfrmmycalculators.lblconvertto.caption","sourcebytes":[67,111,110,118,101,114,116],"value":"Convert"},
 {"hash":1455,"name":"tfrmmycalculators.lbltocalendar.caption","sourcebytes":[84,111],"value":"To"},
+{"hash":32871922,"name":"tfrmmycalculators.btnactualcalendar1.hint","sourcebytes":[67,108,105,99,107,32,116,111,32,115,101,108,101,99,116,32,116,104,101,32,99,97,108,101,110,100,97,114],"value":"Click to select the calendar"},
 {"hash":2805797,"name":"tfrmmycalculators.mnumainfile.caption","sourcebytes":[38,70,105,108,101],"value":"&File"},
 {"hash":41252693,"name":"tfrmmycalculators.mnumainfile.hint","sourcebytes":[70,105,108,101,32,77,101,110,117],"value":"File Menu"},
 {"hash":315140,"name":"tfrmmycalculators.menuitem1.caption","sourcebytes":[69,120,105,116],"value":"Exit"},

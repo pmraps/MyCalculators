@@ -17,6 +17,7 @@ type
       btnACosH: TButton;
       btnACot: TButton;
       BtnActualCalendar: TBitBtn;
+      BtnActualCalendar1: TBitBtn;
       btnAdd: TButton;
       btnASin: TButton;
       btnASinH: TButton;

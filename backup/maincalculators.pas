@@ -901,6 +901,18 @@ begin
                  end;
         end;
 
+     if (CalendarFrom = 'J') and (CalendarTo = 'G') then                  // Julian to Gregorian
+        begin
+            if NDay <= 13 then NDay := NDay + 13
+            else begin
+                   if NMonth = 2 then
+                        if IsLeapYear(NYear) then NDay := NDay + 15
+                        else NDay := NDay + 14
+                   else NDay := NDay + 17;
+                   NMonth := NMonth - 1;
+                 end;
+        end;
+
      // Final string
      Date := EncodeDate(NYear, NMonth, NDay);
      WDay := DayOfWeek(Date);

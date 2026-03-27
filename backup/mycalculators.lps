@@ -19,8 +19,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="882"/>
-        <CursorPos X="47" Y="898"/>
+        <CursorPos X="64" Y="899"/>
         <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -31,11 +32,10 @@
         <ComponentName Value="frmPreferences"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Preferences"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="9"/>
         <CursorPos X="25" Y="38"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
