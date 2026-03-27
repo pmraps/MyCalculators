@@ -413,6 +413,7 @@ object frmMyCalculators: TfrmMyCalculators
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
+      OnClick = btnSinHClick
     end
     object btnASin: TButton
       Left = 2
@@ -424,6 +425,7 @@ object frmMyCalculators: TfrmMyCalculators
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
+      OnClick = btnASinClick
     end
     object btnCos: TButton
       Left = 72
@@ -445,6 +447,7 @@ object frmMyCalculators: TfrmMyCalculators
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
+      OnClick = btnASinHClick
     end
     object btnSecant: TButton
       Left = 2
@@ -456,6 +459,7 @@ object frmMyCalculators: TfrmMyCalculators
       ParentShowHint = False
       ShowHint = True
       TabOrder = 5
+      OnClick = btnSecantClick
     end
     object btnCoSecant: TButton
       Left = 2
@@ -465,6 +469,7 @@ object frmMyCalculators: TfrmMyCalculators
       Width = 70
       Caption = 'CSec'
       TabOrder = 6
+      OnClick = btnCoSecantClick
     end
     object btnCosH: TButton
       Left = 72
@@ -481,6 +486,7 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 7
+      OnClick = btnCosHClick
     end
     object btnACos: TButton
       Left = 72
@@ -490,6 +496,7 @@ object frmMyCalculators: TfrmMyCalculators
       Width = 70
       Caption = 'ACos'
       TabOrder = 8
+      OnClick = btnACosClick
     end
     object btnACosH: TButton
       Left = 72
@@ -499,6 +506,7 @@ object frmMyCalculators: TfrmMyCalculators
       Width = 70
       Caption = 'ACosH'
       TabOrder = 9
+      OnClick = btnACosHClick
     end
     object btnDegreesRadians: TButton
       Left = 72
@@ -540,6 +548,7 @@ object frmMyCalculators: TfrmMyCalculators
       Width = 70
       Caption = 'Tan'
       TabOrder = 12
+      OnClick = btnTanClick
     end
     object btnCTan: TButton
       Left = 216
@@ -549,6 +558,7 @@ object frmMyCalculators: TfrmMyCalculators
       Width = 70
       Caption = 'Cot'
       TabOrder = 13
+      OnClick = btnCTanClick
     end
     object btnTanH: TButton
       Left = 144
@@ -558,6 +568,7 @@ object frmMyCalculators: TfrmMyCalculators
       Width = 70
       Caption = 'TanH'
       TabOrder = 14
+      OnClick = btnTanHClick
     end
     object btnCotH: TButton
       Left = 216
@@ -567,6 +578,7 @@ object frmMyCalculators: TfrmMyCalculators
       Width = 70
       Caption = 'CotH'
       TabOrder = 15
+      OnClick = btnCotHClick
     end
     object btnATan: TButton
       Left = 144
@@ -576,15 +588,17 @@ object frmMyCalculators: TfrmMyCalculators
       Width = 70
       Caption = 'ATan'
       TabOrder = 16
+      OnClick = btnATanClick
     end
     object btnATanH: TButton
       Left = 144
       Height = 25
       Hint = 'Calcular o arco tangente hiperbólico'
-      Top = 90
+      Top = 88
       Width = 70
       Caption = 'ATanH'
       TabOrder = 17
+      OnClick = btnATanHClick
     end
     object btnRadiansDegrees: TButton
       Left = 144
@@ -600,7 +614,7 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 18
-      OnClick = btnDegreesRadiansClick
+      OnClick = btnRadiansDegreesClick
     end
     object btnRadiansGradians: TButton
       Left = 144
@@ -626,6 +640,7 @@ object frmMyCalculators: TfrmMyCalculators
       Width = 70
       Caption = 'ACot'
       TabOrder = 20
+      OnClick = btnACotClick
     end
     object btnHypotenuse: TButton
       Left = 216
@@ -635,6 +650,7 @@ object frmMyCalculators: TfrmMyCalculators
       Width = 70
       Caption = 'Hip'
       TabOrder = 21
+      OnClick = btnHypotenuseClick
     end
     object btnGradiansDegrees: TButton
       Left = 216
@@ -650,6 +666,7 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 22
+      OnClick = btnGradiansDegreesClick
     end
     object btnGradiansRadians: TButton
       Left = 216
@@ -665,6 +682,7 @@ object frmMyCalculators: TfrmMyCalculators
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 23
+      OnClick = btnGradiansRadiansClick
     end
   end
   object pnlFunctions: TPanel
@@ -886,6 +904,26 @@ object frmMyCalculators: TfrmMyCalculators
       ParentFont = False
       TabOrder = 16
       OnClick = btnHexToBaseClick
+    end
+    object btnCycleToRad: TButton
+      Left = 144
+      Height = 25
+      Hint = 'Convert cycles to radians'
+      Top = 120
+      Width = 70
+      Caption = 'Cy-Rad'
+      TabOrder = 17
+      OnClick = btnCycleToRadClick
+    end
+    object btnRadiansToCycles: TButton
+      Left = 216
+      Height = 25
+      Hint = 'Convert radians to cycles'
+      Top = 120
+      Width = 70
+      Caption = 'Rad-Cy'
+      TabOrder = 18
+      OnClick = btnRadiansToCyclesClick
     end
   end
   object pnlDatulator: TPanel

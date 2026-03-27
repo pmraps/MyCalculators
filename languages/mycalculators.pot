@@ -179,6 +179,14 @@ msgctxt "tfrmmycalculators.btnctan.hint"
 msgid "Calcular a cotangente"
 msgstr ""
 
+#: tfrmmycalculators.btncycletorad.caption
+msgid "Cy-Rad"
+msgstr ""
+
+#: tfrmmycalculators.btncycletorad.hint
+msgid "Convert cycles to radians"
+msgstr ""
+
 #: tfrmmycalculators.btndectobase.caption
 msgid "Dec > N"
 msgstr ""
@@ -456,6 +464,16 @@ msgctxt "tfrmmycalculators.btnradiansgradians.hint"
 msgid "Converter radianos em gradianos"
 msgstr ""
 
+#: tfrmmycalculators.btnradianstocycles.caption
+msgctxt "tfrmmycalculators.btnradianstocycles.caption"
+msgid "Rad-Cy"
+msgstr ""
+
+#: tfrmmycalculators.btnradianstocycles.hint
+msgctxt "tfrmmycalculators.btnradianstocycles.hint"
+msgid "Convert radians to cycles"
+msgstr ""
+
 #: tfrmmycalculators.btnremainder.caption
 msgid "Remdr"
 msgstr ""
@@ -688,28 +706,28 @@ msgid "Help and info for the program"
 msgstr ""
 
 #: tfrmmycalculators.ppmenuarab.caption
-msgid "Árabe"
+msgid "Arab"
 msgstr ""
 
 #: tfrmmycalculators.ppmenuchinese.caption
-msgid "Chinês"
+msgid "Chinese"
 msgstr ""
 
 #: tfrmmycalculators.ppmenufrench.caption
-msgid "Republicano francês"
+msgid "French  Republican"
 msgstr ""
 
 #: tfrmmycalculators.ppmenugregorian.caption
 msgctxt "tfrmmycalculators.ppmenugregorian.caption"
-msgid "Gregoriano"
+msgid "Gregorian"
 msgstr ""
 
 #: tfrmmycalculators.ppmenuhebrew.caption
-msgid "Hebraico"
+msgid "Hebrew"
 msgstr ""
 
 #: tfrmmycalculators.ppmenujulian.caption
-msgid "Juliano"
+msgid "Julian"
 msgstr ""
 
 #: tfrmmycalculators.rdbtndatecalculator.caption

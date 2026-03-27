@@ -5,7 +5,7 @@ unit mainCalculators;
 interface
 
 uses
-    SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
+    SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics,
     ExtCtrls, Buttons, DateTimePicker, Math, MyCredits, baseConvert, Classes;
 
 type
@@ -81,6 +81,8 @@ type
       btnTwo: TButton;
       btnXRoot: TButton;
       btnZero: TButton;
+      btnCycleToRad: TButton;
+      btnRadiansToCycles: TButton;
       DTPickerStartDate: TDateTimePicker;
       DTPickerEndDate: TDateTimePicker;
       DtTPickerEndDate: TDateTimePicker;
@@ -119,11 +121,22 @@ type
         mnuMainFile: TMenuItem;
         mnuMainEdit: TMenuItem;
         mnuMainHelp: TMenuItem;
+        procedure btnACosClick(Sender: TObject);
+        procedure btnACosHClick(Sender: TObject);
+        procedure btnACotClick(Sender: TObject);
         procedure BtnActualCalendarClick(Sender: TObject);
         procedure btnAddClick(Sender: TObject);
+        procedure btnASinClick(Sender: TObject);
+        procedure btnASinHClick(Sender: TObject);
+        procedure btnATanClick(Sender: TObject);
+        procedure btnATanHClick(Sender: TObject);
         procedure btnBackspaceClick(Sender: TObject);
         procedure btnBinToBaseClick(Sender: TObject);
         procedure btnCelsiusClick(Sender: TObject);
+        procedure btnCoSecantClick(Sender: TObject);
+        procedure btnCosHClick(Sender: TObject);
+        procedure btnCotHClick(Sender: TObject);
+        procedure btnCTanClick(Sender: TObject);
         procedure btnDecToBaseClick(Sender: TObject);
         procedure btnClearEntryClick(Sender: TObject);
         procedure btnCommaClick(Sender: TObject);
@@ -135,13 +148,17 @@ type
         procedure btnFactorialClick(Sender: TObject);
         procedure btnFahrenheitClick(Sender: TObject);
         procedure btnFractionClick(Sender: TObject);
+        procedure btnGradiansDegreesClick(Sender: TObject);
+        procedure btnGradiansRadiansClick(Sender: TObject);
         procedure btnHexToBaseClick(Sender: TObject);
+        procedure btnHypotenuseClick(Sender: TObject);
         procedure btnLogClick(Sender: TObject);
         procedure btnMemoryClear2Click(Sender: TObject);
         procedure btnMemoryMinus3Click(Sender: TObject);
         procedure btnMemoryPlus2Click(Sender: TObject);
         procedure btnOctToBaseClick(Sender: TObject);
         procedure btnPIClick(Sender: TObject);
+        procedure btnRadiansDegreesClick(Sender: TObject);
         procedure btnRadiansGradiansClick(Sender: TObject);
         procedure btnDivideClick(Sender: TObject);
         procedure btnEightClick(Sender: TObject);
@@ -159,17 +176,23 @@ type
         procedure btnRemainderClick(Sender: TObject);
         procedure btnResultClick(Sender: TObject);
         procedure btnRisedToClick(Sender: TObject);
+        procedure btnSecantClick(Sender: TObject);
         procedure btnSevenClick(Sender: TObject);
         procedure btnSinClick(Sender: TObject);
+        procedure btnSinHClick(Sender: TObject);
         procedure btnSixClick(Sender: TObject);
         procedure btnSqrNum1Click(Sender: TObject);
         procedure btnSqrtClick(Sender: TObject);
+        procedure btnTanClick(Sender: TObject);
+        procedure btnTanHClick(Sender: TObject);
         procedure btnTAUClick(Sender: TObject);
         procedure btnTenRaisedTo1Click(Sender: TObject);
         procedure btnThreeClick(Sender: TObject);
         procedure btnTwoClick(Sender: TObject);
         procedure btnXRootClick(Sender: TObject);
         procedure btnZeroClick(Sender: TObject);
+        procedure btnCycleToRadClick(Sender: TObject);
+        procedure btnRadiansToCyclesClick(Sender: TObject);
         procedure DTPickerEndDateChange(Sender: TObject);
         procedure DTPickerStartDateChange(Sender: TObject);
         procedure mnuHelpCreditsClick(Sender: TObject);
@@ -210,8 +233,9 @@ begin
     pnlFunctions.Visible := false;
     pnlTrigonometry.Visible := false;
     pnlDatulator.Visible := false;
-    StTxtCalendarConversion.Caption := CalendarConversion(DTPickerPresent.Date, 'G', 'G');
-//    StTxtDateCalculation.Caption := DateDifference(DTPickerStartDate.Date, DTPickerEndDate.Date);
+    StTxtCalendarConversion.Caption := CalendarConversion(Now, 'G', 'G');
+    DTPickerEndDate.Date := Now();
+    DTPickerStartDate.Date := Now();
 end;
 
 procedure TfrmMyCalculators.btnSevenClick(Sender: TObject);
@@ -228,6 +252,11 @@ begin
     txtFieldResult.Text := FloatToStr(Sine);
 end;
 
+procedure TfrmMyCalculators.btnSinHClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(SinH(StrToFloat(txtFieldResult.Text)));
+end;
+
 procedure TfrmMyCalculators.btnSixClick(Sender: TObject);
 begin
     if txtFieldResult.Text = '' then txtFieldResult.Text := '6'
@@ -242,6 +271,16 @@ end;
 procedure TfrmMyCalculators.btnSqrtClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(Sqrt(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnTanClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(Tan(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnTanHClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(TanH(StrToFloat(txtFieldResult.Text)));
 end;
 
 procedure TfrmMyCalculators.btnTAUClick(Sender: TObject);
@@ -282,6 +321,16 @@ procedure TfrmMyCalculators.btnZeroClick(Sender: TObject);
 begin
     if txtFieldResult.Text = '' then txtFieldResult.Text := '0'
     else txtFieldResult.Text := txtFieldResult.Text + '0';
+end;
+
+procedure TfrmMyCalculators.btnCycleToRadClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(CycleToRad(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnRadiansToCyclesClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(RadToCycle(StrToFloat(txtFieldResult.Text)));
 end;
 
 procedure TfrmMyCalculators.DTPickerEndDateChange(Sender: TObject);
@@ -394,6 +443,26 @@ begin
      txtFieldResult.Text := FloatToStr(StrToFloat(txtFieldResult.Text) * 1.8 + 32);
 end;
 
+procedure TfrmMyCalculators.btnCoSecantClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(coSecant(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnCosHClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(CosH(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnCotHClick(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmMyCalculators.btnCTanClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(CoTan(StrToFloat(txtFieldResult.Text)));
+end;
+
 procedure TfrmMyCalculators.btnDecToBaseClick(Sender: TObject);
 begin
     Num1 := txtFieldResult.Text;
@@ -413,9 +482,51 @@ begin
     txtFieldResult.Text := '0';
 end;
 
+procedure TfrmMyCalculators.btnASinClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(arcSin(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnASinHClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(arcSinH(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnATanClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(ArcTan(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnATanHClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(ArcTanH(StrToFloat(txtFieldResult.Text)));
+end;
+
 procedure TfrmMyCalculators.BtnActualCalendarClick(Sender: TObject);
 begin
     ppMenuCalendars.PopUp;
+end;
+
+procedure TfrmMyCalculators.btnACosClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(ArcCos(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnACosHClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(ArcosH(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnACotClick(Sender: TObject);
+var ArcCot : Float;
+begin
+     if StrToFloat(txtFieldResult.Text) > 0 then
+    ArcCot := ArcTan(1 / StrToFloat(txtFieldResult.Text))
+  else if StrToFloat(txtFieldResult.Text) < 0 then
+    ArcCot:=pi + ArcTan(1 / StrToFloat(txtFieldResult.Text))
+  else
+    ArcCot := pi/2;
+  txtFieldResult.Text := FloatToStr(ArcCot);
 end;
 
 procedure TfrmMyCalculators.btnClearEntryClick(Sender: TObject);
@@ -505,10 +616,32 @@ begin
     txtFieldResult.Text := FloatToStr(1 / StrToInt(txtFieldResult.Text));
 end;
 
+procedure TfrmMyCalculators.btnGradiansDegreesClick(Sender: TObject);
+begin
+     txtFieldResult.Text := FloatToStr(GradToDeg(StrToFloat(txtFieldResult.Text)));
+end;
+
+procedure TfrmMyCalculators.btnGradiansRadiansClick(Sender: TObject);
+begin
+     txtFieldResult.Text := FloatToStr(GradToRad(StrToFloat(txtFieldResult.Text)));
+end;
+
 procedure TfrmMyCalculators.btnHexToBaseClick(Sender: TObject);
 begin
     Num1 := txtFieldResult.Text;
     Operators := 'H>N';
+    txtFieldResult.Text := '';
+    pnlDatulator.Visible := false;
+    pnlFunctions.Visible := false;
+    pnlTrigonometry.Visible := false;
+    pnlSimple.Visible := true;
+    rdBtnSimpleCalculator.Checked := true;
+end;
+
+procedure TfrmMyCalculators.btnHypotenuseClick(Sender: TObject);
+begin
+    Num1 := txtFieldResult.Text;
+    Operators := 'Hypo';
     txtFieldResult.Text := '';
     pnlDatulator.Visible := false;
     pnlFunctions.Visible := false;
@@ -567,11 +700,16 @@ begin
     txtFieldResult.Text := FloatToStr(Pi);
 end;
 
+procedure TfrmMyCalculators.btnRadiansDegreesClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(RadToDeg(StrToFloat(txtFieldResult.Text)));
+end;
+
 procedure TfrmMyCalculators.btnRadiansGradiansClick(Sender: TObject);
 var temp : Float;
 begin
     temp := StrToFloat(txtFieldResult.Text);
-    txtFieldResult.Text := FloatToStr(RadToDeg(temp));
+    txtFieldResult.Text := FloatToStr(RadToGrad(temp));
 end;
 
 procedure TfrmMyCalculators.btnDivideClick(Sender: TObject);
@@ -689,6 +827,11 @@ var Number1, Number2 : extended;
                                        Result := FloatToStr(Power(Number1, Number2));
                                      end;
                             end;
+                  'Hypo'  : begin
+                              Number1 := StrToFloat(Num1);
+                              Number2 := StrToFloat(Num2);
+                              Result := FloatToStr(Hypot(Number2, Number1));
+                            end
         else
           begin
                Result := '';
@@ -722,6 +865,11 @@ begin
      pnlTrigonometry.Visible := false;
      pnlSimple.Visible := true;
      rdBtnSimpleCalculator.Checked := true;
+end;
+
+procedure TfrmMyCalculators.btnSecantClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(Secant(StrToFloat(txtFieldResult.Text)));
 end;
 
 function TfrmMyCalculators.CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
@@ -801,27 +949,80 @@ begin
 end;
 
 function TfrmMyCalculators.DateDifference(firstDate, secondDate : TDate) : String;
-var firstNDay, firstNMonth, firstNYear : Word;
+var firstNDay, firstNMonth, firstNYear, temp : Word;
     secondNDay, secondNMonth, secondNYear : Word;
     years, months, days : String;
+    tempDate : TDate;
 begin
+     if firstDate > secondDate then                                    // Prevent wrong calculations with
+         begin                                                         // start date bigger then end date
+              tempDate := secondDate;
+              secondDate := firstDate;
+              firstDate := tempDate;
+              lblStartDate.Caption := 'End date';
+              lblStartDate.Font.Color := clRed;
+              lblEndDate.Caption := 'Start date';
+         end
+     else
+         begin
+              lblStartDate.Font.Color := clDefault;
+              lblStartDate.Caption := 'Start date';
+              lblEndDate.Caption := 'End date';
+         end;
      DecodeDate(firstDate, firstNYear, firstNMonth, firstNDay);
      DecodeDate(secondDate, secondNYear, secondNMonth, secondNDay);
      if DaysBetween(firstDate, secondDate) = 0 then
-         StTxtDateCalculation.Caption := 'As datas são iguais'
-     else if firstDate < secondDate then
-             begin
-                  years := IntToStr(secondNYear - firstNYear);
-                  months := IntToStr(secondNMonth - firstNMonth);
-                  days := IntToStr(secondNDay - firstNDay);
-             end
-           else if firstDate > secondDate then
+         StTxtDateCalculation.Caption := 'Same date';
+      temp := (secondNMonth - firstNMonth);                            // start calculation
+      if temp > 12  then
+         temp := 12 + (secondNMonth - firstNMonth);
+      months := IntToStr(temp);
+      temp := secondNDay - firstNDay;
+      if (temp > 28) and (secondNMonth = 2) then                       //  February
+            temp := 28 + (secondNDay - firstNDay)
+      else if ((secondNMonth = 4) or (secondNMonth = 6)                // 30 days months
+              or (secondNMonth = 9) or (secondNMonth = 11)) then
+              temp := 30 + (secondNDay - firstNDay)
+           else temp := 31 + (secondNDay - firstNDay);                 // 31 days months
+      days := IntToStr(temp);
+      if secondNMonth >= firstNMonth then
+           years := IntToStr(secondNYear - firstNYear)
+      else years := IntToStr(secondNYear - firstNYear - 1);
+      if (days = '0') and (months = '0') then
+         begin
+              if years = '1' then DateDifference := years + ' year.'
+              else DateDifference := years + ' years.';
+         end
+      else if (days = '0') and (years = '0') then
+              begin
+                   if months = '1' then DateDifference := months + ' month.'
+                   else DateDifference := months + ' months.';
+              end
+           else if (days = '0') then
                    begin
-                        years := IntToStr(firstNYear - secondNYear);
-                        months := IntToStr(firstNMonth - secondNMonth);
-                        days := IntToStr(firstNDay - secondNDay);
-                   end;
-     DateDifference := days + ' days, ' + months + ' months, ' + years + ' years.';
+                        if (months = '1') and (years = '1') then DateDifference := months + ' month and ' + years + ' year.'
+                        else if (months = '1') then DateDifference := months + ' month and ' + years + ' years.'
+                             else if years = '1' then DateDifference := months + ' months and ' + years + ' year.'
+                                  else DateDifference := months + ' months and ' + years + ' years.'
+                   end
+                else if (months = '0') and (years = '0') then
+                        if days = '1' then DateDifference := days + ' day.'
+                        else DateDifference := days + ' days.'
+                     else if (years = '0') then
+                             begin
+                                  if (days = '1') and (months = '1') then DateDifference := days + ' day and ' + months + ' month.'
+                                  else if days = '1' then DateDifference := days + ' day and ' + months + ' months.'
+                                       else if months = '1' then DateDifference := days + ' days and ' + months + ' month.'
+                                            else DateDifference := days + ' days and ' + months + ' months.';
+                             end
+                          else if (months = '0') then
+                               begin
+                                    if (days  = '1') and (years = '1') then DateDifference := days + ' day, ' + years + ' year.'
+                                    else if days = '1' then DateDifference := days + ' day and ' + years + ' years.'
+                                         else if years = '1' then DateDifference := days + ' days and ' + years + ' year.'
+                               end
+                               else if (days = '1') and (months = '1') and (years = '1') then DateDifference := days + ' day, ' + months + ' month and ' + years + ' year.'
+                                    else DateDifference := days + ' days, ' + months + ' months and ' + years + ' years.'
 end;
 
 end.
