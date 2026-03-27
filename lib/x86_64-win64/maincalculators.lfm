@@ -1,16 +1,17 @@
 object frmMyCalculators: TfrmMyCalculators
   Left = 488
-  Height = 579
+  Height = 273
   Top = 250
-  Width = 1007
+  Width = 334
   HelpType = htKeyword
   HelpKeyword = 'simpleHlp'
   HelpContext = 1
   Caption = 'Calculators'
-  ClientHeight = 579
-  ClientWidth = 1007
+  ClientHeight = 273
+  ClientWidth = 334
   DefaultMonitor = dmMainForm
   Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
   Font.Height = -13
   Font.Pitch = fpVariable
   Font.Quality = fqDraft
@@ -47,6 +48,7 @@ object frmMyCalculators: TfrmMyCalculators
     BevelOuter = bvNone
     ClientHeight = 24
     ClientWidth = 280
+    ParentBackground = False
     TabOrder = 1
     object rdBtnSimpleCalculator: TRadioButton
       Left = 0
@@ -124,13 +126,14 @@ object frmMyCalculators: TfrmMyCalculators
     end
   end
   object pnlSimple: TPanel
-    Left = 696
-    Height = 264
+    Left = 24
+    Height = 312
     Top = 72
     Width = 288
     BevelOuter = bvNone
-    ClientHeight = 264
+    ClientHeight = 312
     ClientWidth = 288
+    ParentBackground = False
     TabOrder = 2
     object btnResult: TButton
       Left = 144
@@ -383,13 +386,14 @@ object frmMyCalculators: TfrmMyCalculators
     end
   end
   object pnlTrigonometry: TPanel
-    Left = 360
-    Height = 264
+    Left = 24
+    Height = 208
     Top = 72
     Width = 288
     BevelOuter = bvNone
-    ClientHeight = 264
+    ClientHeight = 208
     ClientWidth = 288
+    ParentBackground = False
     TabOrder = 3
     object btnSin: TButton
       Left = 2
@@ -693,6 +697,7 @@ object frmMyCalculators: TfrmMyCalculators
     BevelOuter = bvNone
     ClientHeight = 264
     ClientWidth = 288
+    ParentBackground = False
     TabOrder = 4
     object btnPercent: TButton
       Left = 0
@@ -928,12 +933,13 @@ object frmMyCalculators: TfrmMyCalculators
   end
   object pnlDatulator: TPanel
     Left = 24
-    Height = 264
-    Top = 304
+    Height = 384
+    Top = 72
     Width = 286
     BevelOuter = bvNone
-    ClientHeight = 264
+    ClientHeight = 384
     ClientWidth = 286
+    ParentBackground = False
     TabOrder = 5
     object DTPickerPresent: TDateTimePicker
       Left = 121
@@ -1138,6 +1144,7 @@ object frmMyCalculators: TfrmMyCalculators
         Caption = 'Exit'
         Hint = 'Close the calculator'
         ShortCut = 32856
+        OnClick = MenuItem1Click
       end
     end
     object mnuMainEdit: TMenuItem
@@ -1148,6 +1155,7 @@ object frmMyCalculators: TfrmMyCalculators
         Caption = '&Preferences'
         Hint = 'Settings for the application'
         ImageIndex = 8
+        OnClick = mnuEditSettingsClick
       end
     end
     object mnuMainHelp: TMenuItem
@@ -1185,21 +1193,25 @@ object frmMyCalculators: TfrmMyCalculators
     end
     object ppMenuFrench: TMenuItem
       Caption = 'French  Republican'
+      Enabled = False
       ImageIndex = 2
       OnClick = ppMenuFrenchClick
     end
     object ppMenuHebrew: TMenuItem
       Caption = 'Hebrew'
+      Enabled = False
       ImageIndex = 3
       OnClick = ppMenuHebrewClick
     end
     object ppMenuChinese: TMenuItem
       Caption = 'Chinese'
+      Enabled = False
       ImageIndex = 4
       OnClick = ppMenuChineseClick
     end
     object ppMenuArab: TMenuItem
       Caption = 'Arab'
+      Enabled = False
       ImageIndex = 5
       OnClick = ppMenuArabClick
     end

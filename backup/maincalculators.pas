@@ -5,8 +5,8 @@ unit mainCalculators;
 interface
 
 uses
-    SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics,
-    ExtCtrls, Buttons, DateTimePicker, Math, MyCredits, baseConvert, Classes;
+    SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
+    ExtCtrls, Buttons, DateTimePicker, Math, MyCredits, baseConvert, Preferences;
 
 type
 
@@ -195,6 +195,8 @@ type
         procedure btnRadiansToCyclesClick(Sender: TObject);
         procedure DTPickerEndDateChange(Sender: TObject);
         procedure DTPickerStartDateChange(Sender: TObject);
+        procedure MenuItem1Click(Sender: TObject);
+        procedure mnuEditSettingsClick(Sender: TObject);
         procedure mnuHelpCreditsClick(Sender: TObject);
         procedure ppMenuArabClick(Sender: TObject);
         procedure ppMenuChineseClick(Sender: TObject);
@@ -341,6 +343,16 @@ end;
 procedure TfrmMyCalculators.DTPickerStartDateChange(Sender: TObject);
 begin
     StTxtDateCalculation.Caption := DateDifference(DTPickerStartDate.Date, DTPickerEndDate.Date);
+end;
+
+procedure TfrmMyCalculators.MenuItem1Click(Sender: TObject);
+begin
+    Application.Terminate;
+end;
+
+procedure TfrmMyCalculators.mnuEditSettingsClick(Sender: TObject);
+begin
+    frmPreferences.ShowModal;
 end;
 
 procedure TfrmMyCalculators.mnuHelpCreditsClick(Sender: TObject);
@@ -580,7 +592,7 @@ end;
 procedure TfrmMyCalculators.btnExponentialClick(Sender: TObject);
 begin
      Num1 := txtFieldResult.Text;
-     Operators := 'Expo';
+     Operators := 'Exp';
      txtFieldResult.Text := '';
      pnlDatulator.Visible := false;
      pnlFunctions.Visible := false;
@@ -877,14 +889,20 @@ var SWDay, SDay, SMonth, SYear : String;
   WDay, NDay, NMonth, NYear : Word;
 begin
      DecodeDate(Date, NYear, NMonth, NDay);
-     if (CalendarFrom = 'G') and (CalendarTo = 'J') then
-         if NDay >= 13 then NDay := NDay - 13
-         else begin
-                   NDay := NDay + 18;
+     if (CalendarFrom = 'G') and (CalendarTo = 'J') then                  // Gregorian to Julian
+        begin
+            if NDay > 13 then NDay := NDay - 13
+            else begin
+                   if NMonth = 2 then
+                        if IsLeapYear(NYear) then NDay := NDay + 16
+                        else NDay := NDay + 15
+                   else NDay := NDay + 18;
                    NMonth := NMonth - 1;
-         end;
-     //  Hebrew dates
+                 end;
+        end;
 
+     // Final string
+     Date := EncodeDate(NYear, NMonth, NDay);
      WDay := DayOfWeek(Date);
      SWDay := IntToStr(WDay);
      case WDay of

@@ -9,8 +9,8 @@
         <Filename Value="mycalculators.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="37" Y="14"/>
-        <UsageCount Value="40"/>
+        <CursorPos X="56" Y="13"/>
+        <UsageCount Value="43"/>
       </Unit>
       <Unit>
         <Filename Value="maincalculators.pas"/>
@@ -19,10 +19,23 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
+        <TopLine Value="882"/>
+        <CursorPos X="47" Y="898"/>
+        <UsageCount Value="43"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="preferences.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPreferences"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Preferences"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="516"/>
-        <CursorPos X="43" Y="529"/>
-        <UsageCount Value="40"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="9"/>
+        <CursorPos X="25" Y="38"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>

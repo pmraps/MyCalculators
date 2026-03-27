@@ -762,3 +762,45 @@ msgstr ""
 msgid "Activa a caculadora trigonométrica"
 msgstr ""
 
+#: tfrmpreferences.btnok.caption
+msgid "OK"
+msgstr ""
+
+#: tfrmpreferences.btnok.hint
+msgid "Save your choices and return to the calculator"
+msgstr ""
+
+#: tfrmpreferences.caption
+msgid "Preferences"
+msgstr ""
+
+#: tfrmpreferences.cboxthemes.hint
+msgid "Select a theme, dark or light"
+msgstr ""
+
+#: tfrmpreferences.cboxthemes.text
+msgid "Light"
+msgstr ""
+
+#: tfrmpreferences.combobox1.hint
+msgid "Select your prefered language"
+msgstr ""
+
+#: tfrmpreferences.combobox1.text
+msgctxt "tfrmpreferences.combobox1.text"
+msgid "English"
+msgstr ""
+
+#: tfrmpreferences.combobox1.texthint
+msgctxt "tfrmpreferences.combobox1.texthint"
+msgid "English"
+msgstr ""
+
+#: tfrmpreferences.lbllanguage.caption
+msgid "Language"
+msgstr ""
+
+#: tfrmpreferences.lbltheme.caption
+msgid "Theme"
+msgstr ""
+
