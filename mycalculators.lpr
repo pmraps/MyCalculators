@@ -10,7 +10,7 @@ uses
     athreads,
     {$ENDIF}
     Interfaces, // this includes the LCL widgetset
-    Forms, datetimectrls, mainCalculators, MyCredits, Preferences;
+    Forms, datetimectrls, mainCalculators, MyCredits, Preferences, Help;
     { you can add units after this }
 
 {$R *.res}
@@ -25,6 +25,7 @@ begin
     Application.CreateForm(TfrmMyCalculators, frmMyCalculators);
     Application.CreateForm(TfrmCredits, frmCredits);
     Application.CreateForm(TfrmPreferences, frmPreferences);
+    Application.CreateForm(TfrmHelp, frmHelp);
     Application.Run;
 end.
 

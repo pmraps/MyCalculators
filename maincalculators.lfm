@@ -1205,6 +1205,7 @@ object frmMyCalculators: TfrmMyCalculators
         ImageIndex = 9
         ShortCut = 32842
         ShortCutKey2 = 112
+        OnClick = mnuHelpHelpClick
       end
       object mnuHelpCredits: TMenuItem
         Caption = '&Credits'

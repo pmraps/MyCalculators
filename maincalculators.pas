@@ -6,7 +6,8 @@ interface
 
 uses
     SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
-    ExtCtrls, Buttons, DateTimePicker, Math, MyCredits, baseConvert, Preferences;
+    Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math, baseConvert,
+    MyCredits, Preferences, Help;
 
 type
 
@@ -106,111 +107,113 @@ type
       mnuHelpHelp: TMenuItem;
       mnuCredits: TMenuItem;
       pnlDatulator: TPanel;
-        pnlCalculatorType: TPanel;
-        pnlFunctions: TPanel;
-        pnlSimple: TPanel;
-        pnlTrigonometry: TPanel;
-        ppMenuCalendars: TPopupMenu;
-        rdBtnDateCalculator: TRadioButton;
-        rdBtnTrigonometry: TRadioButton;
-        rdBtnFunctions: TRadioButton;
-        rdBtnSimpleCalculator: TRadioButton;
-        StTxtCalendarConversion: TStaticText;
-        StTxtDateCalculation: TStaticText;
-        txtFieldResult: TEdit;
-        mainMenu: TMainMenu;
-        mnuMainFile: TMenuItem;
-        mnuMainEdit: TMenuItem;
-        mnuMainHelp: TMenuItem;
-        procedure btnACosClick(Sender: TObject);
-        procedure btnACosHClick(Sender: TObject);
-        procedure btnACotClick(Sender: TObject);
-        procedure BtnActualCalendarClick(Sender: TObject);
-        procedure btnAddClick(Sender: TObject);
-        procedure btnASinClick(Sender: TObject);
-        procedure btnASinHClick(Sender: TObject);
-        procedure btnATanClick(Sender: TObject);
-        procedure btnATanHClick(Sender: TObject);
-        procedure btnBackspaceClick(Sender: TObject);
-        procedure btnBinToBaseClick(Sender: TObject);
-        procedure btnCelsiusClick(Sender: TObject);
-        procedure btnCoSecantClick(Sender: TObject);
-        procedure btnCosHClick(Sender: TObject);
-        procedure btnCotHClick(Sender: TObject);
-        procedure btnCTanClick(Sender: TObject);
-        procedure btnDecToBaseClick(Sender: TObject);
-        procedure btnClearEntryClick(Sender: TObject);
-        procedure btnCommaClick(Sender: TObject);
-        procedure btnCosClick(Sender: TObject);
-        procedure btnCubeNum1Click(Sender: TObject);
-        procedure btnEulerConstantClick(Sender: TObject);
-        procedure btnDecHexClick(Sender: TObject);
-        procedure btnExponentialClick(Sender: TObject);
-        procedure btnFactorialClick(Sender: TObject);
-        procedure btnFahrenheitClick(Sender: TObject);
-        procedure btnFractionClick(Sender: TObject);
-        procedure btnGradiansDegreesClick(Sender: TObject);
-        procedure btnGradiansRadiansClick(Sender: TObject);
-        procedure btnHexToBaseClick(Sender: TObject);
-        procedure btnHypotenuseClick(Sender: TObject);
-        procedure btnLogClick(Sender: TObject);
-        procedure btnMemoryClear2Click(Sender: TObject);
-        procedure btnMemoryMinus3Click(Sender: TObject);
-        procedure btnMemoryPlus2Click(Sender: TObject);
-        procedure btnOctToBaseClick(Sender: TObject);
-        procedure btnPIClick(Sender: TObject);
-        procedure btnRadiansDegreesClick(Sender: TObject);
-        procedure btnRadiansGradiansClick(Sender: TObject);
-        procedure btnDivideClick(Sender: TObject);
-        procedure btnEightClick(Sender: TObject);
-        procedure btnFiveClick(Sender: TObject);
-        procedure btnFourClick(Sender: TObject);
-        procedure btnDegreesGradiansClick(Sender: TObject);
-        procedure btnMinusClick(Sender: TObject);
-        procedure btnMultiplyClick(Sender: TObject);
-        procedure btnNineClick(Sender: TObject);
-        procedure btnOneClick(Sender: TObject);
-        procedure btnPercentClick(Sender: TObject);
-        procedure btnPermilageClick(Sender: TObject);
-        procedure btnPlusMinusClick(Sender: TObject);
-        procedure btnDegreesRadiansClick(Sender: TObject);
-        procedure btnRemainderClick(Sender: TObject);
-        procedure btnResultClick(Sender: TObject);
-        procedure btnRisedToClick(Sender: TObject);
-        procedure btnSecantClick(Sender: TObject);
-        procedure btnSevenClick(Sender: TObject);
-        procedure btnSinClick(Sender: TObject);
-        procedure btnSinHClick(Sender: TObject);
-        procedure btnSixClick(Sender: TObject);
-        procedure btnSqrNum1Click(Sender: TObject);
-        procedure btnSqrtClick(Sender: TObject);
-        procedure btnTanClick(Sender: TObject);
-        procedure btnTanHClick(Sender: TObject);
-        procedure btnTAUClick(Sender: TObject);
-        procedure btnTenRaisedTo1Click(Sender: TObject);
-        procedure btnThreeClick(Sender: TObject);
-        procedure btnTwoClick(Sender: TObject);
-        procedure btnXRootClick(Sender: TObject);
-        procedure btnZeroClick(Sender: TObject);
-        procedure btnCycleToRadClick(Sender: TObject);
-        procedure btnRadiansToCyclesClick(Sender: TObject);
-        procedure DTPickerEndDateChange(Sender: TObject);
-        procedure DTPickerStartDateChange(Sender: TObject);
-        procedure MenuItem1Click(Sender: TObject);
-        procedure mnuEditSettingsClick(Sender: TObject);
-        procedure mnuHelpCreditsClick(Sender: TObject);
-        procedure ppMenuArabClick(Sender: TObject);
-        procedure ppMenuChineseClick(Sender: TObject);
-        procedure ppMenuFrenchClick(Sender: TObject);
-        procedure ppMenuGregorianClick(Sender: TObject);
-        procedure ppMenuHebrewClick(Sender: TObject);
-        procedure ppMenuJulianClick(Sender: TObject);
-        procedure rdBtnDateCalculatorClick(Sender: TObject);
-        procedure rdBtnFunctionsClick(Sender: TObject);
-        procedure rdBtnSimpleCalculatorClick(Sender: TObject);
-        procedure rdBtnTrigonometryClick(Sender: TObject);
-        procedure FormCreate(Sender: TObject);
-
+      pnlCalculatorType: TPanel;
+      pnlFunctions: TPanel;
+      pnlSimple: TPanel;
+      pnlTrigonometry: TPanel;
+      ppMenuCalendars: TPopupMenu;
+      rdBtnDateCalculator: TRadioButton;
+      rdBtnTrigonometry: TRadioButton;
+      rdBtnFunctions: TRadioButton;
+      rdBtnSimpleCalculator: TRadioButton;
+      StTxtCalendarConversion: TStaticText;
+      StTxtDateCalculation: TStaticText;
+      txtFieldResult: TEdit;
+      mainMenu: TMainMenu;
+      mnuMainFile: TMenuItem;
+      mnuMainEdit: TMenuItem;
+      mnuMainHelp: TMenuItem;
+      procedure btnACosClick(Sender: TObject);
+      procedure btnACosHClick(Sender: TObject);
+      procedure btnACotClick(Sender: TObject);
+      procedure BtnActualCalendarClick(Sender: TObject);
+      procedure btnAddClick(Sender: TObject);
+      procedure btnASinClick(Sender: TObject);
+      procedure btnASinHClick(Sender: TObject);
+      procedure btnATanClick(Sender: TObject);
+      procedure btnATanHClick(Sender: TObject);
+      procedure btnBackspaceClick(Sender: TObject);
+      procedure btnBinToBaseClick(Sender: TObject);
+      procedure btnCelsiusClick(Sender: TObject);
+      procedure btnCoSecantClick(Sender: TObject);
+      procedure btnCosHClick(Sender: TObject);
+      procedure btnCotHClick(Sender: TObject);
+      procedure btnCTanClick(Sender: TObject);
+      procedure btnDecToBaseClick(Sender: TObject);
+      procedure btnClearEntryClick(Sender: TObject);
+      procedure btnCommaClick(Sender: TObject);
+      procedure btnCosClick(Sender: TObject);
+      procedure btnCubeNum1Click(Sender: TObject);
+      procedure btnEulerConstantClick(Sender: TObject);
+      procedure btnDecHexClick(Sender: TObject);
+      procedure btnExponentialClick(Sender: TObject);
+      procedure btnFactorialClick(Sender: TObject);
+      procedure btnFahrenheitClick(Sender: TObject);
+      procedure btnFractionClick(Sender: TObject);
+      procedure btnGradiansDegreesClick(Sender: TObject);
+      procedure btnGradiansRadiansClick(Sender: TObject);
+      procedure btnHexToBaseClick(Sender: TObject);
+      procedure btnHypotenuseClick(Sender: TObject);
+      procedure btnLogClick(Sender: TObject);
+      procedure btnMemoryClear2Click(Sender: TObject);
+      procedure btnMemoryMinus3Click(Sender: TObject);
+      procedure btnMemoryPlus2Click(Sender: TObject);
+      procedure btnOctToBaseClick(Sender: TObject);
+      procedure btnPIClick(Sender: TObject);
+      procedure btnRadiansDegreesClick(Sender: TObject);
+      procedure btnRadiansGradiansClick(Sender: TObject);
+      procedure btnDivideClick(Sender: TObject);
+      procedure btnEightClick(Sender: TObject);
+      procedure btnFiveClick(Sender: TObject);
+      procedure btnFourClick(Sender: TObject);
+      procedure btnDegreesGradiansClick(Sender: TObject);
+      procedure btnMinusClick(Sender: TObject);
+      procedure btnMultiplyClick(Sender: TObject);
+      procedure btnNineClick(Sender: TObject);
+      procedure btnOneClick(Sender: TObject);
+      procedure btnPercentClick(Sender: TObject);
+      procedure btnPermilageClick(Sender: TObject);
+      procedure btnPlusMinusClick(Sender: TObject);
+      procedure btnDegreesRadiansClick(Sender: TObject);
+      procedure btnRemainderClick(Sender: TObject);
+      procedure btnResultClick(Sender: TObject);
+      procedure btnRisedToClick(Sender: TObject);
+      procedure btnSecantClick(Sender: TObject);
+      procedure btnSevenClick(Sender: TObject);
+      procedure btnSinClick(Sender: TObject);
+      procedure btnSinHClick(Sender: TObject);
+      procedure btnSixClick(Sender: TObject);
+      procedure btnSqrNum1Click(Sender: TObject);
+      procedure btnSqrtClick(Sender: TObject);
+      procedure btnTanClick(Sender: TObject);
+      procedure btnTanHClick(Sender: TObject);
+      procedure btnTAUClick(Sender: TObject);
+      procedure btnTenRaisedTo1Click(Sender: TObject);
+      procedure btnThreeClick(Sender: TObject);
+      procedure btnTwoClick(Sender: TObject);
+      procedure btnXRootClick(Sender: TObject);
+      procedure btnZeroClick(Sender: TObject);
+      procedure btnCycleToRadClick(Sender: TObject);
+      procedure btnRadiansToCyclesClick(Sender: TObject);
+      procedure DTPickerEndDateChange(Sender: TObject);
+      procedure DTPickerStartDateChange(Sender: TObject);
+      function FormHelp(Command: Word; Data: PtrInt; var CallHelp: Boolean
+          ): Boolean;
+      procedure MenuItem1Click(Sender: TObject);
+      procedure mnuEditSettingsClick(Sender: TObject);
+      procedure mnuHelpCreditsClick(Sender: TObject);
+      procedure mnuHelpHelpClick(Sender: TObject);
+      procedure ppMenuArabClick(Sender: TObject);
+      procedure ppMenuChineseClick(Sender: TObject);
+      procedure ppMenuFrenchClick(Sender: TObject);
+      procedure ppMenuGregorianClick(Sender: TObject);
+      procedure ppMenuHebrewClick(Sender: TObject);
+      procedure ppMenuJulianClick(Sender: TObject);
+      procedure rdBtnDateCalculatorClick(Sender: TObject);
+      procedure rdBtnFunctionsClick(Sender: TObject);
+      procedure rdBtnSimpleCalculatorClick(Sender: TObject);
+      procedure rdBtnTrigonometryClick(Sender: TObject);
+      procedure FormCreate(Sender: TObject);
   private
       Num1, Num2, Result, Operators : String;
       Memory : extended;
@@ -346,6 +349,12 @@ begin
     StTxtDateCalculation.Caption := DateDifference(DTPickerStartDate.Date, DTPickerEndDate.Date);
 end;
 
+function TfrmMyCalculators.FormHelp(Command: Word; Data: PtrInt;
+    var CallHelp: Boolean): Boolean;
+begin
+    frmHelp.ShowModal;
+end;
+
 procedure TfrmMyCalculators.MenuItem1Click(Sender: TObject);
 begin
     Application.Terminate;
@@ -359,6 +368,11 @@ end;
 procedure TfrmMyCalculators.mnuHelpCreditsClick(Sender: TObject);
 begin
     frmCredits.ShowModal;
+end;
+
+procedure TfrmMyCalculators.mnuHelpHelpClick(Sender: TObject);
+begin
+    frmHelp.ShowModal;
 end;
 
 procedure TfrmMyCalculators.ppMenuArabClick(Sender: TObject);
@@ -980,80 +994,52 @@ begin
 end;
 
 function TfrmMyCalculators.DateDifference(firstDate, secondDate : TDate) : String;
-var firstNDay, firstNMonth, firstNYear, temp : Word;
-    secondNDay, secondNMonth, secondNYear : Word;
+var firstDay, firstMonth, firstYear : Word;
     years, months, days : String;
-    tempDate : TDate;
 begin
-     if firstDate > secondDate then                                    // Prevent wrong calculations with
-         begin                                                         // start date bigger then end date
-              tempDate := secondDate;
-              secondDate := firstDate;
-              firstDate := tempDate;
-              lblStartDate.Caption := 'End date';
-              lblStartDate.Font.Color := clRed;
+     if firstDate > secondDate then
+         begin
+              lblStartDate.Caption := 'End date';                      // Flag the inversion of order
+              lblStartDate.Font.Color := clRed;                        // with a red label
               lblEndDate.Caption := 'Start date';
          end
      else
          begin
-              lblStartDate.Font.Color := clDefault;
+              lblStartDate.Font.Color := clDefault;                    // Return labels to default colour
               lblStartDate.Caption := 'Start date';
               lblEndDate.Caption := 'End date';
          end;
-     DecodeDate(firstDate, firstNYear, firstNMonth, firstNDay);
-     DecodeDate(secondDate, secondNYear, secondNMonth, secondNDay);
-     if DaysBetween(firstDate, secondDate) = 0 then
-         StTxtDateCalculation.Caption := 'Same date';
-      temp := (secondNMonth - firstNMonth);                            // start calculation
-      if temp > 12  then
-         temp := 12 + (secondNMonth - firstNMonth);
-      months := IntToStr(temp);
-      temp := secondNDay - firstNDay;
-      if (temp > 28) and (secondNMonth = 2) then                       //  February
-            temp := 28 + (secondNDay - firstNDay)
-      else if ((secondNMonth = 4) or (secondNMonth = 6)                // 30 days months
-              or (secondNMonth = 9) or (secondNMonth = 11)) then
-              temp := 30 + (secondNDay - firstNDay)
-           else temp := 31 + (secondNDay - firstNDay);                 // 31 days months
-      days := IntToStr(temp);
-      if secondNMonth >= firstNMonth then
-           years := IntToStr(secondNYear - firstNYear)
-      else years := IntToStr(secondNYear - firstNYear - 1);
-      if (days = '0') and (months = '0') then
-         begin
-              if years = '1' then DateDifference := years + ' year.'
-              else DateDifference := years + ' years.';
-         end
-      else if (days = '0') and (years = '0') then
-              begin
-                   if months = '1' then DateDifference := months + ' month.'
-                   else DateDifference := months + ' months.';
-              end
-           else if (days = '0') then
-                   begin
-                        if (months = '1') and (years = '1') then DateDifference := months + ' month and ' + years + ' year.'
-                        else if (months = '1') then DateDifference := months + ' month and ' + years + ' years.'
-                             else if years = '1' then DateDifference := months + ' months and ' + years + ' year.'
-                                  else DateDifference := months + ' months and ' + years + ' years.'
-                   end
-                else if (months = '0') and (years = '0') then
-                        if days = '1' then DateDifference := days + ' day.'
-                        else DateDifference := days + ' days.'
-                     else if (years = '0') then
-                             begin
-                                  if (days = '1') and (months = '1') then DateDifference := days + ' day and ' + months + ' month.'
-                                  else if days = '1' then DateDifference := days + ' day and ' + months + ' months.'
-                                       else if months = '1' then DateDifference := days + ' days and ' + months + ' month.'
-                                            else DateDifference := days + ' days and ' + months + ' months.';
-                             end
-                          else if (months = '0') then
-                               begin
-                                    if (days  = '1') and (years = '1') then DateDifference := days + ' day, ' + years + ' year.'
-                                    else if days = '1' then DateDifference := days + ' day and ' + years + ' years.'
-                                         else if years = '1' then DateDifference := days + ' days and ' + years + ' year.'
-                               end
-                               else if (days = '1') and (months = '1') and (years = '1') then DateDifference := days + ' day, ' + months + ' month and ' + years + ' year.'
-                                    else DateDifference := days + ' days, ' + months + ' months and ' + years + ' years.'
+     PeriodBetween(firstDate, secondDate, firstYear, firstMonth, firstDay);
+     years := IntToStr(firstYear);
+     months := IntToStr(firstMonth);
+     days := IntToStr(firstDay);
+     if (days = '0') and (months = '0') and (years = '0') then DateDifference := years + 'Dates are the same'
+     else if (days = '0') and (months = '0') and (years = '1') then DateDifference := years + ' year.'
+          else if (days = '0') and (months = '0') and (years > '1') then DateDifference := years + ' years.'
+               else if (days = '0') and (months = '1') and (years = '0') then DateDifference := months + ' month.'
+                    else if (days = '0') and (months = '1') and (years = '1') then DateDifference := months + ' month and ' + years + ' year.'
+                         else if (days = '0') and (months = '1') and (years > '1') then DateDifference := months + ' month and ' + years + ' years.'
+                              else if (days = '0') and (months > '1') and (years = '0') then DateDifference := months + ' months and ' + years + ' year.'
+                                   else if (days = '0') and (months > '1') and (years = '1') then DateDifference := months + ' months and ' + years + ' year.'
+                                        else if (days = '0') and (months > '1') and (years > '1') then DateDifference := months + ' months and ' + years + ' years.'
+                                             else if (days = '1') and (months = '0') and (years = '0') then DateDifference := days + ' day, '
+                                                  else if (days = '1') and (months = '0') and (years = '1') then DateDifference := days + ' day and ' + years + ' year.'
+                                                       else if (days = '1') and (months = '0') and (years > '1') then DateDifference := days + ' day and ' + years + ' years.'
+                                                            else if (days = '1') and (months = '1') and (years = '0') then DateDifference := days + ' day and ' + months + ' month.'
+                                                                 else if (days = '1') and (months = '1') and (years = '1') then DateDifference := days + ' day, ' + months + ' month and ' + years + ' year.'
+                                                                      else if (days = '1') and (months = '1') and (years > '1') then DateDifference := days + ' day, ' + months + ' month and ' + years + ' years.'
+                                                                           else if (days = '1') and (months > '1') and (years = '0') then DateDifference := days + ' day and ' + months + ' months.'
+                                                                                else if (days = '1') and (months > '1') and (years = '1') then DateDifference := days + ' day, ' + months + ' months and ' + years + ' year.'
+                                                                                     else if (days = '1') and (months > '1') and (years > '1') then DateDifference := days + ' day, ' + months + ' months and ' + years + ' years.'
+                                                                                          else if (days > '1') and (months = '0') and (years = '0') then DateDifference := days + ' days.'
+                                                                                               else if (days > '1') and (months = '0') and (years = '1') then DateDifference := days + ' days and ' + years + ' year.'
+                                                                                                    else if (days > '1') and (months = '0') and (years > '1') then DateDifference := days + ' days and ' + years + ' years.'
+                                                                                                         else if (days > '1') and (months = '1') and (years = '0') then DateDifference := days + ' days and ' + months + ' month.'
+                                                                                                              else if (days > '1') and (months = '1') and (years = '1') then DateDifference := days + ' days, ' + months + ' month and ' + years + ' year.'
+                                                                                                                   else if (days > '1') and (months = '1') and (years > '1') then DateDifference := days + ' days, ' + months + ' month and ' + years + ' years.'
+                                                                                                                        else if (days > '1') and (months > '1') and (years = '0') then DateDifference := days + ' days and ' + months + ' months.'
+                                                                                                                             else if (days > '1') and (months > '1') and (years = '1') then DateDifference := days + ' days, ' + months + ' months and ' + years + ' year.'
+                                                                                                                                  else if (days > '1') and (months > '1') and (years > '1') then DateDifference := days + ' days, ' + months + ' months and ' + years + ' years.'
 end;
 
 end.

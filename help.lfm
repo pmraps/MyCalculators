@@ -1,0 +1,161 @@
+object frmHelp: TfrmHelp
+  Left = 488
+  Height = 273
+  Top = 250
+  Width = 535
+  HorzScrollBar.Page = 530
+  VertScrollBar.Page = 272
+  AutoScroll = True
+  Caption = 'Help'
+  ClientHeight = 273
+  ClientWidth = 535
+  ParentFont = True
+  Position = poOwnerFormCenter
+  LCLVersion = '4.4.0.0'
+  Visible = True
+  object NtBookMainHelp: TNotebook
+    Left = 200
+    Height = 200
+    Top = 0
+    Width = 330
+    PageIndex = 5
+    TabOrder = 0
+    object Description: TPage
+      object mmoDescription: TMemo
+        Left = 0
+        Height = 200
+        Top = 0
+        Width = 330
+        Lines.Strings = (
+          'This is yet another multi-function calculator.'
+          ''
+          'The type of calculations is chosen from the four radio'
+          'buttons right below the results screen.'
+          ''
+          'For single number calculations, choose the number and'
+          'click the desired function name.'
+          ''
+          'For calculations requiring two numbers, choose the first'
+          'number, choose the function, and then choose the'
+          'second number.'
+          ''
+          'There is a small section where you can change the theme'
+          'and/or the language, via menu Edit .> Settings.'
+        )
+        ParentColor = True
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+    end
+    object Simple: TPage
+      object mmoSimple: TMemo
+        Left = 0
+        Height = 200
+        Top = 0
+        Width = 330
+        Lines.Strings = (
+          'mmoSimple'
+        )
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+    end
+    object Miscellaneous: TPage
+      object mmoMiscFunctions: TMemo
+        Left = 0
+        Height = 200
+        Top = 0
+        Width = 330
+        Lines.Strings = (
+          'mmoMiscFunctions'
+        )
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+    end
+    object Trigonometric: TPage
+      object mmoTrigonometric: TMemo
+        Left = 0
+        Height = 200
+        Top = 0
+        Width = 330
+        Lines.Strings = (
+          'mmoTrigonometric'
+        )
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+    end
+    object Dates: TPage
+      object mmoDates: TMemo
+        Left = 0
+        Height = 200
+        Top = 0
+        Width = 330
+        Lines.Strings = (
+          'mmoDates'
+        )
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+    end
+    object Settings: TPage
+      object mmoSettings: TMemo
+        Left = 0
+        Height = 200
+        Top = 0
+        Width = 330
+        Lines.Strings = (
+          'mmoSettings'
+        )
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+    end
+  end
+  object btnOK: TButton
+    Left = 460
+    Height = 25
+    Hint = 'Close the help system'
+    Top = 240
+    Width = 70
+    Caption = 'OK'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    OnClick = btnOKClick
+  end
+  object TrViewHelpIndex: TTreeView
+    Left = 0
+    Height = 272
+    Hint = 'Click to open the corresponding page'
+    Top = 0
+    Width = 193
+    BackgroundColor = clDefault
+    BorderWidth = 2
+    ParentColor = True
+    ReadOnly = True
+    ScrollBars = ssNone
+    TabOrder = 2
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+    Items.Data = {
+      F9FFFFFF020006000000010000000000000000000000FFFFFFFF000000000000
+      0000000B0000004465736372697074696F6EFFFFFFFF0100000001000000FFFF
+      FFFF0000000000000000001100000053696D706C652063616C63756C61746F72
+      FFFFFFFF0200000002000000FFFFFFFF000000000000000000170000004D6973
+      63656C6C616E656F75732066756E6374696F6E73FFFFFFFF0300000003000000
+      FFFFFFFF00000000000000000018000000547269676F6E6F6D65747269632063
+      616C63756C61746F72FFFFFFFF0400000004000000FFFFFFFF00000000000000
+      00001D0000004461746520636F6E76657274657220616E642063616C63756C61
+      746F72FFFFFFFF0500000005000000FFFFFFFF00000000000000000008000000
+      53657474696E6773
+    }
+    OnSelectionChanged = TrViewHelpIndexSelectionChanged
+  end
+end

@@ -9,8 +9,8 @@
         <Filename Value="mycalculators.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="56" Y="13"/>
-        <UsageCount Value="43"/>
+        <CursorPos X="72" Y="13"/>
+        <UsageCount Value="54"/>
       </Unit>
       <Unit>
         <Filename Value="maincalculators.pas"/>
@@ -19,10 +19,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="882"/>
-        <CursorPos X="64" Y="899"/>
-        <UsageCount Value="43"/>
+        <TopLine Value="331"/>
+        <CursorPos X="2" Y="196"/>
+        <UsageCount Value="54"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -30,12 +29,28 @@
         <Filename Value="preferences.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmPreferences"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Preferences"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="7"/>
+        <CursorPos X="47" Y="20"/>
+        <UsageCount Value="34"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="help.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmHelp"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Help"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="9"/>
-        <CursorPos X="25" Y="38"/>
-        <UsageCount Value="23"/>
+        <CursorPos X="47" Y="31"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>

@@ -18,6 +18,8 @@ type
         lblTheme: TLabel;
         lblLanguage: TLabel;
         procedure btnOKClick(Sender: TObject);
+        function FormHelp(Command: Word; Data: PtrInt; var CallHelp: Boolean
+            ): Boolean;
     private
 
     public
@@ -35,7 +37,13 @@ implementation
 
 procedure TfrmPreferences.btnOKClick(Sender: TObject);
 begin
-    Exit;
+    frmPreferences.Close;
+end;
+
+function TfrmPreferences.FormHelp(Command: Word; Data: PtrInt;
+    var CallHelp: Boolean): Boolean;
+begin
+    frmHelp.ShowModal;
 end;
 
 end.

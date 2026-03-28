@@ -11,6 +11,24 @@ msgstr ""
 "X-Generator: Poedit 3.9\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
+#: tfrmhelp.btnok.caption
+msgctxt "tfrmhelp.btnok.caption"
+msgid "OK"
+msgstr ""
+
+#: tfrmhelp.btnok.hint
+msgctxt "tfrmhelp.btnok.hint"
+msgid "Close the help system"
+msgstr ""
+
+#: tfrmhelp.caption
+msgid "Help"
+msgstr ""
+
+#: tfrmhelp.trviewhelpindex.hint
+msgid "Click to open the corresponding page"
+msgstr ""
+
 #: tfrmmycalculators.btnacos.caption
 msgctxt "tfrmmycalculators.btnacos.caption"
 msgid "ACos"
@@ -42,6 +60,12 @@ msgid "Calcular o arco cotangente"
 msgstr ""
 
 #: tfrmmycalculators.btnactualcalendar.hint
+msgctxt "tfrmmycalculators.btnactualcalendar.hint"
+msgid "Click to select the calendar"
+msgstr ""
+
+#: tfrmmycalculators.btnactualcalendar1.hint
+msgctxt "tfrmmycalculators.btnactualcalendar1.hint"
 msgid "Click to select the calendar"
 msgstr ""
 
@@ -871,6 +895,7 @@ msgid "Activa a caculadora trigonométrica"
 msgstr "Calculadora trigonométrica"
 
 #: tfrmpreferences.btnok.caption
+msgctxt "tfrmpreferences.btnok.caption"
 msgid "OK"
 msgstr ""
 
