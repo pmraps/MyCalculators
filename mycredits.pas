@@ -29,6 +29,8 @@ type
         StTxtCredits1: TStaticText;
         TbShtCreditsContributors: TTabSheet;
         TbShtCreditsCredits: TTabSheet;
+        procedure StaticText2Click(Sender: TObject);
+        procedure StaticText2MouseEnter(Sender: TObject);
         procedure StTxtContributors1Click(Sender: TObject);
         procedure StTxtCredits6Click(Sender: TObject);
         procedure StTxtCredits1Click(Sender: TObject);
@@ -73,6 +75,16 @@ end;
 procedure TfrmCredits.StTxtContributors1Click(Sender: TObject);
 begin
      OpenDocument('mailto: pmra@protonmail.com');
+end;
+
+procedure TfrmCredits.StaticText2MouseEnter(Sender: TObject);
+begin
+    StaticText2.Cursor := crHandPoint;
+end;
+
+procedure TfrmCredits.StaticText2Click(Sender: TObject);
+begin
+    OpenURL('https://icons8.com/icon/43131/book');
 end;
 
 procedure TfrmCredits.StTxtCredits2Click(Sender: TObject);

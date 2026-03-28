@@ -1,13 +1,13 @@
 object frmHelp: TfrmHelp
   Left = 488
-  Height = 273
+  Height = 251
   Top = 250
   Width = 535
   HorzScrollBar.Page = 530
-  VertScrollBar.Page = 272
+  VertScrollBar.Page = 233
   AutoScroll = True
   Caption = 'Help'
-  ClientHeight = 273
+  ClientHeight = 251
   ClientWidth = 535
   ParentFont = True
   Position = poOwnerFormCenter
@@ -22,10 +22,12 @@ object frmHelp: TfrmHelp
     TabOrder = 0
     object Description: TPage
       object mmoDescription: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
         Width = 330
+        BorderStyle = bsNone
         Lines.Strings = (
           'This is yet another multi-function calculator.'
           ''
@@ -50,13 +52,16 @@ object frmHelp: TfrmHelp
     end
     object Simple: TPage
       object mmoSimple: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
         Width = 330
+        BorderStyle = bsNone
         Lines.Strings = (
           'mmoSimple'
         )
+        ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
@@ -64,13 +69,16 @@ object frmHelp: TfrmHelp
     end
     object Miscellaneous: TPage
       object mmoMiscFunctions: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
         Width = 330
+        BorderStyle = bsNone
         Lines.Strings = (
           'mmoMiscFunctions'
         )
+        ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
@@ -78,13 +86,16 @@ object frmHelp: TfrmHelp
     end
     object Trigonometric: TPage
       object mmoTrigonometric: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
         Width = 330
+        BorderStyle = bsNone
         Lines.Strings = (
           'mmoTrigonometric'
         )
+        ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
@@ -92,13 +103,16 @@ object frmHelp: TfrmHelp
     end
     object Dates: TPage
       object mmoDates: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
         Width = 330
+        BorderStyle = bsNone
         Lines.Strings = (
           'mmoDates'
         )
+        ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
@@ -106,13 +120,21 @@ object frmHelp: TfrmHelp
     end
     object Settings: TPage
       object mmoSettings: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
         Width = 330
+        BorderStyle = bsNone
         Lines.Strings = (
-          'mmoSettings'
+          'Click on the down arrow of the first list to select a'
+          'language.'
+          ''
+          'Click on the down arrow of the second list and select a'
+          'theme, dark or light.'
+          ''
         )
+        ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
@@ -123,7 +145,7 @@ object frmHelp: TfrmHelp
     Left = 460
     Height = 25
     Hint = 'Close the help system'
-    Top = 240
+    Top = 208
     Width = 70
     Caption = 'OK'
     ParentShowHint = False
@@ -133,27 +155,28 @@ object frmHelp: TfrmHelp
   end
   object TrViewHelpIndex: TTreeView
     Left = 0
-    Height = 272
+    Height = 232
     Hint = 'Click to open the corresponding page'
     Top = 0
     Width = 193
     BackgroundColor = clDefault
     BorderWidth = 2
+    Images = frmMyCalculators.ImageList
     ParentColor = True
     ReadOnly = True
     ScrollBars = ssNone
     TabOrder = 2
     Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
     Items.Data = {
-      F9FFFFFF020006000000010000000000000000000000FFFFFFFF000000000000
-      0000000B0000004465736372697074696F6EFFFFFFFF0100000001000000FFFF
+      F9FFFFFF0200060000000A0000000A00000000000000FFFFFFFF000000000000
+      0000000B0000004465736372697074696F6E0A0000000A00000001000000FFFF
       FFFF0000000000000000001100000053696D706C652063616C63756C61746F72
-      FFFFFFFF0200000002000000FFFFFFFF000000000000000000170000004D6973
-      63656C6C616E656F75732066756E6374696F6E73FFFFFFFF0300000003000000
+      0A0000000A00000002000000FFFFFFFF000000000000000000170000004D6973
+      63656C6C616E656F75732066756E6374696F6E730A0000000A00000003000000
       FFFFFFFF00000000000000000018000000547269676F6E6F6D65747269632063
-      616C63756C61746F72FFFFFFFF0400000004000000FFFFFFFF00000000000000
+      616C63756C61746F720A0000000A00000004000000FFFFFFFF00000000000000
       00001D0000004461746520636F6E76657274657220616E642063616C63756C61
-      746F72FFFFFFFF0500000005000000FFFFFFFF00000000000000000008000000
+      746F720A0000000A00000005000000FFFFFFFF00000000000000000008000000
       53657474696E6773
     }
     OnSelectionChanged = TrViewHelpIndexSelectionChanged

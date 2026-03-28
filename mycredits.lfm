@@ -1,10 +1,13 @@
 object frmCredits: TfrmCredits
   Left = 488
-  Height = 261
+  Height = 258
   Top = 250
   Width = 379
-  ClientHeight = 261
-  ClientWidth = 379
+  HorzScrollBar.Page = 360
+  VertScrollBar.Page = 258
+  AutoScroll = True
+  ClientHeight = 258
+  ClientWidth = 362
   ParentFont = True
   Position = poMainFormCenter
   LCLVersion = '4.4.0.0'
@@ -116,9 +119,11 @@ object frmCredits: TfrmCredits
         Left = 0
         Height = 17
         Top = 192
-        Width = 65
-        Caption = 'StaticText2'
+        Width = 352
+        Caption = 'Book Icon'
         TabOrder = 8
+        OnClick = StaticText2Click
+        OnMouseEnter = StaticText2MouseEnter
       end
       object StaticText3: TStaticText
         Left = 0

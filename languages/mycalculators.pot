@@ -26,7 +26,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnacos.hint
 msgctxt "tfrmmycalculators.btnacos.hint"
-msgid "Calcular o arco cosseno"
+msgid "Calculate the  arch cosine"
 msgstr ""
 
 #: tfrmmycalculators.btnacosh.caption
@@ -36,7 +36,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnacosh.hint
 msgctxt "tfrmmycalculators.btnacosh.hint"
-msgid "Calcular o arco cosseno hiperbólico"
+msgid "Calculate the hyperbolic  arch cosine"
 msgstr ""
 
 #: tfrmmycalculators.btnacot.caption
@@ -46,17 +46,17 @@ msgstr ""
 
 #: tfrmmycalculators.btnacot.hint
 msgctxt "tfrmmycalculators.btnacot.hint"
-msgid "Calcular o arco cotangente"
+msgid "Calculate the arch cotangent"
 msgstr ""
 
 #: tfrmmycalculators.btnactualcalendar.hint
 msgctxt "tfrmmycalculators.btnactualcalendar.hint"
-msgid "Click to select the calendar"
+msgid "Click to select the calendar to convert to"
 msgstr ""
 
 #: tfrmmycalculators.btnactualcalendar1.hint
 msgctxt "tfrmmycalculators.btnactualcalendar1.hint"
-msgid "Click to select the calendar"
+msgid "Click to select the calendar to convert from"
 msgstr ""
 
 #: tfrmmycalculators.btnadd.caption
@@ -75,7 +75,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnasin.hint
 msgctxt "tfrmmycalculators.btnasin.hint"
-msgid "Calcular o arco seno"
+msgid "Calculate the arch sine"
 msgstr ""
 
 #: tfrmmycalculators.btnasinh.caption
@@ -85,7 +85,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnasinh.hint
 msgctxt "tfrmmycalculators.btnasinh.hint"
-msgid "Calcular o arco seno hiperbólico"
+msgid "Calculate the hyperbolic arch sine"
 msgstr ""
 
 #: tfrmmycalculators.btnatan.caption
@@ -95,7 +95,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnatan.hint
 msgctxt "tfrmmycalculators.btnatan.hint"
-msgid "Calcular o arco tangente"
+msgid "Calculate the arch tangent"
 msgstr ""
 
 #: tfrmmycalculators.btnatanh.caption
@@ -105,7 +105,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnatanh.hint
 msgctxt "tfrmmycalculators.btnatanh.hint"
-msgid "Calcular o arco tangente hiperbólico"
+msgid "Calculte the hyperbolic arch tangent"
 msgstr ""
 
 #: tfrmmycalculators.btnbackspace.caption
@@ -123,7 +123,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnbintobase.hint
 msgctxt "tfrmmycalculators.btnbintobase.hint"
-msgid "Converter números entre diferentes bases"
+msgid "Convert binary to different base"
 msgstr ""
 
 #: tfrmmycalculators.btncelsius.caption
@@ -131,7 +131,7 @@ msgid "Cº"
 msgstr ""
 
 #: tfrmmycalculators.btncelsius.hint
-msgid "Converter para centígrados"
+msgid "Convert to Celsius"
 msgstr ""
 
 #: tfrmmycalculators.btnclearentry.caption
@@ -160,7 +160,7 @@ msgstr ""
 
 #: tfrmmycalculators.btncos.hint
 msgctxt "tfrmmycalculators.btncos.hint"
-msgid "Calcular o cosseno"
+msgid "Calculate the cosine"
 msgstr ""
 
 #: tfrmmycalculators.btncosecant.caption
@@ -170,7 +170,7 @@ msgstr ""
 
 #: tfrmmycalculators.btncosecant.hint
 msgctxt "tfrmmycalculators.btncosecant.hint"
-msgid "Calcular a cosecante"
+msgid "Calculte the cosecant"
 msgstr ""
 
 #: tfrmmycalculators.btncosh.caption
@@ -180,7 +180,7 @@ msgstr ""
 
 #: tfrmmycalculators.btncosh.hint
 msgctxt "tfrmmycalculators.btncosh.hint"
-msgid "Calcular o cosseno hiperbólico"
+msgid "Calculate the hyperbolic cosine"
 msgstr ""
 
 #: tfrmmycalculators.btncoth.caption
@@ -190,7 +190,7 @@ msgstr ""
 
 #: tfrmmycalculators.btncoth.hint
 msgctxt "tfrmmycalculators.btncoth.hint"
-msgid "Calcular a cotangente hiperbólica"
+msgid "Calculate the hyperbolic cotangent"
 msgstr ""
 
 #: tfrmmycalculators.btnctan.caption
@@ -200,7 +200,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnctan.hint
 msgctxt "tfrmmycalculators.btnctan.hint"
-msgid "Calcular a cotangente"
+msgid "Calculate the cotangent"
 msgstr ""
 
 #: tfrmmycalculators.btncycletorad.caption
@@ -217,7 +217,7 @@ msgstr ""
 
 #: tfrmmycalculators.btndectobase.hint
 msgctxt "tfrmmycalculators.btndectobase.hint"
-msgid "Converter números entre diferentes bases"
+msgid "Convert decimal to different base"
 msgstr ""
 
 #: tfrmmycalculators.btndegreesgradians.caption
@@ -227,7 +227,7 @@ msgstr ""
 
 #: tfrmmycalculators.btndegreesgradians.hint
 msgctxt "tfrmmycalculators.btndegreesgradians.hint"
-msgid "Converter graus em gradianos"
+msgid "Convert degrees to gradians"
 msgstr ""
 
 #: tfrmmycalculators.btndegreesradians.caption
@@ -237,7 +237,7 @@ msgstr ""
 
 #: tfrmmycalculators.btndegreesradians.hint
 msgctxt "tfrmmycalculators.btndegreesradians.hint"
-msgid "Converter graus em radianos"
+msgid "Convert degrees to radians"
 msgstr ""
 
 #: tfrmmycalculators.btndivide.caption
@@ -263,7 +263,7 @@ msgid "e"
 msgstr ""
 
 #: tfrmmycalculators.btneulerconstant.hint
-msgid "Constante de Euler"
+msgid "Euler's number"
 msgstr ""
 
 #: tfrmmycalculators.btnexponential.caption
@@ -271,7 +271,7 @@ msgid "Exp"
 msgstr ""
 
 #: tfrmmycalculators.btnexponential.hint
-msgid "Exponential"
+msgid "Calculate the exponential"
 msgstr ""
 
 #: tfrmmycalculators.btnfactorial.caption
@@ -279,7 +279,7 @@ msgid "n!"
 msgstr ""
 
 #: tfrmmycalculators.btnfactorial.hint
-msgid "Calcular o factorial"
+msgid "Calculate the factorial"
 msgstr ""
 
 #: tfrmmycalculators.btnfahrenheit.caption
@@ -287,7 +287,7 @@ msgid "Fº"
 msgstr ""
 
 #: tfrmmycalculators.btnfahrenheit.hint
-msgid "Converter para Fahrenheit"
+msgid "Convert to Fahrenheit"
 msgstr ""
 
 #: tfrmmycalculators.btnfive.caption
@@ -313,7 +313,7 @@ msgid "1/x"
 msgstr ""
 
 #: tfrmmycalculators.btnfraction.hint
-msgid "Calcular a fracção de um"
+msgid "Calculate the fraction of 1"
 msgstr ""
 
 #: tfrmmycalculators.btngradiansdegrees.caption
@@ -323,7 +323,7 @@ msgstr ""
 
 #: tfrmmycalculators.btngradiansdegrees.hint
 msgctxt "tfrmmycalculators.btngradiansdegrees.hint"
-msgid "Converter gradianos em graus"
+msgid "Convert gradians to degrees"
 msgstr ""
 
 #: tfrmmycalculators.btngradiansradians.caption
@@ -333,7 +333,7 @@ msgstr ""
 
 #: tfrmmycalculators.btngradiansradians.hint
 msgctxt "tfrmmycalculators.btngradiansradians.hint"
-msgid "Converter gradianos em radianos"
+msgid "Convert gradians to radians"
 msgstr ""
 
 #: tfrmmycalculators.btnhextobase.caption
@@ -342,7 +342,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnhextobase.hint
 msgctxt "tfrmmycalculators.btnhextobase.hint"
-msgid "Converter números entre diferentes bases"
+msgid "Convert hexadecimal to different base"
 msgstr ""
 
 #: tfrmmycalculators.btnhypotenuse.caption
@@ -360,7 +360,7 @@ msgid "Log"
 msgstr ""
 
 #: tfrmmycalculators.btnlog.hint
-msgid "Logaritmo decimal"
+msgid "Calculate logarythms in different bases"
 msgstr ""
 
 #: tfrmmycalculators.btnmemoryclear.caption
@@ -423,7 +423,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnocttobase.hint
 msgctxt "tfrmmycalculators.btnocttobase.hint"
-msgid "Converter números entre diferentes bases"
+msgid "Convert octal to different base"
 msgstr ""
 
 #: tfrmmycalculators.btnone.caption
@@ -440,7 +440,7 @@ msgid "%"
 msgstr ""
 
 #: tfrmmycalculators.btnpercent.hint
-msgid "Converter em percentagem"
+msgid "Convert to percent"
 msgstr ""
 
 #: tfrmmycalculators.btnpermilage.caption
@@ -448,7 +448,7 @@ msgid "‰"
 msgstr ""
 
 #: tfrmmycalculators.btnpermilage.hint
-msgid "Converter em permilagem"
+msgid "Convert to permil"
 msgstr ""
 
 #: tfrmmycalculators.btnpi.caption
@@ -456,7 +456,7 @@ msgid "π"
 msgstr ""
 
 #: tfrmmycalculators.btnpi.hint
-msgid "Constante Pi"
+msgid "Constant Pi"
 msgstr ""
 
 #: tfrmmycalculators.btnplusminus.caption
@@ -475,7 +475,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnradiansdegrees.hint
 msgctxt "tfrmmycalculators.btnradiansdegrees.hint"
-msgid "Converter radianos em graus"
+msgid "Convert radians to degrees"
 msgstr ""
 
 #: tfrmmycalculators.btnradiansgradians.caption
@@ -485,7 +485,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnradiansgradians.hint
 msgctxt "tfrmmycalculators.btnradiansgradians.hint"
-msgid "Converter radianos em gradianos"
+msgid "Convert radians to gradians"
 msgstr ""
 
 #: tfrmmycalculators.btnradianstocycles.caption
@@ -521,7 +521,7 @@ msgid "x^y"
 msgstr ""
 
 #: tfrmmycalculators.btnrisedto.hint
-msgid "Elevar a "
+msgid "Raise to"
 msgstr ""
 
 #: tfrmmycalculators.btnsecant.caption
@@ -531,7 +531,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnsecant.hint
 msgctxt "tfrmmycalculators.btnsecant.hint"
-msgid "Calcular a secante"
+msgid "Calculate the secant"
 msgstr ""
 
 #: tfrmmycalculators.btnseven.caption
@@ -550,7 +550,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnsin.hint
 msgctxt "tfrmmycalculators.btnsin.hint"
-msgid "Calcular o seno"
+msgid "Calculate the sin"
 msgstr ""
 
 #: tfrmmycalculators.btnsinh.caption
@@ -560,7 +560,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnsinh.hint
 msgctxt "tfrmmycalculators.btnsinh.hint"
-msgid "Calcular o seno hiperbólico"
+msgid "Calculate the hyperbolic sine"
 msgstr ""
 
 #: tfrmmycalculators.btnsix.caption
@@ -579,7 +579,7 @@ msgstr ""
 
 #: tfrmmycalculators.btntan.hint
 msgctxt "tfrmmycalculators.btntan.hint"
-msgid "Calcular a tangente"
+msgid "Calculate the tangent"
 msgstr ""
 
 #: tfrmmycalculators.btntanh.caption
@@ -589,7 +589,7 @@ msgstr ""
 
 #: tfrmmycalculators.btntanh.hint
 msgctxt "tfrmmycalculators.btntanh.hint"
-msgid "Calcular a tangente hiperbólica"
+msgid "Calculate the hyperbolic tangent"
 msgstr ""
 
 #: tfrmmycalculators.btntau.caption
@@ -597,7 +597,7 @@ msgid "𝞽"
 msgstr ""
 
 #: tfrmmycalculators.btntau.hint
-msgid "Constante TAU"
+msgid "Constant TAU"
 msgstr ""
 
 #: tfrmmycalculators.btnthree.caption
@@ -623,7 +623,7 @@ msgid ""
 msgstr ""
 
 #: tfrmmycalculators.btnxroot.hint
-msgid "Calcular a raiz cúbica"
+msgid "Calculate the nth root"
 msgstr ""
 
 #: tfrmmycalculators.btnzero.caption
@@ -759,7 +759,7 @@ msgid "Date"
 msgstr ""
 
 #: tfrmmycalculators.rdbtndatecalculator.hint
-msgid "Calculadora de datas"
+msgid "Display the date calculator"
 msgstr ""
 
 #: tfrmmycalculators.rdbtnfunctions.caption
@@ -767,7 +767,7 @@ msgid "f(x)"
 msgstr ""
 
 #: tfrmmycalculators.rdbtnfunctions.hint
-msgid "Activa funções diversas"
+msgid "Display miscelaneous functions"
 msgstr ""
 
 #: tfrmmycalculators.rdbtnsimplecalculator.caption
@@ -775,7 +775,7 @@ msgid "Simple"
 msgstr ""
 
 #: tfrmmycalculators.rdbtnsimplecalculator.hint
-msgid "Activa a calculadora simples"
+msgid "Display the simple calculator"
 msgstr ""
 
 #: tfrmmycalculators.rdbtntrigonometry.caption
@@ -783,7 +783,7 @@ msgid "Trig"
 msgstr ""
 
 #: tfrmmycalculators.rdbtntrigonometry.hint
-msgid "Activa a caculadora trigonométrica"
+msgid "Display the trigonometric calculator"
 msgstr ""
 
 #: tfrmpreferences.btnok.caption

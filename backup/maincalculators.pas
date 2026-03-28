@@ -197,8 +197,8 @@ type
       procedure btnRadiansToCyclesClick(Sender: TObject);
       procedure DTPickerEndDateChange(Sender: TObject);
       procedure DTPickerStartDateChange(Sender: TObject);
- {{     function FormHelp(Command: Word; Data: PtrInt; var CallHelp: Boolean
-          ): Boolean;}}
+      function FormHelp(Command: Word; Data: PtrInt; var CallHelp: Boolean
+          ): Boolean;
       procedure MenuItem1Click(Sender: TObject);
       procedure mnuEditSettingsClick(Sender: TObject);
       procedure mnuHelpCreditsClick(Sender: TObject);
