@@ -1,4 +1,4 @@
-object frmHelp: TfrmHelp
+inherited frmHelp: TfrmHelp
   Left = 488
   Height = 251
   Top = 250
@@ -22,7 +22,7 @@ object frmHelp: TfrmHelp
     TabOrder = 0
     object Description: TPage
       object mmoDescription: TMemo
-        Cursor = crNo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
@@ -52,6 +52,7 @@ object frmHelp: TfrmHelp
     end
     object Simple: TPage
       object mmoSimple: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
@@ -68,6 +69,7 @@ object frmHelp: TfrmHelp
     end
     object Miscellaneous: TPage
       object mmoMiscFunctions: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
@@ -84,6 +86,7 @@ object frmHelp: TfrmHelp
     end
     object Trigonometric: TPage
       object mmoTrigonometric: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
@@ -100,6 +103,7 @@ object frmHelp: TfrmHelp
     end
     object Dates: TPage
       object mmoDates: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
@@ -116,6 +120,7 @@ object frmHelp: TfrmHelp
     end
     object Settings: TPage
       object mmoSettings: TMemo
+        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0

@@ -1,6 +1,270 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: maincalculators.rsapril
+msgid "April"
+msgstr ""
+
+#: maincalculators.rsaugust
+msgid "August"
+msgstr ""
+
+#: maincalculators.rsdatesarethes
+msgid "Dates are the same"
+msgstr ""
+
+#: maincalculators.rsday
+msgid " day."
+msgstr ""
+
+#: maincalculators.rsday2
+msgid " day, "
+msgstr ""
+
+#: maincalculators.rsdayand
+msgid " day and "
+msgstr ""
+
+#: maincalculators.rsdays
+msgid " days, "
+msgstr ""
+
+#: maincalculators.rsdays2
+msgid " days."
+msgstr ""
+
+#: maincalculators.rsdaysand
+msgid " days and "
+msgstr ""
+
+#: maincalculators.rsdecember
+msgid "December"
+msgstr ""
+
+#: maincalculators.rseight
+msgid "eight"
+msgstr ""
+
+#: maincalculators.rseighteen
+msgid "eighteen"
+msgstr ""
+
+#: maincalculators.rseleven
+msgid "eleven"
+msgstr ""
+
+#: maincalculators.rsenddate
+msgid "End date"
+msgstr ""
+
+#: maincalculators.rsfebruary
+msgid "February"
+msgstr ""
+
+#: maincalculators.rsfifteen
+msgid "fifteen"
+msgstr ""
+
+#: maincalculators.rsfive
+msgid "five"
+msgstr ""
+
+#: maincalculators.rsfour
+msgid "four"
+msgstr ""
+
+#: maincalculators.rsfourteen
+msgid "fourteen"
+msgstr ""
+
+#: maincalculators.rsfriday
+msgid "Friday"
+msgstr ""
+
+#: maincalculators.rsinvalidopera
+msgid "Invalid Operator"
+msgstr ""
+
+#: maincalculators.rsjanuary
+msgid "January"
+msgstr ""
+
+#: maincalculators.rsjuly
+msgid "July"
+msgstr ""
+
+#: maincalculators.rsjune
+msgid "June"
+msgstr ""
+
+#: maincalculators.rsmarch
+msgid "March"
+msgstr ""
+
+#: maincalculators.rsmay
+msgid "May"
+msgstr ""
+
+#: maincalculators.rsmonday
+msgid "Monday"
+msgstr ""
+
+#: maincalculators.rsmonth
+msgid " month."
+msgstr ""
+
+#: maincalculators.rsmonthand
+msgid " month and "
+msgstr ""
+
+#: maincalculators.rsmonths
+msgid " months."
+msgstr ""
+
+#: maincalculators.rsnine
+msgid "nine"
+msgstr ""
+
+#: maincalculators.rsnineteen
+msgid "nineteen"
+msgstr ""
+
+#: maincalculators.rsnovember
+msgid "November"
+msgstr ""
+
+#: maincalculators.rsoctober
+msgid "October"
+msgstr ""
+
+#: maincalculators.rsof
+msgid " of "
+msgstr ""
+
+#: maincalculators.rsone
+msgid "one"
+msgstr ""
+
+#: maincalculators.rssaturday
+msgid "Saturday"
+msgstr ""
+
+#: maincalculators.rsseptember
+msgid "September"
+msgstr ""
+
+#: maincalculators.rsseven
+msgid "seven"
+msgstr ""
+
+#: maincalculators.rsseventeen
+msgid "seventeen"
+msgstr ""
+
+#: maincalculators.rssix
+msgid "six"
+msgstr ""
+
+#: maincalculators.rssixteen
+msgid "sixteen"
+msgstr ""
+
+#: maincalculators.rsstartdate
+msgid "Start date"
+msgstr ""
+
+#: maincalculators.rssunday
+msgid "Sunday"
+msgstr ""
+
+#: maincalculators.rsten
+msgid "ten"
+msgstr ""
+
+#: maincalculators.rsthirteen
+msgid "thirteen"
+msgstr ""
+
+#: maincalculators.rsthirty
+msgid "thirty"
+msgstr ""
+
+#: maincalculators.rsthirtyone
+msgid "thirty one"
+msgstr ""
+
+#: maincalculators.rsthree
+msgid "three"
+msgstr ""
+
+#: maincalculators.rsthursday
+msgid "Thursday"
+msgstr ""
+
+#: maincalculators.rstuesday
+msgid "Tuesday"
+msgstr ""
+
+#: maincalculators.rstwelve
+msgid "twelve"
+msgstr ""
+
+#: maincalculators.rstwenty
+msgid "twenty"
+msgstr ""
+
+#: maincalculators.rstwentyeight
+msgid "twenty eight"
+msgstr ""
+
+#: maincalculators.rstwentyfive
+msgid "twenty five"
+msgstr ""
+
+#: maincalculators.rstwentyfour
+msgid "twenty four"
+msgstr ""
+
+#: maincalculators.rstwentynine
+msgid "twenty nine"
+msgstr ""
+
+#: maincalculators.rstwentyone
+msgid "twenty one"
+msgstr ""
+
+#: maincalculators.rstwentyseven
+msgid "twenty seven"
+msgstr ""
+
+#: maincalculators.rstwentysix
+msgid "twenty six"
+msgstr ""
+
+#: maincalculators.rstwentythree
+msgid "twenty three"
+msgstr ""
+
+#: maincalculators.rstwentytwo
+msgid "twenty two"
+msgstr ""
+
+#: maincalculators.rstwo
+msgid "two"
+msgstr ""
+
+#: maincalculators.rswednesday
+msgid "Wednesday"
+msgstr ""
+
+#: maincalculators.rsyear
+msgid " year."
+msgstr ""
+
+#: maincalculators.rsyears
+msgid " years."
+msgstr ""
+
 #: tfrmhelp.btnok.caption
 msgctxt "tfrmhelp.btnok.caption"
 msgid "OK"
@@ -26,7 +290,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnacos.hint
 msgctxt "tfrmmycalculators.btnacos.hint"
-msgid "Calculate the  arch cosine"
+msgid "Calculate the arch cosine"
 msgstr ""
 
 #: tfrmmycalculators.btnacosh.caption
@@ -347,12 +611,12 @@ msgstr ""
 
 #: tfrmmycalculators.btnhypotenuse.caption
 msgctxt "tfrmmycalculators.btnhypotenuse.caption"
-msgid "Hip"
+msgid "Hyp"
 msgstr ""
 
 #: tfrmmycalculators.btnhypotenuse.hint
 msgctxt "tfrmmycalculators.btnhypotenuse.hint"
-msgid "Calcular a hipótenusa dum triângulo recto"
+msgid "Calculate the hypothenuse of a right triangle"
 msgstr ""
 
 #: tfrmmycalculators.btnlog.caption
@@ -480,7 +744,7 @@ msgstr ""
 
 #: tfrmmycalculators.btnradiansgradians.caption
 msgctxt "tfrmmycalculators.btnradiansgradians.caption"
-msgid "Rad.Grad"
+msgid "Rad-Grad"
 msgstr ""
 
 #: tfrmmycalculators.btnradiansgradians.hint
@@ -697,7 +961,7 @@ msgstr ""
 
 #: tfrmmycalculators.mnuhelphelp.caption
 msgctxt "tfrmmycalculators.mnuhelphelp.caption"
-msgid "A&uda"
+msgid "&Help"
 msgstr ""
 
 #: tfrmmycalculators.mnuhelphelp.hint
@@ -738,7 +1002,7 @@ msgid "Chinese"
 msgstr ""
 
 #: tfrmmycalculators.ppmenufrench.caption
-msgid "French  Republican"
+msgid "French Republican"
 msgstr ""
 
 #: tfrmmycalculators.ppmenugregorian.caption
@@ -799,26 +1063,27 @@ msgstr ""
 msgid "Preferences"
 msgstr ""
 
+#: tfrmpreferences.cblanguage.hint
+msgctxt "tfrmpreferences.cblanguage.hint"
+msgid "Select your prefered language"
+msgstr ""
+
+#: tfrmpreferences.cblanguage.text
+msgctxt "tfrmpreferences.cblanguage.text"
+msgid "English"
+msgstr ""
+
+#: tfrmpreferences.cblanguage.texthint
+msgctxt "tfrmpreferences.cblanguage.texthint"
+msgid "English"
+msgstr ""
+
 #: tfrmpreferences.cboxthemes.hint
 msgid "Select a theme, dark or light"
 msgstr ""
 
 #: tfrmpreferences.cboxthemes.text
 msgid "Light"
-msgstr ""
-
-#: tfrmpreferences.combobox1.hint
-msgid "Select your prefered language"
-msgstr ""
-
-#: tfrmpreferences.combobox1.text
-msgctxt "tfrmpreferences.combobox1.text"
-msgid "English"
-msgstr ""
-
-#: tfrmpreferences.combobox1.texthint
-msgctxt "tfrmpreferences.combobox1.texthint"
-msgid "English"
 msgstr ""
 
 #: tfrmpreferences.lbllanguage.caption

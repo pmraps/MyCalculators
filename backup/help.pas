@@ -6,13 +6,13 @@ interface
 
 uses
     Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-    ComCtrls;
+    ComCtrls, LocalizedForms, myResourceStrings;
 
 type
 
     { TfrmHelp }
 
-    TfrmHelp = class(TForm)
+    TfrmHelp = class(TLocalizedForm)
         btnOK: TButton;
         Dates: TPage;
         Description: TPage;

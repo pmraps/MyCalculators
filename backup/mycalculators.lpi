@@ -25,7 +25,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <BuildNr Value="38"/>
+      <BuildNr Value="45"/>
       <Language Value="0816"/>
       <Attributes pvaDebug="True"/>
       <StringTable CompanyName="HBCB"/>
@@ -76,6 +76,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Help"/>
+      </Unit>
+      <Unit>
+        <Filename Value="myresourcestrings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="myResourceStrings"/>
       </Unit>
     </Units>
   </ProjectOptions>

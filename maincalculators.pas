@@ -7,13 +7,13 @@ interface
 uses
     SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
     Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math, baseConvert,
-    MyCredits, Preferences, Help;
+    MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator, LocalizedForms;
 
 type
 
     { TfrmMyCalculators }
 
-    TfrmMyCalculators = class(TForm)
+    TfrmMyCalculators = class(TLocalizedForm)
       btnACos: TButton;
       btnACosH: TButton;
       btnACot: TButton;
@@ -218,9 +218,77 @@ type
       Num1, Num2, Result, Operators : String;
       Memory : extended;
   public
-        function CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
-        function DateDifference(firstDate, secondDate : TDate) : String;
+      function CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
+      function DateDifference(firstDate, secondDate : TDate) : String;
   end;
+
+resourcestring
+    rsInvalidOpera = 'Invalid Operator';
+    rsSunday = 'Sunday';
+    rsMonday = 'Monday';
+    rsTuesday = 'Tuesday';
+    rsWednesday = 'Wednesday';
+    rsThursday = 'Thursday';
+    rsFriday = 'Friday';
+    rsSaturday = 'Saturday';
+    rsOne = 'one';
+    rsTwo = 'two';
+    rsThree = 'three';
+    rsFour = 'four';
+    rsFive = 'five';
+    rsSix = 'six';
+    rsSeven = 'seven';
+    rsEight = 'eight';
+    rsNine = 'nine';
+    rsTen = 'ten';
+    rsEleven = 'eleven';
+    rsTwelve = 'twelve';
+    rsThirteen = 'thirteen';
+    rsFourteen = 'fourteen';
+    rsFifteen = 'fifteen';
+    rsSixteen = 'sixteen';
+    rsSeventeen = 'seventeen';
+    rsEighteen = 'eighteen';
+    rsNineteen = 'nineteen';
+    rsTwenty = 'twenty';
+    rsTwentyOne = 'twenty one';
+    rsTwentyTwo = 'twenty two';
+    rsTwentyThree = 'twenty three';
+    rsTwentyFour = 'twenty four';
+    rsTwentyFive = 'twenty five';
+    rsTwentySix = 'twenty six';
+    rsTwentySeven = 'twenty seven';
+    rsTwentyEight = 'twenty eight';
+    rsTwentyNine = 'twenty nine';
+    rsThirty = 'thirty';
+    rsThirtyOne = 'thirty one';
+    rsJanuary = 'January';
+    rsFebruary = 'February';
+    rsMarch = 'March';
+    rsApril = 'April';
+    rsMay = 'May';
+    rsJune = 'June';
+    rsJuly = 'July';
+    rsAugust = 'August';
+    rsSeptember = 'September';
+    rsOctober = 'October';
+    rsNovember = 'November';
+    rsDecember = 'December';
+    rsOf = ' of ';
+    rsEndDate = 'End date';
+    rsStartDate = 'Start date';
+    rsDatesAreTheS = 'Dates are the same';
+    rsYear = ' year.';
+    rsYears = ' years.';
+    rsMonth = ' month.';
+    rsMonthAnd = ' month and ';
+    rsDay = ' day.';
+    rsDayAnd = ' day and ';
+    rsDay2 = ' day, ';
+    rsMonths = ' months.';
+    rsDaysAnd = ' days and ';
+    rsDays = ' days, ';
+    rsDays2 = ' days.';
 
 var
     frmMyCalculators: TfrmMyCalculators;
@@ -234,14 +302,15 @@ implementation
 {$R *.lfm}
 procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
-    pnlSimple.Visible := true;
-    rdBtnSimpleCalculator.Checked := true;
-    pnlFunctions.Visible := false;
-    pnlTrigonometry.Visible := false;
-    pnlDatulator.Visible := false;
-    StTxtCalendarConversion.Caption := CalendarConversion(Now, 'G', 'G');
-    DTPickerEndDate.Date := Now();
-    DTPickerStartDate.Date := Now();
+//     SelectLanguage('');
+     pnlSimple.Visible := true;
+     rdBtnSimpleCalculator.Checked := true;
+     pnlFunctions.Visible := false;
+     pnlTrigonometry.Visible := false;
+     pnlDatulator.Visible := false;
+     StTxtCalendarConversion.Caption := CalendarConversion(Now, 'G', 'G');
+     DTPickerEndDate.Date := Now();
+     DTPickerStartDate.Date := Now();
 end;
 
 procedure TfrmMyCalculators.btnSevenClick(Sender: TObject);
@@ -862,7 +931,7 @@ var Number1, Number2 : extended;
         else
           begin
                Result := '';
-               MessageDlg('Operador inválido', mtInformation, [mbYes], 0);
+               MessageDlg(rsInvalidOpera, mtInformation, [mbYes], 0);
                txtFieldResult.Text := '';
                pnlDatulator.Visible := false;
                pnlFunctions.Visible := false;
@@ -933,64 +1002,64 @@ begin
      WDay := DayOfWeek(Date);
      SWDay := IntToStr(WDay);
      case WDay of
-          1 : SWDay := 'Sunday';
-          2 : SWDay := 'Monday';
-          3 : SWDay := 'Tuesday';
-          4 : SWDay := 'Wednesday';
-          5 : SWDay := 'Thursday';
-          6 : SWDay := 'Friday';
-          7 : SWDay := 'Saturday';
+          1 : SWDay := rsSunday;
+          2 : SWDay := rsMonday;
+          3 : SWDay := rsTuesday;
+          4 : SWDay := rsWednesday;
+          5 : SWDay := rsThursday;
+          6 : SWDay := rsFriday;
+          7 : SWDay := rsSaturday;
      end;
      case NDay of
-           1  : SDay := 'one';
-           2  : SDay := 'two';
-           3  : SDay := 'three';
-           4  : SDay := 'four';
-           5  : SDay := 'five';
-           6  : SDay := 'six';
-           7  : SDay := 'seven';
-           8  : SDay := 'eight';
-           9  : SDay := 'nine';
-           10 : SDay := 'ten';
-           11 : SDay := 'eleven';
-           12 : SDay := 'twelve';
-           13 : SDay := 'thirteen';
-           14 : SDay := 'fourteen';
-           15 : SDay := 'fifteen';
-           16 : SDay := 'sisteen';
-           17 : SDay := 'seventeen';
-           18 : SDay := 'eighteen';
-           19 : SDay := 'nineteen';
-           20 : SDay := 'twenty';
-           21 : SDay := 'twenty one';
-           22 : SDay := 'twenty two';
-           23 : SDay := 'twenty three';
-           24 : SDay := 'twenty four';
-           25 : SDay := 'twenty five';
-           26 : SDay := 'twenty six';
-           27 : SDay := 'twenty seven';
-           28 : SDay := 'twenty eight';
-           29 : SDay := 'twenty nine';
-           30 : SDay := 'thirty';
-           31 : SDay := 'thirty one';
+           1  : SDay := rsOne;
+           2  : SDay := rsTwo;
+           3  : SDay := rsThree;
+           4  : SDay := rsFour;
+           5  : SDay := rsFive;
+           6  : SDay := rsSix;
+           7  : SDay := rsSeven;
+           8  : SDay := rsEight;
+           9  : SDay := rsNine;
+           10 : SDay := rsTen;
+           11 : SDay := rsEleven;
+           12 : SDay := rsTwelve;
+           13 : SDay := rsThirteen;
+           14 : SDay := rsFourteen;
+           15 : SDay := rsFifteen;
+           16 : SDay := rsSixteen;
+           17 : SDay := rsSeventeen;
+           18 : SDay := rsEighteen;
+           19 : SDay := rsNineteen;
+           20 : SDay := rsTwenty;
+           21 : SDay := rsTwentyOne;
+           22 : SDay := rsTwentyTwo;
+           23 : SDay := rsTwentyThree;
+           24 : SDay := rsTwentyFour;
+           25 : SDay := rsTwentyFive;
+           26 : SDay := rsTwentySix;
+           27 : SDay := rsTwentySeven;
+           28 : SDay := rsTwentyEight;
+           29 : SDay := rsTwentyNine;
+           30 : SDay := rsThirty;
+           31 : SDay := rsThirtyOne;
      end;
      case NMonth of
-            1  : SMonth := 'January';
-            2  : SMonth := 'February';
-            3  : SMonth := 'March';
-            4  : SMonth := 'April';
-            5  : SMonth := 'May';
-            6  : SMonth := 'June';
-            7  : SMonth := 'July';
-            8  : SMonth := 'August';
-            9  : SMonth := 'September';
-            10 : SMonth := 'October';
-            11 : SMonth := 'November';
-            12 : SMonth := 'December';
+            1  : SMonth := rsJanuary;
+            2  : SMonth := rsFebruary;
+            3  : SMonth := rsMarch;
+            4  : SMonth := rsApril;
+            5  : SMonth := rsMay;
+            6  : SMonth := rsJune;
+            7  : SMonth := rsJuly;
+            8  : SMonth := rsAugust;
+            9  : SMonth := rsSeptember;
+            10 : SMonth := rsOctober;
+            11 : SMonth := rsNovember;
+            12 : SMonth := rsDecember;
      end;
      SYear := IntToStr(NYear);
 
-     CalendarConversion := SWDay + ', ' + SDay + ' of ' + SMonth + ' of ' + SYear;
+     CalendarConversion := SWDay + ', ' + SDay + rsOf + SMonth + rsOf + SYear;
 end;
 
 function TfrmMyCalculators.DateDifference(firstDate, secondDate : TDate) : String;
@@ -999,47 +1068,52 @@ var firstDay, firstMonth, firstYear : Word;
 begin
      if firstDate > secondDate then
          begin
-              lblStartDate.Caption := 'End date';                      // Flag the inversion of order
+              lblStartDate.Caption := rsEndDate;
+                                        // Flag the inversion of order
               lblStartDate.Font.Color := clRed;                        // with a red label
-              lblEndDate.Caption := 'Start date';
+              lblEndDate.Caption := rsStartDate;
          end
      else
          begin
               lblStartDate.Font.Color := clDefault;                    // Return labels to default colour
-              lblStartDate.Caption := 'Start date';
-              lblEndDate.Caption := 'End date';
+              lblStartDate.Caption := rsStartDate;
+              lblEndDate.Caption := rsEndDate;
          end;
      PeriodBetween(firstDate, secondDate, firstYear, firstMonth, firstDay);
      years := IntToStr(firstYear);
      months := IntToStr(firstMonth);
      days := IntToStr(firstDay);
-     if (days = '0') and (months = '0') and (years = '0') then DateDifference := years + 'Dates are the same'
-     else if (days = '0') and (months = '0') and (years = '1') then DateDifference := years + ' year.'
-          else if (days = '0') and (months = '0') and (years > '1') then DateDifference := years + ' years.'
-               else if (days = '0') and (months = '1') and (years = '0') then DateDifference := months + ' month.'
-                    else if (days = '0') and (months = '1') and (years = '1') then DateDifference := months + ' month and ' + years + ' year.'
-                         else if (days = '0') and (months = '1') and (years > '1') then DateDifference := months + ' month and ' + years + ' years.'
-                              else if (days = '0') and (months > '1') and (years = '0') then DateDifference := months + ' months and ' + years + ' year.'
-                                   else if (days = '0') and (months > '1') and (years = '1') then DateDifference := months + ' months and ' + years + ' year.'
-                                        else if (days = '0') and (months > '1') and (years > '1') then DateDifference := months + ' months and ' + years + ' years.'
-                                             else if (days = '1') and (months = '0') and (years = '0') then DateDifference := days + ' day, '
-                                                  else if (days = '1') and (months = '0') and (years = '1') then DateDifference := days + ' day and ' + years + ' year.'
-                                                       else if (days = '1') and (months = '0') and (years > '1') then DateDifference := days + ' day and ' + years + ' years.'
-                                                            else if (days = '1') and (months = '1') and (years = '0') then DateDifference := days + ' day and ' + months + ' month.'
-                                                                 else if (days = '1') and (months = '1') and (years = '1') then DateDifference := days + ' day, ' + months + ' month and ' + years + ' year.'
-                                                                      else if (days = '1') and (months = '1') and (years > '1') then DateDifference := days + ' day, ' + months + ' month and ' + years + ' years.'
-                                                                           else if (days = '1') and (months > '1') and (years = '0') then DateDifference := days + ' day and ' + months + ' months.'
-                                                                                else if (days = '1') and (months > '1') and (years = '1') then DateDifference := days + ' day, ' + months + ' months and ' + years + ' year.'
-                                                                                     else if (days = '1') and (months > '1') and (years > '1') then DateDifference := days + ' day, ' + months + ' months and ' + years + ' years.'
-                                                                                          else if (days > '1') and (months = '0') and (years = '0') then DateDifference := days + ' days.'
-                                                                                               else if (days > '1') and (months = '0') and (years = '1') then DateDifference := days + ' days and ' + years + ' year.'
-                                                                                                    else if (days > '1') and (months = '0') and (years > '1') then DateDifference := days + ' days and ' + years + ' years.'
-                                                                                                         else if (days > '1') and (months = '1') and (years = '0') then DateDifference := days + ' days and ' + months + ' month.'
-                                                                                                              else if (days > '1') and (months = '1') and (years = '1') then DateDifference := days + ' days, ' + months + ' month and ' + years + ' year.'
-                                                                                                                   else if (days > '1') and (months = '1') and (years > '1') then DateDifference := days + ' days, ' + months + ' month and ' + years + ' years.'
-                                                                                                                        else if (days > '1') and (months > '1') and (years = '0') then DateDifference := days + ' days and ' + months + ' months.'
-                                                                                                                             else if (days > '1') and (months > '1') and (years = '1') then DateDifference := days + ' days, ' + months + ' months and ' + years + ' year.'
-                                                                                                                                  else if (days > '1') and (months > '1') and (years > '1') then DateDifference := days + ' days, ' + months + ' months and ' + years + ' years.'
+     if (days = '0') and (months = '0') and (years = '0') then DateDifference
+         := years + rsDatesAreTheS
+     else if (days = '0') and (months = '0') and (years = '1')
+         then DateDifference := years + rsYear
+          else if (days = '0') and (months = '0') and (years > '1')
+              then DateDifference := years + rsYears
+               else if (days = '0') and (months = '1') and (years = '0')
+                   then DateDifference := months + ' '+ rsMonth
+                    else if (days = '0') and (months = '1') and (years = '1')
+                        then DateDifference := months + rsMonthAnd + years + rsYear
+                         else if (days = '0') and (months = '1') and (years > '1') then DateDifference := months + rsMonthAnd + years + rsYears
+                              else if (days = '0') and (months > '1') and (years = '0') then DateDifference := months + rsMonthAnd + years + rsYear
+                                   else if (days = '0') and (months > '1') and (years = '1') then DateDifference := months + rsMonthAnd + years + rsYear
+                                        else if (days = '0') and (months > '1') and (years > '1') then DateDifference := months + rsMonthAnd + years + rsYears
+                                             else if (days = '1') and (months = '0') and (years = '0') then DateDifference := days + rsDay
+                                                  else if (days = '1') and (months = '0') and (years = '1') then DateDifference := days + rsDayAnd + years + rsYear
+                                                       else if (days = '1') and (months = '0') and (years > '1') then DateDifference := days + rsDayAnd + years + rsYears
+                                                            else if (days = '1') and (months = '1') and (years = '0') then DateDifference := days + rsDayAnd + months + rsMonth
+                                                                 else if (days = '1') and (months = '1') and (years = '1') then DateDifference := days + rsDay2 + months + rsMonthAnd + years + rsYear
+                                                                      else if (days = '1') and (months = '1') and (years > '1') then DateDifference := days + rsDay2 + months + rsMonthAnd + years + rsYears
+                                                                           else if (days = '1') and (months > '1') and (years = '0') then DateDifference := days + rsDayAnd +  months + rsMonths
+                                                                                else if (days = '1') and (months > '1') and (years = '1') then DateDifference := days + rsDay2 + months + rsMonthAnd + years + rsYear
+                                                                                     else if (days = '1') and (months > '1') and (years > '1') then DateDifference := days + rsDay2 + months + rsMonthAnd + years + rsYears
+                                                                                          else if (days > '1') and (months = '0') and (years = '0') then DateDifference := days + rsDays2                                                                                               else if (days > '1') and (months = '0') and (years = '1') then DateDifference :=  days + rsDaysAnd + years  + rsYear
+                                                                                                    else if (days > '1') and (months = '0') and (years > '1') then DateDifference := days + rsDaysAnd + years + rsYears
+                                                                                                         else if (days > '1') and (months = '1') and (years = '0') then DateDifference := days + rsDaysAnd + months + rsMonth
+                                                                                                              else if (days > '1') and (months = '1') and (years = '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYear
+                                                                                                                   else if (days > '1') and (months = '1') and (years > '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYears
+                                                                                                                        else if (days > '1') and (months > '1') and (years = '0') then DateDifference := days + rsDaysAnd + months + rsMonths
+                                                                                                                             else if (days > '1') and (months > '1') and (years = '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYear
+                                                                                                                                  else if (days > '1') and (months > '1') and (years > '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYears
 end;
 
 end.

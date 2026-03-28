@@ -1,4 +1,4 @@
-object frmMyCalculators: TfrmMyCalculators
+inherited frmMyCalculators: TfrmMyCalculators
   Left = 488
   Height = 584
   Top = 250
@@ -20,9 +20,8 @@ object frmMyCalculators: TfrmMyCalculators
   Menu = mainMenu
   Position = poDesktopCenter
   ShowHint = True
-  LCLVersion = '4.4.0.0'
   OnCreate = FormCreate
-  object txtFieldResult: TEdit
+  object txtFieldResult: TEdit[0]
     Left = 24
     Height = 38
     Top = 8
@@ -40,7 +39,7 @@ object frmMyCalculators: TfrmMyCalculators
     ParentFont = False
     TabOrder = 0
   end
-  object pnlCalculatorType: TPanel
+  object pnlCalculatorType: TPanel[1]
     Left = 24
     Height = 24
     Top = 48
@@ -125,7 +124,7 @@ object frmMyCalculators: TfrmMyCalculators
       OnClick = rdBtnDateCalculatorClick
     end
   end
-  object pnlSimple: TPanel
+  object pnlSimple: TPanel[2]
     Left = 24
     Height = 312
     Top = 72
@@ -385,7 +384,7 @@ object frmMyCalculators: TfrmMyCalculators
       OnClick = btnCommaClick
     end
   end
-  object pnlTrigonometry: TPanel
+  object pnlTrigonometry: TPanel[3]
     Left = 680
     Height = 208
     Top = 72
@@ -454,9 +453,9 @@ object frmMyCalculators: TfrmMyCalculators
       OnClick = btnASinHClick
     end
     object btnSecant: TButton
-      Left = 2
+      Left = 0
       Height = 25
-      Hint = 'Calcular a secante'
+      Hint = 'Calculate the secant'
       Top = 120
       Width = 70
       Caption = 'Sec'
@@ -468,7 +467,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnCoSecant: TButton
       Left = 2
       Height = 25
-      Hint = 'Calcular a cosecante'
+      Hint = 'Calculte the cosecant'
       Top = 150
       Width = 70
       Caption = 'CSec'
@@ -495,7 +494,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnACos: TButton
       Left = 72
       Height = 25
-      Hint = 'Calculate the  arch cosine'
+      Hint = 'Calculate the arch cosine'
       Top = 60
       Width = 70
       Caption = 'ACos'
@@ -515,7 +514,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnDegreesRadians: TButton
       Left = 72
       Height = 25
-      Hint = 'Converter graus em radianos'
+      Hint = 'Convert degrees to radians'
       Top = 120
       Width = 70
       Caption = 'Deg-Rad'
@@ -531,7 +530,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnDegreesGradians: TButton
       Left = 72
       Height = 25
-      Hint = 'Converter graus em gradianos'
+      Hint = 'Convert degrees to gradians'
       Top = 150
       Width = 70
       Caption = 'Deg-Grad'
@@ -607,7 +606,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnRadiansDegrees: TButton
       Left = 144
       Height = 25
-      Hint = 'Converter radianos em graus'
+      Hint = 'Convert radians to degrees'
       Top = 120
       Width = 70
       Caption = 'Rad-Deg'
@@ -623,10 +622,10 @@ object frmMyCalculators: TfrmMyCalculators
     object btnRadiansGradians: TButton
       Left = 144
       Height = 25
-      Hint = 'Converter radianos em gradianos'
+      Hint = 'Convert radians to gradians'
       Top = 150
       Width = 70
-      Caption = 'Rad.Grad'
+      Caption = 'Rad-Grad'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -649,17 +648,17 @@ object frmMyCalculators: TfrmMyCalculators
     object btnHypotenuse: TButton
       Left = 216
       Height = 25
-      Hint = 'Calcular a hipótenusa dum triângulo recto'
+      Hint = 'Calculate the hypothenuse of a right triangle'
       Top = 88
       Width = 70
-      Caption = 'Hip'
+      Caption = 'Hyp'
       TabOrder = 21
       OnClick = btnHypotenuseClick
     end
     object btnGradiansDegrees: TButton
       Left = 216
       Height = 25
-      Hint = 'Converter gradianos em graus'
+      Hint = 'Convert gradians to degrees'
       Top = 120
       Width = 70
       Caption = 'Grad-Deg'
@@ -675,7 +674,7 @@ object frmMyCalculators: TfrmMyCalculators
     object btnGradiansRadians: TButton
       Left = 216
       Height = 25
-      Hint = 'Converter gradianos em radianos'
+      Hint = 'Convert gradians to radians'
       Top = 150
       Width = 70
       Caption = 'Grad-Rad'
@@ -689,7 +688,7 @@ object frmMyCalculators: TfrmMyCalculators
       OnClick = btnGradiansRadiansClick
     end
   end
-  object pnlFunctions: TPanel
+  object pnlFunctions: TPanel[4]
     Left = 360
     Height = 264
     Top = 72
@@ -931,7 +930,7 @@ object frmMyCalculators: TfrmMyCalculators
       OnClick = btnRadiansToCyclesClick
     end
   end
-  object pnlDatulator: TPanel
+  object pnlDatulator: TPanel[5]
     Left = 24
     Height = 256
     Top = 320
@@ -1168,7 +1167,7 @@ object frmMyCalculators: TfrmMyCalculators
       OnClick = BtnActualCalendarClick
     end
   end
-  object mainMenu: TMainMenu
+  object mainMenu: TMainMenu[6]
     AutoLineReduction = maManual
     Images = ImageList
     Left = 368
@@ -1200,7 +1199,7 @@ object frmMyCalculators: TfrmMyCalculators
       Hint = 'Help and info for the program'
       ShortCut = 32842
       object mnuHelpHelp: TMenuItem
-        Caption = 'A&uda'
+        Caption = '&Help'
         Hint = 'Opens the help window'
         ImageIndex = 9
         ShortCut = 32842
@@ -1215,7 +1214,7 @@ object frmMyCalculators: TfrmMyCalculators
       end
     end
   end
-  object ppMenuCalendars: TPopupMenu
+  object ppMenuCalendars: TPopupMenu[7]
     Images = ImageList
     Left = 496
     Top = 312
@@ -1230,7 +1229,7 @@ object frmMyCalculators: TfrmMyCalculators
       OnClick = ppMenuJulianClick
     end
     object ppMenuFrench: TMenuItem
-      Caption = 'French  Republican'
+      Caption = 'French Republican'
       Enabled = False
       ImageIndex = 2
       OnClick = ppMenuFrenchClick
@@ -1254,7 +1253,7 @@ object frmMyCalculators: TfrmMyCalculators
       OnClick = ppMenuArabClick
     end
   end
-  object ImageList: TImageList
+  object ImageList: TImageList[8]
     Left = 616
     Top = 312
     Bitmap = {

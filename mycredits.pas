@@ -6,13 +6,13 @@ interface
 
 uses
     Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls,
-    LclIntF;
+    LclIntF, LocalizedForms;
 
 type
 
     { TfrmCredits }
 
-    TfrmCredits = class(TForm)
+    TfrmCredits = class(TLocalizedForm)
         PgCtrlCredits: TPageControl;
         ScrllBarCreditsVertical: TScrollBar;
         ScrllBarContributorsVertical: TScrollBar;

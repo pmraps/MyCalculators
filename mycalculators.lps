@@ -8,9 +8,10 @@
       <Unit>
         <Filename Value="mycalculators.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="29"/>
-        <UsageCount Value="56"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="77" Y="13"/>
+        <UsageCount Value="64"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="maincalculators.pas"/>
@@ -20,9 +21,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="331"/>
-        <CursorPos X="2" Y="196"/>
-        <UsageCount Value="56"/>
+        <TopLine Value="199"/>
+        <CursorPos X="25" Y="219"/>
+        <UsageCount Value="64"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -33,10 +34,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Preferences"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="6"/>
-        <CursorPos X="47" Y="20"/>
-        <UsageCount Value="36"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="100"/>
+        <CursorPos X="3" Y="125"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -48,11 +49,19 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Help"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="9"/>
-        <CursorPos X="47" Y="31"/>
-        <UsageCount Value="27"/>
+        <CursorPos X="29" Y="9"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="myresourcestrings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="myResourceStrings"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="17" Y="10"/>
+        <UsageCount Value="28"/>
+        <Loaded Value="True"/>
       </Unit>
     </Units>
     <RunParams>
@@ -63,13 +72,16 @@
   <Debugging>
     <Watches>
       <Item>
-        <Expression Value="temp"/>
+        <Expression Value="lang"/>
       </Item>
       <Item>
-        <Expression Value="firstNMonth"/>
+        <Expression Value="p"/>
       </Item>
       <Item>
-        <Expression Value="secondNMonth"/>
+        <Expression Value="ALang"/>
+      </Item>
+      <Item>
+        <Expression Value="i"/>
       </Item>
     </Watches>
   </Debugging>

@@ -1,4 +1,4 @@
-object frmHelp: TfrmHelp
+inherited frmHelp: TfrmHelp
   Left = 488
   Height = 251
   Top = 250
@@ -11,14 +11,13 @@ object frmHelp: TfrmHelp
   ClientWidth = 535
   ParentFont = True
   Position = poOwnerFormCenter
-  LCLVersion = '4.4.0.0'
   Visible = True
-  object NtBookMainHelp: TNotebook
+  object NtBookMainHelp: TNotebook[0]
     Left = 200
     Height = 200
     Top = 0
     Width = 330
-    PageIndex = 5
+    PageIndex = 0
     TabOrder = 0
     object Description: TPage
       object mmoDescription: TMemo
@@ -141,7 +140,7 @@ object frmHelp: TfrmHelp
       end
     end
   end
-  object btnOK: TButton
+  object btnOK: TButton[1]
     Left = 460
     Height = 25
     Hint = 'Close the help system'
@@ -153,7 +152,7 @@ object frmHelp: TfrmHelp
     TabOrder = 1
     OnClick = btnOKClick
   end
-  object TrViewHelpIndex: TTreeView
+  object TrViewHelpIndex: TTreeView[2]
     Left = 0
     Height = 232
     Hint = 'Click to open the corresponding page'
