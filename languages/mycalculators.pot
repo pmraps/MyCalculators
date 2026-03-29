@@ -2,267 +2,723 @@ msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
 #: maincalculators.rsapril
+msgctxt "maincalculators.rsapril"
 msgid "April"
 msgstr ""
 
 #: maincalculators.rsaugust
+msgctxt "maincalculators.rsaugust"
 msgid "August"
 msgstr ""
 
 #: maincalculators.rsdatesarethes
+msgctxt "maincalculators.rsdatesarethes"
 msgid "Dates are the same"
 msgstr ""
 
 #: maincalculators.rsday
+msgctxt "maincalculators.rsday"
 msgid " day."
 msgstr ""
 
 #: maincalculators.rsday2
+msgctxt "maincalculators.rsday2"
 msgid " day, "
 msgstr ""
 
 #: maincalculators.rsdayand
+msgctxt "maincalculators.rsdayand"
 msgid " day and "
 msgstr ""
 
 #: maincalculators.rsdays
+msgctxt "maincalculators.rsdays"
 msgid " days, "
 msgstr ""
 
 #: maincalculators.rsdays2
+msgctxt "maincalculators.rsdays2"
 msgid " days."
 msgstr ""
 
 #: maincalculators.rsdaysand
+msgctxt "maincalculators.rsdaysand"
 msgid " days and "
 msgstr ""
 
 #: maincalculators.rsdecember
+msgctxt "maincalculators.rsdecember"
 msgid "December"
 msgstr ""
 
 #: maincalculators.rseight
+msgctxt "maincalculators.rseight"
 msgid "eight"
 msgstr ""
 
 #: maincalculators.rseighteen
+msgctxt "maincalculators.rseighteen"
 msgid "eighteen"
 msgstr ""
 
 #: maincalculators.rseleven
+msgctxt "maincalculators.rseleven"
 msgid "eleven"
 msgstr ""
 
 #: maincalculators.rsenddate
+msgctxt "maincalculators.rsenddate"
 msgid "End date"
 msgstr ""
 
 #: maincalculators.rsfebruary
+msgctxt "maincalculators.rsfebruary"
 msgid "February"
 msgstr ""
 
 #: maincalculators.rsfifteen
+msgctxt "maincalculators.rsfifteen"
 msgid "fifteen"
 msgstr ""
 
 #: maincalculators.rsfive
+msgctxt "maincalculators.rsfive"
 msgid "five"
 msgstr ""
 
 #: maincalculators.rsfour
+msgctxt "maincalculators.rsfour"
 msgid "four"
 msgstr ""
 
 #: maincalculators.rsfourteen
+msgctxt "maincalculators.rsfourteen"
 msgid "fourteen"
 msgstr ""
 
 #: maincalculators.rsfriday
+msgctxt "maincalculators.rsfriday"
 msgid "Friday"
 msgstr ""
 
 #: maincalculators.rsinvalidopera
+msgctxt "maincalculators.rsinvalidopera"
 msgid "Invalid Operator"
 msgstr ""
 
 #: maincalculators.rsjanuary
+msgctxt "maincalculators.rsjanuary"
 msgid "January"
 msgstr ""
 
 #: maincalculators.rsjuly
+msgctxt "maincalculators.rsjuly"
 msgid "July"
 msgstr ""
 
 #: maincalculators.rsjune
+msgctxt "maincalculators.rsjune"
 msgid "June"
 msgstr ""
 
 #: maincalculators.rsmarch
+msgctxt "maincalculators.rsmarch"
 msgid "March"
 msgstr ""
 
 #: maincalculators.rsmay
+msgctxt "maincalculators.rsmay"
 msgid "May"
 msgstr ""
 
 #: maincalculators.rsmonday
+msgctxt "maincalculators.rsmonday"
 msgid "Monday"
 msgstr ""
 
 #: maincalculators.rsmonth
+msgctxt "maincalculators.rsmonth"
 msgid " month."
 msgstr ""
 
 #: maincalculators.rsmonthand
+msgctxt "maincalculators.rsmonthand"
 msgid " month and "
 msgstr ""
 
 #: maincalculators.rsmonths
+msgctxt "maincalculators.rsmonths"
 msgid " months."
 msgstr ""
 
 #: maincalculators.rsnine
+msgctxt "maincalculators.rsnine"
 msgid "nine"
 msgstr ""
 
 #: maincalculators.rsnineteen
+msgctxt "maincalculators.rsnineteen"
 msgid "nineteen"
 msgstr ""
 
 #: maincalculators.rsnovember
+msgctxt "maincalculators.rsnovember"
 msgid "November"
 msgstr ""
 
 #: maincalculators.rsoctober
+msgctxt "maincalculators.rsoctober"
 msgid "October"
 msgstr ""
 
 #: maincalculators.rsof
+msgctxt "maincalculators.rsof"
 msgid " of "
 msgstr ""
 
 #: maincalculators.rsone
+msgctxt "maincalculators.rsone"
 msgid "one"
 msgstr ""
 
 #: maincalculators.rssaturday
+msgctxt "maincalculators.rssaturday"
 msgid "Saturday"
 msgstr ""
 
 #: maincalculators.rsseptember
+msgctxt "maincalculators.rsseptember"
 msgid "September"
 msgstr ""
 
 #: maincalculators.rsseven
+msgctxt "maincalculators.rsseven"
 msgid "seven"
 msgstr ""
 
 #: maincalculators.rsseventeen
+msgctxt "maincalculators.rsseventeen"
 msgid "seventeen"
 msgstr ""
 
 #: maincalculators.rssix
+msgctxt "maincalculators.rssix"
 msgid "six"
 msgstr ""
 
 #: maincalculators.rssixteen
+msgctxt "maincalculators.rssixteen"
 msgid "sixteen"
 msgstr ""
 
 #: maincalculators.rsstartdate
+msgctxt "maincalculators.rsstartdate"
 msgid "Start date"
 msgstr ""
 
 #: maincalculators.rssunday
+msgctxt "maincalculators.rssunday"
 msgid "Sunday"
 msgstr ""
 
 #: maincalculators.rsten
+msgctxt "maincalculators.rsten"
 msgid "ten"
 msgstr ""
 
 #: maincalculators.rsthirteen
+msgctxt "maincalculators.rsthirteen"
 msgid "thirteen"
 msgstr ""
 
 #: maincalculators.rsthirty
+msgctxt "maincalculators.rsthirty"
 msgid "thirty"
 msgstr ""
 
 #: maincalculators.rsthirtyone
+msgctxt "maincalculators.rsthirtyone"
 msgid "thirty one"
 msgstr ""
 
 #: maincalculators.rsthree
+msgctxt "maincalculators.rsthree"
 msgid "three"
 msgstr ""
 
 #: maincalculators.rsthursday
+msgctxt "maincalculators.rsthursday"
 msgid "Thursday"
 msgstr ""
 
 #: maincalculators.rstuesday
+msgctxt "maincalculators.rstuesday"
 msgid "Tuesday"
 msgstr ""
 
 #: maincalculators.rstwelve
+msgctxt "maincalculators.rstwelve"
 msgid "twelve"
 msgstr ""
 
 #: maincalculators.rstwenty
+msgctxt "maincalculators.rstwenty"
 msgid "twenty"
 msgstr ""
 
 #: maincalculators.rstwentyeight
+msgctxt "maincalculators.rstwentyeight"
 msgid "twenty eight"
 msgstr ""
 
 #: maincalculators.rstwentyfive
+msgctxt "maincalculators.rstwentyfive"
 msgid "twenty five"
 msgstr ""
 
 #: maincalculators.rstwentyfour
+msgctxt "maincalculators.rstwentyfour"
 msgid "twenty four"
 msgstr ""
 
 #: maincalculators.rstwentynine
+msgctxt "maincalculators.rstwentynine"
 msgid "twenty nine"
 msgstr ""
 
 #: maincalculators.rstwentyone
+msgctxt "maincalculators.rstwentyone"
 msgid "twenty one"
 msgstr ""
 
 #: maincalculators.rstwentyseven
+msgctxt "maincalculators.rstwentyseven"
 msgid "twenty seven"
 msgstr ""
 
 #: maincalculators.rstwentysix
+msgctxt "maincalculators.rstwentysix"
 msgid "twenty six"
 msgstr ""
 
 #: maincalculators.rstwentythree
+msgctxt "maincalculators.rstwentythree"
 msgid "twenty three"
 msgstr ""
 
 #: maincalculators.rstwentytwo
+msgctxt "maincalculators.rstwentytwo"
 msgid "twenty two"
 msgstr ""
 
 #: maincalculators.rstwo
+msgctxt "maincalculators.rstwo"
 msgid "two"
 msgstr ""
 
 #: maincalculators.rswednesday
+msgctxt "maincalculators.rswednesday"
 msgid "Wednesday"
 msgstr ""
 
 #: maincalculators.rsyear
+msgctxt "maincalculators.rsyear"
 msgid " year."
 msgstr ""
 
 #: maincalculators.rsyears
+msgctxt "maincalculators.rsyears"
 msgid " years."
+msgstr ""
+
+#: myresourcestrings.rsapril
+msgctxt "myresourcestrings.rsapril"
+msgid "April"
+msgstr ""
+
+#: myresourcestrings.rsaugust
+msgctxt "myresourcestrings.rsaugust"
+msgid "August"
+msgstr ""
+
+#: myresourcestrings.rsdatesarethes
+msgctxt "myresourcestrings.rsdatesarethes"
+msgid "Dates are the same"
+msgstr ""
+
+#: myresourcestrings.rsday
+msgctxt "myresourcestrings.rsday"
+msgid " day."
+msgstr ""
+
+#: myresourcestrings.rsday2
+msgctxt "myresourcestrings.rsday2"
+msgid " day, "
+msgstr ""
+
+#: myresourcestrings.rsdayand
+msgctxt "myresourcestrings.rsdayand"
+msgid " day and "
+msgstr ""
+
+#: myresourcestrings.rsdays
+msgctxt "myresourcestrings.rsdays"
+msgid " days, "
+msgstr ""
+
+#: myresourcestrings.rsdays2
+msgctxt "myresourcestrings.rsdays2"
+msgid " days."
+msgstr ""
+
+#: myresourcestrings.rsdaysand
+msgctxt "myresourcestrings.rsdaysand"
+msgid " days and "
+msgstr ""
+
+#: myresourcestrings.rsdecember
+msgctxt "myresourcestrings.rsdecember"
+msgid "December"
+msgstr ""
+
+#: myresourcestrings.rseight
+msgctxt "myresourcestrings.rseight"
+msgid "eight"
+msgstr ""
+
+#: myresourcestrings.rseighteen
+msgctxt "myresourcestrings.rseighteen"
+msgid "eighteen"
+msgstr ""
+
+#: myresourcestrings.rseleven
+msgctxt "myresourcestrings.rseleven"
+msgid "eleven"
+msgstr ""
+
+#: myresourcestrings.rsenddate
+msgctxt "myresourcestrings.rsenddate"
+msgid "End date"
+msgstr ""
+
+#: myresourcestrings.rsfebruary
+msgctxt "myresourcestrings.rsfebruary"
+msgid "February"
+msgstr ""
+
+#: myresourcestrings.rsfifteen
+msgctxt "myresourcestrings.rsfifteen"
+msgid "fifteen"
+msgstr ""
+
+#: myresourcestrings.rsfive
+msgctxt "myresourcestrings.rsfive"
+msgid "five"
+msgstr ""
+
+#: myresourcestrings.rsfour
+msgctxt "myresourcestrings.rsfour"
+msgid "four"
+msgstr ""
+
+#: myresourcestrings.rsfourteen
+msgctxt "myresourcestrings.rsfourteen"
+msgid "fourteen"
+msgstr ""
+
+#: myresourcestrings.rsfriday
+msgctxt "myresourcestrings.rsfriday"
+msgid "Friday"
+msgstr ""
+
+#: myresourcestrings.rsinvalidopera
+msgctxt "myresourcestrings.rsinvalidopera"
+msgid "Invalid Operator"
+msgstr ""
+
+#: myresourcestrings.rsjanuary
+msgctxt "myresourcestrings.rsjanuary"
+msgid "January"
+msgstr ""
+
+#: myresourcestrings.rsjuly
+msgctxt "myresourcestrings.rsjuly"
+msgid "July"
+msgstr ""
+
+#: myresourcestrings.rsjune
+msgctxt "myresourcestrings.rsjune"
+msgid "June"
+msgstr ""
+
+#: myresourcestrings.rsmarch
+msgctxt "myresourcestrings.rsmarch"
+msgid "March"
+msgstr ""
+
+#: myresourcestrings.rsmay
+msgctxt "myresourcestrings.rsmay"
+msgid "May"
+msgstr ""
+
+#: myresourcestrings.rsmonday
+msgctxt "myresourcestrings.rsmonday"
+msgid "Monday"
+msgstr ""
+
+#: myresourcestrings.rsmonth
+msgctxt "myresourcestrings.rsmonth"
+msgid " month."
+msgstr ""
+
+#: myresourcestrings.rsmonthand
+msgctxt "myresourcestrings.rsmonthand"
+msgid " month and "
+msgstr ""
+
+#: myresourcestrings.rsmonths
+msgctxt "myresourcestrings.rsmonths"
+msgid " months."
+msgstr ""
+
+#: myresourcestrings.rsnine
+msgctxt "myresourcestrings.rsnine"
+msgid "nine"
+msgstr ""
+
+#: myresourcestrings.rsnineteen
+msgctxt "myresourcestrings.rsnineteen"
+msgid "nineteen"
+msgstr ""
+
+#: myresourcestrings.rsnovember
+msgctxt "myresourcestrings.rsnovember"
+msgid "November"
+msgstr ""
+
+#: myresourcestrings.rsoctober
+msgctxt "myresourcestrings.rsoctober"
+msgid "October"
+msgstr ""
+
+#: myresourcestrings.rsof
+msgctxt "myresourcestrings.rsof"
+msgid " of "
+msgstr ""
+
+#: myresourcestrings.rsone
+msgctxt "myresourcestrings.rsone"
+msgid "one"
+msgstr ""
+
+#: myresourcestrings.rssaturday
+msgctxt "myresourcestrings.rssaturday"
+msgid "Saturday"
+msgstr ""
+
+#: myresourcestrings.rsseptember
+msgctxt "myresourcestrings.rsseptember"
+msgid "September"
+msgstr ""
+
+#: myresourcestrings.rsseven
+msgctxt "myresourcestrings.rsseven"
+msgid "seven"
+msgstr ""
+
+#: myresourcestrings.rsseventeen
+msgctxt "myresourcestrings.rsseventeen"
+msgid "seventeen"
+msgstr ""
+
+#: myresourcestrings.rssix
+msgctxt "myresourcestrings.rssix"
+msgid "six"
+msgstr ""
+
+#: myresourcestrings.rssixteen
+msgctxt "myresourcestrings.rssixteen"
+msgid "sixteen"
+msgstr ""
+
+#: myresourcestrings.rsstartdate
+msgctxt "myresourcestrings.rsstartdate"
+msgid "Start date"
+msgstr ""
+
+#: myresourcestrings.rssunday
+msgctxt "myresourcestrings.rssunday"
+msgid "Sunday"
+msgstr ""
+
+#: myresourcestrings.rsten
+msgctxt "myresourcestrings.rsten"
+msgid "ten"
+msgstr ""
+
+#: myresourcestrings.rsthirteen
+msgctxt "myresourcestrings.rsthirteen"
+msgid "thirteen"
+msgstr ""
+
+#: myresourcestrings.rsthirty
+msgctxt "myresourcestrings.rsthirty"
+msgid "thirty"
+msgstr ""
+
+#: myresourcestrings.rsthirtyone
+msgctxt "myresourcestrings.rsthirtyone"
+msgid "thirty one"
+msgstr ""
+
+#: myresourcestrings.rsthree
+msgctxt "myresourcestrings.rsthree"
+msgid "three"
+msgstr ""
+
+#: myresourcestrings.rsthursday
+msgctxt "myresourcestrings.rsthursday"
+msgid "Thursday"
+msgstr ""
+
+#: myresourcestrings.rstuesday
+msgctxt "myresourcestrings.rstuesday"
+msgid "Tuesday"
+msgstr ""
+
+#: myresourcestrings.rstwelve
+msgctxt "myresourcestrings.rstwelve"
+msgid "twelve"
+msgstr ""
+
+#: myresourcestrings.rstwenty
+msgctxt "myresourcestrings.rstwenty"
+msgid "twenty"
+msgstr ""
+
+#: myresourcestrings.rstwentyeight
+msgctxt "myresourcestrings.rstwentyeight"
+msgid "twenty eight"
+msgstr ""
+
+#: myresourcestrings.rstwentyfive
+msgctxt "myresourcestrings.rstwentyfive"
+msgid "twenty five"
+msgstr ""
+
+#: myresourcestrings.rstwentyfour
+msgctxt "myresourcestrings.rstwentyfour"
+msgid "twenty four"
+msgstr ""
+
+#: myresourcestrings.rstwentynine
+msgctxt "myresourcestrings.rstwentynine"
+msgid "twenty nine"
+msgstr ""
+
+#: myresourcestrings.rstwentyone
+msgctxt "myresourcestrings.rstwentyone"
+msgid "twenty one"
+msgstr ""
+
+#: myresourcestrings.rstwentyseven
+msgctxt "myresourcestrings.rstwentyseven"
+msgid "twenty seven"
+msgstr ""
+
+#: myresourcestrings.rstwentysix
+msgctxt "myresourcestrings.rstwentysix"
+msgid "twenty six"
+msgstr ""
+
+#: myresourcestrings.rstwentythree
+msgctxt "myresourcestrings.rstwentythree"
+msgid "twenty three"
+msgstr ""
+
+#: myresourcestrings.rstwentytwo
+msgctxt "myresourcestrings.rstwentytwo"
+msgid "twenty two"
+msgstr ""
+
+#: myresourcestrings.rstwo
+msgctxt "myresourcestrings.rstwo"
+msgid "two"
+msgstr ""
+
+#: myresourcestrings.rswednesday
+msgctxt "myresourcestrings.rswednesday"
+msgid "Wednesday"
+msgstr ""
+
+#: myresourcestrings.rsyear
+msgctxt "myresourcestrings.rsyear"
+msgid " year."
+msgstr ""
+
+#: myresourcestrings.rsyears
+msgctxt "myresourcestrings.rsyears"
+msgid " years."
+msgstr ""
+
+#: tfrmcredits.sttxtcontributors1.caption
+msgid "Pedro Albuquerque - author, translator"
+msgstr ""
+
+#: tfrmcredits.sttxtcredits1.caption
+msgid "Bart Broersma and Flying Sheep Inc."
+msgstr ""
+
+#: tfrmcredits.sttxtcredits10.caption
+msgid "SVG repo"
+msgstr ""
+
+#: tfrmcredits.sttxtcredits2.caption
+msgid "FreePascal Wiki"
+msgstr ""
+
+#: tfrmcredits.sttxtcredits3.caption
+msgid "Mosque Icon"
+msgstr ""
+
+#: tfrmcredits.sttxtcredits4.caption
+msgid "Settings Icon"
+msgstr ""
+
+#: tfrmcredits.sttxtcredits5.caption
+msgid "Credits Icon"
+msgstr ""
+
+#: tfrmcredits.sttxtcredits6.caption
+msgid "Calculator Icon"
+msgstr ""
+
+#: tfrmcredits.sttxtcredits7.caption
+msgid "Help Icon"
+msgstr ""
+
+#: tfrmcredits.sttxtcredits8.caption
+msgid "mailto procedure - balazsszekely"
+msgstr ""
+
+#: tfrmcredits.sttxtcredits9.caption
+msgid "Book Icon"
+msgstr ""
+
+#: tfrmcredits.tbshtcreditscontributors.caption
+msgid "Contributors"
+msgstr ""
+
+#: tfrmcredits.tbshtcreditscontributors.hint
+msgid "Displays a list of translators and contributors"
+msgstr ""
+
+#: tfrmcredits.tbshtcreditscredits.caption
+msgid "Credits"
+msgstr ""
+
+#: tfrmcredits.tbshtcreditscredits.hint
+msgid "Display a list of sources used in the program"
 msgstr ""
 
 #: tfrmhelp.btnok.caption
@@ -991,6 +1447,14 @@ msgstr ""
 
 #: tfrmmycalculators.mnumainhelp.hint
 msgid "Help and info for the program"
+msgstr ""
+
+#: tfrmmycalculators.mnutodolist.caption
+msgid "Todo List"
+msgstr ""
+
+#: tfrmmycalculators.mnutodolist.hint
+msgid "Things to be added"
 msgstr ""
 
 #: tfrmmycalculators.ppmenuarab.caption

@@ -16,7 +16,6 @@ inherited frmPreferences: TfrmPreferences
     AutoSize = False
     Color = clWhite
     ItemHeight = 15
-    ItemIndex = 0
     Items.Strings = (
       'en - English'
       'es - Español'

@@ -17,8 +17,8 @@ type
         ScrllBarCreditsVertical: TScrollBar;
         ScrllBarContributorsVertical: TScrollBar;
         StTxtCredits8: TStaticText;
-        StaticText2: TStaticText;
-        StaticText3: TStaticText;
+        StTxtCredits9: TStaticText;
+        StTxtCredits10: TStaticText;
         StTxtContributors1: TStaticText;
         StTxtCredits7: TStaticText;
         StTxtCredits6: TStaticText;
@@ -29,8 +29,10 @@ type
         StTxtCredits1: TStaticText;
         TbShtCreditsContributors: TTabSheet;
         TbShtCreditsCredits: TTabSheet;
-        procedure StaticText2Click(Sender: TObject);
-        procedure StaticText2MouseEnter(Sender: TObject);
+        procedure StTxtCredits9Click(Sender: TObject);
+        procedure StTxtCredits9MouseEnter(Sender: TObject);
+        procedure StTxtCredits10Click(Sender: TObject);
+        procedure StTxtCredits10MouseEnter(Sender: TObject);
         procedure StTxtContributors1Click(Sender: TObject);
         procedure StTxtCredits6Click(Sender: TObject);
         procedure StTxtCredits1Click(Sender: TObject);
@@ -49,6 +51,8 @@ type
         procedure StTxtCredits8MouseEnter(Sender: TObject);
     private
 
+    protected
+             procedure UpdateTranslation(ALang : String); override;
     public
 
     end;
@@ -77,12 +81,22 @@ begin
      OpenDocument('mailto: pmra@protonmail.com');
 end;
 
-procedure TfrmCredits.StaticText2MouseEnter(Sender: TObject);
+procedure TfrmCredits.StTxtCredits9MouseEnter(Sender: TObject);
 begin
-    StaticText2.Cursor := crHandPoint;
+    StTxtCredits9.Cursor := crHandPoint;
 end;
 
-procedure TfrmCredits.StaticText2Click(Sender: TObject);
+procedure TfrmCredits.StTxtCredits10Click(Sender: TObject);
+begin
+    OpenURL('https://www.svgrepo.com');
+end;
+
+procedure TfrmCredits.StTxtCredits10MouseEnter(Sender: TObject);
+begin
+    StTxtCredits10.Cursor := crHandPoint;
+end;
+
+procedure TfrmCredits.StTxtCredits9Click(Sender: TObject);
 begin
     OpenURL('https://icons8.com/icon/43131/book');
 end;
@@ -150,6 +164,73 @@ end;
 procedure TfrmCredits.StTxtCredits8MouseEnter(Sender: TObject);
 begin
     StTxtCredits8.Cursor := crHandPoint;
+end;
+
+procedure TfrmCredits.UpdateTranslation(ALang: String);
+var
+  s: String;
+begin
+  inherited;
+
+  { DefaultTranslator cannot execute code, i.e. strings combined by means of
+    the Format statement are not translated automatically. Such a string is
+    created for the caption of LblSum in "CalculateSum" - we have to call this
+    method here to get that label translated. }
+//  CalculateSum;
+
+  { In old versions there was a complication for the labels LblTodayIs which
+    displays the current date, and with LblMoney which displays some amount of
+    money with the currency sign.
+    Formatting for these data is extracted from the DefaultFormatSettings.
+    The resulting strings are encoded in ansi and do not display locale-specific
+    characters. To get this right they have to be converted to UTF8.
+    Usually, it is sufficient to call SysToUTF8 for this purpose. Our example,
+    however, allows for Hebrew characters which are usually not contained in the
+    typical code pages. Therefore, we use'll a more general procedure based on
+    ConvertEncoding which allows to specify the source code page which had been
+    determined when UpdateFormatSettings had been called in the LocalizedForms
+    unit.
+
+    This has been changed since Laz 2.2.0. The old conversion code is left
+    here commented for comparison.
+  }
+//  s := FormatDateTime(DefaultFormatSettings.LongDateFormat, Date());
+  {
+  s := ConvertEncoding(
+    FormatDateTime(DefaultFormatSettings.LongDateFormat, d),  // string to convert
+    CodePage,      // source encoding as defined by "CodePage"
+    EncodingUTF8   // destination encoding - UTF8
+  );
+  }
+  { Note: "ConvertEncoding" requires the unit LConvEncoding in the uses clause. }
+//  LblTodayIs.Caption := Format(rsTodayIs, [s]);
+
+//  s := DefaultFormatSettings.CurrencyString;
+
+  { Now the same with LblMoney... }
+//  LblMoney.Caption := Format('%.*n %s', [
+//    DefaultFormatSettings.CurrencyDecimals, 10.0e6, DefaultFormatSettings.CurrencyString]);
+  {
+  LblMoney.Caption := ConvertEncoding(
+    Format('%.*n %s', [
+      DefaultFormatSettings.CurrencyDecimals,
+      10e6,
+      DefaultFormatSettings.CurrencyString
+    ]),
+    CodePage, EncodingUTF8
+  );
+  }
+
+  { The items of TRadiogroup are not translated automatically. }
+{  with RadioGroup do begin
+    Items[0] := rsOne;
+    Items[1] := rsTwo;
+    Items[2] := rsThree;
+  end;
+}
+  { We should translate CheckGroup here also. But we don't do this here
+    to demonstrate the effect when the items of the CheckGroup are not
+    translated explicitly as we did with the RadioGroup. }
 end;
 
 end.

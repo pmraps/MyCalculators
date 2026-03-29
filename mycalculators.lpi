@@ -16,6 +16,7 @@
       <XPManifest>
         <DpiAware Value="True"/>
       </XPManifest>
+      <Icon Value="0"/>
     </General>
     <LazDoc Paths="documentation" PackageName="pmradocsmycalc"/>
     <i18n>
@@ -25,7 +26,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <BuildNr Value="45"/>
+      <BuildNr Value="49"/>
       <Language Value="0816"/>
       <Attributes pvaDebug="True"/>
       <StringTable CompanyName="HBCB"/>
@@ -81,6 +82,14 @@
         <Filename Value="myresourcestrings.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="myResourceStrings"/>
+      </Unit>
+      <Unit>
+        <Filename Value="mycredits.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCredits"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MyCredits"/>
       </Unit>
     </Units>
   </ProjectOptions>

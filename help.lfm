@@ -58,7 +58,18 @@ inherited frmHelp: TfrmHelp
         Width = 330
         BorderStyle = bsNone
         Lines.Strings = (
-          'mmoSimple'
+          'This is the regular arithmetic calculator. Does basic'
+          'functions, like adding, subtracting, multiplying and dividing.'
+          ''
+          'The remaider function (REMDR) gives the remainder of'
+          'an integer division.'
+          ''
+          'You can add the present value to memory with M+, add'
+          'another value with another M+, subtract the present'
+          'value from whatever is in memory, or clear the memory.'
+          ''
+          'Be aware, if there is nothing in memory, with M- the'
+          'present value will be stores as a negative value.'
         )
         ParentColor = True
         ReadOnly = True
@@ -168,14 +179,14 @@ inherited frmHelp: TfrmHelp
     Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
     Items.Data = {
       F9FFFFFF0200060000000A0000000A00000000000000FFFFFFFF000000000000
-      0000000B0000004465736372697074696F6E0A0000000A00000001000000FFFF
+      0000000B0000004465736372697074696F6E100000001000000001000000FFFF
       FFFF0000000000000000001100000053696D706C652063616C63756C61746F72
-      0A0000000A00000002000000FFFFFFFF000000000000000000170000004D6973
-      63656C6C616E656F75732066756E6374696F6E730A0000000A00000003000000
+      0F0000000F00000002000000FFFFFFFF000000000000000000170000004D6973
+      63656C6C616E656F75732066756E6374696F6E730E0000000E00000003000000
       FFFFFFFF00000000000000000018000000547269676F6E6F6D65747269632063
-      616C63756C61746F720A0000000A00000004000000FFFFFFFF00000000000000
+      616C63756C61746F720D0000000D00000004000000FFFFFFFF00000000000000
       00001D0000004461746520636F6E76657274657220616E642063616C63756C61
-      746F720A0000000A00000005000000FFFFFFFF00000000000000000008000000
+      746F72080000000800000005000000FFFFFFFF00000000000000000008000000
       53657474696E6773
     }
     OnSelectionChanged = TrViewHelpIndexSelectionChanged

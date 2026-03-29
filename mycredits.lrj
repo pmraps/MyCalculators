@@ -9,8 +9,8 @@
 {"hash":82352494,"name":"tfrmcredits.sttxtcredits6.caption","sourcebytes":[67,97,108,99,117,108,97,116,111,114,32,73,99,111,110],"value":"Calculator Icon"},
 {"hash":52738206,"name":"tfrmcredits.sttxtcredits7.caption","sourcebytes":[72,101,108,112,32,73,99,111,110],"value":"Help Icon"},
 {"hash":41519369,"name":"tfrmcredits.sttxtcredits8.caption","sourcebytes":[109,97,105,108,116,111,32,112,114,111,99,101,100,117,114,101,32,45,32,98,97,108,97,122,115,115,122,101,107,101,108,121],"value":"mailto procedure - balazsszekely"},
-{"hash":265316306,"name":"tfrmcredits.statictext2.caption","sourcebytes":[83,116,97,116,105,99,84,101,120,116,50],"value":"StaticText2"},
-{"hash":265316307,"name":"tfrmcredits.statictext3.caption","sourcebytes":[83,116,97,116,105,99,84,101,120,116,51],"value":"StaticText3"},
+{"hash":97825086,"name":"tfrmcredits.sttxtcredits9.caption","sourcebytes":[66,111,111,107,32,73,99,111,110],"value":"Book Icon"},
+{"hash":177703407,"name":"tfrmcredits.sttxtcredits10.caption","sourcebytes":[83,86,71,32,114,101,112,111],"value":"SVG repo"},
 {"hash":107102275,"name":"tfrmcredits.tbshtcreditscontributors.hint","sourcebytes":[68,105,115,112,108,97,121,115,32,97,32,108,105,115,116,32,111,102,32,116,114,97,110,115,108,97,116,111,114,115,32,97,110,100,32,99,111,110,116,114,105,98,117,116,111,114,115],"value":"Displays a list of translators and contributors"},
 {"hash":188419347,"name":"tfrmcredits.tbshtcreditscontributors.caption","sourcebytes":[67,111,110,116,114,105,98,117,116,111,114,115],"value":"Contributors"},
 {"hash":124221042,"name":"tfrmcredits.sttxtcontributors1.caption","sourcebytes":[80,101,100,114,111,32,65,108,98,117,113,117,101,114,113,117,101,32,45,32,97,117,116,104,111,114,44,32,116,114,97,110,115,108,97,116,111,114],"value":"Pedro Albuquerque - author, translator"}
