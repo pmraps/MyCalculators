@@ -54,7 +54,7 @@ interface
 
 uses
     Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-    LCLTranslator, DefaultTranslator, LocalizedForms;
+    LCLTranslator, DefaultTranslator, LocalizedForms, myResourceStrings;
 
 type
 
@@ -120,7 +120,7 @@ end;
   - It calls "UpdateTranslation" for itself and for each form of the project -
     this way, the forms can do things that are not done automatically.
   - It updates the language selector combobox }
-procedure TfrPreferences.SelectLanguage(ALang: String);
+procedure TfrmPreferences.SelectLanguage(ALang: String);
 var
   i, p: Integer;
   lang: String;

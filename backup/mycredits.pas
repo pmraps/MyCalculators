@@ -6,7 +6,7 @@ interface
 
 uses
     Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls,
-    LclIntF, LocalizedForms;
+    LclIntF, LocalizedForms, myResourceStrings;
 
 type
 
@@ -207,21 +207,20 @@ begin
   s := DefaultFormatSettings.CurrencyString;
 
   { Now the same with LblMoney... }
-//  LblMoney.Caption := Format('%.*n %s', [
+{  LblMoney.Caption := Format('%.*n %s', [
     DefaultFormatSettings.CurrencyDecimals,
     10.0e6,
     DefaultFormatSettings.CurrencyString
-  ]);
-  {
-  LblMoney.Caption := ConvertEncoding(
+  ]);}
+
+{  LblMoney.Caption := ConvertEncoding(
     Format('%.*n %s', [
       DefaultFormatSettings.CurrencyDecimals,
       10e6,
       DefaultFormatSettings.CurrencyString
     ]),
     CodePage, EncodingUTF8
-  );
-  }
+  );  }
 
   { Items that are are not translated automatically: }
 {  with RadioGroup do begin

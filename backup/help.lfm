@@ -17,7 +17,7 @@ inherited frmHelp: TfrmHelp
     Height = 200
     Top = 0
     Width = 330
-    PageIndex = 0
+    PageIndex = 5
     TabOrder = 0
     object Description: TPage
       object mmoDescription: TMemo
@@ -27,26 +27,12 @@ inherited frmHelp: TfrmHelp
         Top = 0
         Width = 330
         BorderStyle = bsNone
-        Lines.Strings = (
-          'This is yet another multi-function calculator.'
-          ''
-          'The type of calculations is chosen from the four radio'
-          'buttons right below the results screen.'
-          ''
-          'For single number calculations, choose the number and'
-          'click the desired function name.'
-          ''
-          'For calculations requiring two numbers, choose the first'
-          'number, choose the function, and then choose the'
-          'second number.'
-          ''
-          'There is a small section where you can change the theme'
-          'and/or the language, via menu Edit .> Settings.'
-        )
         ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
+        WantReturns = False
+        OnEnter = mmoDescriptionEnter
       end
     end
     object Simple: TPage
@@ -57,24 +43,17 @@ inherited frmHelp: TfrmHelp
         Top = 0
         Width = 330
         BorderStyle = bsNone
+        HideSelection = False
         Lines.Strings = (
-          'This is the regular arithmetic calculator. Does basic'
-          'functions, like adding, subtracting, multiplying and dividing.'
           ''
-          'The remaider function (REMDR) gives the remainder of'
-          'an integer division.'
-          ''
-          'You can add the present value to memory with M+, add'
-          'another value with another M+, subtract the present'
-          'value from whatever is in memory, or clear the memory.'
-          ''
-          'Be aware, if there is nothing in memory, with M- the'
-          'present value will be stores as a negative value.'
         )
         ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
+        TabStop = False
+        WantReturns = False
+        OnEnter = mmoSimpleEnter
       end
     end
     object Miscellaneous: TPage
@@ -136,18 +115,17 @@ inherited frmHelp: TfrmHelp
         Top = 0
         Width = 330
         BorderStyle = bsNone
+        HideSelection = False
         Lines.Strings = (
-          'Click on the down arrow of the first list to select a'
-          'language.'
           ''
-          'Click on the down arrow of the second list and select a'
-          'theme, dark or light.'
           ''
         )
         ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
+        WantReturns = False
+        OnEnter = mmoSettingsEnter
       end
     end
   end
@@ -157,7 +135,9 @@ inherited frmHelp: TfrmHelp
     Hint = 'Close the help system'
     Top = 208
     Width = 70
+    Cancel = True
     Caption = 'OK'
+    Default = True
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1

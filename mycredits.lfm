@@ -7,7 +7,7 @@ inherited frmCredits: TfrmCredits
   VertScrollBar.Page = 258
   AutoScroll = True
   ClientHeight = 258
-  ClientWidth = 379
+  ClientWidth = 362
   ParentFont = True
   Position = poMainFormCenter
   object PgCtrlCredits: TPageControl[0]

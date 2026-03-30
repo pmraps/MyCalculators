@@ -431,6 +431,54 @@ msgctxt "myresourcestrings.rsfriday"
 msgid "Friday"
 msgstr ""
 
+#: myresourcestrings.rshelpdescline0
+msgctxt "myresourcestrings.rshelpdescline0"
+msgid "This is yet another multi-function calculator."
+msgstr ""
+
+#: myresourcestrings.rshelpdescline2
+msgid "The type of calculations is chosen from the four radio buttons right below the results screen."
+msgstr ""
+
+#: myresourcestrings.rshelpdescline4
+msgctxt "myresourcestrings.rshelpdescline4"
+msgid "For single number calculations, choose the number and click the desired function name."
+msgstr ""
+
+#: myresourcestrings.rshelpdescline6
+msgctxt "myresourcestrings.rshelpdescline6"
+msgid "For calculations requiring two numbers, choose the first number, choose the function, and then choose the second number."
+msgstr ""
+
+#: myresourcestrings.rshelpdescline8
+msgctxt "myresourcestrings.rshelpdescline8"
+msgid "There is a small section where you can change the theme and/or the language, via menu Edit -> Settings."
+msgstr ""
+
+#: myresourcestrings.rshelpsettingsline0
+msgid "Click on the down arrow of the first list to select a language."
+msgstr ""
+
+#: myresourcestrings.rshelpsettingsline2
+msgid "Click on the down arrow of the second list and select a theme, dark or light."
+msgstr ""
+
+#: myresourcestrings.rshelpsimpleline0
+msgid "This is the regular arithmetic calculator. Does basic functions, like adding, subtracting, multiplying and dividing."
+msgstr ""
+
+#: myresourcestrings.rshelpsimpleline2
+msgid "The remainder function (REMDR) gives the remainder of an integer division."
+msgstr ""
+
+#: myresourcestrings.rshelpsimpleline4
+msgid "You can add the present value to memory with M+, add another value with another M+, subtract the present value from whatever is in memory, or clear the memory."
+msgstr ""
+
+#: myresourcestrings.rshelpsimpleline6
+msgid "Be aware, if there is nothing in memory, with M- the present value will be stores as a negative value."
+msgstr ""
+
 #: myresourcestrings.rsinvalidopera
 msgctxt "myresourcestrings.rsinvalidopera"
 msgid "Invalid Operator"
@@ -579,6 +627,32 @@ msgstr ""
 #: myresourcestrings.rsthursday
 msgctxt "myresourcestrings.rsthursday"
 msgid "Thursday"
+msgstr ""
+
+#: myresourcestrings.rstrviewdate
+msgctxt "myresourcestrings.rstrviewdate"
+msgid "Date"
+msgstr ""
+
+#: myresourcestrings.rstrviewdesc
+msgid "Description"
+msgstr ""
+
+#: myresourcestrings.rstrviewmisc
+msgid "Miscellaneous"
+msgstr ""
+
+#: myresourcestrings.rstrviewsettings
+msgid "Settings"
+msgstr ""
+
+#: myresourcestrings.rstrviewsimple
+msgctxt "myresourcestrings.rstrviewsimple"
+msgid "Simple"
+msgstr ""
+
+#: myresourcestrings.rstrviewtrig
+msgid "Trigonometric"
 msgstr ""
 
 #: myresourcestrings.rstuesday
@@ -1483,6 +1557,7 @@ msgid "Julian"
 msgstr ""
 
 #: tfrmmycalculators.rdbtndatecalculator.caption
+msgctxt "tfrmmycalculators.rdbtndatecalculator.caption"
 msgid "Date"
 msgstr ""
 
@@ -1499,6 +1574,7 @@ msgid "Display miscelaneous functions"
 msgstr ""
 
 #: tfrmmycalculators.rdbtnsimplecalculator.caption
+msgctxt "tfrmmycalculators.rdbtnsimplecalculator.caption"
 msgid "Simple"
 msgstr ""
 

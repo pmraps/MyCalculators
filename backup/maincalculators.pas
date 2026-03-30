@@ -238,6 +238,7 @@ implementation
 {$R *.lfm}
 procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
+     frmPreferences.SelectLanguage('pt');
      pnlSimple.Visible := true;
      rdBtnSimpleCalculator.Checked := true;
      pnlFunctions.Visible := false;

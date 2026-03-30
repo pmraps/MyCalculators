@@ -29,11 +29,14 @@ type
         Trigonometric: TPage;
         TrViewHelpIndex: TTreeView;
         procedure btnOKClick(Sender: TObject);
+        procedure mmoDescriptionEnter(Sender: TObject);
+        procedure mmoSettingsEnter(Sender: TObject);
+        procedure mmoSimpleEnter(Sender: TObject);
         procedure TrViewHelpIndexSelectionChanged(Sender: TObject);
     private
 
     protected
-        procedure UpdateTranslation(ALang: String);
+        procedure UpdateTranslation(ALang: String); override;
     public
 
     end;
@@ -51,6 +54,37 @@ implementation
 procedure TfrmHelp.btnOKClick(Sender: TObject);
 begin
     frmHelp.Close;
+end;
+
+procedure TfrmHelp.mmoDescriptionEnter(Sender: TObject);
+begin
+    mmoDescription.Lines[0] := rsHelpDescLine0;
+    mmoDescription.Lines[1] := '';
+    mmoDescription.Lines[2] := rsHelpDescLine2;
+    mmoDescription.Lines[3] := '';
+    mmoDescription.Lines[4] := rsHelpDescLine4;
+    mmoDescription.Lines[5] := '';
+    mmoDescription.Lines[6] := rsHelpDescLine6;
+    mmoDescription.Lines[7] := '' + LineEnding;
+    mmoDescription.Lines[8] := rsHelpDescLine8;
+end;
+
+procedure TfrmHelp.mmoSettingsEnter(Sender: TObject);
+begin
+    mmoSettings.Lines[0] := rsHelpSettingsLine0;
+    mmoSettings.Lines[1] := '';
+    mmoSettings.Lines[2] := rsHelpSettingsLine2;
+end;
+
+procedure TfrmHelp.mmoSimpleEnter(Sender: TObject);
+begin
+    mmoSimple.Lines[0] := rsHelpSimpleLine0;
+    mmoSimple.Lines[1] := '';
+    mmoSimple.Lines[2] := rsHelpSimpleLine2;
+    mmoSimple.Lines[3] := '';
+    mmoSimple.Lines[4] := rsHelpSimpleLine4;
+    mmoSimple.Lines[5] := '';
+    mmoSimple.Lines[6] := rsHelpSimpleLine6;
 end;
 
 procedure TfrmHelp.TrViewHelpIndexSelectionChanged(Sender: TObject);
