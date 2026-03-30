@@ -26,7 +26,6 @@ inherited frmPreferences: TfrmPreferences
     TabOrder = 0
     Text = 'English'
     TextHint = 'English'
-    OnChange = CBLanguageChange
   end
   object lblLanguage: TLabel[1]
     Left = 16

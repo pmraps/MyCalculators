@@ -198,8 +198,8 @@ type
       procedure btnRadiansToCyclesClick(Sender: TObject);
       procedure DTPickerEndDateChange(Sender: TObject);
       procedure DTPickerStartDateChange(Sender: TObject);
-      function FormHelp(Command: Word; Data: PtrInt; var CallHelp: Boolean
-          ): Boolean;
+{      function FormHelp(Command: Word; Data: PtrInt; var CallHelp: Boolean
+          ): Boolean;}
       procedure MenuItem1Click(Sender: TObject);
       procedure mnuEditSettingsClick(Sender: TObject);
       procedure mnuHelpCreditsClick(Sender: TObject);
@@ -218,7 +218,6 @@ type
   private
       Num1, Num2, Result, Operators : String;
       Memory : extended;
-      FSelectionTime : TTime;
       procedure SelectLanguage(ALang : String);
       protected
                procedure UpdateTranslation(ALang: String); override;
@@ -1116,7 +1115,7 @@ begin
                                                                                                                                   else if (days > '1') and (months > '1') and (years > '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYears
 end;
 
-{{procedure TfrmPreferences.CBLanguageChange(Sender: TObject);
+{procedure TfrmPreferences.CBLanguageChange(Sender: TObject);
 var lang: String;
   p: Integer;
 begin
@@ -1133,7 +1132,7 @@ begin
         lang := copy(lang, 1, p-1);
         SelectLanguage(lang);
      end;
-end;                      }}
+end;                      }
 
 
 { This is the main procedure that has to be called when changing language:
@@ -1159,23 +1158,25 @@ begin
     // Adjust BiDiMode to new language
     UpdateBiDiMode(ALang);
 
-    // Update items not automatically translated.
-    UpdateTranslation(frmPreferences.GetLanguage);
+    // Update items not automatically translated. To be done in all forms.
+    UpdateTranslation(Language);
 
     // Select the new language in the language combobox.
     ALang := lowercase(ALang);
-    for i:=0 to frmPreferences.CbLanguage.Items.Count-1 do begin
-      lang := frmPreferences.CbLanguage.Items[i];
-      p := pos(' ', lang);
-      if p = 0 then p := pos('-', lang);
-      if p = 0 then
-        raise Exception.Create('Language items are not properly formatted.');
-      lang := lowercase(copy(lang, 1, p-1));
-      if lang = ALang then begin
-        frmPreferences.CbLanguage.ItemIndex := i;
-        break;
-      end;
-    end;
+    for i:=0 to frmPreferences.CbLanguage.Items.Count-1 do
+        begin
+          lang := frmPreferences.CBLanguage.Items[i];
+          p := pos(' ', lang);
+          if p = 0 then p := pos('-', lang);
+          if p = 0 then
+            raise Exception.Create('Language items are not properly formatted. Should be two letter lang code - Language name');
+          lang := lowercase(copy(lang, 1, p-1));
+          if lang = ALang then
+             begin
+                  frmPreferences.CbLanguage.ItemIndex := i;
+                  break;
+             end;
+        end;
 
     { Remember the new language. Forms may want to check in UpdateTranslation
       whether the new language has a different BiDiMode. }
@@ -1184,8 +1185,6 @@ begin
 end;
 
 procedure TfrmMyCalculators.UpdateTranslation(ALang: String);
-var
-  s: String;
 begin
 //  inherited;
 

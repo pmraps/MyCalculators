@@ -75,11 +75,11 @@ uses
         rsDays = ' days, ';
         rsDays2 = ' days.';
 
-//      HELP STRINGS
+{{      HELP STRINGS
         rsHelpDescription = 'This is yet another multi-function calculator.\n' +
                             'The type of calculations is chosen from the four radio buttons right below the results screen.\n' +
                             'For single number calculations, choose the number and click the desired function name.\n' +
-                            'For calculations requiring two numbers, choose the first number, choose the function, and then choose the second number.'
+                            'For calculations requiring two numbers, choose the first number, choose the function, and then choose the second number.';}}
 
 implementation
 

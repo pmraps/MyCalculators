@@ -168,69 +168,20 @@ end;
 
 procedure TfrmCredits.UpdateTranslation(ALang: String);
 var
-//  s: String;
+  s: String;
 begin
   inherited;
 
-  { DefaultTranslator cannot execute code, i.e. strings combined by means of
-    the Format statement are not translated automatically. Such a string is
-    created for the caption of LblSum in "CalculateSum" - we have to call this
-    method here to get that label translated. }
-//  CalculateSum;
+  { This method is inherited from LocalizedForm and manually inserts translated
+  strings in cases where LCL/DefaultTranslator cannot do this. }
 
-  { In old versions there was a complication for the labels LblTodayIs which
-    displays the current date, and with LblMoney which displays some amount of
-    money with the currency sign.
-    Formatting for these data is extracted from the DefaultFormatSettings.
-    The resulting strings are encoded in ansi and do not display locale-specific
-    characters. To get this right they have to be converted to UTF8.
-    Usually, it is sufficient to call SysToUTF8 for this purpose. Our example,
-    however, allows for Hebrew characters which are usually not contained in the
-    typical code pages. Therefore, we use'll a more general procedure based on
-    ConvertEncoding which allows to specify the source code page which had been
-    determined when UpdateFormatSettings had been called in the LocalizedForms
-    unit.
+{ The items of the radiogroup are not automatically handled by
+  LCL/DefaultTranslator. Therefore, we have to assign the strings to the
+  translated versions explicitly.
 
-    This has been changed since Laz 2.2.0. The old conversion code is left
-    here commented for comparison.
-  }
-//  s := FormatDateTime(DefaultFormatSettings.LongDateFormat, Date());
-  {
-  s := ConvertEncoding(
-    FormatDateTime(DefaultFormatSettings.LongDateFormat, d),  // string to convert
-    CodePage,      // source encoding as defined by "CodePage"
-    EncodingUTF8   // destination encoding - UTF8
-  );
-  }
-  { Note: "ConvertEncoding" requires the unit LConvEncoding in the uses clause. }
-//  LblTodayIs.Caption := Format(rsTodayIs, [s]);
+  Untranslated resource strings should be added here, like
+  rsSomeString := 'Some translated text}
 
-//  s := DefaultFormatSettings.CurrencyString;
-
-  { Now the same with LblMoney... }
-//  LblMoney.Caption := Format('%.*n %s', [
-//    DefaultFormatSettings.CurrencyDecimals, 10.0e6, DefaultFormatSettings.CurrencyString]);
-  {
-  LblMoney.Caption := ConvertEncoding(
-    Format('%.*n %s', [
-      DefaultFormatSettings.CurrencyDecimals,
-      10e6,
-      DefaultFormatSettings.CurrencyString
-    ]),
-    CodePage, EncodingUTF8
-  );
-  }
-
-  { The items of TRadiogroup are not translated automatically. }
-{  with RadioGroup do begin
-    Items[0] := rsOne;
-    Items[1] := rsTwo;
-    Items[2] := rsThree;
-  end;
-}
-  { We should translate CheckGroup here also. But we don't do this here
-    to demonstrate the effect when the items of the CheckGroup are not
-    translated explicitly as we did with the RadioGroup. }
 end;
 
 end.
