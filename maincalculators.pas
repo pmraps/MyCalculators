@@ -7,7 +7,8 @@ interface
 uses
     SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
     Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math, baseConvert,
-    MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator, LocalizedForms;
+    MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator, LocalizedForms,
+    myResourceStrings;
 
 type
 
@@ -198,8 +199,6 @@ type
       procedure btnRadiansToCyclesClick(Sender: TObject);
       procedure DTPickerEndDateChange(Sender: TObject);
       procedure DTPickerStartDateChange(Sender: TObject);
-{      function FormHelp(Command: Word; Data: PtrInt; var CallHelp: Boolean
-          ): Boolean;}
       procedure MenuItem1Click(Sender: TObject);
       procedure mnuEditSettingsClick(Sender: TObject);
       procedure mnuHelpCreditsClick(Sender: TObject);
@@ -218,81 +217,13 @@ type
   private
       Num1, Num2, Result, Operators : String;
       Memory : extended;
-      procedure SelectLanguage(ALang : String);
-      protected
-               procedure UpdateTranslation(ALang: String); override;
+
+  protected
+
   public
       function CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
       function DateDifference(firstDate, secondDate : TDate) : String;
   end;
-
-resourcestring
-    rsInvalidOpera = 'Invalid Operator';
-    rsSunday = 'Sunday';
-    rsMonday = 'Monday';
-    rsTuesday = 'Tuesday';
-    rsWednesday = 'Wednesday';
-    rsThursday = 'Thursday';
-    rsFriday = 'Friday';
-    rsSaturday = 'Saturday';
-    rsOne = 'one';
-    rsTwo = 'two';
-    rsThree = 'three';
-    rsFour = 'four';
-    rsFive = 'five';
-    rsSix = 'six';
-    rsSeven = 'seven';
-    rsEight = 'eight';
-    rsNine = 'nine';
-    rsTen = 'ten';
-    rsEleven = 'eleven';
-    rsTwelve = 'twelve';
-    rsThirteen = 'thirteen';
-    rsFourteen = 'fourteen';
-    rsFifteen = 'fifteen';
-    rsSixteen = 'sixteen';
-    rsSeventeen = 'seventeen';
-    rsEighteen = 'eighteen';
-    rsNineteen = 'nineteen';
-    rsTwenty = 'twenty';
-    rsTwentyOne = 'twenty one';
-    rsTwentyTwo = 'twenty two';
-    rsTwentyThree = 'twenty three';
-    rsTwentyFour = 'twenty four';
-    rsTwentyFive = 'twenty five';
-    rsTwentySix = 'twenty six';
-    rsTwentySeven = 'twenty seven';
-    rsTwentyEight = 'twenty eight';
-    rsTwentyNine = 'twenty nine';
-    rsThirty = 'thirty';
-    rsThirtyOne = 'thirty one';
-    rsJanuary = 'January';
-    rsFebruary = 'February';
-    rsMarch = 'March';
-    rsApril = 'April';
-    rsMay = 'May';
-    rsJune = 'June';
-    rsJuly = 'July';
-    rsAugust = 'August';
-    rsSeptember = 'September';
-    rsOctober = 'October';
-    rsNovember = 'November';
-    rsDecember = 'December';
-    rsOf = ' of ';
-    rsEndDate = 'End date';
-    rsStartDate = 'Start date';
-    rsDatesAreTheS = 'Dates are the same';
-    rsYear = ' year.';
-    rsYears = ' years.';
-    rsMonth = ' month.';
-    rsMonthAnd = ' month and ';
-    rsDay = ' day.';
-    rsDayAnd = ' day and ';
-    rsDay2 = ' day, ';
-    rsMonths = ' months.';
-    rsDaysAnd = ' days and ';
-    rsDays = ' days, ';
-    rsDays2 = ' days.';
 
 var
     frmMyCalculators: TfrmMyCalculators;
@@ -307,7 +238,6 @@ implementation
 {$R *.lfm}
 procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
-     SelectLanguage('');
      pnlSimple.Visible := true;
      rdBtnSimpleCalculator.Checked := true;
      pnlFunctions.Visible := false;
@@ -1113,140 +1043,6 @@ begin
                                                                                                                         else if (days > '1') and (months > '1') and (years = '0') then DateDifference := days + rsDaysAnd + months + rsMonths
                                                                                                                              else if (days > '1') and (months > '1') and (years = '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYear
                                                                                                                                   else if (days > '1') and (months > '1') and (years > '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYears
-end;
-
-{procedure TfrmPreferences.CBLanguageChange(Sender: TObject);
-var lang: String;
-  p: Integer;
-begin
-  if CbLanguage.ItemIndex > -1 then
-     begin
-        lang := CbLanguage.Items[CbLanguage.ItemIndex];
-        p := pos(' ', lang);
-        if p = 0 then p := pos('-', lang);
-        if p = 0 then
-          raise Exception.Create('Language items are not properly formatted');
-          { This string is essentially meant as a message to the programmer, it
-            will - hopefully - never make its way to the user. Therefore, there is
-            not need to use a resourcestring and activate if for translation. }
-        lang := copy(lang, 1, p-1);
-        SelectLanguage(lang);
-     end;
-end;                      }
-
-
-{ This is the main procedure that has to be called when changing language:
-  - It replaces resourcestrings with the translated ones.
-  - It activates the format settings corresponding to the new language
-  - It tries to use the BiDi mode for the new language (not completely correct)
-  - It calls "UpdateTranslation" for itself and for each form of the project -
-    this way, the forms can do things that are not done automatically.
-  - It updates the language selector combobox }
-procedure TfrmMyCalculators.SelectLanguage(ALang : String);
-var
-  i, p: Integer;
-  lang: String;
-begin
-  // Switch language - this is in LCLTranslator
-  ALang := SetDefaultLang(ALang);
-
-  if ALang <> '' then
-  begin
-    // Switch default settings by calling the procedure provided in BasicLocalizedForm.pas.
-    UpdateFormatSettings(ALang);
-
-    // Adjust BiDiMode to new language
-    UpdateBiDiMode(ALang);
-
-    // Update items not automatically translated. To be done in all forms.
-    UpdateTranslation(Language);
-
-    // Select the new language in the language combobox.
-    ALang := lowercase(ALang);
-    for i:=0 to frmPreferences.CbLanguage.Items.Count - 1 do
-        begin
-          lang := frmPreferences.CBLanguage.Items[i];
-          p := pos(' ', lang);
-          if p = 0 then p := pos('-', lang);
-          if p = 0 then
-            raise Exception.Create('Language items are not properly formatted. Should be two letter lang code - Language name');
-          lang := lowercase(copy(lang, 1, p-1));
-          if lang = ALang then
-             begin
-                  frmPreferences.CbLanguage.ItemIndex := i;
-                  break;
-             end;
-        end;
-
-    { Remember the new language. Forms may want to check in UpdateTranslation
-      whether the new language has a different BiDiMode. }
-    CurrentLang := ALang;
-  end;
-end;
-
-procedure TfrmMyCalculators.UpdateTranslation(ALang: String);
-begin
-//  inherited;
-
-  { DefaultTranslator cannot execute code, i.e. strings combined by means of
-    the Format statement are not translated automatically. Such a string is
-    created for the caption of LblSum in "CalculateSum" - we have to call this
-    method here to get that label translated. }
-//  CalculateSum;
-
-  { In old versions there was a complication for the labels LblTodayIs which
-    displays the current date, and with LblMoney which displays some amount of
-    money with the currency sign.
-    Formatting for these data is extracted from the DefaultFormatSettings.
-    The resulting strings are encoded in ansi and do not display locale-specific
-    characters. To get this right they have to be converted to UTF8.
-    Usually, it is sufficient to call SysToUTF8 for this purpose. Our example,
-    however, allows for Hebrew characters which are usually not contained in the
-    typical code pages. Therefore, we use'll a more general procedure based on
-    ConvertEncoding which allows to specify the source code page which had been
-    determined when UpdateFormatSettings had been called in the LocalizedForms
-    unit.
-
-    This has been changed since Laz 2.2.0. The old conversion code is left
-    here commented for comparison.
-  }
-//  s := FormatDateTime(DefaultFormatSettings.LongDateFormat, Date());
-  {
-  s := ConvertEncoding(
-    FormatDateTime(DefaultFormatSettings.LongDateFormat, d),  // string to convert
-    CodePage,      // source encoding as defined by "CodePage"
-    EncodingUTF8   // destination encoding - UTF8
-  );
-  }
-  { Note: "ConvertEncoding" requires the unit LConvEncoding in the uses clause. }
-//  LblTodayIs.Caption := Format(rsTodayIs, [s]);
-
-//  s := DefaultFormatSettings.CurrencyString;
-
-  { Now the same with LblMoney... }
-//  LblMoney.Caption := Format('%.*n %s', [
-//    DefaultFormatSettings.CurrencyDecimals, 10.0e6, DefaultFormatSettings.CurrencyString]);
-  {
-  LblMoney.Caption := ConvertEncoding(
-    Format('%.*n %s', [
-      DefaultFormatSettings.CurrencyDecimals,
-      10e6,
-      DefaultFormatSettings.CurrencyString
-    ]),
-    CodePage, EncodingUTF8
-  );
-  }
-
-  { The items of TRadiogroup are not translated automatically. }
-{  with RadioGroup do begin
-    Items[0] := rsOne;
-    Items[1] := rsTwo;
-    Items[2] := rsThree;
-  end;
-}
-  { We should translate CheckGroup here also. But we don't do this here
-    to demonstrate the effect when the items of the CheckGroup are not
-    translated explicitly as we did with the RadioGroup. }
 end;
 
 end.

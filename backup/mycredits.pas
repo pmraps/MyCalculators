@@ -166,23 +166,5 @@ begin
     StTxtCredits8.Cursor := crHandPoint;
 end;
 
-procedure TfrmCredits.UpdateTranslation(ALang: String);
-var
-  s: String;
-begin
-  inherited;
-
-  { This method is inherited from LocalizedForm and manually inserts translated
-  strings in cases where LCL/DefaultTranslator cannot do this. }
-
-{ The items of the radiogroup are not automatically handled by
-  LCL/DefaultTranslator. Therefore, we have to assign the strings to the
-  translated versions explicitly.
-
-  Untranslated resource strings should be added here, like
-  rsSomeString := 'Some translated text}
-
-end;
-
 end.
 

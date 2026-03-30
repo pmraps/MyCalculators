@@ -16,6 +16,7 @@ inherited frmPreferences: TfrmPreferences
     AutoSize = False
     Color = clWhite
     ItemHeight = 15
+    ItemIndex = 0
     Items.Strings = (
       'en - English'
       'es - Español'
@@ -24,8 +25,9 @@ inherited frmPreferences: TfrmPreferences
       'pt - Português'
     )
     TabOrder = 0
-    Text = 'English'
+    Text = 'en - English'
     TextHint = 'English'
+    OnGetItems = CBLanguageGetItems
   end
   object lblLanguage: TLabel[1]
     Left = 16

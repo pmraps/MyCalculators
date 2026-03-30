@@ -19,6 +19,7 @@ type
         lblTheme: TLabel;
         lblLanguage: TLabel;
         procedure btnOKClick(Sender: TObject);
+        procedure CBLanguageGetItems(Sender: TObject);
 
     private
 
@@ -42,19 +43,9 @@ begin
     frmPreferences.Close;
 end;
 
-{ This method is inherited from LocalizedForm and manually inserts translated
-  strings in cases where LCL/DefaultTranslator cannot do this. }
-procedure TfrmPreferences.UpdateTranslation(ALang: String);
+procedure TfrmPreferences.CBLanguageGetItems(Sender: TObject);
 begin
-  inherited;
-
-{ The items of the radiogroup are not automatically handled by
-  LCL/DefaultTranslator. Therefore, we have to assign the strings to the
-  translated versions explicitly.
-
-  Untranslated resource strings should be added here, like
-  rsSomeString := 'Some translated text}
-
+    ShowMessage(IntToStr(frmPreferences.CbLanguage.Items.Count));
 end;
 
 end.
