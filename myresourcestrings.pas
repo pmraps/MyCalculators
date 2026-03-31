@@ -116,6 +116,8 @@ uses
         rsHelpSettingsLine0 = 'Click on the down arrow of the first list to select a language.';
         rsHelpSettingsLine2 = 'Click on the down arrow of the second list and select a theme, dark or light.';
 
+        rsDateConverted = '%s';
+
 implementation
 
 end.

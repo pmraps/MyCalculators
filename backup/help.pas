@@ -14,21 +14,22 @@ type
 
     TfrmHelp = class(TLocalizedForm)
         btnOK: TButton;
-        Dates: TPage;
-        Description: TPage;
+        pgDates: TPage;
+        pgDescription: TPage;
         mmoSettings: TMemo;
         mmoDates: TMemo;
         mmoTrigonometric: TMemo;
         mmoMiscFunctions: TMemo;
         mmoSimple: TMemo;
         mmoDescription: TMemo;
-        Miscellaneous: TPage;
+        pgMiscellaneous: TPage;
         NtBookMainHelp: TNotebook;
-        Settings: TPage;
-        Simple: TPage;
-        Trigonometric: TPage;
+        pgSettings: TPage;
+        pgSimple: TPage;
+        pgTrigonometric: TPage;
         TrViewHelpIndex: TTreeView;
         procedure btnOKClick(Sender: TObject);
+        procedure FormCreate(Sender: TObject);
         procedure mmoDatesEnter(Sender: TObject);
         procedure mmoDescriptionEnter(Sender: TObject);
         procedure mmoMiscFunctionsEnter(Sender: TObject);
@@ -59,6 +60,12 @@ begin
     frmHelp.Close;
 end;
 
+procedure TfrmHelp.FormCreate(Sender: TObject);
+begin
+    frmHelp.Close;
+    UpdateTranslation(CurrentLang);
+end;
+
 procedure TfrmHelp.mmoDescriptionEnter(Sender: TObject);
 begin
     mmoDescription.Lines[0] := rsHelpDescLine0;
@@ -68,7 +75,7 @@ begin
     mmoDescription.Lines[4] := rsHelpDescLine4;
     mmoDescription.Lines[5] := '';
     mmoDescription.Lines[6] := rsHelpDescLine6;
-    mmoDescription.Lines[7] := '' + LineEnding;
+    mmoDescription.Lines[7] := '';
     mmoDescription.Lines[8] := rsHelpDescLine8;
 end;
 
@@ -90,7 +97,6 @@ begin
     mmoTrigonometric.Lines[2] := rsHelpTrigLine2;
     mmoTrigonometric.Lines[3] := '';
     mmoTrigonometric.Lines[4] := rsHelpTrigLine4;
-    mmoTrigonometric.Lines[5] := '';
 end;
 
 procedure TfrmHelp.mmoMiscFunctionsEnter(Sender: TObject);
@@ -104,7 +110,7 @@ begin
     mmoMiscFunctions.Lines[6] := rsHelpMiscLine6;
     mmoMiscFunctions.Lines[7] := '';
     mmoMiscFunctions.Lines[8] := rsHelpMiscLine8;
-    mmoMiscFunctions.Lines[9] := '' + LineEnding;
+    mmoMiscFunctions.Lines[9] := '';
     mmoMiscFunctions.Lines[10] := rsHelpMiscLine10;
 end;
 
@@ -136,14 +142,14 @@ var
 begin
   inherited;
 
-    mmoDescription.Lines[0] := rsHelpDescLine0;
+{    mmoDescription.Lines[0] := rsHelpDescLine0;
     mmoDescription.Lines[1] := '';
     mmoDescription.Lines[2] := rsHelpDescLine2;
     mmoDescription.Lines[3] := '';
     mmoDescription.Lines[4] := rsHelpDescLine4;
     mmoDescription.Lines[5] := '';
     mmoDescription.Lines[6] := rsHelpDescLine6;
-    mmoDescription.Lines[7] := '' + LineEnding;
+    mmoDescription.Lines[7] := '';
     mmoDescription.Lines[8] := rsHelpDescLine8;
 
     mmoSimple.Lines[0] := rsHelpSimpleLine0;
@@ -163,12 +169,12 @@ begin
     mmoMiscFunctions.Lines[6] := rsHelpMiscLine6;
     mmoMiscFunctions.Lines[7] := '';
     mmoMiscFunctions.Lines[8] := rsHelpMiscLine8;
-    mmoMiscFunctions.Lines[9] := '' + LineEnding;
+    mmoMiscFunctions.Lines[9] := '';
     mmoMiscFunctions.Lines[10] := rsHelpMiscLine10;
 
     mmoSettings.Lines[0] := rsHelpSettingsLine0;
     mmoSettings.Lines[1] := '';
-    mmoSettings.Lines[2] := rsHelpSettingsLine2;
+    mmoSettings.Lines[2] := rsHelpSettingsLine2;     }
 
     {
     DefaultTranslator cannot execute code, i.e. strings combined by means of

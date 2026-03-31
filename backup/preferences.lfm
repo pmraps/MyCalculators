@@ -7,6 +7,7 @@ inherited frmPreferences: TfrmPreferences
   DefaultMonitor = dmMainForm
   ParentFont = True
   Position = poMainFormCenter
+  OnCreate = FormCreate
   object CBLanguage: TComboBox[0]
     Left = 168
     Height = 23

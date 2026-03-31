@@ -12,12 +12,13 @@ inherited frmHelp: TfrmHelp
   ParentFont = True
   Position = poOwnerFormCenter
   Visible = True
+  OnCreate = FormCreate
   object NtBookMainHelp: TNotebook[0]
     Left = 200
     Height = 200
     Top = 0
     Width = 330
-    PageIndex = 2
+    PageIndex = 0
     TabOrder = 0
     object pgDescription: TPage
       TabStop = True
@@ -28,6 +29,9 @@ inherited frmHelp: TfrmHelp
         Top = 0
         Width = 330
         BorderStyle = bsNone
+        Lines.Strings = (
+          'rsHelpDescLine0'
+        )
         ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth

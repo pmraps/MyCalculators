@@ -68,6 +68,7 @@ type
         lblLanguage: TLabel;
         procedure btnOKClick(Sender: TObject);
         procedure CBLanguageChange(Sender: TObject);
+        procedure FormCreate(Sender: TObject);
 
     private
         FSelectionTime: TTime;
@@ -111,6 +112,12 @@ begin
     lang := copy(lang, 1, p-1);
     SelectLanguage(lang);
   end;
+end;
+
+procedure TfrmPreferences.FormCreate(Sender: TObject);
+begin
+     SelectLanguage('');
+     UpdateTranslation(CurrentLang);
 end;
 
 { This is the main procedure that has to be called when changing language:

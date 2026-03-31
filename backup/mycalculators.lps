@@ -9,8 +9,8 @@
         <Filename Value="mycalculators.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="77" Y="29"/>
-        <UsageCount Value="85"/>
+        <CursorPos Y="27"/>
+        <UsageCount Value="93"/>
       </Unit>
       <Unit>
         <Filename Value="maincalculators.pas"/>
@@ -20,9 +20,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="377"/>
-        <CursorPos X="7" Y="380"/>
-        <UsageCount Value="85"/>
+        <TopLine Value="1012"/>
+        <CursorPos Y="1022"/>
+        <UsageCount Value="93"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -34,9 +34,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Preferences"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="40"/>
-        <CursorPos X="53" Y="57"/>
-        <UsageCount Value="65"/>
+        <TopLine Value="86"/>
+        <CursorPos Y="112"/>
+        <UsageCount Value="73"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -48,9 +48,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Help"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="51"/>
-        <CursorPos X="13" Y="115"/>
-        <UsageCount Value="56"/>
+        <TopLine Value="123"/>
+        <CursorPos Y="142"/>
+        <UsageCount Value="64"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -59,9 +59,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="myResourceStrings"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="39"/>
-        <CursorPos Y="114"/>
-        <UsageCount Value="49"/>
+        <TopLine Value="91"/>
+        <CursorPos X="28" Y="119"/>
+        <UsageCount Value="57"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -72,8 +72,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MyCredits"/>
         <EditorIndex Value="4"/>
-        <CursorPos X="28" Y="9"/>
-        <UsageCount Value="39"/>
+        <TopLine Value="159"/>
+        <CursorPos X="61" Y="175"/>
+        <UsageCount Value="47"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -83,4 +84,17 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <Watches>
+      <Item>
+        <Expression Value="CurrentLang"/>
+      </Item>
+      <Item>
+        <Expression Value="ALang"/>
+      </Item>
+      <Item>
+        <Expression Value="lang"/>
+      </Item>
+    </Watches>
+  </Debugging>
 </CONFIG>

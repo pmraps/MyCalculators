@@ -8,7 +8,7 @@ uses
     SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
     Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math, baseConvert,
     MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator, LocalizedForms,
-    myResourceStrings;
+    myResourceStrings, Windows;
 
 type
 
@@ -245,14 +245,17 @@ implementation
 {$R *.lfm}
 procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
+     DTPickerPresent.Date := Now();
+     CurrentLang := 'pt';
+     UpdateTranslation(CurrentLang);
      pnlSimple.Visible := true;
      rdBtnSimpleCalculator.Checked := true;
      pnlFunctions.Visible := false;
      pnlTrigonometry.Visible := false;
      pnlDatulator.Visible := false;
-     StTxtCalendarConversion.Caption := CalendarConversion(Now, 'G', 'G');
      DTPickerEndDate.Date := Now();
      DTPickerStartDate.Date := Now();
+     StTxtCalendarConversion.Caption := CalendarConversion(Now(), 'G', 'G');
 end;
 
 procedure TfrmMyCalculators.btnSevenClick(Sender: TObject);
@@ -377,7 +380,7 @@ end;
 
 procedure TfrmMyCalculators.mnuHelpHelpClick(Sender: TObject);
 begin
-    //frmHelp.ShowModal;
+    frmHelp.ShowModal;
 end;
 
 procedure TfrmMyCalculators.ppMenuArabClick(Sender: TObject);
@@ -928,6 +931,7 @@ function TfrmMyCalculators.CalendarConversion(Date : TDate; CalendarFrom, Calend
 var SWDay, SDay, SMonth, SYear : String;
   WDay, NDay, NMonth, NYear : Word;
 begin
+     StTxtCalendarConversion.Caption := '';
      DecodeDate(Date, NYear, NMonth, NDay);
      if (CalendarFrom = 'G') and (CalendarTo = 'J') then                  // Gregorian to Julian
         begin
@@ -1015,7 +1019,14 @@ begin
      end;
      SYear := IntToStr(NYear);
 
-     CalendarConversion := SWDay + ', ' + SDay + rsOf + SMonth + rsOf + SYear;
+     case CurrentLang of
+          'en' : CalendarConversion := SWDay + ', ' + SMonth + SDay + ', ' + SYear;
+          'es' : ;
+          'fr' : ;
+          'it' : ;
+          'pt' : CalendarConversion := SWDay + FormatDateTime(DefaultFormatSettings.LongDateFormat, DTPickerPresent.Date);
+     end;
+
 end;
 
 function TfrmMyCalculators.DateDifference(firstDate, secondDate : TDate) : String;
@@ -1073,63 +1084,11 @@ begin
 end;
 
 procedure TfrmMyCalculators.UpdateTranslation(ALang: String);
-var
-  s: String;
 begin
   inherited;
 
-  { DefaultTranslator cannot execute code, i.e. strings combined by means of
-    the Format statement are not translated automatically, we have to call a
-    method here to get those labels translated. }
-//  SomeFormatedLabelToTranslate(%s is %d bytes);
-
-  { In old versions there was a complication for the labels LblTodayIs which
-    displays the current date, and with LblMoney which displays some amount of
-    money with the currency sign.
-    Formatting for these data is extracted from the DefaultFormatSettings.
-    The resulting strings are encoded in ansi and do not display locale-specific
-    characters. To get this right they have to be converted to UTF8.
-    Usually, it is sufficient to call SysToUTF8 for this purpose. Our example,
-    however, allows for Hebrew characters which are usually not contained in the
-    typical code pages. Therefore, we'll use a more general procedure based on
-    ConvertEncoding which allows to specify the source code page which had been
-    determined when UpdateFormatSettings had been called in the LocalizedForms
-    unit.
-
-    This has been changed since Laz 2.2.0. The old conversion code is left
-    here commented for comparison.
-  }
-  s := FormatDateTime(DefaultFormatSettings.LongDateFormat, Date());
-  {
-  s := ConvertEncoding(
-    FormatDateTime(DefaultFormatSettings.LongDateFormat, d),  // string to convert
-    CodePage,      // source encoding as defined by "CodePage"
-    EncodingUTF8   // destination encoding - UTF8
-  );
-  }
-  { Note: "ConvertEncoding" requires the unit LConvEncoding in the uses clause. }
-//  LblTodayIs.Caption := Format(rsTodayIs, [s]);
-
-  s := DefaultFormatSettings.CurrencyString;
-
-  { Now the same with LblMoney... }
-{  LblMoney.Caption := Format('%.*n %s', [
-    DefaultFormatSettings.CurrencyDecimals,
-    10.0e6,
-    DefaultFormatSettings.CurrencyString
-  ]);}
-
-{  LblMoney.Caption := ConvertEncoding(
-    Format('%.*n %s', [
-      DefaultFormatSettings.CurrencyDecimals,
-      10e6,
-      DefaultFormatSettings.CurrencyString
-    ]),
-    CodePage, EncodingUTF8
-  );  }
-
-  { Items that are are not translated automatically: }
-{  with RadioGroup do begin
+  { Items that are are not translated automatically:
+  with RadioGroup do begin
     Items[0] := rsOne;
     Items[1] := rsTwo;
     Items[2] := rsThree;
