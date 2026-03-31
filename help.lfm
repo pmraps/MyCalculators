@@ -17,9 +17,10 @@ inherited frmHelp: TfrmHelp
     Height = 200
     Top = 0
     Width = 330
-    PageIndex = 5
+    PageIndex = 2
     TabOrder = 0
-    object Description: TPage
+    object pgDescription: TPage
+      TabStop = True
       object mmoDescription: TMemo
         Cursor = crNone
         Left = 0
@@ -35,7 +36,8 @@ inherited frmHelp: TfrmHelp
         OnEnter = mmoDescriptionEnter
       end
     end
-    object Simple: TPage
+    object pgSimple: TPage
+      TabStop = True
       object mmoSimple: TMemo
         Cursor = crNone
         Left = 0
@@ -56,7 +58,8 @@ inherited frmHelp: TfrmHelp
         OnEnter = mmoSimpleEnter
       end
     end
-    object Miscellaneous: TPage
+    object pgMiscellaneous: TPage
+      TabStop = True
       object mmoMiscFunctions: TMemo
         Cursor = crNone
         Left = 0
@@ -65,15 +68,17 @@ inherited frmHelp: TfrmHelp
         Width = 330
         BorderStyle = bsNone
         Lines.Strings = (
-          'mmoMiscFunctions'
+          ''
         )
         ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
+        OnEnter = mmoMiscFunctionsEnter
       end
     end
-    object Trigonometric: TPage
+    object pgTrigonometric: TPage
+      TabStop = True
       object mmoTrigonometric: TMemo
         Cursor = crNone
         Left = 0
@@ -82,7 +87,7 @@ inherited frmHelp: TfrmHelp
         Width = 330
         BorderStyle = bsNone
         Lines.Strings = (
-          'mmoTrigonometric'
+          ''
         )
         ParentColor = True
         ReadOnly = True
@@ -90,7 +95,8 @@ inherited frmHelp: TfrmHelp
         TabOrder = 0
       end
     end
-    object Dates: TPage
+    object pgDates: TPage
+      TabStop = True
       object mmoDates: TMemo
         Cursor = crNone
         Left = 0
@@ -99,15 +105,17 @@ inherited frmHelp: TfrmHelp
         Width = 330
         BorderStyle = bsNone
         Lines.Strings = (
-          'mmoDates'
+          ''
         )
         ParentColor = True
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
+        OnEnter = mmoDatesEnter
       end
     end
-    object Settings: TPage
+    object pgSettings: TPage
+      TabStop = True
       object mmoSettings: TMemo
         Cursor = crNone
         Left = 0
@@ -147,7 +155,7 @@ inherited frmHelp: TfrmHelp
     Left = 0
     Height = 232
     Hint = 'Click to open the corresponding page'
-    Top = 0
+    Top = 1
     Width = 193
     BackgroundColor = clDefault
     BorderWidth = 2

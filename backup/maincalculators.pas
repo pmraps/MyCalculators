@@ -86,6 +86,10 @@ type
       btnZero: TButton;
       btnCycleToRad: TButton;
       btnRadiansToCycles: TButton;
+      btnKgToLbs: TButton;
+      btnLbsToKg: TButton;
+      btnLToGal: TButton;
+      btnGalToL: TButton;
       DTPickerStartDate: TDateTimePicker;
       DTPickerEndDate: TDateTimePicker;
       DtTPickerEndDate: TDateTimePicker;
@@ -97,7 +101,6 @@ type
       lblStartDate: TLabel;
       lblEndDate: TLabel;
       MenuItem1: TMenuItem;
-      mnuTodoList: TMenuItem;
       mnuEditSettings: TMenuItem;
       mnuHelpCredits: TMenuItem;
       ppMenuGregorian: TMenuItem;
@@ -152,11 +155,15 @@ type
       procedure btnFactorialClick(Sender: TObject);
       procedure btnFahrenheitClick(Sender: TObject);
       procedure btnFractionClick(Sender: TObject);
+      procedure btnGalToLClick(Sender: TObject);
       procedure btnGradiansDegreesClick(Sender: TObject);
       procedure btnGradiansRadiansClick(Sender: TObject);
       procedure btnHexToBaseClick(Sender: TObject);
       procedure btnHypotenuseClick(Sender: TObject);
+      procedure btnKgToLbsClick(Sender: TObject);
+      procedure btnLbsToKgClick(Sender: TObject);
       procedure btnLogClick(Sender: TObject);
+      procedure btnLToGalClick(Sender: TObject);
       procedure btnMemoryClear2Click(Sender: TObject);
       procedure btnMemoryMinus3Click(Sender: TObject);
       procedure btnMemoryPlus2Click(Sender: TObject);
@@ -238,7 +245,6 @@ implementation
 {$R *.lfm}
 procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
-     frmPreferences.SelectLanguage('pt');
      pnlSimple.Visible := true;
      rdBtnSimpleCalculator.Checked := true;
      pnlFunctions.Visible := false;
@@ -371,7 +377,7 @@ end;
 
 procedure TfrmMyCalculators.mnuHelpHelpClick(Sender: TObject);
 begin
-    frmHelp.ShowModal;
+    //frmHelp.ShowModal;
 end;
 
 procedure TfrmMyCalculators.ppMenuArabClick(Sender: TObject);
@@ -642,6 +648,11 @@ begin
     txtFieldResult.Text := FloatToStr(1 / StrToInt(txtFieldResult.Text));
 end;
 
+procedure TfrmMyCalculators.btnGalToLClick(Sender: TObject);
+begin
+     txtFieldResult.Text := FloatToStr((StrToFloat(txtFieldResult.Text) * 4.54609));
+end;
+
 procedure TfrmMyCalculators.btnGradiansDegreesClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr(GradToDeg(StrToFloat(txtFieldResult.Text)));
@@ -676,6 +687,16 @@ begin
     rdBtnSimpleCalculator.Checked := true;
 end;
 
+procedure TfrmMyCalculators.btnKgToLbsClick(Sender: TObject);
+begin
+     txtFieldResult.Text := FloatToStr(StrToFloat(txtFieldResult.Text) * 2.2046226218);
+end;
+
+procedure TfrmMyCalculators.btnLbsToKgClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(StrToFloat(txtFieldResult.Text) * 0.45359237);
+end;
+
 procedure TfrmMyCalculators.btnLogClick(Sender: TObject);
 begin
     Num1 := txtFieldResult.Text;
@@ -686,6 +707,11 @@ begin
     pnlTrigonometry.Visible := false;
     pnlSimple.Visible := true;
     rdBtnSimpleCalculator.Checked := true;
+end;
+
+procedure TfrmMyCalculators.btnLToGalClick(Sender: TObject);
+begin
+    txtFieldResult.Text := FloatToStr(StrToFloat(txtFieldResult.Text) * 0.219969248299);
 end;
 
 procedure TfrmMyCalculators.btnMemoryClear2Click(Sender: TObject);

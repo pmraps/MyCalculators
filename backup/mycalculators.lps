@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="77" Y="29"/>
-        <UsageCount Value="79"/>
+        <UsageCount Value="85"/>
       </Unit>
       <Unit>
         <Filename Value="maincalculators.pas"/>
@@ -19,9 +19,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
-        <TopLine Value="225"/>
-        <CursorPos X="6" Y="240"/>
-        <UsageCount Value="79"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="377"/>
+        <CursorPos X="7" Y="380"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -35,7 +36,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="40"/>
         <CursorPos X="53" Y="57"/>
-        <UsageCount Value="59"/>
+        <UsageCount Value="65"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -46,10 +47,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Help"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="48" Y="9"/>
-        <UsageCount Value="50"/>
+        <TopLine Value="51"/>
+        <CursorPos X="13" Y="115"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -58,9 +59,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="myResourceStrings"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="64"/>
-        <CursorPos X="20" Y="81"/>
-        <UsageCount Value="43"/>
+        <TopLine Value="39"/>
+        <CursorPos Y="114"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -72,7 +73,7 @@
         <UnitName Value="MyCredits"/>
         <EditorIndex Value="4"/>
         <CursorPos X="28" Y="9"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>

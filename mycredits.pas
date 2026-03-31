@@ -14,8 +14,6 @@ type
 
     TfrmCredits = class(TLocalizedForm)
         PgCtrlCredits: TPageControl;
-        ScrllBarCreditsVertical: TScrollBar;
-        ScrllBarContributorsVertical: TScrollBar;
         StTxtCredits8: TStaticText;
         StTxtCredits9: TStaticText;
         StTxtCredits10: TStaticText;
@@ -27,8 +25,10 @@ type
         StTxtCredits3: TStaticText;
         StTxtCredits2: TStaticText;
         StTxtCredits1: TStaticText;
+        TbShtTodoList: TTabSheet;
         TbShtCreditsContributors: TTabSheet;
         TbShtCreditsCredits: TTabSheet;
+        TViewTodoList: TTreeView;
         procedure StTxtCredits9Click(Sender: TObject);
         procedure StTxtCredits9MouseEnter(Sender: TObject);
         procedure StTxtCredits10Click(Sender: TObject);

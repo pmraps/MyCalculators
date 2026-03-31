@@ -431,6 +431,22 @@ msgctxt "myresourcestrings.rsfriday"
 msgid "Friday"
 msgstr ""
 
+#: myresourcestrings.rshelpdateline0
+msgid "Here we can convert any date from one calendar to another. We do so by choosing a calendar using the first button. The default is the gregorian calendar. After that, we pick a date using the selector, and end with using the second button to select the target calendar."
+msgstr ""
+
+#: myresourcestrings.rshelpdateline1
+msgid "The result will be presented below in full."
+msgstr ""
+
+#: myresourcestrings.rshelpdateline3
+msgid "We can also calculate the difference between two dates using the appopriate selectors. The calculation is shown at the bottom."
+msgstr ""
+
+#: myresourcestrings.rshelpdateline4
+msgid "If the start date is later than the end date, the labels will switch position and the end date painted in red."
+msgstr ""
+
 #: myresourcestrings.rshelpdescline0
 msgctxt "myresourcestrings.rshelpdescline0"
 msgid "This is yet another multi-function calculator."
@@ -455,6 +471,30 @@ msgctxt "myresourcestrings.rshelpdescline8"
 msgid "There is a small section where you can change the theme and/or the language, via menu Edit -> Settings."
 msgstr ""
 
+#: myresourcestrings.rshelpmiscline0
+msgid "Here we have several commonly used functions and converters. Some require two arguments, most only one."
+msgstr ""
+
+#: myresourcestrings.rshelpmiscline10
+msgid "The other buttons are converters, they pick the first number and convert it as shown."
+msgstr ""
+
+#: myresourcestrings.rshelpmiscline2
+msgid "% and ‰ divide the number by 100 and 1000, respectively. x raised to y needs two numbers, the base (first number) and the exponent. As soon as you click the button, you will be redirected to the numeric keypad to enter the exponent."
+msgstr ""
+
+#: myresourcestrings.rshelpmiscline4
+msgid "Same thing happens with the nth root, exponential or logarythm functions. For the factorial, or the fraction of one, we need only one number."
+msgstr ""
+
+#: myresourcestrings.rshelpmiscline6
+msgid "For convenience, there are available trhee well known constants, Pi, Euler and Tau."
+msgstr ""
+
+#: myresourcestrings.rshelpmiscline8
+msgid "The four rightmost buttons pick the entered number and ask for the base to convert it to, assuming the number was entered in the base the button shows."
+msgstr ""
+
 #: myresourcestrings.rshelpsettingsline0
 msgid "Click on the down arrow of the first list to select a language."
 msgstr ""
@@ -477,6 +517,18 @@ msgstr ""
 
 #: myresourcestrings.rshelpsimpleline6
 msgid "Be aware, if there is nothing in memory, with M- the present value will be stores as a negative value."
+msgstr ""
+
+#: myresourcestrings.rshelptrigline0
+msgid "These are the most common trigonometric functions. Tehy pick the entered number and calculate the respective function."
+msgstr ""
+
+#: myresourcestrings.rshelptrigline2
+msgid "The exception being the hypothenuse calculation (Hyp button), tha requires two operands."
+msgstr ""
+
+#: myresourcestrings.rshelptrigline4
+msgid "There are also six converters between several angle measurement units."
 msgstr ""
 
 #: myresourcestrings.rsinvalidopera
@@ -795,6 +847,11 @@ msgstr ""
 msgid "Display a list of sources used in the program"
 msgstr ""
 
+#: tfrmcredits.tbshttodolist.caption
+msgctxt "tfrmcredits.tbshttodolist.caption"
+msgid "To Do List"
+msgstr ""
+
 #: tfrmhelp.btnok.caption
 msgctxt "tfrmhelp.btnok.caption"
 msgid "OK"
@@ -1110,6 +1167,10 @@ msgstr ""
 msgid "Calculate the fraction of 1"
 msgstr ""
 
+#: tfrmmycalculators.btngaltol.caption
+msgid "Gal - L"
+msgstr ""
+
 #: tfrmmycalculators.btngradiansdegrees.caption
 msgctxt "tfrmmycalculators.btngradiansdegrees.caption"
 msgid "Grad-Deg"
@@ -1149,12 +1210,28 @@ msgctxt "tfrmmycalculators.btnhypotenuse.hint"
 msgid "Calculate the hypothenuse of a right triangle"
 msgstr ""
 
+#: tfrmmycalculators.btnkgtolbs.caption
+msgid "Kg - Lbs"
+msgstr ""
+
+#: tfrmmycalculators.btnkgtolbs.hint
+msgid "Convert Kilograms to Pounds"
+msgstr ""
+
+#: tfrmmycalculators.btnlbstokg.caption
+msgid "Lbs - Kg"
+msgstr ""
+
 #: tfrmmycalculators.btnlog.caption
 msgid "Log"
 msgstr ""
 
 #: tfrmmycalculators.btnlog.hint
 msgid "Calculate logarythms in different bases"
+msgstr ""
+
+#: tfrmmycalculators.btnltogal.caption
+msgid "L - Gal"
 msgstr ""
 
 #: tfrmmycalculators.btnmemoryclear.caption
@@ -1521,14 +1598,6 @@ msgstr ""
 
 #: tfrmmycalculators.mnumainhelp.hint
 msgid "Help and info for the program"
-msgstr ""
-
-#: tfrmmycalculators.mnutodolist.caption
-msgid "Todo List"
-msgstr ""
-
-#: tfrmmycalculators.mnutodolist.hint
-msgid "Things to be added"
 msgstr ""
 
 #: tfrmmycalculators.ppmenuarab.caption

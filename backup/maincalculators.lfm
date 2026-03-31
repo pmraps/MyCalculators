@@ -852,10 +852,10 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnLogClick
     end
     object btnFahrenheit: TButton
-      Left = 72
+      Left = 0
       Height = 25
       Hint = 'Convert to Fahrenheit'
-      Top = 120
+      Top = 150
       Width = 70
       Caption = 'Fº'
       TabOrder = 13
@@ -910,7 +910,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnHexToBaseClick
     end
     object btnCycleToRad: TButton
-      Left = 144
+      Left = 72
       Height = 25
       Hint = 'Convert cycles to radians'
       Top = 120
@@ -920,14 +920,51 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnCycleToRadClick
     end
     object btnRadiansToCycles: TButton
-      Left = 216
+      Left = 72
       Height = 25
       Hint = 'Convert radians to cycles'
-      Top = 120
+      Top = 150
       Width = 70
       Caption = 'Rad-Cy'
       TabOrder = 18
       OnClick = btnRadiansToCyclesClick
+    end
+    object btnKgToLbs: TButton
+      Left = 144
+      Height = 25
+      Hint = 'Convert Kilograms to Pounds'
+      Top = 120
+      Width = 70
+      Caption = 'Kg - Lbs'
+      TabOrder = 19
+      OnClick = btnKgToLbsClick
+    end
+    object btnLbsToKg: TButton
+      Left = 144
+      Height = 25
+      Top = 150
+      Width = 70
+      Caption = 'Lbs - Kg'
+      TabOrder = 20
+      OnClick = btnLbsToKgClick
+    end
+    object btnLToGal: TButton
+      Left = 216
+      Height = 25
+      Top = 120
+      Width = 70
+      Caption = 'L - Gal'
+      TabOrder = 21
+      OnClick = btnLToGalClick
+    end
+    object btnGalToL: TButton
+      Left = 216
+      Height = 25
+      Top = 150
+      Width = 70
+      Caption = 'Gal - L'
+      TabOrder = 22
+      OnClick = btnGalToLClick
     end
   end
   object pnlDatulator: TPanel[5]
@@ -1212,11 +1249,6 @@ inherited frmMyCalculators: TfrmMyCalculators
         Hint = 'Displays sources, contributors, translators, etc.'
         ImageIndex = 7
         OnClick = mnuHelpCreditsClick
-      end
-      object mnuTodoList: TMenuItem
-        Caption = 'Todo List'
-        Hint = 'Things to be added'
-        ImageIndex = 11
       end
     end
   end
