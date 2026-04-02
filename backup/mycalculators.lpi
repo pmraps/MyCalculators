@@ -26,7 +26,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <BuildNr Value="77"/>
+      <BuildNr Value="82"/>
       <Language Value="0816"/>
       <Attributes pvaDebug="True"/>
       <StringTable CompanyName="HBCB"/>
@@ -63,14 +63,6 @@
         <UnitName Value="mainCalculators"/>
       </Unit>
       <Unit>
-        <Filename Value="preferences.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmPreferences"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="Preferences"/>
-      </Unit>
-      <Unit>
         <Filename Value="help.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmHelp"/>
@@ -90,6 +82,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MyCredits"/>
+      </Unit>
+      <Unit>
+        <Filename Value="preferences.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPreferences"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Preferences"/>
       </Unit>
     </Units>
   </ProjectOptions>

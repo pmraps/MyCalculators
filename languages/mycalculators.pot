@@ -804,6 +804,10 @@ msgstr ""
 msgid "SVG repo"
 msgstr ""
 
+#: tfrmcredits.sttxtcredits11.caption
+msgid "Hamburger icon"
+msgstr ""
+
 #: tfrmcredits.sttxtcredits2.caption
 msgid "FreePascal Wiki"
 msgstr ""
@@ -1547,62 +1551,78 @@ msgstr ""
 msgid "To"
 msgstr ""
 
-#: tfrmmycalculators.menuitem1.caption
-msgid "Exit"
-msgstr ""
-
-#: tfrmmycalculators.menuitem1.hint
-msgid "Close the calculator"
-msgstr ""
-
-#: tfrmmycalculators.mnueditsettings.caption
-msgid "&Preferences"
-msgstr ""
-
-#: tfrmmycalculators.mnueditsettings.hint
-msgid "Settings for the application"
-msgstr ""
-
-#: tfrmmycalculators.mnuhelpcredits.caption
+#: tfrmmycalculators.mnucredits.caption
+msgctxt "tfrmmycalculators.mnucredits.caption"
 msgid "&Credits"
 msgstr ""
 
-#: tfrmmycalculators.mnuhelpcredits.hint
-msgid "Displays sources, contributors, translators, etc."
+#: tfrmmycalculators.mnucredits.hint
+msgctxt "tfrmmycalculators.mnucredits.hint"
+msgid "Contributors, translators, etc."
 msgstr ""
 
-#: tfrmmycalculators.mnuhelphelp.caption
-msgctxt "tfrmmycalculators.mnuhelphelp.caption"
+#: tfrmmycalculators.mnuexit.caption
+msgctxt "tfrmmycalculators.mnuexit.caption"
+msgid "Ex&it"
+msgstr ""
+
+#: tfrmmycalculators.mnuexit.hint
+msgctxt "tfrmmycalculators.mnuexit.hint"
+msgid "Close the calculator"
+msgstr ""
+
+#: tfrmmycalculators.mnuhamburger.hint
+msgid "Click to open the menu"
+msgstr ""
+
+#: tfrmmycalculators.mnuhelp.caption
+msgctxt "tfrmmycalculators.mnuhelp.caption"
 msgid "&Help"
 msgstr ""
 
-#: tfrmmycalculators.mnuhelphelp.hint
-msgid "Opens the help window"
+#: tfrmmycalculators.mnupreferences.caption
+msgctxt "tfrmmycalculators.mnupreferences.caption"
+msgid "Preferences"
 msgstr ""
 
-#: tfrmmycalculators.mnumainedit.caption
-msgid "&Edit"
+#: tfrmmycalculators.mnupreferences.hint
+msgctxt "tfrmmycalculators.mnupreferences.hint"
+msgid "Change application language and/or colours"
 msgstr ""
 
-#: tfrmmycalculators.mnumainedit.hint
-msgid "Edit Menu"
+#: tfrmmycalculators.mnupreflang.caption
+msgctxt "tfrmmycalculators.mnupreflang.caption"
+msgid "Language"
 msgstr ""
 
-#: tfrmmycalculators.mnumainfile.caption
-msgid "&File"
+#: tfrmmycalculators.mnupreflang.hint
+msgid "Choose the application language"
 msgstr ""
 
-#: tfrmmycalculators.mnumainfile.hint
-msgid "File Menu"
+#: tfrmmycalculators.mnupreftheme.caption
+msgctxt "tfrmmycalculators.mnupreftheme.caption"
+msgid "Theme"
 msgstr ""
 
-#: tfrmmycalculators.mnumainhelp.caption
-msgctxt "tfrmmycalculators.mnumainhelp.caption"
-msgid "&Help"
+#: tfrmmycalculators.mnupreftheme.hint
+msgid "Choose a theme, dark or light"
 msgstr ""
 
-#: tfrmmycalculators.mnumainhelp.hint
-msgid "Help and info for the program"
+#: tfrmmycalculators.mnuprefthemedark.caption
+msgid "Dark"
+msgstr ""
+
+#: tfrmmycalculators.mnuprefthemedark.hint
+msgid "Dark Theme, easier on the eyes"
+msgstr ""
+
+#: tfrmmycalculators.mnuprefthemelight.caption
+msgctxt "tfrmmycalculators.mnuprefthemelight.caption"
+msgid "Light"
+msgstr ""
+
+#: tfrmmycalculators.mnuprefthemelight.hint
+msgid "Light, more visibility"
 msgstr ""
 
 #: tfrmmycalculators.ppmenuarab.caption
@@ -1674,22 +1694,12 @@ msgid "Save your choices and return to the calculator"
 msgstr ""
 
 #: tfrmpreferences.caption
+msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
 msgstr ""
 
 #: tfrmpreferences.cblanguage.hint
-msgctxt "tfrmpreferences.cblanguage.hint"
 msgid "Select your prefered language"
-msgstr ""
-
-#: tfrmpreferences.cblanguage.text
-msgctxt "tfrmpreferences.cblanguage.text"
-msgid "en - English"
-msgstr ""
-
-#: tfrmpreferences.cblanguage.texthint
-msgctxt "tfrmpreferences.cblanguage.texthint"
-msgid "English"
 msgstr ""
 
 #: tfrmpreferences.cboxthemes.hint
@@ -1697,14 +1707,17 @@ msgid "Select a theme, dark or light"
 msgstr ""
 
 #: tfrmpreferences.cboxthemes.text
+msgctxt "tfrmpreferences.cboxthemes.text"
 msgid "Light"
 msgstr ""
 
 #: tfrmpreferences.lbllanguage.caption
+msgctxt "tfrmpreferences.lbllanguage.caption"
 msgid "Language"
 msgstr ""
 
 #: tfrmpreferences.lbltheme.caption
+msgctxt "tfrmpreferences.lbltheme.caption"
 msgid "Theme"
 msgstr ""
 

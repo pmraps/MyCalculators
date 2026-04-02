@@ -352,6 +352,11 @@ msgctxt "myresourcestrings.rsaugust"
 msgid "August"
 msgstr "Agosto"
 
+#: myresourcestrings.rsdateconverted
+#, object-pascal-format
+msgid "%s"
+msgstr "%s"
+
 #: myresourcestrings.rsdatesarethes
 msgctxt "myresourcestrings.rsdatesarethes"
 msgid "Dates are the same"

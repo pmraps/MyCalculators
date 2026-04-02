@@ -8,10 +8,13 @@ uses
     SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
     Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math, baseConvert,
     MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator, LocalizedForms,
-    myResourceStrings, Windows;
+    myResourceStrings, gettext;
 
 type
-
+    { procedure ColourChange;
+          background #45494A/697374
+          foreground #4A4645/747069
+    }
     { TfrmMyCalculators }
 
     TfrmMyCalculators = class(TLocalizedForm)
@@ -100,17 +103,21 @@ type
       lblConvertTo: TLabel;
       lblStartDate: TLabel;
       lblEndDate: TLabel;
-      MenuItem1: TMenuItem;
-      mnuEditSettings: TMenuItem;
-      mnuHelpCredits: TMenuItem;
+      mnuPrefLang: TMenuItem;
+      mnuPrefTheme: TMenuItem;
+      mnuPrefThemeDark: TMenuItem;
+      mnuPrefThemeLight: TMenuItem;
+      mnuPreferences: TMenuItem;
+      mnuHelp: TMenuItem;
+      mnuCredits: TMenuItem;
+      mnuExit: TMenuItem;
+      mnuHamburger: TMenuItem;
       ppMenuGregorian: TMenuItem;
       ppMenuJulian: TMenuItem;
       ppMenuFrench: TMenuItem;
       ppMenuHebrew: TMenuItem;
       ppMenuArab: TMenuItem;
       ppMenuChinese: TMenuItem;
-      mnuHelpHelp: TMenuItem;
-      mnuCredits: TMenuItem;
       pnlDatulator: TPanel;
       pnlCalculatorType: TPanel;
       pnlFunctions: TPanel;
@@ -125,9 +132,6 @@ type
       StTxtDateCalculation: TStaticText;
       txtFieldResult: TEdit;
       mainMenu: TMainMenu;
-      mnuMainFile: TMenuItem;
-      mnuMainEdit: TMenuItem;
-      mnuMainHelp: TMenuItem;
       procedure btnACosClick(Sender: TObject);
       procedure btnACosHClick(Sender: TObject);
       procedure btnACotClick(Sender: TObject);
@@ -206,10 +210,15 @@ type
       procedure btnRadiansToCyclesClick(Sender: TObject);
       procedure DTPickerEndDateChange(Sender: TObject);
       procedure DTPickerStartDateChange(Sender: TObject);
-      procedure MenuItem1Click(Sender: TObject);
+      procedure mnuFileExitClick(Sender: TObject);
       procedure mnuEditSettingsClick(Sender: TObject);
       procedure mnuHelpCreditsClick(Sender: TObject);
       procedure mnuHelpHelpClick(Sender: TObject);
+      procedure mnuPrefLangClick(Sender: TObject);
+      procedure mnuPrefLangEsClick(Sender: TObject);
+      procedure mnuPrefLangFrClick(Sender: TObject);
+      procedure mnuPrefLangPtClick(Sender: TObject);
+      procedure munPrefLangEnClick(Sender: TObject);
       procedure ppMenuArabClick(Sender: TObject);
       procedure ppMenuChineseClick(Sender: TObject);
       procedure ppMenuFrenchClick(Sender: TObject);
@@ -221,12 +230,11 @@ type
       procedure rdBtnSimpleCalculatorClick(Sender: TObject);
       procedure rdBtnTrigonometryClick(Sender: TObject);
       procedure FormCreate(Sender: TObject);
+      function GetSystemLanguage : String;
   private
       Num1, Num2, Result, Operators : String;
       Memory : extended;
 
-  protected
-      procedure UpdateTranslation(ALang: String); override;
   public
       function CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
       function DateDifference(firstDate, secondDate : TDate) : String;
@@ -246,8 +254,7 @@ implementation
 procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
      DTPickerPresent.Date := Now();
-     CurrentLang := 'pt';
-     UpdateTranslation(CurrentLang);
+     UpdateTranslation(GetSystemLanguage);
      pnlSimple.Visible := true;
      rdBtnSimpleCalculator.Checked := true;
      pnlFunctions.Visible := false;
@@ -363,7 +370,7 @@ begin
     StTxtDateCalculation.Caption := DateDifference(DTPickerStartDate.Date, DTPickerEndDate.Date);
 end;
 
-procedure TfrmMyCalculators.MenuItem1Click(Sender: TObject);
+procedure TfrmMyCalculators.mnuFileExitClick(Sender: TObject);
 begin
     Application.Terminate;
 end;
@@ -381,6 +388,32 @@ end;
 procedure TfrmMyCalculators.mnuHelpHelpClick(Sender: TObject);
 begin
     frmHelp.ShowModal;
+end;
+
+procedure TfrmMyCalculators.mnuPrefLangClick(Sender: TObject);
+begin
+    frmPreferences.ShowModal;
+    ShowMessage(CurrentLang);
+end;
+
+procedure TfrmMyCalculators.mnuPrefLangEsClick(Sender: TObject);
+begin
+    CurrentLang := 'es';
+end;
+
+procedure TfrmMyCalculators.mnuPrefLangFrClick(Sender: TObject);
+begin
+    CurrentLang := 'es';
+end;
+
+procedure TfrmMyCalculators.mnuPrefLangPtClick(Sender: TObject);
+begin
+    CurrentLang := 'pt';
+end;
+
+procedure TfrmMyCalculators.munPrefLangEnClick(Sender: TObject);
+begin
+     CurrentLang := 'fr';
 end;
 
 procedure TfrmMyCalculators.ppMenuArabClick(Sender: TObject);
@@ -1024,7 +1057,7 @@ begin
           'es' : ;
           'fr' : ;
           'it' : ;
-          'pt' : CalendarConversion := SWDay + FormatDateTime(DefaultFormatSettings.LongDateFormat, DTPickerPresent.Date);
+          'pt' : CalendarConversion := SWDay + ', ' + FormatDateTime(DefaultFormatSettings.LongDateFormat, DTPickerPresent.Date);
      end;
 
 end;
@@ -1083,18 +1116,12 @@ begin
                                                                                                                                   else if (days > '1') and (months > '1') and (years > '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYears
 end;
 
-procedure TfrmMyCalculators.UpdateTranslation(ALang: String);
+function TfrmMyCalculators.GetSystemLanguage : String;
+var
+  Lang = '', FallbackLang: String;
 begin
-  inherited;
-
-  { Items that are are not translated automatically:
-  with RadioGroup do begin
-    Items[0] := rsOne;
-    Items[1] := rsTwo;
-    Items[2] := rsThree;
-  end;}
-
-  { We should translate CheckGroup here also. Probably also list strings, etc.. }
+     GetLanguageIDs(Lang, FallbackLang);
+     Result := FallbackLang;
 end;
 
 end.

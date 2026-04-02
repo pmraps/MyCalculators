@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Last-Translator: Vasseur Gilles <gillesvasseur58@gmail.com>\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-03-31 18:32+0100\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: http://lazarus.developpez.com/\n"
-"PO-Revision-Date: 2021-11-25 13:55+0100\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"MIME-Version: 1.0\n"
-"POT-Creation-Date: \n"
-"Project-Id-Version: \n"
-"Language: fr\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.9\n"
 
 #: lclstrconsts.hhshelpbrowsernotexecutable
 #, object-pascal-format
@@ -131,10 +131,8 @@ msgid "Backward"
 msgstr "En arrière"
 
 #: lclstrconsts.rsbitmaps
-#, fuzzy
-#| msgid "Bitmaps"
 msgid "Bitmap Files"
-msgstr "Images"
+msgstr "Fichiers Bitmaps"
 
 #: lclstrconsts.rsblackcolorcaption
 msgid "Black"
@@ -209,10 +207,8 @@ msgid "Cream"
 msgstr "Crème"
 
 #: lclstrconsts.rscursor
-#, fuzzy
-#| msgid "Cursor"
 msgid "Cursor Files"
-msgstr "Curseur"
+msgstr "Fichiers Curseur"
 
 #: lclstrconsts.rscustomcolorcaption
 msgid "Custom ..."
@@ -408,8 +404,6 @@ msgid "--gdk-no-debug flags  Turn off specific GDK trace/debug messages."
 msgstr "--gdk-no-debug flags  Arrêter les messages spécifiques GDK+ trace/débogage."
 
 #: lclstrconsts.rsgif
-#, fuzzy
-#| msgid "Graphics Interchange Format"
 msgid "Graphics Interchange Format Files"
 msgstr "Format d'échange graphique (GIF)"
 
@@ -620,16 +614,12 @@ msgid "Hot Light"
 msgstr "Spot"
 
 #: lclstrconsts.rsicns
-#, fuzzy
-#| msgid "Mac OS X Icon"
 msgid "macOS Icon Files"
 msgstr "Ressource d'icône OSX"
 
 #: lclstrconsts.rsicon
-#, fuzzy
-#| msgid "Icon"
 msgid "Icon Files"
-msgstr "Icône"
+msgstr "Fichiers d'icône"
 
 #: lclstrconsts.rsiconimageempty
 msgid "Icon image cannot be empty"
@@ -720,8 +710,6 @@ msgid "%s is already associated with %s"
 msgstr "%s est déjà associé à %s"
 
 #: lclstrconsts.rsjpeg
-#, fuzzy
-#| msgid "Joint Picture Expert Group"
 msgid "JPEG Files"
 msgstr "Joint Picture Expert Group"
 
@@ -913,20 +901,14 @@ msgid "Select a date"
 msgstr "Choisir une date"
 
 #: lclstrconsts.rspixmap
-#, fuzzy
-#| msgid "Pixmap"
 msgid "Pixmap Files"
-msgstr "Pixmap"
+msgstr "Fichiers Pixmap"
 
 #: lclstrconsts.rsportablenetworkgraphic
-#, fuzzy
-#| msgid "Portable Network Graphic"
 msgid "PNG Files"
-msgstr "Portable Network Graphic"
+msgstr "Fichiers PNG"
 
 #: lclstrconsts.rsportablepixmap
-#, fuzzy
-#| msgid "Portable PixMap"
 msgid "Portable Pixmap Files"
 msgstr "Portable PixMap"
 
@@ -1125,17 +1107,15 @@ msgstr "Texte"
 
 #: lclstrconsts.rstga
 msgid "TGA Image Files"
-msgstr ""
+msgstr "Fichiers d'image TGA"
 
 #: lclstrconsts.rsthebuiltinurlisreadonlychangethebaseurlinstead
 msgid "The built-in URL is read only. Change the BaseURL instead."
 msgstr "L'URL intégrée est en lecture seule. Changez BaseURL à la place."
 
 #: lclstrconsts.rstiff
-#, fuzzy
-#| msgid "Tagged Image File Format"
 msgid "Tagged Image File Format Files"
-msgstr "Tagged Image File Format"
+msgstr "Fichiers Tagged Image File Format"
 
 #: lclstrconsts.rstpanelaccessibilitydescription
 msgctxt "lclstrconsts.rstpanelaccessibilitydescription"
@@ -1480,4 +1460,3 @@ msgstr "Taille"
 #: lclstrconsts.sshellctrlstype
 msgid "Type"
 msgstr "Type"
-

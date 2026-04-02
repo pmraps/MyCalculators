@@ -14,6 +14,7 @@ type
 
     TfrmCredits = class(TLocalizedForm)
         PgCtrlCredits: TPageControl;
+        StTxtCredits11: TStaticText;
         StTxtCredits8: TStaticText;
         StTxtCredits9: TStaticText;
         StTxtCredits10: TStaticText;
@@ -30,6 +31,8 @@ type
         TbShtCreditsCredits: TTabSheet;
         TViewTodoList: TTreeView;
         procedure FormCreate(Sender: TObject);
+        procedure StTxtCredits11Click(Sender: TObject);
+        procedure StTxtCredits11MouseEnter(Sender: TObject);
         procedure StTxtCredits9Click(Sender: TObject);
         procedure StTxtCredits9MouseEnter(Sender: TObject);
         procedure StTxtCredits10Click(Sender: TObject);
@@ -105,6 +108,16 @@ end;
 procedure TfrmCredits.FormCreate(Sender: TObject);
 begin
     UpdateTranslation(CurrentLang);
+end;
+
+procedure TfrmCredits.StTxtCredits11Click(Sender: TObject);
+begin
+    OpenURL('https://icons8.com/icon/8113/menu');
+end;
+
+procedure TfrmCredits.StTxtCredits11MouseEnter(Sender: TObject);
+begin
+    StTxtCredits11.Cursor := crHandPoint;
 end;
 
 procedure TfrmCredits.StTxtCredits2Click(Sender: TObject);

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-03-28 15:25+0000\n"
+"PO-Revision-Date: 2026-03-31 18:20+0100\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -542,40 +542,34 @@ msgid "Help Database \"%s\" did not find a viewer for a help page of type %s"
 msgstr "A base de dados de ajuda \"%s\" não encontra um visualizador para páginas de ajuda de tipo %s"
 
 #: lclstrconsts.rshelphelpdatabasenotfound
-#, fuzzy, object-pascal-format
-#| msgid "Help Database %s%s%s not found"
+#, object-pascal-format
 msgid "Help Database \"%s\" not found"
-msgstr "Base de dados de ajuda %s%s%s não encontrada"
+msgstr "Base de dados de ajuda \"%s\" não encontrada"
 
 #: lclstrconsts.rshelphelpfordirectivenotfound
-#, fuzzy, object-pascal-format
-#| msgid "Help for directive %s%s%s not found."
+#, object-pascal-format
 msgid "Help for directive \"%s\" not found."
 msgstr "Ajuda para a directiva \"%s\" não encontrada."
 
 #: lclstrconsts.rshelphelpfordirectivenotfoundindatabase
-#, fuzzy, object-pascal-format
-#| msgid "Help for directive %s%s%s not found in Database %s%s%s."
+#, object-pascal-format
 msgid "Help for directive \"%s\" not found in Database \"%s\"."
 msgstr "Ajuda para a directiva \"%s\" não encontrada na base de dados \"%s\"."
 
 #: lclstrconsts.rshelphelpkeywordnotfound
-#, fuzzy, object-pascal-format
-#| msgid "Help keyword %s%s%s not found."
+#, object-pascal-format
 msgid "Help keyword \"%s\" not found."
 msgstr "Palavra-chave de ajuda \"%s\" não encontrada."
 
 #: lclstrconsts.rshelphelpkeywordnotfoundindatabase
-#, fuzzy, object-pascal-format
-#| msgid "Help keyword %s%s%s not found in Database %s%s%s."
+#, object-pascal-format
 msgid "Help keyword \"%s\" not found in Database \"%s\"."
 msgstr "Palavra-chave de ajuda \"%s\" não encontrada na base de dados \"%s\"."
 
 #: lclstrconsts.rshelphelpnodehasnohelpdatabase
-#, fuzzy, object-pascal-format
-#| msgid "Help node %s%s%s has no Help Database"
+#, object-pascal-format
 msgid "Help node \"%s\" has no Help Database"
-msgstr "Nó ajuda \"%s\" não tem base de dados de ajuda"
+msgstr "Nó da ajuda \"%s\" não tem base de dados de ajuda"
 
 #: lclstrconsts.rshelpnohelpfoundforsource
 #, object-pascal-format
@@ -600,10 +594,9 @@ msgid "Help Selector Error"
 msgstr "Erro no selector de ajuda"
 
 #: lclstrconsts.rshelpthereisnoviewerforhelptype
-#, fuzzy, object-pascal-format
-#| msgid "There is no viewer for help type %s%s%s"
+#, object-pascal-format
 msgid "There is no viewer for help type \"%s\""
-msgstr "Não ha visualizador para tipo ajuda \"%s\""
+msgstr "Não há visualizador para o tipo de ajuda \"%s\""
 
 #: lclstrconsts.rshelpviewererror
 msgid "Help Viewer Error"
@@ -1417,10 +1410,7 @@ msgid "%s bytes"
 msgstr "%s bytes"
 
 #: lclstrconsts.sshellctrlsinvalidpath
-#, fuzzy, object-pascal-format
-#| msgid ""
-#| "Invalid pathname:\n"
-#| "\"%s\"\n"
+#, object-pascal-format
 msgctxt "lclstrconsts.sshellctrlsinvalidpath"
 msgid ""
 "Invalid pathname:\n"
@@ -1430,12 +1420,7 @@ msgstr ""
 "\"%s\""
 
 #: lclstrconsts.sshellctrlsinvalidpathrelative
-#, fuzzy, object-pascal-format
-#| msgid ""
-#| "Invalid relative pathname:\n"
-#| "\"%s\"\n"
-#| "in relation to rootpath:\n"
-#| "\"%s\"\n"
+#, object-pascal-format
 msgid ""
 "Invalid relative pathname:\n"
 "\"%s\"\n"
@@ -1448,10 +1433,7 @@ msgstr ""
 "\"%s\""
 
 #: lclstrconsts.sshellctrlsinvalidroot
-#, fuzzy, object-pascal-format
-#| msgid ""
-#| "Invalid pathname:\n"
-#| "\"%s\"\n"
+#, object-pascal-format
 msgctxt "lclstrconsts.sshellctrlsinvalidroot"
 msgid ""
 "Invalid pathname:\n"
@@ -1475,10 +1457,7 @@ msgid "Name"
 msgstr "Nome"
 
 #: lclstrconsts.sshellctrlsselecteditemdoesnotexists
-#, fuzzy, object-pascal-format
-#| msgid ""
-#| "The selected item does not exist on disk:\n"
-#| "\"%s\"\n"
+#, object-pascal-format
 msgid ""
 "The selected item does not exist on disk:\n"
 "\"%s\""
