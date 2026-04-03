@@ -6,7 +6,7 @@ interface
 
 uses
     Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-    LocalizedForms, gettext, LCLTranslator;
+    LocalizedForms, LCLTranslator;
 
 type
 
@@ -14,17 +14,20 @@ type
 
     TfrmPreferences = class(TLocalizedForm)
         Button1: TButton;
-        cBoxPrefLang: TComboBox;
+        cBoxPrefLang: TComboBox;            // wp: why does cBoxPrefLang not exist?
         cBoxPrefTheme: TComboBox;
         lblPrefLang: TLabel;
         lblPrefTheme: TLabel;
         procedure btnOKClick(Sender: TObject);
-        procedure cBoxPrefLangChange(Sender: TObject);
+        procedure FormActivate(Sender: TObject);
     private
+        function GetLanguage: String;  // wp: added
 
     public
 
     end;
+
+    procedure UpdateLanguage(ALanguage: String);  // wp: added
 
 var
     frmPreferences: TfrmPreferences;
@@ -37,15 +40,45 @@ implementation
 
 procedure TfrmPreferences.btnOKClick(Sender: TObject);
 begin
-     frmPreferences.Close;
+  UpdateLanguage(GetLanguage);
+  frmPreferences.Close;
 end;
 
-procedure TfrmPreferences.cBoxPrefLangChange(Sender: TObject);
+procedure TfrmPreferences.FormActivate(Sender: TObject);
+begin
+     cBoxPrefLang.Font.Color := clGray;
+     cBoxPrefLang.Text := CurrentLang;
+     cBoxPrefTheme.Font.Color := clGray;
+     // cBoxPrefTheme.Text := CurrentTheme;
+end;
+
+function TfrmPreferences.GetLanguage: String;
 var
-  lang: String;
   p: Integer;
 begin
-     SetDefaultLang(Copy(cBoxPrefLang.Text, 0, 2));
+  Result := '';
+  if cBoxPrefLang.ItemIndex > -1 then
+  begin
+    Result := cBoxPrefLang.Items[cBoxPrefLang.ItemIndex];
+    p := pos(' ', Result);
+    if p > 0 then
+      Result := copy(Result, 1, p-1)
+    else
+      exit;
+  end;
+end;
+
+
+procedure UpdateLanguage(ALanguage: String);
+begin
+  if ALanguage = '' then
+    exit;
+
+  CurrentLang := ALanguage;
+  SetDefaultLang(ALanguage);
+
+  if Application.MainForm is TLocalizedForm then
+    TLocalizedForm(Application.MainForm).UpdateTranslation(ALanguage);
 end;
 
 end.

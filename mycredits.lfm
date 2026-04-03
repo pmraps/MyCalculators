@@ -16,8 +16,8 @@ inherited frmCredits: TfrmCredits
     Height = 332
     Top = 0
     Width = 360
-    ActivePage = TbShtTodoList
-    TabIndex = 2
+    ActivePage = TbShtCreditsContributors
+    TabIndex = 1
     TabOrder = 0
     object TbShtCreditsCredits: TTabSheet
       Cursor = crNone
@@ -166,6 +166,16 @@ inherited frmCredits: TfrmCredits
         Caption = 'Pedro Albuquerque - author, translator'
         TabOrder = 0
         OnClick = StTxtContributors1Click
+      end
+      object StTxtContributorsWP: TStaticText
+        Left = 0
+        Height = 17
+        Top = 24
+        Width = 353
+        Caption = 'wp - Localization and others (see code comments)'
+        TabOrder = 1
+        OnClick = StTxtContributorsWPClick
+        OnMouseEnter = StTxtContributorsWPMouseEnter
       end
     end
     object TbShtTodoList: TTabSheet

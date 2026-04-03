@@ -688,7 +688,7 @@ msgstr ""
 
 #: myresourcestrings.rstrviewdate
 msgctxt "myresourcestrings.rstrviewdate"
-msgid "Date"
+msgid "Date converter and calculator"
 msgstr ""
 
 #: myresourcestrings.rstrviewdesc
@@ -696,7 +696,7 @@ msgid "Description"
 msgstr ""
 
 #: myresourcestrings.rstrviewmisc
-msgid "Miscellaneous"
+msgid "Miscellaneous functions"
 msgstr ""
 
 #: myresourcestrings.rstrviewsettings
@@ -705,11 +705,11 @@ msgstr ""
 
 #: myresourcestrings.rstrviewsimple
 msgctxt "myresourcestrings.rstrviewsimple"
-msgid "Simple"
+msgid "Simple calculator"
 msgstr ""
 
 #: myresourcestrings.rstrviewtrig
-msgid "Trigonometric"
+msgid "Trigonometric calculator"
 msgstr ""
 
 #: myresourcestrings.rstuesday
@@ -794,6 +794,10 @@ msgstr ""
 
 #: tfrmcredits.sttxtcontributors1.caption
 msgid "Pedro Albuquerque - author, translator"
+msgstr ""
+
+#: tfrmcredits.sttxtcontributorswp.caption
+msgid "wp - Localization and others (see code comments)"
 msgstr ""
 
 #: tfrmcredits.sttxtcredits1.caption
@@ -1599,6 +1603,10 @@ msgstr ""
 msgid "Choose the application language"
 msgstr ""
 
+#: tfrmmycalculators.mnuprefsdialog.caption
+msgid "Settings dialog..."
+msgstr ""
+
 #: tfrmmycalculators.mnupreftheme.caption
 msgctxt "tfrmmycalculators.mnupreftheme.caption"
 msgid "Theme"
@@ -1698,7 +1706,8 @@ msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
 msgstr ""
 
-#: tfrmpreferences.cblanguage.hint
+#: tfrmpreferences.cboxpreflang.hint
+msgctxt "tfrmpreferences.cboxpreflang.hint"
 msgid "Select your prefered language"
 msgstr ""
 
@@ -1706,13 +1715,8 @@ msgstr ""
 msgid "Select a theme, dark or light"
 msgstr ""
 
-#: tfrmpreferences.cboxthemes.text
-msgctxt "tfrmpreferences.cboxthemes.text"
-msgid "Light"
-msgstr ""
-
-#: tfrmpreferences.lbllanguage.caption
-msgctxt "tfrmpreferences.lbllanguage.caption"
+#: tfrmpreferences.lblpreflang.caption
+msgctxt "tfrmpreferences.lblpreflang.caption"
 msgid "Language"
 msgstr ""
 

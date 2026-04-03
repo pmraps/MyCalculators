@@ -24,8 +24,8 @@ uses
 type
   TLocalizedForm = class(TForm)
   protected
-    procedure UpdateTranslation(ALang: String); virtual;
   public
+    procedure UpdateTranslation(ALang: String); virtual;    // wp: moved from protected to "public"
     (* Activate for Lazarus version older than 1.2
     procedure FlipChildren(AllLevels: Boolean); override;
     *)

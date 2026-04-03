@@ -14,6 +14,7 @@ type
 
     TfrmCredits = class(TLocalizedForm)
         PgCtrlCredits: TPageControl;
+        StTxtContributorsWP: TStaticText;
         StTxtCredits11: TStaticText;
         StTxtCredits8: TStaticText;
         StTxtCredits9: TStaticText;
@@ -31,6 +32,8 @@ type
         TbShtCreditsCredits: TTabSheet;
         TViewTodoList: TTreeView;
         procedure FormCreate(Sender: TObject);
+        procedure StTxtContributorsWPClick(Sender: TObject);
+        procedure StTxtContributorsWPMouseEnter(Sender: TObject);
         procedure StTxtCredits11Click(Sender: TObject);
         procedure StTxtCredits11MouseEnter(Sender: TObject);
         procedure StTxtCredits9Click(Sender: TObject);
@@ -108,6 +111,16 @@ end;
 procedure TfrmCredits.FormCreate(Sender: TObject);
 begin
     UpdateTranslation(CurrentLang);
+end;
+
+procedure TfrmCredits.StTxtContributorsWPClick(Sender: TObject);
+begin
+    OpenURL('https://forum.lazarus.freepascal.org/index.php?action=profile;u=45589');
+end;
+
+procedure TfrmCredits.StTxtContributorsWPMouseEnter(Sender: TObject);
+begin
+    StTxtContributorsWP.Cursor := crHandPoint;
 end;
 
 procedure TfrmCredits.StTxtCredits11Click(Sender: TObject);

@@ -9,8 +9,8 @@
         <Filename Value="mycalculators.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="11" Y="14"/>
-        <UsageCount Value="103"/>
+        <CursorPos X="5" Y="21"/>
+        <UsageCount Value="24"/>
       </Unit>
       <Unit>
         <Filename Value="maincalculators.pas"/>
@@ -19,9 +19,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
-        <TopLine Value="239"/>
-        <CursorPos X="25" Y="1124"/>
-        <UsageCount Value="103"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="226"/>
+        <CursorPos Y="258"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -32,10 +33,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Help"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="30"/>
-        <CursorPos Y="142"/>
-        <UsageCount Value="74"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="219"/>
+        <CursorPos X="47" Y="39"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -43,10 +44,7 @@
         <Filename Value="myresourcestrings.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="myResourceStrings"/>
-        <EditorIndex Value="3"/>
-        <CursorPos X="28" Y="119"/>
-        <UsageCount Value="67"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="24"/>
       </Unit>
       <Unit>
         <Filename Value="mycredits.pas"/>
@@ -55,10 +53,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MyCredits"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="170"/>
-        <CursorPos X="50" Y="115"/>
-        <UsageCount Value="57"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="116"/>
+        <CursorPos X="5" Y="118"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -69,11 +67,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Preferences"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="10"/>
-        <CursorPos X="19" Y="9"/>
-        <UsageCount Value="23"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="28"/>
+        <CursorPos Y="51"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -86,13 +83,7 @@
   <Debugging>
     <Watches>
       <Item>
-        <Expression Value="lang"/>
-      </Item>
-      <Item>
         <Expression Value="CurrentLang"/>
-      </Item>
-      <Item>
-        <Expression Value="cBoxPrefLang.ItemIndex"/>
       </Item>
     </Watches>
   </Debugging>

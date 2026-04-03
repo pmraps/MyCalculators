@@ -157,6 +157,7 @@
 {"hash":30421077,"name":"tfrmmycalculators.mnuhamburger.hint","sourcebytes":[67,108,105,99,107,32,116,111,32,111,112,101,110,32,116,104,101,32,109,101,110,117],"value":"Click to open the menu"},
 {"hash":215859715,"name":"tfrmmycalculators.mnupreferences.caption","sourcebytes":[80,114,101,102,101,114,101,110,99,101,115],"value":"Preferences"},
 {"hash":190334915,"name":"tfrmmycalculators.mnupreferences.hint","sourcebytes":[67,104,97,110,103,101,32,97,112,112,108,105,99,97,116,105,111,110,32,108,97,110,103,117,97,103,101,32,97,110,100,47,111,114,32,99,111,108,111,117,114,115],"value":"Change application language and/or colours"},
+{"hash":124539646,"name":"tfrmmycalculators.mnuprefsdialog.caption","sourcebytes":[83,101,116,116,105,110,103,115,32,100,105,97,108,111,103,46,46,46],"value":"Settings dialog..."},
 {"hash":139375349,"name":"tfrmmycalculators.mnupreflang.caption","sourcebytes":[76,97,110,103,117,97,103,101],"value":"Language"},
 {"hash":94262981,"name":"tfrmmycalculators.mnupreflang.hint","sourcebytes":[67,104,111,111,115,101,32,116,104,101,32,97,112,112,108,105,99,97,116,105,111,110,32,108,97,110,103,117,97,103,101],"value":"Choose the application language"},
 {"hash":5958709,"name":"tfrmmycalculators.mnupreftheme.caption","sourcebytes":[84,104,101,109,101],"value":"Theme"},

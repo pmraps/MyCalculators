@@ -1,3 +1,11 @@
+{
+Comments marked with 'wp' came from
+https://forum.lazarus.freepascal.org/index.php?action=profile;u=45589
+hero member of the Lazarus forum, who took the time and knowledge to correct
+this project and teach me some basic notions.
+
+MANY THANKS !
+}
 unit Help;
 
 {$mode ObjFPC}{$H+}
@@ -28,18 +36,26 @@ type
         pgSimple: TPage;
         pgTrigonometric: TPage;
         TrViewHelpIndex: TTreeView;
-        procedure btnOKClick(Sender: TObject);
         procedure FormCreate(Sender: TObject);
         procedure mmoDatesEnter(Sender: TObject);
-        procedure mmoDescriptionEnter(Sender: TObject);
-        procedure mmoMiscFunctionsEnter(Sender: TObject);
         procedure mmoSettingsEnter(Sender: TObject);
-        procedure mmoSimpleEnter(Sender: TObject);
-        procedure mmoTrigonometricEnter(Sender: TObject);
         procedure TrViewHelpIndexSelectionChanged(Sender: TObject);
+
     private
+        // wp
+        procedure PrepareDescriptionMemo;
+        procedure PrepareSimpleMemo;
+        procedure PrepareTrigMemo;
+        procedure PrepareMiscFunctionsMemo;
+        procedure PrepareDatesMemo;
+        procedure PrepareSettingsMemo;
 
     protected
+        // wp
+        procedure PopulateMemos;
+        procedure PopulateTreeView;
+
+    public
         procedure UpdateTranslation(ALang: String); override;
     public
 
@@ -52,82 +68,171 @@ implementation
 
 {$R *.lfm}
 
+{ wp General remark: Turning off the cursor inside the memos is annoying... }
+
 { TfrmHelp }
 
+{ wp All these auxiliary forms are opened modally. Therefore the form closes
+  automatically when the ModalResult of the OK button is different from mrNone.
+  In the Object Inspector I set this to mrClose; therefore, this method is
+  not needed any more.
 
 procedure TfrmHelp.btnOKClick(Sender: TObject);
 begin
-    frmHelp.Close;
+    // Close;   // wp: not required when you set Modalresult to mrClose;
 end;
+}
 
 procedure TfrmHelp.FormCreate(Sender: TObject);
 begin
-    frmHelp.Close;
-    UpdateTranslation(CurrentLang);
+  { wp Hide the newly created help form. This is needed because you auto-create
+   forms which would show the form immediately. }
+  Visible := false;
+  //frmHelp.Close;
+
+  UpdateTranslation(CurrentLang);
+
+  PopulateTreeView;
+  PopulateMemos;
 end;
+
+{ wp This writes the help texts into the memos. This is done by code to facilitate
+  translation. }
+procedure TfrmHelp.PopulateMemos;
+begin
+  PrepareDescriptionMemo;
+  PrepareSimpleMemo;
+  PrepareTrigMemo;
+  PrepareMiscFunctionsMemo;
+  PrepareDatesMemo;
+  PrepareSettingsMemo;
+end;
+
+{ wp I think populating the treeview by code here is safer than doing it in the
+  object inspector because we have to access the nodes of the tree at verious
+  places and must be sure that everything is in sync. This can be achieved more
+  easily in a single file. }
+procedure TfrmHelp.PopulateTreeView;
+begin
+  TrViewHelpIndex.Items.Clear;
+  with TrViewHelpIndex.Items.Add(nil, rsTrViewDesc) do
+  begin
+    ImageIndex := 10;
+    SelectedIndex := ImageIndex;
+  end;
+  with TrViewHelpIndex.Items.Add(nil, rsTrViewSimple) do
+  begin
+    ImageIndex := 16;
+    SelectedIndex := ImageIndex;
+  end;
+  with TrViewHelpIndex.Items.Add(nil, rsTrViewMisc) do
+  begin
+    ImageIndex := 15;
+    SelectedIndex := ImageIndex;
+  end;
+  with TrViewHelpIndex.Items.Add(nil, rsTrViewTrig) do
+  begin
+    ImageIndex := 14;
+    SelectedIndex := ImageIndex;
+  end;
+  with TrViewHelpIndex.Items.Add(nil, rsTrViewDate) do
+  begin
+    ImageIndex := 13;
+    SelectedIndex := ImageIndex;
+  end;
+  with TrViewHelpIndex.Items.Add(nil, rsTrViewSettings) do
+  begin
+    ImageIndex := 8;
+    SelectedIndex := ImageIndex;
+  end;
+end;
+
+procedure TfrmHelp.PrepareDescriptionMemo;
+begin
+  mmoDescription.Lines.Clear;
+  mmoDescription.Lines.Add(rsHelpDescLine0);
+  mmoDescription.Lines.Add('');
+  mmoDescription.Lines.Add(rsHelpDescLine2);
+  mmoDescription.Lines.Add('');
+  mmoDescription.Lines.Add(rsHelpDescLine4);
+  mmoDescription.Lines.Add('');
+  mmoDescription.Lines.Add(rsHelpDescLine6);
+  mmoDescription.Lines.Add('');
+  mmoDescription.Lines.Add(rsHelpDescLine8);
+end;
+
+{ wp This is not working. The memo lines must be provided already when the form
+  is created. I put this code into the PrepareXXXXMemo procedures which are
+  called from the form's OnCreate and when language changes. The latter
+  automatically writes the translated texts into the memos.
+
+  This comment holds for all the other mmoXXXXEnter procedures. }
+
+  { I removed all other similar procedures in accordance. Left this one to
+    show the difference
 
 procedure TfrmHelp.mmoDescriptionEnter(Sender: TObject);
 begin
     mmoDescription.Lines[0] := rsHelpDescLine0;
     mmoDescription.Lines[1] := '';
-    mmoDescription.Lines[2] := rsHelpDescLine2;
-    mmoDescription.Lines[3] := '';
-    mmoDescription.Lines[4] := rsHelpDescLine4;
-    mmoDescription.Lines[5] := '';
-    mmoDescription.Lines[6] := rsHelpDescLine6;
-    mmoDescription.Lines[7] := '';
-    mmoDescription.Lines[8] := rsHelpDescLine8;
+    ...
+end;
+}
+
+procedure TfrmHelp.PrepareSimpleMemo;
+begin
+  mmoSimple.Lines.Clear;
+  mmoSimple.Lines.Add(rsHelpSimpleLine0);
+  mmoSimple.Lines.Add('');
+  mmoSimple.Lines.Add(rsHelpSimpleLine2);
+  mmoSimple.Lines.Add('');
+  mmoSimple.Lines.Add(rsHelpSimpleLine4);
+  mmoSimple.Lines.Add('');
+  mmoSimple.Lines.Add(rsHelpSimpleLine6);
 end;
 
-procedure TfrmHelp.mmoSimpleEnter(Sender: TObject);
+procedure TfrmHelp.PrepareTrigMemo;
 begin
-    mmoSimple.Lines[0] := rsHelpSimpleLine0;
-    mmoSimple.Lines[1] := '';
-    mmoSimple.Lines[2] := rsHelpSimpleLine2;
-    mmoSimple.Lines[3] := '';
-    mmoSimple.Lines[4] := rsHelpSimpleLine4;
-    mmoSimple.Lines[5] := '';
-    mmoSimple.Lines[6] := rsHelpSimpleLine6;
+  mmoTrigonometric.Lines.Clear;
+  mmoTrigonometric.Lines.Add(rsHelpTrigLine0);
+  mmoTrigonometric.Lines.Add('');
+  mmoTrigonometric.Lines.Add(rsHelpTrigLine2);
+  mmoTrigonometric.Lines.Add('');
+  mmoTrigonometric.Lines.Add(rsHelpTrigLine4);
 end;
 
-procedure TfrmHelp.mmoTrigonometricEnter(Sender: TObject);
+procedure TfrmHelp.PrepareMiscFunctionsMemo;
 begin
-    mmoTrigonometric.Lines[0] := rsHelpTrigLine0;
-    mmoTrigonometric.Lines[1] := '';
-    mmoTrigonometric.Lines[2] := rsHelpTrigLine2;
-    mmoTrigonometric.Lines[3] := '';
-    mmoTrigonometric.Lines[4] := rsHelpTrigLine4;
+  mmoMiscFunctions.Lines.Clear;
+  mmoMiscFunctions.Lines.Add(rsHelpMiscLine0);
+  mmoMiscFunctions.Lines.Add('');
+  mmoMiscFunctions.Lines.Add(rsHelpMiscLine2);
+  mmoMiscFunctions.Lines.Add('');
+  mmoMiscFunctions.Lines.Add(rsHelpMiscLine4);
+  mmoMiscFunctions.Lines.Add('');
+  mmoMiscFunctions.Lines.Add(rsHelpMiscLine6);
+  mmoMiscFunctions.Lines.Add('');
+  mmoMiscFunctions.Lines.Add(rsHelpMiscLine8);
+  mmoMiscFunctions.Lines.Add('');
+  mmoMiscFunctions.Lines.Add(rsHelpMiscLine10);
 end;
 
-procedure TfrmHelp.mmoMiscFunctionsEnter(Sender: TObject);
+procedure TfrmHelp.PrepareDatesMemo;
 begin
-    mmoMiscFunctions.Lines[0] := rsHelpMiscLine0;
-    mmoMiscFunctions.Lines[1] := '';
-    mmoMiscFunctions.Lines[2] := rsHelpMiscLine2;
-    mmoMiscFunctions.Lines[3] := '';
-    mmoMiscFunctions.Lines[4] := rsHelpMiscLine4;
-    mmoMiscFunctions.Lines[5] := '';
-    mmoMiscFunctions.Lines[6] := rsHelpMiscLine6;
-    mmoMiscFunctions.Lines[7] := '';
-    mmoMiscFunctions.Lines[8] := rsHelpMiscLine8;
-    mmoMiscFunctions.Lines[9] := '';
-    mmoMiscFunctions.Lines[10] := rsHelpMiscLine10;
+    mmoDates.Lines.Clear;
+    mmoDates.Lines.Add(rsHelpDateLine0);
+    mmoDates.Lines.Add(rsHelpDateLine1);
+    mmoDates.Lines.Add('');
+    mmoDates.Lines.Add(rsHelpDateLine3);
+    mmoDates.Lines.Add(rsHelpDateLine4);
 end;
 
-procedure TfrmHelp.mmoDatesEnter(Sender: TObject);
+procedure TfrmHelp.PrepareSettingsMemo;
 begin
-    mmoDates.Lines[0] := rsHelpDateLine0;
-    mmoDates.Lines[1] := rsHelpDateLine1;
-    mmoDates.Lines[2] := '';
-    mmoDates.Lines[3] := rsHelpDateLine3;
-    mmoDates.Lines[4] := rsHelpDateLine4;
-end;
-
-procedure TfrmHelp.mmoSettingsEnter(Sender: TObject);
-begin
-    mmoSettings.Lines[0] := rsHelpSettingsLine0;
-    mmoSettings.Lines[1] := '';
-    mmoSettings.Lines[2] := rsHelpSettingsLine2;
+    mmoSettings.Lines.Clear;
+    mmoSettings.Lines.Add(rsHelpSettingsLine0);
+    mmoSettings.Lines.Add('');
+    mmoSettings.Lines.Add(rsHelpSettingsLine2);
 end;
 
 procedure TfrmHelp.TrViewHelpIndexSelectionChanged(Sender: TObject);
@@ -137,104 +242,15 @@ begin
 end;
 
 procedure TfrmHelp.UpdateTranslation(ALang: String);
-var
-  s: String;
 begin
   inherited;
 
-{    mmoDescription.Lines[0] := rsHelpDescLine0;
-    mmoDescription.Lines[1] := '';
-    mmoDescription.Lines[2] := rsHelpDescLine2;
-    mmoDescription.Lines[3] := '';
-    mmoDescription.Lines[4] := rsHelpDescLine4;
-    mmoDescription.Lines[5] := '';
-    mmoDescription.Lines[6] := rsHelpDescLine6;
-    mmoDescription.Lines[7] := '';
-    mmoDescription.Lines[8] := rsHelpDescLine8;
+  { wp It seems to be that the nodes of the treeview are not automatically
+    translated. --> We must update the texts manually. }
+  PopulateTreeView;
 
-    mmoSimple.Lines[0] := rsHelpSimpleLine0;
-    mmoSimple.Lines[1] := '';
-    mmoSimple.Lines[2] := rsHelpSimpleLine2;
-    mmoSimple.Lines[3] := '';
-    mmoSimple.Lines[4] := rsHelpSimpleLine4;
-    mmoSimple.Lines[5] := '';
-    mmoSimple.Lines[6] := rsHelpSimpleLine6;
-
-    mmoMiscFunctions.Lines[0] := rsHelpMiscLine0;
-    mmoMiscFunctions.Lines[1] := '';
-    mmoMiscFunctions.Lines[2] := rsHelpMiscLine2;
-    mmoMiscFunctions.Lines[3] := '';
-    mmoMiscFunctions.Lines[4] := rsHelpMiscLine4;
-    mmoMiscFunctions.Lines[5] := '';
-    mmoMiscFunctions.Lines[6] := rsHelpMiscLine6;
-    mmoMiscFunctions.Lines[7] := '';
-    mmoMiscFunctions.Lines[8] := rsHelpMiscLine8;
-    mmoMiscFunctions.Lines[9] := '';
-    mmoMiscFunctions.Lines[10] := rsHelpMiscLine10;
-
-    mmoSettings.Lines[0] := rsHelpSettingsLine0;
-    mmoSettings.Lines[1] := '';
-    mmoSettings.Lines[2] := rsHelpSettingsLine2;     }
-
-    {
-    DefaultTranslator cannot execute code, i.e. strings combined by means of
-    the Format statement are not translated automatically, we have to call a
-    method here to get those labels translated.
-    }
-
-    {
-    In old versions there was a complication for the labels LblTodayIs which
-    displays the current date, and with LblMoney which displays some amount of
-    money with the currency sign.
-    Formatting for these data is extracted from the DefaultFormatSettings.
-    The resulting strings are encoded in ansi and do not display locale-specific
-    characters. To get this right they have to be converted to UTF8.
-    Usually, it is sufficient to call SysToUTF8 for this purpose. Our example,
-    however, allows for Hebrew characters which are usually not contained in the
-    typical code pages. Therefore, we'll use a more general procedure based on
-    ConvertEncoding which allows to specify the source code page which had been
-    determined when UpdateFormatSettings had been called in the LocalizedForms
-    unit.
-
-    This has been changed since Laz 2.2.0. The old conversion code is left
-    here commented for comparison.
-    }
-    s := FormatDateTime(DefaultFormatSettings.LongDateFormat, Date());
-    {
-    s := ConvertEncoding(
-      FormatDateTime(DefaultFormatSettings.LongDateFormat, d),  // string to convert
-      CodePage,      // source encoding as defined by "CodePage"
-      EncodingUTF8   // destination encoding - UTF8);
-      }
-      { Note: "ConvertEncoding" requires the unit LConvEncoding in the uses clause. }
-//  LblTodayIs.Caption := Format(rsTodayIs, [s]);
-
-  s := DefaultFormatSettings.CurrencyString;
-
-  { Now the same with LblMoney... }
-{  LblMoney.Caption := Format('%.*n %s', [
-    DefaultFormatSettings.CurrencyDecimals,
-    10.0e6,
-    DefaultFormatSettings.CurrencyString
-  ]);}
-
-{  LblMoney.Caption := ConvertEncoding(
-    Format('%.*n %s', [
-      DefaultFormatSettings.CurrencyDecimals,
-      10e6,
-      DefaultFormatSettings.CurrencyString
-    ]),
-    CodePage, EncodingUTF8
-  );  }
-
-  { Items that are are not translated automatically: }
-{  with RadioGroup do begin
-    Items[0] := rsOne;
-    Items[1] := rsTwo;
-    Items[2] := rsThree;
-  end;}
-
-  { We should translate CheckGroup here also. Probably also list strings, etc.. }
+  { wp The same with the help texts in the memos. }
+  PopulateMemos;
 end;
 
 end.

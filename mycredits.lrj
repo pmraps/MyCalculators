@@ -15,5 +15,6 @@
 {"hash":107102275,"name":"tfrmcredits.tbshtcreditscontributors.hint","sourcebytes":[68,105,115,112,108,97,121,115,32,97,32,108,105,115,116,32,111,102,32,116,114,97,110,115,108,97,116,111,114,115,32,97,110,100,32,99,111,110,116,114,105,98,117,116,111,114,115],"value":"Displays a list of translators and contributors"},
 {"hash":188419347,"name":"tfrmcredits.tbshtcreditscontributors.caption","sourcebytes":[67,111,110,116,114,105,98,117,116,111,114,115],"value":"Contributors"},
 {"hash":124221042,"name":"tfrmcredits.sttxtcontributors1.caption","sourcebytes":[80,101,100,114,111,32,65,108,98,117,113,117,101,114,113,117,101,32,45,32,97,117,116,104,111,114,44,32,116,114,97,110,115,108,97,116,111,114],"value":"Pedro Albuquerque - author, translator"},
+{"hash":79632889,"name":"tfrmcredits.sttxtcontributorswp.caption","sourcebytes":[119,112,32,45,32,76,111,99,97,108,105,122,97,116,105,111,110,32,97,110,100,32,111,116,104,101,114,115,32,40,115,101,101,32,99,111,100,101,32,99,111,109,109,101,110,116,115,41],"value":"wp - Localization and others (see code comments)"},
 {"hash":185770468,"name":"tfrmcredits.tbshttodolist.caption","sourcebytes":[84,111,32,68,111,32,76,105,115,116],"value":"To Do List"}
 ]}

@@ -80,10 +80,10 @@ uses
         rsDays2 = ' days.';
         //TREEVIEW NAMES
         rsTrViewDesc = 'Description';
-        rsTrViewSimple = 'Simple';
-        rsTrViewMisc = 'Miscellaneous';
-        rsTrViewTrig = 'Trigonometric';
-        rsTrViewDate = 'Date';
+        rsTrViewSimple = 'Simple calculator';
+        rsTrViewMisc = 'Miscellaneous functions';
+        rsTrViewTrig = 'Trigonometric calculator';
+        rsTrViewDate = 'Date converter and calculator';
         rsTrViewSettings = 'Settings';
         // DESCRIPTION HELP STRINGS
         rsHelpDescLine0 = 'This is yet another multi-function calculator.';

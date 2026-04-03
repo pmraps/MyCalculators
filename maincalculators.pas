@@ -4,11 +4,12 @@ unit mainCalculators;
 
 interface
 
-uses
-    SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
-    Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math, baseConvert,
-    MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator, LocalizedForms,
-    myResourceStrings, gettext;
+uses LazLogger,
+     SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
+     Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math, baseConvert,
+     MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator, LocalizedForms,
+     myResourceStrings, gettext,
+     FileUtil;
 
 type
     { procedure ColourChange;
@@ -103,6 +104,7 @@ type
       lblConvertTo: TLabel;
       lblStartDate: TLabel;
       lblEndDate: TLabel;
+      mnuPrefsDialog: TMenuItem;
       mnuPrefLang: TMenuItem;
       mnuPrefTheme: TMenuItem;
       mnuPrefThemeDark: TMenuItem;
@@ -128,6 +130,7 @@ type
       rdBtnTrigonometry: TRadioButton;
       rdBtnFunctions: TRadioButton;
       rdBtnSimpleCalculator: TRadioButton;
+      Separator1: TMenuItem;
       StTxtCalendarConversion: TStaticText;
       StTxtDateCalculation: TStaticText;
       txtFieldResult: TEdit;
@@ -210,15 +213,10 @@ type
       procedure btnRadiansToCyclesClick(Sender: TObject);
       procedure DTPickerEndDateChange(Sender: TObject);
       procedure DTPickerStartDateChange(Sender: TObject);
-      procedure mnuFileExitClick(Sender: TObject);
-      procedure mnuEditSettingsClick(Sender: TObject);
-      procedure mnuHelpCreditsClick(Sender: TObject);
-      procedure mnuHelpHelpClick(Sender: TObject);
-      procedure mnuPrefLangClick(Sender: TObject);
-      procedure mnuPrefLangEsClick(Sender: TObject);
-      procedure mnuPrefLangFrClick(Sender: TObject);
-      procedure mnuPrefLangPtClick(Sender: TObject);
-      procedure munPrefLangEnClick(Sender: TObject);
+      procedure mnuCreditsClick(Sender: TObject);
+      procedure mnuExitClick(Sender: TObject);
+      procedure mnuHelpClick(Sender: TObject);
+      procedure mnuPrefsDialogClick(Sender: TObject);
       procedure ppMenuArabClick(Sender: TObject);
       procedure ppMenuChineseClick(Sender: TObject);
       procedure ppMenuFrenchClick(Sender: TObject);
@@ -230,11 +228,13 @@ type
       procedure rdBtnSimpleCalculatorClick(Sender: TObject);
       procedure rdBtnTrigonometryClick(Sender: TObject);
       procedure FormCreate(Sender: TObject);
-      function GetSystemLanguage : String;
   private
       Num1, Num2, Result, Operators : String;
       Memory : extended;
 
+      function GetSystemLanguage : String;
+      procedure InitLanguagesMenu;                      // wp: Added
+      procedure LanguageClick(Sender: TObject);         // wp: Added
   public
       function CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
       function DateDifference(firstDate, secondDate : TDate) : String;
@@ -242,7 +242,6 @@ type
 
 var
     frmMyCalculators: TfrmMyCalculators;
-    Language : String;
 
 const
   E   = 2.718281828459045235360287471352;
@@ -255,6 +254,7 @@ procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
      DTPickerPresent.Date := Now();
      UpdateTranslation(GetSystemLanguage);
+     CurrentLang := GetSystemLanguage;
      pnlSimple.Visible := true;
      rdBtnSimpleCalculator.Checked := true;
      pnlFunctions.Visible := false;
@@ -263,6 +263,8 @@ begin
      DTPickerEndDate.Date := Now();
      DTPickerStartDate.Date := Now();
      StTxtCalendarConversion.Caption := CalendarConversion(Now(), 'G', 'G');
+
+     InitLanguagesMenu;            // wp: Added
 end;
 
 procedure TfrmMyCalculators.btnSevenClick(Sender: TObject);
@@ -370,50 +372,24 @@ begin
     StTxtDateCalculation.Caption := DateDifference(DTPickerStartDate.Date, DTPickerEndDate.Date);
 end;
 
-procedure TfrmMyCalculators.mnuFileExitClick(Sender: TObject);
+procedure TfrmMyCalculators.mnuCreditsClick(Sender: TObject);
 begin
-    Application.Terminate;
+  frmCredits.ShowModal;
 end;
 
-procedure TfrmMyCalculators.mnuEditSettingsClick(Sender: TObject);
+procedure TfrmMyCalculators.mnuExitClick(Sender: TObject);
 begin
-    frmPreferences.ShowModal;
+  Close;
 end;
 
-procedure TfrmMyCalculators.mnuHelpCreditsClick(Sender: TObject);
+procedure TfrmMyCalculators.mnuHelpClick(Sender: TObject);
 begin
-    frmCredits.ShowModal;
+  frmHelp.ShowModal;
 end;
 
-procedure TfrmMyCalculators.mnuHelpHelpClick(Sender: TObject);
+procedure TfrmMyCalculators.mnuPrefsDialogClick(Sender: TObject);
 begin
-    frmHelp.ShowModal;
-end;
-
-procedure TfrmMyCalculators.mnuPrefLangClick(Sender: TObject);
-begin
-    frmPreferences.ShowModal;
-    ShowMessage(CurrentLang);
-end;
-
-procedure TfrmMyCalculators.mnuPrefLangEsClick(Sender: TObject);
-begin
-    CurrentLang := 'es';
-end;
-
-procedure TfrmMyCalculators.mnuPrefLangFrClick(Sender: TObject);
-begin
-    CurrentLang := 'es';
-end;
-
-procedure TfrmMyCalculators.mnuPrefLangPtClick(Sender: TObject);
-begin
-    CurrentLang := 'pt';
-end;
-
-procedure TfrmMyCalculators.munPrefLangEnClick(Sender: TObject);
-begin
-     CurrentLang := 'fr';
+  frmPreferences.ShowModal;
 end;
 
 procedure TfrmMyCalculators.ppMenuArabClick(Sender: TObject);
@@ -1126,5 +1102,69 @@ begin
      Result := FallbackLang;
 end;
 
+{ wp: Added }
+procedure TfrmMyCalculators.LanguageClick(Sender: TObject);
+var
+  mnu: TMenuItem;
+  po: String;
+begin
+  if not (Sender is TMenuItem) then
+    exit;
+  mnu := TMenuItem(Sender);
+  mnu.Checked := true;
+  po := mnu.Caption;
+  if po[1] = '.' then Delete(po, 1, 1);
+  SetDefaultLang(po);       // Translate resource strings and insert them into the current form
+  UpdateTranslation(po);    // Inserts translated strings into the other forms
+  CurrentLang := po;
+end;
+
+{ wp: This is the compare function needed by the po file stringlist for sorting by
+  language codes. }
+function CompareLang(List: TStringList; Index1, Index2: Integer): Integer;
+var
+  lang1, lang2: String;
+begin
+  lang1 := ExtractFileExt(ChangeFileExt(List[Index1], ''));
+  lang2 := ExtractFileExt(ChangeFileExt(List[Index2], ''));
+  Result := CompareText(lang1, lang2);
+end;
+
+{ wp: Iterate over all po files and add a sub-menu item for each language to the
+  mnuPrefLang menu item. }
+procedure TfrmMyCalculators.InitLanguagesMenu;
+var
+  L: TStringList;
+  fn: String;
+  po: String;
+  mnu: TMenuItem;
+begin
+  L := TStringList.Create;
+  try
+    fn := ChangeFileExt(ExtractFileName(Application.ExeName), '');
+
+    FindAllFiles(L, Application.Location + 'languages', fn + '.*.po', false);
+    L.CustomSort(@CompareLang);   // Sort items by language
+    for fn in L do
+    begin
+      po := ExtractFileExt(ChangeFileExt(fn, ''));
+      if po <> '' then
+      begin
+        if po[1] = '.' then Delete(po, 1, 1);
+        // Create a submenu item for this language
+        mnu := TMenuItem.Create(mainMenu);
+        mnu.Caption := po;
+        mnu.RadioItem := true;
+        mnu.OnClick := @LanguageClick;
+        // Add the item as a submenu to the mnuPrefLang item.
+        mnuPrefLang.Add(mnu);
+      end;
+    end;
+  finally
+    L. Free;
+  end;
+end;
+
 end.
+
 

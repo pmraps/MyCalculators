@@ -1,7 +1,7 @@
-object frmPreferences: TfrmPreferences
-  Left = 488
+inherited frmPreferences: TfrmPreferences
+  Left = 569
   Height = 109
-  Top = 250
+  Top = 454
   Width = 288
   Caption = 'Preferences'
   ClientHeight = 109
@@ -9,8 +9,8 @@ object frmPreferences: TfrmPreferences
   DefaultMonitor = dmMainForm
   ParentFont = True
   Position = poMainFormCenter
-  LCLVersion = '4.4.0.0'
-  object CBLanguage: TComboBox
+  OnActivate = FormActivate
+  object cBoxPrefLang: TComboBox[0]
     Left = 136
     Height = 23
     Hint = 'Select your prefered language'
@@ -20,6 +20,7 @@ object frmPreferences: TfrmPreferences
     Color = clWhite
     ItemHeight = 15
     Items.Strings = (
+      'de - Deutsch'
       'en - English'
       'es - Español'
       'fr - Français'
@@ -28,7 +29,7 @@ object frmPreferences: TfrmPreferences
     )
     TabOrder = 0
   end
-  object lblLanguage: TLabel
+  object lblPrefLang: TLabel[1]
     Left = 8
     Height = 25
     Top = 8
@@ -37,7 +38,7 @@ object frmPreferences: TfrmPreferences
     Caption = 'Language'
     Layout = tlCenter
   end
-  object btnOK: TButton
+  object btnOK: TButton[2]
     Left = 210
     Height = 25
     Hint = 'Save your choices and return to the calculator'
@@ -47,7 +48,7 @@ object frmPreferences: TfrmPreferences
     TabOrder = 2
     OnClick = btnOKClick
   end
-  object lblTheme: TLabel
+  object lblTheme: TLabel[3]
     Left = 8
     Height = 25
     Top = 40
@@ -55,7 +56,7 @@ object frmPreferences: TfrmPreferences
     AutoSize = False
     Caption = 'Theme'
   end
-  object CBoxThemes: TComboBox
+  object CBoxThemes: TComboBox[4]
     Left = 136
     Height = 23
     Hint = 'Select a theme, dark or light'
@@ -64,12 +65,10 @@ object frmPreferences: TfrmPreferences
     AutoSize = False
     Color = clWhite
     ItemHeight = 15
-    ItemIndex = 1
     Items.Strings = (
       'Dark'
       'Light'
     )
     TabOrder = 1
-    Text = 'Light'
   end
 end
