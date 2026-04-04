@@ -37,8 +37,6 @@ type
         pgTrigonometric: TPage;
         TrViewHelpIndex: TTreeView;
         procedure FormCreate(Sender: TObject);
-        procedure mmoDatesEnter(Sender: TObject);
-        procedure mmoSettingsEnter(Sender: TObject);
         procedure TrViewHelpIndexSelectionChanged(Sender: TObject);
 
     private

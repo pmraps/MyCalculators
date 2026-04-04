@@ -1,13 +1,13 @@
 inherited frmMyCalculators: TfrmMyCalculators
   Left = 488
-  Height = 604
+  Height = 258
   Top = 250
   Width = 634
   HelpType = htKeyword
   HelpKeyword = 'simpleHlp'
   HelpContext = 1
   Caption = 'Calculators'
-  ClientHeight = 604
+  ClientHeight = 258
   ClientWidth = 634
   DefaultMonitor = dmMainForm
   Font.CharSet = ANSI_CHARSET
@@ -387,9 +387,9 @@ inherited frmMyCalculators: TfrmMyCalculators
     end
   end
   object pnlTrigonometry: TPanel[3]
-    Left = 336
+    Left = 0
     Height = 208
-    Top = 312
+    Top = 72
     Width = 288
     BevelOuter = bvNone
     ClientHeight = 208
@@ -455,7 +455,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnASinHClick
     end
     object btnSecant: TButton
-      Left = 0
+      Left = 2
       Height = 25
       Hint = 'Calculate the secant'
       Top = 120
@@ -693,7 +693,7 @@ inherited frmMyCalculators: TfrmMyCalculators
   object pnlFunctions: TPanel[4]
     Left = 2
     Height = 264
-    Top = 312
+    Top = 72
     Width = 288
     BevelOuter = bvNone
     ClientHeight = 264

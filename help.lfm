@@ -9,6 +9,7 @@ inherited frmHelp: TfrmHelp
   Caption = 'Help'
   ClientHeight = 251
   ClientWidth = 535
+  DefaultMonitor = dmMainForm
   ParentFont = True
   Position = poOwnerFormCenter
   OnCreate = FormCreate

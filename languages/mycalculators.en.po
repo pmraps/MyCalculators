@@ -868,12 +868,20 @@ msgctxt "myresourcestrings.rsyears"
 msgid " years."
 msgstr " years."
 
+#: tfrmcredits.caption
+#, fuzzy
+msgctxt "tfrmcredits.caption"
+msgid "Credits"
+msgstr "Credits"
+
 #: tfrmcredits.sttxtcontributors1.caption
-msgid "Pedro Albuquerque - author, translator"
+#, fuzzy
+#| msgid "Pedro Albuquerque - author, translator"
+msgid "Pedro Albuquerque (author, translator)"
 msgstr "Pedro Albuquerque - author, translator"
 
 #: tfrmcredits.sttxtcontributorswp.caption
-msgid "wp - Localization and others (see code comments)"
+msgid "wp (Developer) - Localization and others (see code comments)"
 msgstr ""
 
 #: tfrmcredits.sttxtcredits1.caption
@@ -920,6 +928,10 @@ msgstr "mailto procedure - balazsszekely"
 msgid "Book Icon"
 msgstr "Book Icon"
 
+#: tfrmcredits.tabsheet1.caption
+msgid "Imagens"
+msgstr ""
+
 #: tfrmcredits.tbshtcreditscontributors.caption
 msgid "Contributors"
 msgstr "Contributors"
@@ -929,6 +941,7 @@ msgid "Displays a list of translators and contributors"
 msgstr "Displays a list of translators and contributors"
 
 #: tfrmcredits.tbshtcreditscredits.caption
+msgctxt "tfrmcredits.tbshtcreditscredits.caption"
 msgid "Credits"
 msgstr "Credits"
 

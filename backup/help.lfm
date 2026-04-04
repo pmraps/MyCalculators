@@ -111,7 +111,6 @@ inherited frmHelp: TfrmHelp
         ReadOnly = True
         ScrollBars = ssAutoBoth
         TabOrder = 0
-        OnEnter = mmoDatesEnter
       end
     end
     object pgSettings: TPage
@@ -133,7 +132,6 @@ inherited frmHelp: TfrmHelp
         ScrollBars = ssAutoBoth
         TabOrder = 0
         WantReturns = False
-        OnEnter = mmoSettingsEnter
       end
     end
   end

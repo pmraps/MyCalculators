@@ -4,12 +4,12 @@ unit mainCalculators;
 
 interface
 
-uses                  LazLogger,
-    SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
-    Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math, baseConvert,
-    MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator, LocalizedForms,
-    myResourceStrings, gettext,
-    FileUtil;
+uses LazLogger,
+     SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
+     Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math, baseConvert,
+     MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator, LocalizedForms,
+     myResourceStrings, gettext,
+     FileUtil;
 
 type
     { procedure ColourChange;
@@ -235,6 +235,8 @@ type
       function GetSystemLanguage : String;
       procedure InitLanguagesMenu;                      // wp: Added
       procedure LanguageClick(Sender: TObject);         // wp: Added
+
+      procedure ReturnToSimplePanel;
   public
       function CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
       function DateDifference(firstDate, secondDate : TDate) : String;
@@ -254,6 +256,7 @@ procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
      DTPickerPresent.Date := Now();
      UpdateTranslation(GetSystemLanguage);
+     CurrentLang := GetSystemLanguage;
      pnlSimple.Visible := true;
      rdBtnSimpleCalculator.Checked := true;
      pnlFunctions.Visible := false;
@@ -278,11 +281,13 @@ begin
     Angle := StrToFloat(txtFieldResult.Text);
     SinCos(DegToRad(Angle), Sine, Cosine);
     txtFieldResult.Text := FloatToStr(Sine);
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnSinHClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(SinH(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnSixClick(Sender: TObject);
@@ -304,16 +309,19 @@ end;
 procedure TfrmMyCalculators.btnTanClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(Tan(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnTanHClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(TanH(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnTAUClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr(TAU);
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnTenRaisedTo1Click(Sender: TObject);
@@ -338,11 +346,7 @@ begin
     Num1 := txtFieldResult.Text;
      Operators := 'NRoot';
      txtFieldResult.Text := '';
-     pnlDatulator.Visible := false;
-     pnlFunctions.Visible := false;
-     pnlTrigonometry.Visible := false;
-     pnlSimple.Visible := true;
-     rdBtnSimpleCalculator.Checked := true;
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnZeroClick(Sender: TObject);
@@ -354,11 +358,13 @@ end;
 procedure TfrmMyCalculators.btnCycleToRadClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(CycleToRad(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnRadiansToCyclesClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(RadToCycle(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.DTPickerEndDateChange(Sender: TObject);
@@ -474,36 +480,37 @@ begin
     Num1 := txtFieldResult.Text;
     Operators := 'B>N';
     txtFieldResult.Text := '';
-    pnlDatulator.Visible := false;
-    pnlFunctions.Visible := false;
-    pnlTrigonometry.Visible := false;
-    pnlSimple.Visible := true;
-    rdBtnSimpleCalculator.Checked := true;
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnCelsiusClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr(StrToFloat(txtFieldResult.Text) * 1.8 + 32);
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnCoSecantClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(coSecant(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnCosHClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(CosH(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnCotHClick(Sender: TObject);
 begin
-
+     txtFieldResult.Text := FloatToStr((Math.Power(E, 2) + 1)/(Power(E, 2) - 1));
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnCTanClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(CoTan(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnDecToBaseClick(Sender: TObject);
@@ -511,11 +518,7 @@ begin
     Num1 := txtFieldResult.Text;
     Operators := 'D>N';
     txtFieldResult.Text := '';
-    pnlDatulator.Visible := false;
-    pnlFunctions.Visible := false;
-    pnlTrigonometry.Visible := false;
-    pnlSimple.Visible := true;
-    rdBtnSimpleCalculator.Checked := true;
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnAddClick(Sender: TObject);
@@ -528,21 +531,25 @@ end;
 procedure TfrmMyCalculators.btnASinClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(arcSin(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnASinHClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(arcSinH(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnATanClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(ArcTan(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnATanHClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(ArcTanH(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.BtnActualCalendarClick(Sender: TObject);
@@ -553,11 +560,13 @@ end;
 procedure TfrmMyCalculators.btnACosClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(ArcCos(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnACosHClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(ArcosH(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnACotClick(Sender: TObject);
@@ -570,6 +579,7 @@ begin
   else
     ArcCot := pi/2;
   txtFieldResult.Text := FloatToStr(ArcCot);
+  ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnClearEntryClick(Sender: TObject);
@@ -594,6 +604,7 @@ begin
     Angle := StrToFloat(txtFieldResult.Text);
     SinCos(DegToRad(Angle), Sine, Cosine);
     txtFieldResult.Text := FloatToStr(Cosine);
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnCubeNum1Click(Sender: TObject);
@@ -611,6 +622,7 @@ end;
 procedure TfrmMyCalculators.btnEulerConstantClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr(E);
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnDecHexClick(Sender: TObject);
@@ -625,11 +637,7 @@ begin
      Num1 := txtFieldResult.Text;
      Operators := 'Exp';
      txtFieldResult.Text := '';
-     pnlDatulator.Visible := false;
-     pnlFunctions.Visible := false;
-     pnlTrigonometry.Visible := false;
-     pnlSimple.Visible := true;
-     rdBtnSimpleCalculator.Checked := true;
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnFactorialClick(Sender: TObject);
@@ -640,38 +648,39 @@ begin
      repeat
        factorial := factorial * (temp - 1);
        Dec(temp);
-     until temp = 1;;
-     pnlDatulator.Visible := false;
-     pnlFunctions.Visible := false;
-     pnlTrigonometry.Visible := false;
-     pnlSimple.Visible := true;
-     rdBtnSimpleCalculator.Checked := true;
+     until temp = 1;
      txtFieldResult.Text := IntToStr(factorial);
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnFahrenheitClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr((StrToFloat(txtFieldResult.Text) - 32) / 1.8);
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnFractionClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(1 / StrToInt(txtFieldResult.Text));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnGalToLClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr((StrToFloat(txtFieldResult.Text) * 4.54609));
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnGradiansDegreesClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr(GradToDeg(StrToFloat(txtFieldResult.Text)));
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnGradiansRadiansClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr(GradToRad(StrToFloat(txtFieldResult.Text)));
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnHexToBaseClick(Sender: TObject);
@@ -679,11 +688,7 @@ begin
     Num1 := txtFieldResult.Text;
     Operators := 'H>N';
     txtFieldResult.Text := '';
-    pnlDatulator.Visible := false;
-    pnlFunctions.Visible := false;
-    pnlTrigonometry.Visible := false;
-    pnlSimple.Visible := true;
-    rdBtnSimpleCalculator.Checked := true;
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnHypotenuseClick(Sender: TObject);
@@ -691,21 +696,19 @@ begin
     Num1 := txtFieldResult.Text;
     Operators := 'Hypo';
     txtFieldResult.Text := '';
-    pnlDatulator.Visible := false;
-    pnlFunctions.Visible := false;
-    pnlTrigonometry.Visible := false;
-    pnlSimple.Visible := true;
-    rdBtnSimpleCalculator.Checked := true;
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnKgToLbsClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr(StrToFloat(txtFieldResult.Text) * 2.2046226218);
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnLbsToKgClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(StrToFloat(txtFieldResult.Text) * 0.45359237);
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnLogClick(Sender: TObject);
@@ -713,16 +716,13 @@ begin
     Num1 := txtFieldResult.Text;
     Operators := 'Log';
     txtFieldResult.Text := '';
-    pnlDatulator.Visible := false;
-    pnlFunctions.Visible := false;
-    pnlTrigonometry.Visible := false;
-    pnlSimple.Visible := true;
-    rdBtnSimpleCalculator.Checked := true;
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnLToGalClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(StrToFloat(txtFieldResult.Text) * 0.219969248299);
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnMemoryClear2Click(Sender: TObject);
@@ -751,28 +751,25 @@ begin
     Num1 := txtFieldResult.Text;
     Operators := 'O>N';
     txtFieldResult.Text := '';
-    pnlDatulator.Visible := false;
-    pnlFunctions.Visible := false;
-    pnlTrigonometry.Visible := false;
-    pnlSimple.Visible := true;
-    rdBtnSimpleCalculator.Checked := true;
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnPIClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(Pi);
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnRadiansDegreesClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(RadToDeg(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnRadiansGradiansClick(Sender: TObject);
-var temp : Float;
 begin
-    temp := StrToFloat(txtFieldResult.Text);
-    txtFieldResult.Text := FloatToStr(RadToGrad(temp));
+    txtFieldResult.Text := FloatToStr(RadToGrad(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnDivideClick(Sender: TObject);
@@ -797,6 +794,7 @@ end;
 procedure TfrmMyCalculators.btnDegreesGradiansClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(DegToGrad(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnMinusClick(Sender: TObject);
@@ -828,11 +826,13 @@ end;
 procedure TfrmMyCalculators.btnPercentClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr(StrToFloat(txtFieldResult.Text) / 100);
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnPermilageClick(Sender: TObject);
 begin
      txtFieldResult.Text := FloatToStr(StrToFloat(txtFieldResult.Text) / 1000);
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnPlusMinusClick(Sender: TObject);
@@ -843,6 +843,7 @@ end;
 procedure TfrmMyCalculators.btnDegreesRadiansClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(DegToRad(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnRemainderClick(Sender: TObject);
@@ -923,16 +924,13 @@ begin
      Num1 := txtFieldResult.Text;
      Operators := 'x^y';
      txtFieldResult.Text := '';
-     pnlDatulator.Visible := false;
-     pnlFunctions.Visible := false;
-     pnlTrigonometry.Visible := false;
-     pnlSimple.Visible := true;
-     rdBtnSimpleCalculator.Checked := true;
+     ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnSecantClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(Secant(StrToFloat(txtFieldResult.Text)));
+    ReturnToSimplePanel;
 end;
 
 function TfrmMyCalculators.CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
@@ -1099,6 +1097,15 @@ begin
      FallbackLang := '';
      GetLanguageIDs(Lang, FallbackLang);
      Result := FallbackLang;
+end;
+
+procedure TfrmMyCalculators.ReturnToSimplePanel;
+begin
+     frmMyCalculators.rdBtnSimpleCalculator.Checked := true;
+     frmMyCalculators.pnlSimple.Visible := true;
+     frmMyCalculators.pnlFunctions.Visible := false;
+     frmMyCalculators.pnlTrigonometry.Visible := false;
+     frmMyCalculators.pnlDatulator.Visible := false;;
 end;
 
 { wp: Added }

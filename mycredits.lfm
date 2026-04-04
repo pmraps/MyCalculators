@@ -1,15 +1,15 @@
 inherited frmCredits: TfrmCredits
   Left = 488
-  Height = 263
   Top = 250
   Width = 379
   HorzScrollBar.Page = 360
-  VertScrollBar.Page = 263
+  VertScrollBar.Page = 240
   AutoScroll = True
-  ClientHeight = 263
+  Caption = 'Credits'
   ClientWidth = 362
+  DefaultMonitor = dmMainForm
   ParentFont = True
-  Position = poMainFormCenter
+  Position = poOwnerFormCenter
   OnCreate = FormCreate
   object PgCtrlCredits: TPageControl[0]
     Left = 0
@@ -17,6 +17,7 @@ inherited frmCredits: TfrmCredits
     Top = 0
     Width = 360
     ActivePage = TbShtCreditsContributors
+    Images = frmMyCalculators.ImageList
     TabIndex = 1
     TabOrder = 0
     object TbShtCreditsCredits: TTabSheet
@@ -56,95 +57,15 @@ inherited frmCredits: TfrmCredits
         OnClick = StTxtCredits2Click
         OnMouseEnter = StTxtCredits2MouseEnter
       end
-      object StTxtCredits3: TStaticText
-        Left = 0
-        Height = 17
-        Top = 48
-        Width = 352
-        Caption = 'Mosque Icon'
-        TabOrder = 2
-        OnClick = StTxtCredits3Click
-        OnMouseEnter = StTxtCredits3MouseEnter
-      end
-      object StTxtCredits4: TStaticText
-        Left = 0
-        Height = 17
-        Top = 72
-        Width = 352
-        Caption = 'Settings Icon'
-        TabOrder = 3
-        OnClick = StTxtCredits4Click
-        OnMouseEnter = StTxtCredits4MouseEnter
-      end
-      object StTxtCredits5: TStaticText
-        Left = 0
-        Height = 17
-        Top = 96
-        Width = 352
-        Caption = 'Credits Icon'
-        TabOrder = 4
-        OnClick = StTxtCredits5Click
-        OnMouseEnter = StTxtCredits5MouseEnter
-      end
-      object StTxtCredits6: TStaticText
-        Left = 0
-        Height = 17
-        Top = 120
-        Width = 352
-        Caption = 'Calculator Icon'
-        TabOrder = 5
-        OnClick = StTxtCredits6Click
-        OnMouseEnter = StTxtCredits6MouseEnter
-      end
-      object StTxtCredits7: TStaticText
-        Left = 0
-        Height = 17
-        Top = 144
-        Width = 352
-        Caption = 'Help Icon'
-        TabOrder = 6
-        OnClick = StTxtCredits7Click
-        OnMouseEnter = StTxtCredits7MouseEnter
-      end
       object StTxtCredits8: TStaticText
         Left = 0
         Height = 17
-        Top = 168
+        Top = 48
         Width = 562
         Caption = 'mailto procedure - balazsszekely'
-        TabOrder = 7
+        TabOrder = 2
         OnClick = StTxtCredits8Click
         OnMouseEnter = StTxtCredits8MouseEnter
-      end
-      object StTxtCredits9: TStaticText
-        Left = 0
-        Height = 17
-        Top = 192
-        Width = 352
-        Caption = 'Book Icon'
-        TabOrder = 8
-        OnClick = StTxtCredits9Click
-        OnMouseEnter = StTxtCredits9MouseEnter
-      end
-      object StTxtCredits10: TStaticText
-        Left = 0
-        Height = 17
-        Top = 216
-        Width = 352
-        Caption = 'SVG repo'
-        TabOrder = 9
-        OnClick = StTxtCredits10Click
-        OnMouseEnter = StTxtCredits10MouseEnter
-      end
-      object StTxtCredits11: TStaticText
-        Left = 0
-        Height = 17
-        Top = 240
-        Width = 352
-        Caption = 'Hamburger icon'
-        TabOrder = 10
-        OnClick = StTxtCredits11Click
-        OnMouseEnter = StTxtCredits11MouseEnter
       end
     end
     object TbShtCreditsContributors: TTabSheet
@@ -163,7 +84,7 @@ inherited frmCredits: TfrmCredits
         Height = 17
         Top = 0
         Width = 352
-        Caption = 'Pedro Albuquerque - author, translator'
+        Caption = 'Pedro Albuquerque (author, translator)'
         TabOrder = 0
         OnClick = StTxtContributors1Click
       end
@@ -172,10 +93,95 @@ inherited frmCredits: TfrmCredits
         Height = 17
         Top = 24
         Width = 353
-        Caption = 'wp - Localization and others (see code comments)'
+        Caption = 'wp (Developer) - Localization and others (see code comments)'
         TabOrder = 1
         OnClick = StTxtContributorsWPClick
         OnMouseEnter = StTxtContributorsWPMouseEnter
+      end
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'Imagens'
+      ClientHeight = 304
+      ClientWidth = 352
+      object StTxtCredits3: TStaticText
+        Left = 0
+        Height = 17
+        Top = 48
+        Width = 352
+        Caption = 'Mosque Icon'
+        TabOrder = 0
+        OnClick = StTxtCredits3Click
+        OnMouseEnter = StTxtCredits3MouseEnter
+      end
+      object StTxtCredits4: TStaticText
+        Left = 0
+        Height = 17
+        Top = 72
+        Width = 352
+        Caption = 'Settings Icon'
+        TabOrder = 1
+        OnClick = StTxtCredits4Click
+        OnMouseEnter = StTxtCredits4MouseEnter
+      end
+      object StTxtCredits5: TStaticText
+        Left = 0
+        Height = 17
+        Top = 24
+        Width = 352
+        Caption = 'Credits Icon'
+        TabOrder = 2
+        OnClick = StTxtCredits5Click
+        OnMouseEnter = StTxtCredits5MouseEnter
+      end
+      object StTxtCredits6: TStaticText
+        Left = 0
+        Height = 17
+        Top = 0
+        Width = 352
+        Caption = 'Calculator Icon'
+        TabOrder = 3
+        OnClick = StTxtCredits6Click
+        OnMouseEnter = StTxtCredits6MouseEnter
+      end
+      object StTxtCredits7: TStaticText
+        Left = 0
+        Height = 17
+        Top = 144
+        Width = 352
+        Caption = 'Help Icon'
+        TabOrder = 4
+        OnClick = StTxtCredits7Click
+        OnMouseEnter = StTxtCredits7MouseEnter
+      end
+      object StTxtCredits9: TStaticText
+        Left = 0
+        Height = 17
+        Top = 120
+        Width = 352
+        Caption = 'Book Icon'
+        TabOrder = 5
+        OnClick = StTxtCredits9Click
+        OnMouseEnter = StTxtCredits9MouseEnter
+      end
+      object StTxtCredits10: TStaticText
+        Left = 0
+        Height = 17
+        Top = 96
+        Width = 352
+        Caption = 'SVG repo'
+        TabOrder = 6
+        OnClick = StTxtCredits10Click
+        OnMouseEnter = StTxtCredits10MouseEnter
+      end
+      object StTxtCredits11: TStaticText
+        Left = 0
+        Height = 17
+        Top = 168
+        Width = 352
+        Caption = 'Hamburger icon'
+        TabOrder = 7
+        OnClick = StTxtCredits11Click
+        OnMouseEnter = StTxtCredits11MouseEnter
       end
     end
     object TbShtTodoList: TTabSheet
