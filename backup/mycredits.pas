@@ -27,8 +27,8 @@ type
         StTxtCredits3: TStaticText;
         StTxtCredits2: TStaticText;
         StTxtCredits1: TStaticText;
-        TabSheet1: TTabSheet;
-        TbShtTodoList: TTabSheet;
+        TbShtCreditsImages: TTabSheet;
+        TbShtCreditsTodoList: TTabSheet;
         TbShtCreditsContributors: TTabSheet;
         TbShtCreditsCredits: TTabSheet;
         TViewTodoList: TTreeView;
@@ -60,8 +60,9 @@ type
     private
 
     protected
-        procedure UpdateTranslation(ALang: String); override;
+
     public
+        procedure UpdateTranslation(ALang: String); override;
 
     end;
 

@@ -6,14 +6,14 @@ interface
 
 uses
     Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-    LocalizedForms, LCLTranslator;
+    LocalizedForms, LCLTranslator, myResourceStrings;
 
 type
 
     { TfrmPreferences }
 
     TfrmPreferences = class(TLocalizedForm)
-        Button1: TButton;
+        btnOK: TButton;
         cBoxPrefLang: TComboBox;            // wp: why does cBoxPrefLang not exist?
         cBoxPrefTheme: TComboBox;
         lblPrefLang: TLabel;
@@ -46,9 +46,10 @@ end;
 
 procedure TfrmPreferences.FormActivate(Sender: TObject);
 begin
+     TfrmPreferences..Caption := rsBtnOK;
      cBoxPrefLang.Font.Color := clGray;
      cBoxPrefLang.Text := CurrentLang;
-     cBoxPrefTheme.Font.Color := clGray;
+     // cBoxPrefTheme.Font.Color := clGray;
      // cBoxPrefTheme.Text := CurrentTheme;
 end;
 

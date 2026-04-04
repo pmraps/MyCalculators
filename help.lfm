@@ -12,13 +12,14 @@ inherited frmHelp: TfrmHelp
   DefaultMonitor = dmMainForm
   ParentFont = True
   Position = poOwnerFormCenter
+  OnActivate = FormActivate
   OnCreate = FormCreate
   object NtBookMainHelp: TNotebook[0]
     Left = 200
     Height = 200
     Top = 0
     Width = 330
-    PageIndex = 0
+    PageIndex = 5
     TabOrder = 0
     object pgDescription: TPage
       TabStop = True
@@ -30,7 +31,7 @@ inherited frmHelp: TfrmHelp
         Width = 330
         BorderStyle = bsNone
         Lines.Strings = (
-          'rsHelpDescLine0'
+          ''
         )
         ParentColor = True
         ReadOnly = True
@@ -143,7 +144,6 @@ inherited frmHelp: TfrmHelp
     Top = 208
     Width = 70
     Cancel = True
-    Caption = 'OK'
     Default = True
     ModalResult = 11
     ParentShowHint = False

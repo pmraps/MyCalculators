@@ -26,7 +26,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <BuildNr Value="94"/>
+      <BuildNr Value="115"/>
       <Language Value="0816"/>
       <Attributes pvaDebug="True"/>
       <StringTable CompanyName="HBCB"/>

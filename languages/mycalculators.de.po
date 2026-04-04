@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -12,49 +12,41 @@ msgstr ""
 "X-Generator: Poedit 3.9\n"
 
 #: maincalculators.rsapril
-#, fuzzy
 msgctxt "maincalculators.rsapril"
 msgid "April"
 msgstr "April"
 
 #: maincalculators.rsaugust
-#, fuzzy
 msgctxt "maincalculators.rsaugust"
 msgid "August"
 msgstr "August"
 
 #: maincalculators.rsdatesarethes
-#, fuzzy
 msgctxt "maincalculators.rsdatesarethes"
 msgid "Dates are the same"
 msgstr "Datumswerte sind gleich"
 
 #: maincalculators.rsday
-#, fuzzy
 msgctxt "maincalculators.rsday"
 msgid " day."
 msgstr " Tag."
 
 #: maincalculators.rsday2
-#, fuzzy
 msgctxt "maincalculators.rsday2"
 msgid " day, "
 msgstr " Tag, "
 
 #: maincalculators.rsdayand
-#, fuzzy
 msgctxt "maincalculators.rsdayand"
 msgid " day and "
 msgstr " Tag und "
 
 #: maincalculators.rsdays
-#, fuzzy
 msgctxt "maincalculators.rsdays"
 msgid " days, "
 msgstr " Tage, "
 
 #: maincalculators.rsdays2
-#, fuzzy
 msgctxt "maincalculators.rsdays2"
 msgid " days."
 msgstr " Tage."
@@ -62,10 +54,9 @@ msgstr " Tage."
 #: maincalculators.rsdaysand
 msgctxt "maincalculators.rsdaysand"
 msgid " days and "
-msgstr ""
+msgstr " Tage und "
 
 #: maincalculators.rsdecember
-#, fuzzy
 msgctxt "maincalculators.rsdecember"
 msgid "December"
 msgstr "Dezember"
@@ -73,20 +64,19 @@ msgstr "Dezember"
 #: maincalculators.rseight
 msgctxt "maincalculators.rseight"
 msgid "eight"
-msgstr ""
+msgstr "acht"
 
 #: maincalculators.rseighteen
 msgctxt "maincalculators.rseighteen"
 msgid "eighteen"
-msgstr ""
+msgstr "achtzehn"
 
 #: maincalculators.rseleven
 msgctxt "maincalculators.rseleven"
 msgid "eleven"
-msgstr ""
+msgstr "elf"
 
 #: maincalculators.rsenddate
-#, fuzzy
 msgctxt "maincalculators.rsenddate"
 msgid "End date"
 msgstr "End-Datum"
@@ -94,70 +84,64 @@ msgstr "End-Datum"
 #: maincalculators.rsfebruary
 msgctxt "maincalculators.rsfebruary"
 msgid "February"
-msgstr ""
+msgstr "Februar"
 
 #: maincalculators.rsfifteen
 msgctxt "maincalculators.rsfifteen"
 msgid "fifteen"
-msgstr ""
+msgstr "fünfzehn"
 
 #: maincalculators.rsfive
 msgctxt "maincalculators.rsfive"
 msgid "five"
-msgstr ""
+msgstr "fünf"
 
 #: maincalculators.rsfour
 msgctxt "maincalculators.rsfour"
 msgid "four"
-msgstr ""
+msgstr "vier"
 
 #: maincalculators.rsfourteen
 msgctxt "maincalculators.rsfourteen"
 msgid "fourteen"
-msgstr ""
+msgstr "vierzehn"
 
 #: maincalculators.rsfriday
 msgctxt "maincalculators.rsfriday"
 msgid "Friday"
-msgstr ""
+msgstr "Freitag"
 
 #: maincalculators.rsinvalidopera
 msgctxt "maincalculators.rsinvalidopera"
 msgid "Invalid Operator"
-msgstr ""
+msgstr "Ungültiger Operator"
 
 #: maincalculators.rsjanuary
-#, fuzzy
 msgctxt "maincalculators.rsjanuary"
 msgid "January"
 msgstr "Januar"
 
 #: maincalculators.rsjuly
-#, fuzzy
 msgctxt "maincalculators.rsjuly"
 msgid "July"
 msgstr "Juli"
 
 #: maincalculators.rsjune
-#, fuzzy
 msgctxt "maincalculators.rsjune"
 msgid "June"
 msgstr "Juni"
 
 #: maincalculators.rsmarch
-#, fuzzy
 msgctxt "maincalculators.rsmarch"
 msgid "March"
 msgstr "März"
 
 #: maincalculators.rsmay
-#, fuzzy
 msgctxt "maincalculators.rsmay"
 msgid "May"
 msgstr "Mai"
 
 #: maincalculators.rsmonday
-#, fuzzy
 msgctxt "maincalculators.rsmonday"
 msgid "Monday"
 msgstr "Montag"
@@ -165,36 +149,34 @@ msgstr "Montag"
 #: maincalculators.rsmonth
 msgctxt "maincalculators.rsmonth"
 msgid " month."
-msgstr ""
+msgstr " Monat."
 
 #: maincalculators.rsmonthand
 msgctxt "maincalculators.rsmonthand"
 msgid " month and "
-msgstr ""
+msgstr " Monat und "
 
 #: maincalculators.rsmonths
 msgctxt "maincalculators.rsmonths"
 msgid " months."
-msgstr ""
+msgstr " Monate."
 
 #: maincalculators.rsnine
 msgctxt "maincalculators.rsnine"
 msgid "nine"
-msgstr ""
+msgstr "neun"
 
 #: maincalculators.rsnineteen
 msgctxt "maincalculators.rsnineteen"
 msgid "nineteen"
-msgstr ""
+msgstr "neunzehn"
 
 #: maincalculators.rsnovember
-#, fuzzy
 msgctxt "maincalculators.rsnovember"
 msgid "November"
 msgstr "November"
 
 #: maincalculators.rsoctober
-#, fuzzy
 msgctxt "maincalculators.rsoctober"
 msgid "October"
 msgstr "Oktober"
@@ -202,21 +184,19 @@ msgstr "Oktober"
 #: maincalculators.rsof
 msgctxt "maincalculators.rsof"
 msgid " of "
-msgstr ""
+msgstr " von "
 
 #: maincalculators.rsone
 msgctxt "maincalculators.rsone"
 msgid "one"
-msgstr ""
+msgstr "ein"
 
 #: maincalculators.rssaturday
-#, fuzzy
 msgctxt "maincalculators.rssaturday"
 msgid "Saturday"
 msgstr "Samstag"
 
 #: maincalculators.rsseptember
-#, fuzzy
 msgctxt "maincalculators.rsseptember"
 msgid "September"
 msgstr "September"
@@ -224,31 +204,29 @@ msgstr "September"
 #: maincalculators.rsseven
 msgctxt "maincalculators.rsseven"
 msgid "seven"
-msgstr ""
+msgstr "sieben"
 
 #: maincalculators.rsseventeen
 msgctxt "maincalculators.rsseventeen"
 msgid "seventeen"
-msgstr ""
+msgstr "siebzehn"
 
 #: maincalculators.rssix
 msgctxt "maincalculators.rssix"
 msgid "six"
-msgstr ""
+msgstr "sechs"
 
 #: maincalculators.rssixteen
 msgctxt "maincalculators.rssixteen"
 msgid "sixteen"
-msgstr ""
+msgstr "sechzehn"
 
 #: maincalculators.rsstartdate
-#, fuzzy
 msgctxt "maincalculators.rsstartdate"
 msgid "Start date"
 msgstr "Start-Datum"
 
 #: maincalculators.rssunday
-#, fuzzy
 msgctxt "maincalculators.rssunday"
 msgid "Sunday"
 msgstr "Sonntag"
@@ -256,48 +234,44 @@ msgstr "Sonntag"
 #: maincalculators.rsten
 msgctxt "maincalculators.rsten"
 msgid "ten"
-msgstr ""
+msgstr "zehn"
 
 #: maincalculators.rsthirteen
 msgctxt "maincalculators.rsthirteen"
 msgid "thirteen"
-msgstr ""
+msgstr "dreizehn"
 
 #: maincalculators.rsthirty
 msgctxt "maincalculators.rsthirty"
 msgid "thirty"
-msgstr ""
+msgstr "dreißig"
 
 #: maincalculators.rsthirtyone
 msgctxt "maincalculators.rsthirtyone"
 msgid "thirty one"
-msgstr ""
+msgstr "ein und dreißig"
 
 #: maincalculators.rsthree
 msgctxt "maincalculators.rsthree"
 msgid "three"
-msgstr ""
+msgstr "drei"
 
 #: maincalculators.rsthursday
-#, fuzzy
 msgctxt "maincalculators.rsthursday"
 msgid "Thursday"
 msgstr "Donnerstag"
 
 #: maincalculators.rstuesday
-#, fuzzy
 msgctxt "maincalculators.rstuesday"
 msgid "Tuesday"
 msgstr "Dienstag"
 
 #: maincalculators.rstwelve
-#, fuzzy
 msgctxt "maincalculators.rstwelve"
 msgid "twelve"
 msgstr "zwölf"
 
 #: maincalculators.rstwenty
-#, fuzzy
 msgctxt "maincalculators.rstwenty"
 msgid "twenty"
 msgstr "zwanzig"
@@ -305,67 +279,67 @@ msgstr "zwanzig"
 #: maincalculators.rstwentyeight
 msgctxt "maincalculators.rstwentyeight"
 msgid "twenty eight"
-msgstr ""
+msgstr "acht und zwantzig"
 
 #: maincalculators.rstwentyfive
 msgctxt "maincalculators.rstwentyfive"
 msgid "twenty five"
-msgstr ""
+msgstr "fünf und zwantzig"
 
 #: maincalculators.rstwentyfour
 msgctxt "maincalculators.rstwentyfour"
 msgid "twenty four"
-msgstr ""
+msgstr "vier und zwantzig"
 
 #: maincalculators.rstwentynine
 msgctxt "maincalculators.rstwentynine"
 msgid "twenty nine"
-msgstr ""
+msgstr "neun und zwantzig"
 
 #: maincalculators.rstwentyone
 msgctxt "maincalculators.rstwentyone"
 msgid "twenty one"
-msgstr ""
+msgstr "ein und zwantzig"
 
 #: maincalculators.rstwentyseven
 msgctxt "maincalculators.rstwentyseven"
 msgid "twenty seven"
-msgstr ""
+msgstr "sieben und zwantzig"
 
 #: maincalculators.rstwentysix
 msgctxt "maincalculators.rstwentysix"
 msgid "twenty six"
-msgstr ""
+msgstr "sechs und zwantzig"
 
 #: maincalculators.rstwentythree
 msgctxt "maincalculators.rstwentythree"
 msgid "twenty three"
-msgstr ""
+msgstr "drei und zwantzig"
 
 #: maincalculators.rstwentytwo
 msgctxt "maincalculators.rstwentytwo"
 msgid "twenty two"
-msgstr ""
+msgstr "zwei und zwantzig"
 
 #: maincalculators.rstwo
 msgctxt "maincalculators.rstwo"
 msgid "two"
-msgstr ""
+msgstr "zwei"
 
 #: maincalculators.rswednesday
 msgctxt "maincalculators.rswednesday"
 msgid "Wednesday"
-msgstr ""
+msgstr "Mittwoch"
 
 #: maincalculators.rsyear
 msgctxt "maincalculators.rsyear"
 msgid " year."
-msgstr ""
+msgstr " jar."
 
 #: maincalculators.rsyears
 msgctxt "maincalculators.rsyears"
 msgid " years."
-msgstr ""
+msgstr " Jahre."
 
 #: myresourcestrings.rsapril
 msgctxt "myresourcestrings.rsapril"
@@ -377,13 +351,13 @@ msgctxt "myresourcestrings.rsaugust"
 msgid "August"
 msgstr "August"
 
-#: myresourcestrings.rsdateconverted
-#, object-pascal-format
-msgid "%s"
-msgstr ""
+#: myresourcestrings.rsbtnok
+msgctxt "myresourcestrings.rsbtnok"
+msgid "OK"
+msgstr "OK"
 
-#: myresourcestrings.rsdatesarethes
-msgctxt "myresourcestrings.rsdatesarethes"
+#: myresourcestrings.rsdatesareequal
+msgctxt "myresourcestrings.rsdatesareequal"
 msgid "Dates are the same"
 msgstr "Datumswerte sind gleich"
 
@@ -415,7 +389,7 @@ msgstr " Tage."
 #: myresourcestrings.rsdaysand
 msgctxt "myresourcestrings.rsdaysand"
 msgid " days and "
-msgstr ""
+msgstr " Tage und "
 
 #: myresourcestrings.rsdecember
 msgctxt "myresourcestrings.rsdecember"
@@ -425,52 +399,47 @@ msgstr "Dezember"
 #: myresourcestrings.rseight
 msgctxt "myresourcestrings.rseight"
 msgid "eight"
-msgstr ""
+msgstr "acht"
 
 #: myresourcestrings.rseighteen
 msgctxt "myresourcestrings.rseighteen"
 msgid "eighteen"
-msgstr ""
+msgstr "achtzehn"
 
 #: myresourcestrings.rseleven
 msgctxt "myresourcestrings.rseleven"
 msgid "eleven"
-msgstr ""
-
-#: myresourcestrings.rsenddate
-msgctxt "myresourcestrings.rsenddate"
-msgid "End date"
-msgstr "End-Datum"
+msgstr "elf"
 
 #: myresourcestrings.rsfebruary
 msgctxt "myresourcestrings.rsfebruary"
 msgid "February"
-msgstr ""
+msgstr "Februar"
 
 #: myresourcestrings.rsfifteen
 msgctxt "myresourcestrings.rsfifteen"
 msgid "fifteen"
-msgstr ""
+msgstr "fünfzehn"
 
 #: myresourcestrings.rsfive
 msgctxt "myresourcestrings.rsfive"
 msgid "five"
-msgstr ""
+msgstr "fünf"
 
 #: myresourcestrings.rsfour
 msgctxt "myresourcestrings.rsfour"
 msgid "four"
-msgstr ""
+msgstr "vier"
 
 #: myresourcestrings.rsfourteen
 msgctxt "myresourcestrings.rsfourteen"
 msgid "fourteen"
-msgstr ""
+msgstr "vierzehn"
 
 #: myresourcestrings.rsfriday
 msgctxt "myresourcestrings.rsfriday"
 msgid "Friday"
-msgstr ""
+msgstr "Freitag"
 
 #: myresourcestrings.rshelpdateline0
 msgid "Here we can convert any date from one calendar to another. We do so by choosing a calendar using the first button. The default is the gregorian calendar. After that, we pick a date using the selector, and end with using the second button to select the target calendar."
@@ -478,18 +447,17 @@ msgstr "Hier können wir jedes beliebige Datum von einem Kalender zu einem ander
 
 #: myresourcestrings.rshelpdateline1
 msgid "The result will be presented below in full."
-msgstr ""
+msgstr "Das Ergebnis wird im Folgenden vollständig dargestellt."
 
 #: myresourcestrings.rshelpdateline3
 msgid "We can also calculate the difference between two dates using the appopriate selectors. The calculation is shown at the bottom."
-msgstr ""
+msgstr "Mit den entsprechenden Selektoren können wir auch die Differenz zwischen zwei Daten berechnen. Die Berechnung wird unten angezeigt."
 
 #: myresourcestrings.rshelpdateline4
 msgid "If the start date is later than the end date, the labels will switch position and the end date painted in red."
 msgstr ""
 
 #: myresourcestrings.rshelpdescline0
-msgctxt "myresourcestrings.rshelpdescline0"
 msgid "This is yet another multi-function calculator."
 msgstr "Das ist noch ein Multifunktions-Rechner."
 
@@ -498,17 +466,14 @@ msgid "The type of calculations is chosen from the four radio buttons right belo
 msgstr ""
 
 #: myresourcestrings.rshelpdescline4
-msgctxt "myresourcestrings.rshelpdescline4"
 msgid "For single number calculations, choose the number and click the desired function name."
 msgstr ""
 
 #: myresourcestrings.rshelpdescline6
-msgctxt "myresourcestrings.rshelpdescline6"
 msgid "For calculations requiring two numbers, choose the first number, choose the function, and then choose the second number."
 msgstr ""
 
 #: myresourcestrings.rshelpdescline8
-msgctxt "myresourcestrings.rshelpdescline8"
 msgid "There is a small section where you can change the theme and/or the language, via menu Edit -> Settings."
 msgstr ""
 
@@ -572,10 +537,11 @@ msgstr ""
 msgid "There are also six converters between several angle measurement units."
 msgstr ""
 
-#: myresourcestrings.rsinvalidopera
-msgctxt "myresourcestrings.rsinvalidopera"
+#: myresourcestrings.rsinvalidoperator
+#, fuzzy
+msgctxt "myresourcestrings.rsinvalidoperator"
 msgid "Invalid Operator"
-msgstr ""
+msgstr "Ungültiger Operator"
 
 #: myresourcestrings.rsjanuary
 msgctxt "myresourcestrings.rsjanuary"
@@ -608,29 +574,34 @@ msgid "Monday"
 msgstr "Montag"
 
 #: myresourcestrings.rsmonth
+#, fuzzy
 msgctxt "myresourcestrings.rsmonth"
 msgid " month."
-msgstr ""
+msgstr " Monat."
 
 #: myresourcestrings.rsmonthand
+#, fuzzy
 msgctxt "myresourcestrings.rsmonthand"
 msgid " month and "
-msgstr ""
+msgstr " Monat und "
 
 #: myresourcestrings.rsmonths
+#, fuzzy
 msgctxt "myresourcestrings.rsmonths"
 msgid " months."
-msgstr ""
+msgstr " Monate."
 
 #: myresourcestrings.rsnine
+#, fuzzy
 msgctxt "myresourcestrings.rsnine"
 msgid "nine"
-msgstr ""
+msgstr "neun"
 
 #: myresourcestrings.rsnineteen
+#, fuzzy
 msgctxt "myresourcestrings.rsnineteen"
 msgid "nineteen"
-msgstr ""
+msgstr "neunzehn"
 
 #: myresourcestrings.rsnovember
 msgctxt "myresourcestrings.rsnovember"
@@ -643,14 +614,16 @@ msgid "October"
 msgstr "Oktober"
 
 #: myresourcestrings.rsof
+#, fuzzy
 msgctxt "myresourcestrings.rsof"
 msgid " of "
-msgstr ""
+msgstr " von "
 
 #: myresourcestrings.rsone
+#, fuzzy
 msgctxt "myresourcestrings.rsone"
 msgid "one"
-msgstr ""
+msgstr "ein"
 
 #: myresourcestrings.rssaturday
 msgctxt "myresourcestrings.rssaturday"
@@ -663,29 +636,114 @@ msgid "September"
 msgstr "September"
 
 #: myresourcestrings.rsseven
+#, fuzzy
 msgctxt "myresourcestrings.rsseven"
 msgid "seven"
-msgstr ""
+msgstr "sieben"
 
 #: myresourcestrings.rsseventeen
+#, fuzzy
 msgctxt "myresourcestrings.rsseventeen"
 msgid "seventeen"
-msgstr ""
+msgstr "siebzehn"
 
 #: myresourcestrings.rssix
+#, fuzzy
 msgctxt "myresourcestrings.rssix"
 msgid "six"
-msgstr ""
+msgstr "sechs"
 
 #: myresourcestrings.rssixteen
+#, fuzzy
 msgctxt "myresourcestrings.rssixteen"
 msgid "sixteen"
+msgstr "sechzehn"
+
+#: myresourcestrings.rsstrasin
+msgctxt "myresourcestrings.rsstrasin"
+msgid "ASin"
 msgstr ""
 
-#: myresourcestrings.rsstartdate
-msgctxt "myresourcestrings.rsstartdate"
+#: myresourcestrings.rsstrasinh
+msgctxt "myresourcestrings.rsstrasinh"
+msgid "ASinH"
+msgstr ""
+
+#: myresourcestrings.rsstrcyctorad
+msgid "Cyc-Rad"
+msgstr ""
+
+#: myresourcestrings.rsstrdatecalc
+#, fuzzy
+#| msgid "Date"
+msgctxt "myresourcestrings.rsstrdatecalc"
+msgid "Date"
+msgstr "Datum"
+
+#: myresourcestrings.rsstrdateconvert
+msgid "Convert"
+msgstr ""
+
+#: myresourcestrings.rsstrdateenddate
+msgid "End Date"
+msgstr ""
+
+#: myresourcestrings.rsstrdatestartdate
+msgctxt "myresourcestrings.rsstrdatestartdate"
 msgid "Start date"
 msgstr "Start-Datum"
+
+#: myresourcestrings.rsstrdateto
+msgid "to"
+msgstr ""
+
+#: myresourcestrings.rsstrdegtograd
+msgctxt "myresourcestrings.rsstrdegtograd"
+msgid "Deg-Grad"
+msgstr ""
+
+#: myresourcestrings.rsstrdegtorad
+msgctxt "myresourcestrings.rsstrdegtorad"
+msgid "Deg-Rad"
+msgstr ""
+
+#: myresourcestrings.rsstrgradtodeg
+msgctxt "myresourcestrings.rsstrgradtodeg"
+msgid "Grad-Deg"
+msgstr ""
+
+#: myresourcestrings.rsstrhypothenuse
+msgid "Hyp"
+msgstr ""
+
+#: myresourcestrings.rsstrradtocyc
+msgid "Rad-Cyc"
+msgstr ""
+
+#: myresourcestrings.rsstrradtodeg
+msgctxt "myresourcestrings.rsstrradtodeg"
+msgid "Rad-Deg"
+msgstr ""
+
+#: myresourcestrings.rsstrremainder
+msgctxt "myresourcestrings.rsstrremainder"
+msgid "Remdr"
+msgstr ""
+
+#: myresourcestrings.rsstrsimple
+msgctxt "myresourcestrings.rsstrsimple"
+msgid "Simple"
+msgstr "Einfach"
+
+#: myresourcestrings.rsstrsin
+msgctxt "myresourcestrings.rsstrsin"
+msgid "Sin"
+msgstr ""
+
+#: myresourcestrings.rsstrsinh
+msgctxt "myresourcestrings.rsstrsinh"
+msgid "SinH"
+msgstr ""
 
 #: myresourcestrings.rssunday
 msgctxt "myresourcestrings.rssunday"
@@ -693,29 +751,34 @@ msgid "Sunday"
 msgstr "Sonntag"
 
 #: myresourcestrings.rsten
+#, fuzzy
 msgctxt "myresourcestrings.rsten"
 msgid "ten"
-msgstr ""
+msgstr "zehn"
 
 #: myresourcestrings.rsthirteen
+#, fuzzy
 msgctxt "myresourcestrings.rsthirteen"
 msgid "thirteen"
-msgstr ""
+msgstr "dreizehn"
 
 #: myresourcestrings.rsthirty
+#, fuzzy
 msgctxt "myresourcestrings.rsthirty"
 msgid "thirty"
-msgstr ""
+msgstr "dreißig"
 
 #: myresourcestrings.rsthirtyone
+#, fuzzy
 msgctxt "myresourcestrings.rsthirtyone"
 msgid "thirty one"
-msgstr ""
+msgstr "ein und dreißig"
 
 #: myresourcestrings.rsthree
+#, fuzzy
 msgctxt "myresourcestrings.rsthree"
 msgid "three"
-msgstr ""
+msgstr "drei"
 
 #: myresourcestrings.rsthursday
 msgctxt "myresourcestrings.rsthursday"
@@ -723,7 +786,6 @@ msgid "Thursday"
 msgstr "Donnerstag"
 
 #: myresourcestrings.rstrviewdate
-msgctxt "myresourcestrings.rstrviewdate"
 msgid "Date converter and calculator"
 msgstr "Datumsumwandlung und -berechnung"
 
@@ -740,7 +802,6 @@ msgid "Settings"
 msgstr "Einstellungen"
 
 #: myresourcestrings.rstrviewsimple
-msgctxt "myresourcestrings.rstrviewsimple"
 msgid "Simple calculator"
 msgstr "Einfacher Rechner"
 
@@ -764,72 +825,84 @@ msgid "twenty"
 msgstr "zwanzig"
 
 #: myresourcestrings.rstwentyeight
+#, fuzzy
 msgctxt "myresourcestrings.rstwentyeight"
 msgid "twenty eight"
-msgstr ""
+msgstr "acht und zwantzig"
 
 #: myresourcestrings.rstwentyfive
+#, fuzzy
 msgctxt "myresourcestrings.rstwentyfive"
 msgid "twenty five"
-msgstr ""
+msgstr "fünf und zwantzig"
 
 #: myresourcestrings.rstwentyfour
+#, fuzzy
 msgctxt "myresourcestrings.rstwentyfour"
 msgid "twenty four"
-msgstr ""
+msgstr "vier und zwantzig"
 
 #: myresourcestrings.rstwentynine
+#, fuzzy
 msgctxt "myresourcestrings.rstwentynine"
 msgid "twenty nine"
-msgstr ""
+msgstr "neun und zwantzig"
 
 #: myresourcestrings.rstwentyone
+#, fuzzy
 msgctxt "myresourcestrings.rstwentyone"
 msgid "twenty one"
-msgstr ""
+msgstr "ein und zwantzig"
 
 #: myresourcestrings.rstwentyseven
+#, fuzzy
 msgctxt "myresourcestrings.rstwentyseven"
 msgid "twenty seven"
-msgstr ""
+msgstr "sieben und zwantzig"
 
 #: myresourcestrings.rstwentysix
+#, fuzzy
 msgctxt "myresourcestrings.rstwentysix"
 msgid "twenty six"
-msgstr ""
+msgstr "sechs und zwantzig"
 
 #: myresourcestrings.rstwentythree
+#, fuzzy
 msgctxt "myresourcestrings.rstwentythree"
 msgid "twenty three"
-msgstr ""
+msgstr "drei und zwantzig"
 
 #: myresourcestrings.rstwentytwo
+#, fuzzy
 msgctxt "myresourcestrings.rstwentytwo"
 msgid "twenty two"
-msgstr ""
+msgstr "zwei und zwantzig"
 
 #: myresourcestrings.rstwo
+#, fuzzy
 msgctxt "myresourcestrings.rstwo"
 msgid "two"
-msgstr ""
+msgstr "zwei"
 
 #: myresourcestrings.rswednesday
+#, fuzzy
 msgctxt "myresourcestrings.rswednesday"
 msgid "Wednesday"
-msgstr ""
+msgstr "Mittwoch"
 
 #: myresourcestrings.rsyear
+#, fuzzy
 msgctxt "myresourcestrings.rsyear"
 msgid " year."
-msgstr ""
+msgstr " jar."
 
 #: myresourcestrings.rsyears
+#, fuzzy
 msgctxt "myresourcestrings.rsyears"
 msgid " years."
-msgstr ""
+msgstr " Jahre."
 
 #: tfrmcredits.caption
-#, fuzzy
 msgctxt "tfrmcredits.caption"
 msgid "Credits"
 msgstr "Danksagung"
@@ -886,10 +959,6 @@ msgstr ""
 msgid "Book Icon"
 msgstr ""
 
-#: tfrmcredits.tabsheet1.caption
-msgid "Imagens"
-msgstr ""
-
 #: tfrmcredits.tbshtcreditscontributors.caption
 msgid "Contributors"
 msgstr "Mitwirkende"
@@ -907,18 +976,16 @@ msgstr "Danksagung"
 msgid "Display a list of sources used in the program"
 msgstr ""
 
-#: tfrmcredits.tbshttodolist.caption
-msgctxt "tfrmcredits.tbshttodolist.caption"
+#: tfrmcredits.tbshtcreditsimages.caption
+msgid "Images"
+msgstr ""
+
+#: tfrmcredits.tbshtcreditstodolist.caption
+msgctxt "tfrmcredits.tbshtcreditstodolist.caption"
 msgid "To Do List"
 msgstr ""
 
-#: tfrmhelp.btnok.caption
-msgctxt "tfrmhelp.btnok.caption"
-msgid "OK"
-msgstr "OK"
-
 #: tfrmhelp.btnok.hint
-msgctxt "tfrmhelp.btnok.hint"
 msgid "Close the help system"
 msgstr "Das Hilfe-System schließen"
 
@@ -930,636 +997,279 @@ msgstr "Hilfe"
 msgid "Click to open the corresponding page"
 msgstr ""
 
-#: tfrmmycalculators.btnacos.caption
-msgctxt "tfrmmycalculators.btnacos.caption"
-msgid "ACos"
-msgstr ""
-
 #: tfrmmycalculators.btnacos.hint
-msgctxt "tfrmmycalculators.btnacos.hint"
 msgid "Calculate the arch cosine"
 msgstr ""
 
-#: tfrmmycalculators.btnacosh.caption
-msgctxt "tfrmmycalculators.btnacosh.caption"
-msgid "ACosH"
-msgstr ""
-
 #: tfrmmycalculators.btnacosh.hint
-msgctxt "tfrmmycalculators.btnacosh.hint"
-msgid "Calculate the hyperbolic  arch cosine"
-msgstr ""
-
-#: tfrmmycalculators.btnacot.caption
-msgctxt "tfrmmycalculators.btnacot.caption"
-msgid "ACot"
+msgid "Calculate the hyperbolic arch cosine"
 msgstr ""
 
 #: tfrmmycalculators.btnacot.hint
-msgctxt "tfrmmycalculators.btnacot.hint"
 msgid "Calculate the arch cotangent"
 msgstr ""
 
 #: tfrmmycalculators.btnactualcalendar.hint
-msgctxt "tfrmmycalculators.btnactualcalendar.hint"
 msgid "Click to select the calendar to convert to"
 msgstr ""
 
 #: tfrmmycalculators.btnactualcalendar1.hint
-msgctxt "tfrmmycalculators.btnactualcalendar1.hint"
 msgid "Click to select the calendar to convert from"
-msgstr ""
-
-#: tfrmmycalculators.btnadd.caption
-msgctxt "tfrmmycalculators.btnadd.caption"
-msgid "+"
 msgstr ""
 
 #: tfrmmycalculators.btnadd.hint
 msgid "Add"
 msgstr "Addieren"
 
-#: tfrmmycalculators.btnasin.caption
-msgctxt "tfrmmycalculators.btnasin.caption"
-msgid "ASin"
-msgstr ""
-
 #: tfrmmycalculators.btnasin.hint
-msgctxt "tfrmmycalculators.btnasin.hint"
 msgid "Calculate the arch sine"
 msgstr ""
 
-#: tfrmmycalculators.btnasinh.caption
-msgctxt "tfrmmycalculators.btnasinh.caption"
-msgid "ASinH"
-msgstr ""
-
 #: tfrmmycalculators.btnasinh.hint
-msgctxt "tfrmmycalculators.btnasinh.hint"
 msgid "Calculate the hyperbolic arch sine"
 msgstr ""
 
-#: tfrmmycalculators.btnatan.caption
-msgctxt "tfrmmycalculators.btnatan.caption"
-msgid "ATan"
-msgstr ""
-
 #: tfrmmycalculators.btnatan.hint
-msgctxt "tfrmmycalculators.btnatan.hint"
 msgid "Calculate the arch tangent"
 msgstr ""
 
-#: tfrmmycalculators.btnatanh.caption
-msgctxt "tfrmmycalculators.btnatanh.caption"
-msgid "ATanH"
-msgstr ""
-
 #: tfrmmycalculators.btnatanh.hint
-msgctxt "tfrmmycalculators.btnatanh.hint"
 msgid "Calculte the hyperbolic arch tangent"
-msgstr ""
-
-#: tfrmmycalculators.btnbackspace.caption
-msgctxt "tfrmmycalculators.btnbackspace.caption"
-msgid ""
 msgstr ""
 
 #: tfrmmycalculators.btnbackspace.hint
 msgid "Erase a digit"
 msgstr "Eine Ziffer löschen"
 
-#: tfrmmycalculators.btnbintobase.caption
-msgid "Bin > N"
-msgstr ""
-
 #: tfrmmycalculators.btnbintobase.hint
-msgctxt "tfrmmycalculators.btnbintobase.hint"
 msgid "Convert binary to different base"
-msgstr ""
-
-#: tfrmmycalculators.btncelsius.caption
-msgid "Cº"
 msgstr ""
 
 #: tfrmmycalculators.btncelsius.hint
 msgid "Convert to Celsius"
 msgstr "Nach Grad Celsius umrechnen"
 
-#: tfrmmycalculators.btnclearentry.caption
-msgctxt "tfrmmycalculators.btnclearentry.caption"
-msgid "CA"
-msgstr ""
-
 #: tfrmmycalculators.btnclearentry.hint
-msgctxt "tfrmmycalculators.btnclearentry.hint"
 msgid "Clear all entries"
-msgstr ""
-
-#: tfrmmycalculators.btncomma.caption
-msgctxt "tfrmmycalculators.btncomma.caption"
-msgid ","
 msgstr ""
 
 #: tfrmmycalculators.btncomma.hint
 msgid "Decimal point"
 msgstr "Dezimal-Trenner"
 
-#: tfrmmycalculators.btncos.caption
-msgctxt "tfrmmycalculators.btncos.caption"
-msgid "Cos"
-msgstr ""
-
 #: tfrmmycalculators.btncos.hint
-msgctxt "tfrmmycalculators.btncos.hint"
 msgid "Calculate the cosine"
-msgstr ""
-
-#: tfrmmycalculators.btncosecant.caption
-msgctxt "tfrmmycalculators.btncosecant.caption"
-msgid "CSec"
-msgstr ""
+msgstr "Rechner"
 
 #: tfrmmycalculators.btncosecant.hint
-msgctxt "tfrmmycalculators.btncosecant.hint"
 msgid "Calculte the cosecant"
 msgstr ""
 
-#: tfrmmycalculators.btncosh.caption
-msgctxt "tfrmmycalculators.btncosh.caption"
-msgid "CosH"
-msgstr ""
-
 #: tfrmmycalculators.btncosh.hint
-msgctxt "tfrmmycalculators.btncosh.hint"
 msgid "Calculate the hyperbolic cosine"
 msgstr ""
 
-#: tfrmmycalculators.btncoth.caption
-msgctxt "tfrmmycalculators.btncoth.caption"
-msgid "CotH"
-msgstr ""
-
-#: tfrmmycalculators.btncoth.hint
-msgctxt "tfrmmycalculators.btncoth.hint"
-msgid "Calculate the hyperbolic cotangent"
-msgstr ""
-
-#: tfrmmycalculators.btnctan.caption
-msgctxt "tfrmmycalculators.btnctan.caption"
-msgid "Cot"
-msgstr ""
-
-#: tfrmmycalculators.btnctan.hint
-msgctxt "tfrmmycalculators.btnctan.hint"
+#: tfrmmycalculators.btncot.hint
+msgctxt "tfrmmycalculators.btncot.hint"
 msgid "Calculate the cotangent"
 msgstr ""
 
-#: tfrmmycalculators.btncycletorad.caption
-msgid "Cy-Rad"
+#: tfrmmycalculators.btncoth.hint
+msgid "Calculate the hyperbolic cotangent"
 msgstr ""
 
-#: tfrmmycalculators.btncycletorad.hint
+#: tfrmmycalculators.btncyclestoradians.hint
+msgctxt "tfrmmycalculators.btncyclestoradians.hint"
 msgid "Convert cycles to radians"
 msgstr ""
 
-#: tfrmmycalculators.btndectobase.caption
-msgid "Dec > N"
-msgstr ""
-
 #: tfrmmycalculators.btndectobase.hint
-msgctxt "tfrmmycalculators.btndectobase.hint"
 msgid "Convert decimal to different base"
 msgstr ""
 
-#: tfrmmycalculators.btndegreesgradians.caption
-msgctxt "tfrmmycalculators.btndegreesgradians.caption"
-msgid "Deg-Grad"
-msgstr ""
-
 #: tfrmmycalculators.btndegreesgradians.hint
-msgctxt "tfrmmycalculators.btndegreesgradians.hint"
 msgid "Convert degrees to gradians"
-msgstr ""
-
-#: tfrmmycalculators.btndegreesradians.caption
-msgctxt "tfrmmycalculators.btndegreesradians.caption"
-msgid "Deg-Rad"
-msgstr ""
+msgstr "Kilogramm in Pfund umwandeln"
 
 #: tfrmmycalculators.btndegreesradians.hint
-msgctxt "tfrmmycalculators.btndegreesradians.hint"
 msgid "Convert degrees to radians"
-msgstr ""
-
-#: tfrmmycalculators.btndivide.caption
-msgctxt "tfrmmycalculators.btndivide.caption"
-msgid "/"
-msgstr ""
+msgstr "Kilogramm in Pfund umwandeln"
 
 #: tfrmmycalculators.btndivide.hint
 msgid "Divide"
-msgstr ""
-
-#: tfrmmycalculators.btneight.caption
-msgctxt "tfrmmycalculators.btneight.caption"
-msgid "8"
 msgstr ""
 
 #: tfrmmycalculators.btneight.hint
 msgid "Eight"
 msgstr ""
 
-#: tfrmmycalculators.btneulerconstant.caption
-msgid "e"
-msgstr ""
-
 #: tfrmmycalculators.btneulerconstant.hint
 msgid "Euler's number"
-msgstr ""
-
-#: tfrmmycalculators.btnexponential.caption
-msgid "Exp"
 msgstr ""
 
 #: tfrmmycalculators.btnexponential.hint
 msgid "Calculate the exponential"
 msgstr ""
 
-#: tfrmmycalculators.btnfactorial.caption
-msgid "n!"
-msgstr ""
-
 #: tfrmmycalculators.btnfactorial.hint
 msgid "Calculate the factorial"
-msgstr ""
-
-#: tfrmmycalculators.btnfahrenheit.caption
-msgid "Fº"
 msgstr ""
 
 #: tfrmmycalculators.btnfahrenheit.hint
 msgid "Convert to Fahrenheit"
 msgstr ""
 
-#: tfrmmycalculators.btnfive.caption
-msgctxt "tfrmmycalculators.btnfive.caption"
-msgid "5"
-msgstr ""
-
 #: tfrmmycalculators.btnfive.hint
 msgid "Five"
-msgstr ""
-
-#: tfrmmycalculators.btnfour.caption
-msgctxt "tfrmmycalculators.btnfour.caption"
-msgid "4"
 msgstr ""
 
 #: tfrmmycalculators.btnfour.hint
 msgid "Four"
 msgstr ""
 
-#: tfrmmycalculators.btnfraction.caption
-msgid "1/x"
-msgstr ""
-
 #: tfrmmycalculators.btnfraction.hint
 msgid "Calculate the fraction of 1"
 msgstr ""
 
-#: tfrmmycalculators.btngaltol.caption
-msgid "Gal - L"
-msgstr ""
-
-#: tfrmmycalculators.btngradiansdegrees.caption
-msgctxt "tfrmmycalculators.btngradiansdegrees.caption"
-msgid "Grad-Deg"
-msgstr ""
-
 #: tfrmmycalculators.btngradiansdegrees.hint
-msgctxt "tfrmmycalculators.btngradiansdegrees.hint"
 msgid "Convert gradians to degrees"
-msgstr ""
-
-#: tfrmmycalculators.btngradiansradians.caption
-msgctxt "tfrmmycalculators.btngradiansradians.caption"
-msgid "Grad-Rad"
-msgstr ""
+msgstr "Kilogramm in Pfund umwandeln"
 
 #: tfrmmycalculators.btngradiansradians.hint
-msgctxt "tfrmmycalculators.btngradiansradians.hint"
 msgid "Convert gradians to radians"
-msgstr ""
-
-#: tfrmmycalculators.btnhextobase.caption
-msgid "Hex > N"
-msgstr ""
+msgstr "Kilogramm in Pfund umwandeln"
 
 #: tfrmmycalculators.btnhextobase.hint
-msgctxt "tfrmmycalculators.btnhextobase.hint"
 msgid "Convert hexadecimal to different base"
 msgstr ""
 
-#: tfrmmycalculators.btnhypotenuse.caption
-msgctxt "tfrmmycalculators.btnhypotenuse.caption"
-msgid "Hyp"
-msgstr ""
-
-#: tfrmmycalculators.btnhypotenuse.hint
-msgctxt "tfrmmycalculators.btnhypotenuse.hint"
+#: tfrmmycalculators.btnhypothenuse.hint
+msgctxt "tfrmmycalculators.btnhypothenuse.hint"
 msgid "Calculate the hypothenuse of a right triangle"
-msgstr ""
-
-#: tfrmmycalculators.btnkgtolbs.caption
-msgid "Kg - Lbs"
 msgstr ""
 
 #: tfrmmycalculators.btnkgtolbs.hint
 msgid "Convert Kilograms to Pounds"
 msgstr "Kilogramm in Pfund umwandeln"
 
-#: tfrmmycalculators.btnlbstokg.caption
-msgid "Lbs - Kg"
-msgstr ""
-
-#: tfrmmycalculators.btnlog.caption
-msgid "Log"
-msgstr ""
-
 #: tfrmmycalculators.btnlog.hint
 msgid "Calculate logarythms in different bases"
-msgstr ""
-
-#: tfrmmycalculators.btnltogal.caption
-msgid "L - Gal"
-msgstr ""
-
-#: tfrmmycalculators.btnmemoryclear.caption
-msgctxt "tfrmmycalculators.btnmemoryclear.caption"
-msgid "MC"
 msgstr ""
 
 #: tfrmmycalculators.btnmemoryclear.hint
 msgid "Clear memory"
 msgstr "Speicher löschen"
 
-#: tfrmmycalculators.btnmemoryminus.caption
-msgctxt "tfrmmycalculators.btnmemoryminus.caption"
-msgid "M-"
-msgstr ""
-
 #: tfrmmycalculators.btnmemoryminus.hint
 msgid "Subtract from memory"
 msgstr "Vom gespeicherten Wert subtrahieren"
-
-#: tfrmmycalculators.btnmemoryplus.caption
-msgctxt "tfrmmycalculators.btnmemoryplus.caption"
-msgid "M+"
-msgstr ""
 
 #: tfrmmycalculators.btnmemoryplus.hint
 msgid "Add to memory"
 msgstr "Zum gespeicherten Wert addieren"
 
-#: tfrmmycalculators.btnminus.caption
-msgctxt "tfrmmycalculators.btnminus.caption"
-msgid "-"
-msgstr ""
-
 #: tfrmmycalculators.btnminus.hint
 msgid "Subtract"
 msgstr "Subtrahieren"
-
-#: tfrmmycalculators.btnmultiply.caption
-msgctxt "tfrmmycalculators.btnmultiply.caption"
-msgid "*"
-msgstr ""
 
 #: tfrmmycalculators.btnmultiply.hint
 msgid "Multiply"
 msgstr "Multiplizieren"
 
-#: tfrmmycalculators.btnnine.caption
-msgctxt "tfrmmycalculators.btnnine.caption"
-msgid "9"
-msgstr ""
-
 #: tfrmmycalculators.btnnine.hint
 msgid "Nine"
 msgstr ""
 
-#: tfrmmycalculators.btnocttobase.caption
-msgid "Oct > N"
-msgstr ""
-
 #: tfrmmycalculators.btnocttobase.hint
-msgctxt "tfrmmycalculators.btnocttobase.hint"
 msgid "Convert octal to different base"
-msgstr ""
-
-#: tfrmmycalculators.btnone.caption
-msgctxt "tfrmmycalculators.btnone.caption"
-msgid "1"
 msgstr ""
 
 #: tfrmmycalculators.btnone.hint
 msgid "One"
 msgstr ""
 
-#: tfrmmycalculators.btnpercent.caption
-msgid "%"
-msgstr ""
-
 #: tfrmmycalculators.btnpercent.hint
 msgid "Convert to percent"
-msgstr ""
-
-#: tfrmmycalculators.btnpermilage.caption
-msgid "‰"
 msgstr ""
 
 #: tfrmmycalculators.btnpermilage.hint
 msgid "Convert to permil"
 msgstr ""
 
-#: tfrmmycalculators.btnpi.caption
-msgid "π"
-msgstr ""
-
 #: tfrmmycalculators.btnpi.hint
 msgid "Constant Pi"
-msgstr ""
-
-#: tfrmmycalculators.btnplusminus.caption
-msgctxt "tfrmmycalculators.btnplusminus.caption"
-msgid "±"
 msgstr ""
 
 #: tfrmmycalculators.btnplusminus.hint
 msgid "Invert the signal"
 msgstr ""
 
-#: tfrmmycalculators.btnradiansdegrees.caption
-msgctxt "tfrmmycalculators.btnradiansdegrees.caption"
-msgid "Rad-Deg"
-msgstr ""
-
 #: tfrmmycalculators.btnradiansdegrees.hint
-msgctxt "tfrmmycalculators.btnradiansdegrees.hint"
 msgid "Convert radians to degrees"
-msgstr ""
-
-#: tfrmmycalculators.btnradiansgradians.caption
-msgctxt "tfrmmycalculators.btnradiansgradians.caption"
-msgid "Rad-Grad"
-msgstr ""
+msgstr "Kilogramm in Pfund umwandeln"
 
 #: tfrmmycalculators.btnradiansgradians.hint
-msgctxt "tfrmmycalculators.btnradiansgradians.hint"
 msgid "Convert radians to gradians"
-msgstr ""
-
-#: tfrmmycalculators.btnradianstocycles.caption
-msgctxt "tfrmmycalculators.btnradianstocycles.caption"
-msgid "Rad-Cy"
-msgstr ""
+msgstr "Kilogramm in Pfund umwandeln"
 
 #: tfrmmycalculators.btnradianstocycles.hint
-msgctxt "tfrmmycalculators.btnradianstocycles.hint"
 msgid "Convert radians to cycles"
-msgstr ""
+msgstr "Kilogramm in Pfund umwandeln"
 
-#: tfrmmycalculators.btnremainder.caption
-msgid "Remdr"
+#: tfrmmycalculators.btnraisedto.hint
+msgid "Raise x to the power of y"
 msgstr ""
 
 #: tfrmmycalculators.btnremainder.hint
 msgid "Division remainder"
 msgstr ""
 
-#: tfrmmycalculators.btnresult.caption
-msgctxt "tfrmmycalculators.btnresult.caption"
-msgid "="
-msgstr ""
-
 #: tfrmmycalculators.btnresult.hint
-msgctxt "tfrmmycalculators.btnresult.hint"
 msgid "Equals"
 msgstr ""
 
-#: tfrmmycalculators.btnrisedto.caption
-msgid "x^y"
-msgstr ""
-
-#: tfrmmycalculators.btnrisedto.hint
-msgid "Raise to"
-msgstr ""
-
-#: tfrmmycalculators.btnsecant.caption
-msgctxt "tfrmmycalculators.btnsecant.caption"
-msgid "Sec"
-msgstr ""
-
 #: tfrmmycalculators.btnsecant.hint
-msgctxt "tfrmmycalculators.btnsecant.hint"
 msgid "Calculate the secant"
-msgstr ""
-
-#: tfrmmycalculators.btnseven.caption
-msgctxt "tfrmmycalculators.btnseven.caption"
-msgid "7"
 msgstr ""
 
 #: tfrmmycalculators.btnseven.hint
 msgid "Seven"
 msgstr ""
 
-#: tfrmmycalculators.btnsin.caption
-msgctxt "tfrmmycalculators.btnsin.caption"
-msgid "Sin"
-msgstr ""
-
 #: tfrmmycalculators.btnsin.hint
-msgctxt "tfrmmycalculators.btnsin.hint"
 msgid "Calculate the sin"
-msgstr ""
-
-#: tfrmmycalculators.btnsinh.caption
-msgctxt "tfrmmycalculators.btnsinh.caption"
-msgid "SinH"
-msgstr ""
+msgstr "Rechner"
 
 #: tfrmmycalculators.btnsinh.hint
-msgctxt "tfrmmycalculators.btnsinh.hint"
 msgid "Calculate the hyperbolic sine"
-msgstr ""
-
-#: tfrmmycalculators.btnsix.caption
-msgctxt "tfrmmycalculators.btnsix.caption"
-msgid "6"
 msgstr ""
 
 #: tfrmmycalculators.btnsix.hint
 msgid "Six"
 msgstr ""
 
-#: tfrmmycalculators.btntan.caption
-msgctxt "tfrmmycalculators.btntan.caption"
-msgid "Tan"
-msgstr ""
-
 #: tfrmmycalculators.btntan.hint
-msgctxt "tfrmmycalculators.btntan.hint"
 msgid "Calculate the tangent"
 msgstr ""
 
-#: tfrmmycalculators.btntanh.caption
-msgctxt "tfrmmycalculators.btntanh.caption"
-msgid "TanH"
-msgstr ""
-
 #: tfrmmycalculators.btntanh.hint
-msgctxt "tfrmmycalculators.btntanh.hint"
 msgid "Calculate the hyperbolic tangent"
-msgstr ""
-
-#: tfrmmycalculators.btntau.caption
-msgid "𝞽"
 msgstr ""
 
 #: tfrmmycalculators.btntau.hint
 msgid "Constant TAU"
 msgstr ""
 
-#: tfrmmycalculators.btnthree.caption
-msgctxt "tfrmmycalculators.btnthree.caption"
-msgid "3"
-msgstr ""
-
 #: tfrmmycalculators.btnthree.hint
 msgid "Three"
-msgstr ""
-
-#: tfrmmycalculators.btntwo.caption
-msgctxt "tfrmmycalculators.btntwo.caption"
-msgid "2"
 msgstr ""
 
 #: tfrmmycalculators.btntwo.hint
 msgid "Two"
 msgstr "Zwei"
 
-#: tfrmmycalculators.btnxroot.caption
-msgid ""
-msgstr ""
-
 #: tfrmmycalculators.btnxroot.hint
 msgid "Calculate the nth root"
-msgstr ""
-
-#: tfrmmycalculators.btnzero.caption
-msgctxt "tfrmmycalculators.btnzero.caption"
-msgid "0"
 msgstr ""
 
 #: tfrmmycalculators.btnzero.hint
@@ -1570,55 +1280,19 @@ msgstr "Null"
 msgid "Calculators"
 msgstr "Rechner"
 
-#: tfrmmycalculators.dtpickerenddate.textfornulldate
-msgctxt "tfrmmycalculators.dtpickerenddate.textfornulldate"
-msgid "NULL"
-msgstr ""
-
-#: tfrmmycalculators.dtpickerpresent.textfornulldate
-msgctxt "tfrmmycalculators.dtpickerpresent.textfornulldate"
-msgid "NULL"
-msgstr ""
-
-#: tfrmmycalculators.dtpickerstartdate.textfornulldate
-msgctxt "tfrmmycalculators.dtpickerstartdate.textfornulldate"
-msgid "NULL"
-msgstr ""
-
-#: tfrmmycalculators.lblconvertto.caption
-msgctxt "tfrmmycalculators.lblconvertto.caption"
-msgid "Convert"
-msgstr "Konvertieren"
-
-#: tfrmmycalculators.lblenddate.caption
-msgid "End Date"
-msgstr "End-Datum"
-
-#: tfrmmycalculators.lblstartdate.caption
-msgid "Start Date"
-msgstr "Start-Datum"
-
-#: tfrmmycalculators.lbltocalendar.caption
-msgid "To"
-msgstr "Bis"
-
 #: tfrmmycalculators.mnucredits.caption
-msgctxt "tfrmmycalculators.mnucredits.caption"
 msgid "&Credits"
-msgstr ""
+msgstr "Danksagung"
 
 #: tfrmmycalculators.mnucredits.hint
-msgctxt "tfrmmycalculators.mnucredits.hint"
 msgid "Contributors, translators, etc."
 msgstr ""
 
 #: tfrmmycalculators.mnuexit.caption
-msgctxt "tfrmmycalculators.mnuexit.caption"
 msgid "Ex&it"
 msgstr "Beenden"
 
 #: tfrmmycalculators.mnuexit.hint
-msgctxt "tfrmmycalculators.mnuexit.hint"
 msgid "Close the calculator"
 msgstr "Den Rechner schließen"
 
@@ -1627,7 +1301,6 @@ msgid "Click to open the menu"
 msgstr "Klicken, um das Menü zu öffnen"
 
 #: tfrmmycalculators.mnuhelp.caption
-msgctxt "tfrmmycalculators.mnuhelp.caption"
 msgid "&Help"
 msgstr "&Hilfe"
 
@@ -1637,7 +1310,6 @@ msgid "Preferences"
 msgstr "Voreinstellungen"
 
 #: tfrmmycalculators.mnupreferences.hint
-msgctxt "tfrmmycalculators.mnupreferences.hint"
 msgid "Change application language and/or colours"
 msgstr "Sprache der Anwendung und/oder Farben ändern"
 
@@ -1645,14 +1317,6 @@ msgstr "Sprache der Anwendung und/oder Farben ändern"
 msgctxt "tfrmmycalculators.mnupreflang.caption"
 msgid "Language"
 msgstr "Sprache"
-
-#: tfrmmycalculators.mnupreflang.hint
-msgid "Choose the application language"
-msgstr "Sprache der Anwendung auswählen"
-
-#: tfrmmycalculators.mnuprefsdialog.caption
-msgid "Settings dialog..."
-msgstr "Einstellungs-Dialog..."
 
 #: tfrmmycalculators.mnupreftheme.caption
 msgctxt "tfrmmycalculators.mnupreftheme.caption"
@@ -1672,7 +1336,6 @@ msgid "Dark Theme, easier on the eyes"
 msgstr "Dunkel Thema, schonender für die Augen"
 
 #: tfrmmycalculators.mnuprefthemelight.caption
-msgctxt "tfrmmycalculators.mnuprefthemelight.caption"
 msgid "Light"
 msgstr "Hell"
 
@@ -1693,7 +1356,6 @@ msgid "French Republican"
 msgstr ""
 
 #: tfrmmycalculators.ppmenugregorian.caption
-msgctxt "tfrmmycalculators.ppmenugregorian.caption"
 msgid "Gregorian"
 msgstr ""
 
@@ -1705,44 +1367,21 @@ msgstr ""
 msgid "Julian"
 msgstr ""
 
-#: tfrmmycalculators.rdbtndatecalculator.caption
-msgctxt "tfrmmycalculators.rdbtndatecalculator.caption"
-msgid "Date"
-msgstr "Datum"
-
 #: tfrmmycalculators.rdbtndatecalculator.hint
 msgid "Display the date calculator"
 msgstr "Datums-Rechner anzeigen"
-
-#: tfrmmycalculators.rdbtnfunctions.caption
-msgid "f(x)"
-msgstr ""
 
 #: tfrmmycalculators.rdbtnfunctions.hint
 msgid "Display miscelaneous functions"
 msgstr "Verschiedene Funktionen anzeigen"
 
-#: tfrmmycalculators.rdbtnsimplecalculator.caption
-msgctxt "tfrmmycalculators.rdbtnsimplecalculator.caption"
-msgid "Simple"
-msgstr "Einfach"
-
 #: tfrmmycalculators.rdbtnsimplecalculator.hint
 msgid "Display the simple calculator"
 msgstr "Den einfachen Rechner anzeigen"
 
-#: tfrmmycalculators.rdbtntrigonometry.caption
-msgid "Trig"
-msgstr "Trig"
-
 #: tfrmmycalculators.rdbtntrigonometry.hint
 msgid "Display the trigonometric calculator"
 msgstr "Den trigonometrischen Rechner anzeigen"
-
-#: tfrmpreferences.btnok.caption
-msgctxt "tfrmpreferences.btnok.caption"
-msgid "OK"
-msgstr "OK"
 
 #: tfrmpreferences.btnok.hint
 msgid "Save your choices and return to the calculator"
@@ -1754,7 +1393,6 @@ msgid "Preferences"
 msgstr "Voreinstellungen"
 
 #: tfrmpreferences.cboxpreflang.hint
-msgctxt "tfrmpreferences.cboxpreflang.hint"
 msgid "Select your prefered language"
 msgstr "Bevorzugte Sprache auswählen"
 

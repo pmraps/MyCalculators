@@ -32,10 +32,10 @@ type
       btnBackspace: TButton;
       btnClearEntry: TButton;
       btnCos: TButton;
-      btnCoSecant: TButton;
+      btnCosecant: TButton;
       btnCosH: TButton;
       btnCotH: TButton;
-      btnCTan: TButton;
+      btnCot: TButton;
       btnDecToBase: TButton;
       btnBinToBase: TButton;
       btnCelsius: TButton;
@@ -45,7 +45,7 @@ type
       btnDegreesRadians: TButton;
       btnGradiansDegrees: TButton;
       btnGradiansRadians: TButton;
-      btnHypotenuse: TButton;
+      btnHypothenuse: TButton;
       btnMemoryMinus: TButton;
       btnOctToBase: TButton;
       btnDivide: TButton;
@@ -75,7 +75,7 @@ type
       btnRemainder: TButton;
       btnResult: TButton;
       btnResult1: TButton;
-      btnRisedTo: TButton;
+      btnRaisedTo: TButton;
       btnSecant: TButton;
       btnSeven: TButton;
       btnSin: TButton;
@@ -88,7 +88,7 @@ type
       btnTwo: TButton;
       btnXRoot: TButton;
       btnZero: TButton;
-      btnCycleToRad: TButton;
+      btnCyclesToRadians: TButton;
       btnRadiansToCycles: TButton;
       btnKgToLbs: TButton;
       btnLbsToKg: TButton;
@@ -104,7 +104,6 @@ type
       lblConvertTo: TLabel;
       lblStartDate: TLabel;
       lblEndDate: TLabel;
-      mnuPrefsDialog: TMenuItem;
       mnuPrefLang: TMenuItem;
       mnuPrefTheme: TMenuItem;
       mnuPrefThemeDark: TMenuItem;
@@ -130,7 +129,6 @@ type
       rdBtnTrigonometry: TRadioButton;
       rdBtnFunctions: TRadioButton;
       rdBtnSimpleCalculator: TRadioButton;
-      Separator1: TMenuItem;
       StTxtCalendarConversion: TStaticText;
       StTxtDateCalculation: TStaticText;
       txtFieldResult: TEdit;
@@ -147,10 +145,10 @@ type
       procedure btnBackspaceClick(Sender: TObject);
       procedure btnBinToBaseClick(Sender: TObject);
       procedure btnCelsiusClick(Sender: TObject);
-      procedure btnCoSecantClick(Sender: TObject);
+      procedure btnCosecantClick(Sender: TObject);
       procedure btnCosHClick(Sender: TObject);
       procedure btnCotHClick(Sender: TObject);
-      procedure btnCTanClick(Sender: TObject);
+      procedure btnCotClick(Sender: TObject);
       procedure btnDecToBaseClick(Sender: TObject);
       procedure btnClearEntryClick(Sender: TObject);
       procedure btnCommaClick(Sender: TObject);
@@ -166,7 +164,7 @@ type
       procedure btnGradiansDegreesClick(Sender: TObject);
       procedure btnGradiansRadiansClick(Sender: TObject);
       procedure btnHexToBaseClick(Sender: TObject);
-      procedure btnHypotenuseClick(Sender: TObject);
+      procedure btnHypothenuseClick(Sender: TObject);
       procedure btnKgToLbsClick(Sender: TObject);
       procedure btnLbsToKgClick(Sender: TObject);
       procedure btnLogClick(Sender: TObject);
@@ -193,7 +191,7 @@ type
       procedure btnDegreesRadiansClick(Sender: TObject);
       procedure btnRemainderClick(Sender: TObject);
       procedure btnResultClick(Sender: TObject);
-      procedure btnRisedToClick(Sender: TObject);
+      procedure btnRaisedToClick(Sender: TObject);
       procedure btnSecantClick(Sender: TObject);
       procedure btnSevenClick(Sender: TObject);
       procedure btnSinClick(Sender: TObject);
@@ -209,14 +207,14 @@ type
       procedure btnTwoClick(Sender: TObject);
       procedure btnXRootClick(Sender: TObject);
       procedure btnZeroClick(Sender: TObject);
-      procedure btnCycleToRadClick(Sender: TObject);
+      procedure btnCyclesToRadiansClick(Sender: TObject);
       procedure btnRadiansToCyclesClick(Sender: TObject);
       procedure DTPickerEndDateChange(Sender: TObject);
       procedure DTPickerStartDateChange(Sender: TObject);
       procedure mnuCreditsClick(Sender: TObject);
       procedure mnuExitClick(Sender: TObject);
       procedure mnuHelpClick(Sender: TObject);
-      procedure mnuPrefsDialogClick(Sender: TObject);
+      procedure mnuPrefLangClick(Sender: TObject);
       procedure ppMenuArabClick(Sender: TObject);
       procedure ppMenuChineseClick(Sender: TObject);
       procedure ppMenuFrenchClick(Sender: TObject);
@@ -227,6 +225,12 @@ type
       procedure rdBtnFunctionsClick(Sender: TObject);
       procedure rdBtnSimpleCalculatorClick(Sender: TObject);
       procedure rdBtnTrigonometryClick(Sender: TObject);
+      procedure InitializeCalculatorTypePanelCaptions;
+      procedure InitializeSimplePanelCaptions;
+      procedure InitializeFunctionsCaptions;
+      procedure InitializeTrigonometryCaptions;
+      procedure InitializeDateCaptions;
+      procedure InitializeCaptions;
       procedure FormCreate(Sender: TObject);
   private
       Num1, Num2, Result, Operators : String;
@@ -237,6 +241,7 @@ type
       procedure LanguageClick(Sender: TObject);         // wp: Added
 
       procedure ReturnToSimplePanel;
+
   public
       function CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
       function DateDifference(firstDate, secondDate : TDate) : String;
@@ -255,15 +260,12 @@ implementation
 procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
      DTPickerPresent.Date := Now();
-     UpdateTranslation(GetSystemLanguage);
-     CurrentLang := GetSystemLanguage;
-     pnlSimple.Visible := true;
-     rdBtnSimpleCalculator.Checked := true;
-     pnlFunctions.Visible := false;
-     pnlTrigonometry.Visible := false;
-     pnlDatulator.Visible := false;
-     DTPickerEndDate.Date := Now();
      DTPickerStartDate.Date := Now();
+     DTPickerEndDate.Date := Now();
+     UpdateTranslation(GetSystemLanguage);     // Default to system language
+     CurrentLang := GetSystemLanguage;
+     InitializeCaptions;                       // Avoid button captions in translation .po files
+     ReturnToSimplePanel;
      StTxtCalendarConversion.Caption := CalendarConversion(Now(), 'G', 'G');
 
      InitLanguagesMenu;            // wp: Added
@@ -355,7 +357,7 @@ begin
     else txtFieldResult.Text := txtFieldResult.Text + '0';
 end;
 
-procedure TfrmMyCalculators.btnCycleToRadClick(Sender: TObject);
+procedure TfrmMyCalculators.btnCyclesToRadiansClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(CycleToRad(StrToFloat(txtFieldResult.Text)));
     ReturnToSimplePanel;
@@ -392,7 +394,7 @@ begin
   frmHelp.ShowModal;
 end;
 
-procedure TfrmMyCalculators.mnuPrefsDialogClick(Sender: TObject);
+procedure TfrmMyCalculators.mnuPrefLangClick(Sender: TObject);
 begin
   frmPreferences.ShowModal;
 end;
@@ -489,7 +491,7 @@ begin
      ReturnToSimplePanel;
 end;
 
-procedure TfrmMyCalculators.btnCoSecantClick(Sender: TObject);
+procedure TfrmMyCalculators.btnCosecantClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(coSecant(StrToFloat(txtFieldResult.Text)));
     ReturnToSimplePanel;
@@ -507,7 +509,7 @@ begin
      ReturnToSimplePanel;
 end;
 
-procedure TfrmMyCalculators.btnCTanClick(Sender: TObject);
+procedure TfrmMyCalculators.btnCotClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(CoTan(StrToFloat(txtFieldResult.Text)));
     ReturnToSimplePanel;
@@ -691,7 +693,7 @@ begin
     ReturnToSimplePanel;
 end;
 
-procedure TfrmMyCalculators.btnHypotenuseClick(Sender: TObject);
+procedure TfrmMyCalculators.btnHypothenuseClick(Sender: TObject);
 begin
     Num1 := txtFieldResult.Text;
     Operators := 'Hypo';
@@ -899,13 +901,9 @@ var Number1, Number2 : extended;
         else
           begin
                Result := '';
-               MessageDlg(rsInvalidOpera, mtInformation, [mbYes], 0);
+               MessageDlg(rsInvalidOperator, mtInformation, [mbYes], 0);
                txtFieldResult.Text := '';
-               pnlDatulator.Visible := false;
-               pnlFunctions.Visible := false;
-               pnlTrigonometry.Visible := false;
-               pnlSimple.Visible := true;
-               rdBtnSimpleCalculator.Checked := true;
+               ReturnToSimplePanel;
           end;
         end;
     except
@@ -919,7 +917,7 @@ var Number1, Number2 : extended;
     txtFieldResult.Text := Result;
 end;
 
-procedure TfrmMyCalculators.btnRisedToClick(Sender: TObject);
+procedure TfrmMyCalculators.btnRaisedToClick(Sender: TObject);
 begin
      Num1 := txtFieldResult.Text;
      Operators := 'x^y';
@@ -1026,10 +1024,11 @@ begin
      SYear := IntToStr(NYear);
 
      case CurrentLang of
-          'en' : CalendarConversion := SWDay + ', ' + SMonth + SDay + ', ' + SYear;
-          'es' : ;
-          'fr' : ;
-          'it' : ;
+          'de' : CalendarConversion := SWDay + ', ' + SDay + ' ' + SMonth + ' ' + SYear;
+          'en' : CalendarConversion := SWDay + ', ' + SMonth + ', ' + SDay + ', ' + SYear;
+          'es' : CalendarConversion := SWDay + ', el ' + SDay + rsOf + SMonth + rsOf + SYear;
+          'fr' : CalendarConversion := 'Le ' + SWDay + ' ' + SDay + SMonth + SYear;
+          'it' : CalendarConversion := SWDay + ', il ' + SDay + rsOf + SMonth + rsOf + SYear;
           'pt' : CalendarConversion := SWDay + ', ' + FormatDateTime(DefaultFormatSettings.LongDateFormat, DTPickerPresent.Date);
      end;
 
@@ -1041,23 +1040,22 @@ var firstDay, firstMonth, firstYear : Word;
 begin
      if firstDate > secondDate then
          begin
-              lblStartDate.Caption := rsEndDate;
-                                        // Flag the inversion of order
-              lblStartDate.Font.Color := clRed;                        // with a red label
-              lblEndDate.Caption := rsStartDate;
+              lblStartDate.Caption := rsStrDateEndDate;         // Flag the inversion of order
+              lblStartDate.Font.Color := clRed;                 // with a red label
+              lblEndDate.Caption := rsStrDateStartDate;
          end
      else
          begin
-              lblStartDate.Font.Color := clDefault;                    // Return labels to default colour
-              lblStartDate.Caption := rsStartDate;
-              lblEndDate.Caption := rsEndDate;
+              lblStartDate.Font.Color := clDefault;             // Return labels to default colour
+              lblStartDate.Caption := rsStrDateStartDate;
+              lblEndDate.Caption := rsStrDateEndDate;
          end;
      PeriodBetween(firstDate, secondDate, firstYear, firstMonth, firstDay);
      years := IntToStr(firstYear);
      months := IntToStr(firstMonth);
      days := IntToStr(firstDay);
      if (days = '0') and (months = '0') and (years = '0') then DateDifference
-         := years + rsDatesAreTheS
+         := years + rsDatesAreEqual
      else if (days = '0') and (months = '0') and (years = '1')
          then DateDifference := years + rsYear
           else if (days = '0') and (months = '0') and (years > '1')
@@ -1169,6 +1167,113 @@ begin
   finally
     L. Free;
   end;
+end;
+procedure TfrmMyCalculators.InitializeCaptions;
+begin
+     frmMyCalculators.InitializeCalculatorTypePanelCaptions;
+     frmMyCalculators.InitializeSimplePanelCaptions;
+     frmMyCalculators.InitializeFunctionsCaptions;
+     frmMyCalculators.InitializeTrigonometryCaptions;
+     frmMyCalculators.InitializeDateCaptions;
+end;
+
+procedure TfrmMyCalculators.InitializeCalculatorTypePanelCaptions;
+begin
+     frmMyCalculators.rdBtnSimpleCalculator.Caption := rsStrSimple;
+     frmMyCalculators.rdBtnFunctions.Caption := 'f(x)';
+     frmMyCalculators.rdBtnTrigonometry.Caption := 'Trig';
+     frmMyCalculators.rdBtnDateCalculator.Caption := rsStrDateCalc;
+end;
+
+procedure TfrmMyCalculators.InitializeSimplePanelCaptions;
+begin
+     frmMyCalculators.btnResult.Caption := '=';
+     frmMyCalculators.btnMemoryClear.Caption := 'MC';
+     frmMyCalculators.btnMemoryPlus.Caption := 'M+';
+     frmMyCalculators.btnMemoryMinus.Caption := 'M-';
+     frmMyCalculators.btnClearEntry.Caption := 'CA';
+     frmMyCalculators.btnBackspace.Caption := '';
+     frmMyCalculators.btnPlusMinus.Caption := '±';
+     frmMyCalculators.btnRemainder.Caption := rsStrRemainder;
+     frmMyCalculators.btnMinus.Caption := '-';
+     frmMyCalculators.btnAdd.Caption := '+';
+     frmMyCalculators.btnMultiply.Caption := '*';
+     frmMyCalculators.btnDivide.Caption := '/';
+     frmMyCalculators.btnComma.Caption := '.';
+     frmMyCalculators.btnNine.Caption := '9';
+     frmMyCalculators.btnEight.Caption := '8';
+     frmMyCalculators.btnSeven.Caption := '7';
+     frmMyCalculators.btnSix.Caption := '6';
+     frmMyCalculators.btnFive.Caption := '5';
+     frmMyCalculators.btnFour.Caption := '4';
+     frmMyCalculators.btnThree.Caption := '3';
+     frmMyCalculators.btnTwo.Caption := '2';
+     frmMyCalculators.btnOne.Caption := '1';
+     frmMyCalculators.btnZero.Caption := '0';
+end;
+
+procedure TfrmMyCalculators.InitializeFunctionsCaptions;
+begin
+     frmMyCalculators.btnPercent.Caption := '%';
+     frmMyCalculators.btnXRoot.Caption := '';
+     frmMyCalculators.btnFactorial.Caption := 'n!';
+     frmMyCalculators.btnPI.Caption := 'π';
+     frmMyCalculators.btnFraction.Caption := '1 / x';
+     frmMyCalculators.btnPermilage.Caption := '‰';
+     frmMyCalculators.btnRaisedTo.Caption := 'x^y';
+     frmMyCalculators.btnEulerConstant.Caption := 'e';
+     frmMyCalculators.btnDecToBase.Caption := 'Dec > N';
+     frmMyCalculators.btnBinToBase.Caption := 'Bin > N';
+     frmMyCalculators.btnOctToBase.Caption := 'Oct > N';
+     frmMyCalculators.btnHexToBase.Caption := 'Hex > N';
+     frmMyCalculators.btnCelsius.Caption := 'Cº';
+     frmMyCalculators.btnFahrenheit.Caption := 'Fº';
+     frmMyCalculators.btnTAU.Caption := '𝛕';
+     frmMyCalculators.btnExponential.Caption := 'Exp';
+     frmMyCalculators.btnLog.Caption := 'Log';
+     frmMyCalculators.btnCyclesToRadians.Caption := rsStrCycToRad;
+     frmMyCalculators.btnRadiansToCycles.Caption := rsStrRadToCyc;
+     frmMyCalculators.btnKgToLbs.Caption := 'Kg - Lbs';
+     frmMyCalculators.btnLbsToKg.Caption := 'Lbs - Kg';
+     frmMyCalculators.btnLToGal.Caption := 'L - Gal';
+     frmMyCalculators.btnGalToL.Caption := 'Gal - L';
+end;
+
+procedure TfrmMyCalculators.InitializeTrigonometryCaptions;
+begin
+     frmMyCalculators.btnSin.Caption := rsStrSin;
+     frmMyCalculators.btnSinH.Caption := rsStrSinH;
+     frmMyCalculators.btnASin.Caption := rsStrASin;
+     frmMyCalculators.btnASinH.Caption := rsStrASinH;
+     frmMyCalculators.btnCos.Caption := 'Cos';
+     frmMyCalculators.btnCosH.Caption := 'CosH';
+     frmMyCalculators.btnACos.Caption := 'ACos';
+     frmMyCalculators.btnACosH.Caption := 'ACosH';
+     frmMyCalculators.btnTan.Caption := 'Tan';
+     frmMyCalculators.btnTanH.Caption := 'TanH';
+     frmMyCalculators.btnATan.Caption := 'ATan';
+     frmMyCalculators.btnATanH.Caption := 'ATanH';
+     frmMyCalculators.btnCot.Caption := 'Cot';
+     frmMyCalculators.btnCotH.Caption := 'CotH';
+     frmMyCalculators.btnACot.Caption := 'ACot';
+     frmMyCalculators.btnSecant.Caption := 'Sec';
+     frmMyCalculators.btnCosecant.Caption := 'CSec';
+     frmMyCalculators.btnHypothenuse.Caption := rsStrHypothenuse;
+     frmMyCalculators.btnDegreesRadians.Caption := rsStrDegToRad;
+     frmMyCalculators.btnDegreesGradians.Caption := rsStrDegToGrad;
+     frmMyCalculators.btnRadiansDegrees.Caption := rsStrRadToDeg;
+     frmMyCalculators.btnRadiansGradians.Caption := 'Rad-Grad';
+     frmMyCalculators.btnGradiansDegrees.Caption := rsStrGradToDeg;
+     frmMyCalculators.btnGradiansRadians.Caption := 'Grad-Rad';
+
+end;
+
+procedure TfrmMyCalculators.InitializeDateCaptions;
+begin
+     frmMyCalculators.lblStartDate.Caption := rsStrDateStartDate;
+     frmMyCalculators.lblEndDate.Caption := rsStrDateEndDate;
+     frmMyCalculators.lblConvertTo.Caption := rsStrDateConvert;
+     frmMyCalculators.lblToCalendar.Caption := rsStrDateTo;
 end;
 
 end.

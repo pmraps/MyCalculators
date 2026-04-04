@@ -8,7 +8,7 @@ uses
     Classes, SysUtils, LocalizedForms;
 
     resourceString
-        rsInvalidOpera = 'Invalid Operator';
+        rsInvalidOperator = 'Invalid Operator';
         // WEEK DAYS
         rsSunday = 'Sunday';
         rsMonday = 'Monday';
@@ -63,10 +63,6 @@ uses
         rsNovember = 'November';
         rsDecember = 'December';
         // MISC DATE STRINGS
-        rsOf = ' of ';
-        rsEndDate = 'End date';
-        rsStartDate = 'Start date';
-        rsDatesAreTheS = 'Dates are the same';
         rsYear = ' year.';
         rsYears = ' years.';
         rsMonth = ' month.';
@@ -80,10 +76,10 @@ uses
         rsDays2 = ' days.';
         //TREEVIEW NAMES
         rsTrViewDesc = 'Description';
-        rsTrViewSimple = 'Simple';
-        rsTrViewMisc = 'Miscellaneous';
-        rsTrViewTrig = 'Trigonometric';
-        rsTrViewDate = 'Date';
+        rsTrViewSimple = 'Simple calculator';
+        rsTrViewMisc = 'Miscellaneous functions';
+        rsTrViewTrig = 'Trigonometric calculator';
+        rsTrViewDate = 'Date converter and calculator';
         rsTrViewSettings = 'Settings';
         // DESCRIPTION HELP STRINGS
         rsHelpDescLine0 = 'This is yet another multi-function calculator.';
@@ -115,8 +111,32 @@ uses
         // SETTINGS HELP STRINGS
         rsHelpSettingsLine0 = 'Click on the down arrow of the first list to select a language.';
         rsHelpSettingsLine2 = 'Click on the down arrow of the second list and select a theme, dark or light.';
+        // COMMON BUTTONS
+        rsBtnOK = 'OK';
+        // RADIO BUTTONS
+        rsStrSimple = 'Simple';
+        rsStrDateCalc = 'Datex';
+        // CALCULATOR BUTTONS
+        rsStrRemainder = 'Remdr';
+        rsStrCycToRad = 'Cyc-Rad';
+        rsStrRadToCyc = 'Rad-Cyc';
+        rsStrSin = 'Sin';
+        rsStrSinH = 'SinH';
+        rsStrASin = 'ASin';
+        rsStrASinH = 'ASinH';
+        rsStrDegToRad = 'Deg-Rad';
+        rsStrDegToGrad = 'Deg-Grad';
+        rsStrRadToDeg = 'Rad-Deg';
+        rsStrGradToDeg = 'Grad-Deg';
+        rsStrHypothenuse = 'Hyp';
+        // DATE STRINGS
+        rsStrDateConvert = 'Convert';
+        rsStrDateTo = 'to';
+        rsStrDateStartDate = 'Start date';
+        rsStrDateEndDate = 'End Date';
+        rsOf = ' of ';
+        rsDatesAreEqual = 'Dates are the same';
 
-        rsDateConverted = %s';
 
 implementation
 

@@ -44,7 +44,6 @@ inherited frmPreferences: TfrmPreferences
     Hint = 'Save your choices and return to the calculator'
     Top = 72
     Width = 70
-    Caption = 'OK'
     TabOrder = 2
     OnClick = btnOKClick
   end

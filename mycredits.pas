@@ -27,8 +27,8 @@ type
         StTxtCredits3: TStaticText;
         StTxtCredits2: TStaticText;
         StTxtCredits1: TStaticText;
-        TabSheet1: TTabSheet;
-        TbShtTodoList: TTabSheet;
+        TbShtCreditsImages: TTabSheet;
+        TbShtCreditsTodoList: TTabSheet;
         TbShtCreditsContributors: TTabSheet;
         TbShtCreditsCredits: TTabSheet;
         TViewTodoList: TTreeView;
@@ -204,14 +204,8 @@ procedure TfrmCredits.UpdateTranslation(ALang: String);
 begin
   inherited;
 
-  { Items that are are not translated automatically: }
-{  with RadioGroup do begin
-    Items[0] := rsOne;
-    Items[1] := rsTwo;
-    Items[2] := rsThree;
-  end;}
+  { Items that are are not translated automatically }
 
-  { We should translate CheckGroup here also. Probably also list strings, etc.. }
 end;
 
 end.

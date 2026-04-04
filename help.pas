@@ -36,6 +36,7 @@ type
         pgSimple: TPage;
         pgTrigonometric: TPage;
         TrViewHelpIndex: TTreeView;
+        procedure FormActivate(Sender: TObject);
         procedure FormCreate(Sender: TObject);
         procedure TrViewHelpIndexSelectionChanged(Sender: TObject);
 
@@ -92,6 +93,11 @@ begin
 
   PopulateTreeView;
   PopulateMemos;
+end;
+
+procedure TfrmHelp.FormActivate(Sender: TObject);
+begin
+    btnOK.Caption := rsBtnOK;
 end;
 
 { wp This writes the help texts into the memos. This is done by code to facilitate

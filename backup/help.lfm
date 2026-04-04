@@ -9,15 +9,17 @@ inherited frmHelp: TfrmHelp
   Caption = 'Help'
   ClientHeight = 251
   ClientWidth = 535
+  DefaultMonitor = dmMainForm
   ParentFont = True
   Position = poOwnerFormCenter
+  OnActivate = FormActivate
   OnCreate = FormCreate
   object NtBookMainHelp: TNotebook[0]
     Left = 200
     Height = 200
     Top = 0
     Width = 330
-    PageIndex = 0
+    PageIndex = 5
     TabOrder = 0
     object pgDescription: TPage
       TabStop = True
@@ -29,7 +31,7 @@ inherited frmHelp: TfrmHelp
         Width = 330
         BorderStyle = bsNone
         Lines.Strings = (
-          'rsHelpDescLine0'
+          ''
         )
         ParentColor = True
         ReadOnly = True
