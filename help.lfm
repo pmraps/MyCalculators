@@ -24,7 +24,6 @@ inherited frmHelp: TfrmHelp
     object pgDescription: TPage
       TabStop = True
       object mmoDescription: TMemo
-        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
@@ -43,7 +42,6 @@ inherited frmHelp: TfrmHelp
     object pgSimple: TPage
       TabStop = True
       object mmoSimple: TMemo
-        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
@@ -64,7 +62,6 @@ inherited frmHelp: TfrmHelp
     object pgMiscellaneous: TPage
       TabStop = True
       object mmoMiscFunctions: TMemo
-        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
@@ -82,7 +79,6 @@ inherited frmHelp: TfrmHelp
     object pgTrigonometric: TPage
       TabStop = True
       object mmoTrigonometric: TMemo
-        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
@@ -100,7 +96,6 @@ inherited frmHelp: TfrmHelp
     object pgDates: TPage
       TabStop = True
       object mmoDates: TMemo
-        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0
@@ -118,7 +113,6 @@ inherited frmHelp: TfrmHelp
     object pgSettings: TPage
       TabStop = True
       object mmoSettings: TMemo
-        Cursor = crNone
         Left = 0
         Height = 200
         Top = 0

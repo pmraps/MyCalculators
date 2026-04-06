@@ -97,7 +97,7 @@ end;
 
 procedure TfrmHelp.FormActivate(Sender: TObject);
 begin
-    btnOK.Caption := rsBtnOK;
+    btnOK.Caption := rsStrBtnOK;
 end;
 
 { wp This writes the help texts into the memos. This is done by code to facilitate

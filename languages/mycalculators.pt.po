@@ -12,336 +12,6 @@ msgstr ""
 "X-Generator: Poedit 3.9\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: maincalculators.rsapril
-msgctxt "maincalculators.rsapril"
-msgid "April"
-msgstr "Abril"
-
-#: maincalculators.rsaugust
-msgctxt "maincalculators.rsaugust"
-msgid "August"
-msgstr "Agosto"
-
-#: maincalculators.rsdatesarethes
-msgctxt "maincalculators.rsdatesarethes"
-msgid "Dates are the same"
-msgstr "As datas são iguais"
-
-#: maincalculators.rsday
-msgctxt "maincalculators.rsday"
-msgid " day."
-msgstr " dia."
-
-#: maincalculators.rsday2
-msgctxt "maincalculators.rsday2"
-msgid " day, "
-msgstr " dia, "
-
-#: maincalculators.rsdayand
-msgctxt "maincalculators.rsdayand"
-msgid " day and "
-msgstr " dia e "
-
-#: maincalculators.rsdays
-msgctxt "maincalculators.rsdays"
-msgid " days, "
-msgstr " dias, "
-
-#: maincalculators.rsdays2
-msgctxt "maincalculators.rsdays2"
-msgid " days."
-msgstr " dias."
-
-#: maincalculators.rsdaysand
-msgctxt "maincalculators.rsdaysand"
-msgid " days and "
-msgstr " dias e "
-
-#: maincalculators.rsdecember
-msgctxt "maincalculators.rsdecember"
-msgid "December"
-msgstr "Dezembro"
-
-#: maincalculators.rseight
-msgctxt "maincalculators.rseight"
-msgid "eight"
-msgstr "oito"
-
-#: maincalculators.rseighteen
-msgctxt "maincalculators.rseighteen"
-msgid "eighteen"
-msgstr "dezoito"
-
-#: maincalculators.rseleven
-msgctxt "maincalculators.rseleven"
-msgid "eleven"
-msgstr "onze"
-
-#: maincalculators.rsenddate
-msgctxt "maincalculators.rsenddate"
-msgid "End date"
-msgstr "Data final"
-
-#: maincalculators.rsfebruary
-msgctxt "maincalculators.rsfebruary"
-msgid "February"
-msgstr "Fevereiro"
-
-#: maincalculators.rsfifteen
-msgctxt "maincalculators.rsfifteen"
-msgid "fifteen"
-msgstr "quinze"
-
-#: maincalculators.rsfive
-msgctxt "maincalculators.rsfive"
-msgid "five"
-msgstr "cinco"
-
-#: maincalculators.rsfour
-msgctxt "maincalculators.rsfour"
-msgid "four"
-msgstr "quatro"
-
-#: maincalculators.rsfourteen
-msgctxt "maincalculators.rsfourteen"
-msgid "fourteen"
-msgstr "quatorze"
-
-#: maincalculators.rsfriday
-msgctxt "maincalculators.rsfriday"
-msgid "Friday"
-msgstr "Sexta"
-
-#: maincalculators.rsinvalidopera
-msgctxt "maincalculators.rsinvalidopera"
-msgid "Invalid Operator"
-msgstr "Operador inválido"
-
-#: maincalculators.rsjanuary
-msgctxt "maincalculators.rsjanuary"
-msgid "January"
-msgstr "Janeiro"
-
-#: maincalculators.rsjuly
-msgctxt "maincalculators.rsjuly"
-msgid "July"
-msgstr "Julho"
-
-#: maincalculators.rsjune
-msgctxt "maincalculators.rsjune"
-msgid "June"
-msgstr "Junho"
-
-#: maincalculators.rsmarch
-msgctxt "maincalculators.rsmarch"
-msgid "March"
-msgstr "Março"
-
-#: maincalculators.rsmay
-msgctxt "maincalculators.rsmay"
-msgid "May"
-msgstr "Maio"
-
-#: maincalculators.rsmonday
-msgctxt "maincalculators.rsmonday"
-msgid "Monday"
-msgstr "Segunda"
-
-#: maincalculators.rsmonth
-msgctxt "maincalculators.rsmonth"
-msgid " month."
-msgstr " mês."
-
-#: maincalculators.rsmonthand
-msgctxt "maincalculators.rsmonthand"
-msgid " month and "
-msgstr " mês e "
-
-#: maincalculators.rsmonths
-msgctxt "maincalculators.rsmonths"
-msgid " months."
-msgstr " meses."
-
-#: maincalculators.rsnine
-msgctxt "maincalculators.rsnine"
-msgid "nine"
-msgstr "nove"
-
-#: maincalculators.rsnineteen
-msgctxt "maincalculators.rsnineteen"
-msgid "nineteen"
-msgstr "dezanove"
-
-#: maincalculators.rsnovember
-msgctxt "maincalculators.rsnovember"
-msgid "November"
-msgstr "Novembro"
-
-#: maincalculators.rsoctober
-msgctxt "maincalculators.rsoctober"
-msgid "October"
-msgstr "Outubro"
-
-#: maincalculators.rsof
-msgctxt "maincalculators.rsof"
-msgid " of "
-msgstr " de "
-
-#: maincalculators.rsone
-msgctxt "maincalculators.rsone"
-msgid "one"
-msgstr "um"
-
-#: maincalculators.rssaturday
-msgctxt "maincalculators.rssaturday"
-msgid "Saturday"
-msgstr "Sábado"
-
-#: maincalculators.rsseptember
-msgctxt "maincalculators.rsseptember"
-msgid "September"
-msgstr "Setembro"
-
-#: maincalculators.rsseven
-msgctxt "maincalculators.rsseven"
-msgid "seven"
-msgstr "sete"
-
-#: maincalculators.rsseventeen
-msgctxt "maincalculators.rsseventeen"
-msgid "seventeen"
-msgstr "dezassete"
-
-#: maincalculators.rssix
-msgctxt "maincalculators.rssix"
-msgid "six"
-msgstr "seis"
-
-#: maincalculators.rssixteen
-msgctxt "maincalculators.rssixteen"
-msgid "sixteen"
-msgstr "dezasseis"
-
-#: maincalculators.rsstartdate
-msgctxt "maincalculators.rsstartdate"
-msgid "Start date"
-msgstr "Data inicial"
-
-#: maincalculators.rssunday
-msgctxt "maincalculators.rssunday"
-msgid "Sunday"
-msgstr "Domingo"
-
-#: maincalculators.rsten
-msgctxt "maincalculators.rsten"
-msgid "ten"
-msgstr "dez"
-
-#: maincalculators.rsthirteen
-msgctxt "maincalculators.rsthirteen"
-msgid "thirteen"
-msgstr "treze"
-
-#: maincalculators.rsthirty
-msgctxt "maincalculators.rsthirty"
-msgid "thirty"
-msgstr "trinta"
-
-#: maincalculators.rsthirtyone
-msgctxt "maincalculators.rsthirtyone"
-msgid "thirty one"
-msgstr "trinta e um"
-
-#: maincalculators.rsthree
-msgctxt "maincalculators.rsthree"
-msgid "three"
-msgstr "três"
-
-#: maincalculators.rsthursday
-msgctxt "maincalculators.rsthursday"
-msgid "Thursday"
-msgstr "Quinta"
-
-#: maincalculators.rstuesday
-msgctxt "maincalculators.rstuesday"
-msgid "Tuesday"
-msgstr "Terça"
-
-#: maincalculators.rstwelve
-msgctxt "maincalculators.rstwelve"
-msgid "twelve"
-msgstr "doze"
-
-#: maincalculators.rstwenty
-msgctxt "maincalculators.rstwenty"
-msgid "twenty"
-msgstr "vinte"
-
-#: maincalculators.rstwentyeight
-msgctxt "maincalculators.rstwentyeight"
-msgid "twenty eight"
-msgstr "vinte e oito"
-
-#: maincalculators.rstwentyfive
-msgctxt "maincalculators.rstwentyfive"
-msgid "twenty five"
-msgstr "vinte e cinco"
-
-#: maincalculators.rstwentyfour
-msgctxt "maincalculators.rstwentyfour"
-msgid "twenty four"
-msgstr "vinte e quatro"
-
-#: maincalculators.rstwentynine
-msgctxt "maincalculators.rstwentynine"
-msgid "twenty nine"
-msgstr "vinte e nove"
-
-#: maincalculators.rstwentyone
-msgctxt "maincalculators.rstwentyone"
-msgid "twenty one"
-msgstr "vinte e um"
-
-#: maincalculators.rstwentyseven
-msgctxt "maincalculators.rstwentyseven"
-msgid "twenty seven"
-msgstr "vinte e sete"
-
-#: maincalculators.rstwentysix
-msgctxt "maincalculators.rstwentysix"
-msgid "twenty six"
-msgstr "vinte e seis"
-
-#: maincalculators.rstwentythree
-msgctxt "maincalculators.rstwentythree"
-msgid "twenty three"
-msgstr "vinte e três"
-
-#: maincalculators.rstwentytwo
-msgctxt "maincalculators.rstwentytwo"
-msgid "twenty two"
-msgstr "vinte e dois"
-
-#: maincalculators.rstwo
-msgctxt "maincalculators.rstwo"
-msgid "two"
-msgstr "dois"
-
-#: maincalculators.rswednesday
-msgctxt "maincalculators.rswednesday"
-msgid "Wednesday"
-msgstr "Quarta"
-
-#: maincalculators.rsyear
-msgctxt "maincalculators.rsyear"
-msgid " year."
-msgstr " ano."
-
-#: maincalculators.rsyears
-msgctxt "maincalculators.rsyears"
-msgid " years."
-msgstr " anos."
-
 #: myresourcestrings.rsapril
 msgctxt "myresourcestrings.rsapril"
 msgid "April"
@@ -352,13 +22,7 @@ msgctxt "myresourcestrings.rsaugust"
 msgid "August"
 msgstr "Agosto"
 
-#: myresourcestrings.rsbtnok
-msgctxt "myresourcestrings.rsbtnok"
-msgid "OK"
-msgstr "Fechar"
-
 #: myresourcestrings.rsdatesareequal
-#, fuzzy
 msgctxt "myresourcestrings.rsdatesareequal"
 msgid "Dates are the same"
 msgstr "As datas são iguais"
@@ -540,7 +204,6 @@ msgid "There are also six converters between several angle measurement units."
 msgstr "Existem também seis conversores entre várias unidades de medida de ângulo."
 
 #: myresourcestrings.rsinvalidoperator
-#, fuzzy
 msgctxt "myresourcestrings.rsinvalidoperator"
 msgid "Invalid Operator"
 msgstr "Operador inválido"
@@ -660,16 +323,38 @@ msgctxt "myresourcestrings.rsstrasinh"
 msgid "ASinH"
 msgstr "ASenH"
 
+#: myresourcestrings.rsstrbtnclose
+msgid "Close"
+msgstr "Fechar"
+
+#: myresourcestrings.rsstrbtnexit
+msgctxt "myresourcestrings.rsstrbtnexit"
+msgid "Exit"
+msgstr "Sa&ir"
+
+#: myresourcestrings.rsstrbtnok
+msgctxt "myresourcestrings.rsstrbtnok"
+msgid "OK"
+msgstr "Aceitar"
+
+#: myresourcestrings.rsstrcreditsdialog
+msgctxt "myresourcestrings.rsstrcreditsdialog"
+msgid "Credits"
+msgstr "Agradecimentos"
+
 #: myresourcestrings.rsstrcyctorad
 msgid "Cyc-Rad"
 msgstr "Cic-Rad"
 
-#: myresourcestrings.rsstrdatecalc
-#, fuzzy
-#| msgid "Date"
-msgctxt "myresourcestrings.rsstrdatecalc"
+#: myresourcestrings.rsstrdatecalccaption
+msgctxt "myresourcestrings.rsstrdatecalccaption"
 msgid "Date"
 msgstr "Data"
+
+#: myresourcestrings.rsstrdatecalchint
+msgctxt "myresourcestrings.rsstrdatecalchint"
+msgid "Display the date calculator"
+msgstr "Calculadora de datas"
 
 #: myresourcestrings.rsstrdateconvert
 msgid "Convert"
@@ -703,9 +388,18 @@ msgctxt "myresourcestrings.rsstrgradtodeg"
 msgid "Grad-Deg"
 msgstr "Grad-Gra"
 
+#: myresourcestrings.rsstrhelpdialog
+msgctxt "myresourcestrings.rsstrhelpdialog"
+msgid "Help"
+msgstr "A&juda"
+
 #: myresourcestrings.rsstrhypothenuse
 msgid "Hyp"
 msgstr "Hip"
+
+#: myresourcestrings.rsstrmischint
+msgid "Display miscellaneous functions"
+msgstr "Mostrar funções diversas"
 
 #: myresourcestrings.rsstrradtocyc
 msgid "Rad-Cyc"
@@ -721,10 +415,20 @@ msgctxt "myresourcestrings.rsstrremainder"
 msgid "Remdr"
 msgstr "Resto"
 
-#: myresourcestrings.rsstrsimple
-msgctxt "myresourcestrings.rsstrsimple"
+#: myresourcestrings.rsstrsettingsdialog
+msgctxt "myresourcestrings.rsstrsettingsdialog"
+msgid "Settings"
+msgstr "Preferências"
+
+#: myresourcestrings.rsstrsimplecaption
+msgctxt "myresourcestrings.rsstrsimplecaption"
 msgid "Simple"
 msgstr "Simples"
+
+#: myresourcestrings.rsstrsimplehint
+msgctxt "myresourcestrings.rsstrsimplehint"
+msgid "Display the simple calculator"
+msgstr "Mostra a calculadora simples"
 
 #: myresourcestrings.rsstrsin
 msgctxt "myresourcestrings.rsstrsin"
@@ -735,6 +439,11 @@ msgstr "Sen"
 msgctxt "myresourcestrings.rsstrsinh"
 msgid "SinH"
 msgstr "SenH"
+
+#: myresourcestrings.rsstrtrigonometrichint
+msgctxt "myresourcestrings.rsstrtrigonometrichint"
+msgid "Display the trigonometric calculator"
+msgstr "Mostra a calculadora trigonométrica"
 
 #: myresourcestrings.rssunday
 msgctxt "myresourcestrings.rssunday"
@@ -784,6 +493,7 @@ msgid "Miscellaneous functions"
 msgstr "Diversas"
 
 #: myresourcestrings.rstrviewsettings
+msgctxt "myresourcestrings.rstrviewsettings"
 msgid "Settings"
 msgstr "Preferências"
 
@@ -963,6 +673,7 @@ msgid "Close the help system"
 msgstr "Fechar o sistema de ajuda"
 
 #: tfrmhelp.caption
+msgctxt "tfrmhelp.caption"
 msgid "Help"
 msgstr "Ajuda"
 
@@ -1253,69 +964,6 @@ msgstr "Zero"
 msgid "Calculators"
 msgstr "Calculadoras"
 
-#: tfrmmycalculators.mnucredits.caption
-msgid "&Credits"
-msgstr "&Agradecimentos"
-
-#: tfrmmycalculators.mnucredits.hint
-msgid "Contributors, translators, etc."
-msgstr "Colaboradores, tradutores, etc."
-
-#: tfrmmycalculators.mnuexit.caption
-msgid "Ex&it"
-msgstr "Sa&ir"
-
-#: tfrmmycalculators.mnuexit.hint
-msgid "Close the calculator"
-msgstr "Fechar a calculadora"
-
-#: tfrmmycalculators.mnuhamburger.hint
-msgid "Click to open the menu"
-msgstr "Clique para abrir o menu"
-
-#: tfrmmycalculators.mnuhelp.caption
-msgid "&Help"
-msgstr "A&juda"
-
-#: tfrmmycalculators.mnupreferences.caption
-msgctxt "tfrmmycalculators.mnupreferences.caption"
-msgid "Preferences"
-msgstr "Preferências"
-
-#: tfrmmycalculators.mnupreferences.hint
-msgid "Change application language and/or colours"
-msgstr "Alterar definições da aplicação"
-
-#: tfrmmycalculators.mnupreflang.caption
-msgctxt "tfrmmycalculators.mnupreflang.caption"
-msgid "Language"
-msgstr "Idioma"
-
-#: tfrmmycalculators.mnupreftheme.caption
-msgctxt "tfrmmycalculators.mnupreftheme.caption"
-msgid "Theme"
-msgstr "Tema"
-
-#: tfrmmycalculators.mnupreftheme.hint
-msgid "Choose a theme, dark or light"
-msgstr "Escolha um tema, claro ou escuro"
-
-#: tfrmmycalculators.mnuprefthemedark.caption
-msgid "Dark"
-msgstr "Escuro"
-
-#: tfrmmycalculators.mnuprefthemedark.hint
-msgid "Dark Theme, easier on the eyes"
-msgstr "Tema escuro, mais suave para a vista"
-
-#: tfrmmycalculators.mnuprefthemelight.caption
-msgid "Light"
-msgstr "Claro"
-
-#: tfrmmycalculators.mnuprefthemelight.hint
-msgid "Light, more visibility"
-msgstr "Claro, mais visível"
-
 #: tfrmmycalculators.ppmenuarab.caption
 msgid "Arab"
 msgstr "Árabe"
@@ -1339,22 +987,6 @@ msgstr "Hebraico"
 #: tfrmmycalculators.ppmenujulian.caption
 msgid "Julian"
 msgstr "Juliano"
-
-#: tfrmmycalculators.rdbtndatecalculator.hint
-msgid "Display the date calculator"
-msgstr "Calculadora de datas"
-
-#: tfrmmycalculators.rdbtnfunctions.hint
-msgid "Display miscelaneous functions"
-msgstr "Funções diversas"
-
-#: tfrmmycalculators.rdbtnsimplecalculator.hint
-msgid "Display the simple calculator"
-msgstr "Mostra a calculadora simples"
-
-#: tfrmmycalculators.rdbtntrigonometry.hint
-msgid "Display the trigonometric calculator"
-msgstr "Mostra a calculadora trigonométrica"
 
 #: tfrmpreferences.btnok.hint
 msgid "Save your choices and return to the calculator"

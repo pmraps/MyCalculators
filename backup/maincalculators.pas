@@ -5,10 +5,10 @@ unit mainCalculators;
 interface
 
 uses LazLogger,
-     SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus, Graphics, Classes,
-     Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math, baseConvert,
-     MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator, LocalizedForms,
-     myResourceStrings, gettext,
+     SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
+     Graphics, Classes, Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math,
+     baseConvert, MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator,
+     LocalizedForms, myResourceStrings, gettext,
      FileUtil;
 
 type
@@ -104,15 +104,11 @@ type
       lblConvertTo: TLabel;
       lblStartDate: TLabel;
       lblEndDate: TLabel;
-      mnuPrefLang: TMenuItem;
-      mnuPrefTheme: TMenuItem;
-      mnuPrefThemeDark: TMenuItem;
-      mnuPrefThemeLight: TMenuItem;
-      mnuPreferences: TMenuItem;
-      mnuHelp: TMenuItem;
-      mnuCredits: TMenuItem;
-      mnuExit: TMenuItem;
-      mnuHamburger: TMenuItem;
+      ppMnuMainSettings: TMenuItem;
+      ppMnuMainHelp: TMenuItem;
+      ppMnuMainCredits: TMenuItem;
+      ppMnuMainExit: TMenuItem;
+      ppMainMenu: TPopupMenu;
       ppMenuGregorian: TMenuItem;
       ppMenuJulian: TMenuItem;
       ppMenuFrench: TMenuItem;
@@ -129,10 +125,10 @@ type
       rdBtnTrigonometry: TRadioButton;
       rdBtnFunctions: TRadioButton;
       rdBtnSimpleCalculator: TRadioButton;
+      SpBtnMainMenu: TSpeedButton;
       StTxtCalendarConversion: TStaticText;
       StTxtDateCalculation: TStaticText;
       txtFieldResult: TEdit;
-      mainMenu: TMainMenu;
       procedure btnACosClick(Sender: TObject);
       procedure btnACosHClick(Sender: TObject);
       procedure btnACotClick(Sender: TObject);
@@ -215,6 +211,7 @@ type
       procedure mnuExitClick(Sender: TObject);
       procedure mnuHelpClick(Sender: TObject);
       procedure mnuPrefLangClick(Sender: TObject);
+      procedure ppMainMenuPopup(Sender: TObject);
       procedure ppMenuArabClick(Sender: TObject);
       procedure ppMenuChineseClick(Sender: TObject);
       procedure ppMenuFrenchClick(Sender: TObject);
@@ -232,6 +229,11 @@ type
       procedure InitializeDateCaptions;
       procedure InitializeCaptions;
       procedure FormCreate(Sender: TObject);
+      function ConvertWDayToStr(Day : Integer) : String;
+      function ConvertNDayToStr(NumberOfDay : Integer) : String;
+      function ConvertMonthToStr(Month : Integer) : String;
+      procedure SpBtnMainMenuClick(Sender: TObject);
+      procedure SpBtnMainMenuMouseLeave(Sender: TObject);
   private
       Num1, Num2, Result, Operators : String;
       Memory : extended;
@@ -397,6 +399,18 @@ end;
 procedure TfrmMyCalculators.mnuPrefLangClick(Sender: TObject);
 begin
   frmPreferences.ShowModal;
+end;
+
+procedure TfrmMyCalculators.ppMainMenuPopup(Sender: TObject);
+begin
+     ppMainMenu.Items[0].ImageIndex := 8;
+     ppMainMenu.Items[0].Caption := rsStrSettingsDialog;
+     ppMainMenu.Items[1].ImageIndex := 9;
+     ppMainMenu.Items[1].Caption := rsStrHelpDialog;
+     ppMainMenu.Items[2].ImageIndex := 7;
+     ppMainMenu.Items[2].Caption := rsStrCreditsDialog;
+     ppMainMenu.Items[3].ImageIndex := 12;
+     ppMainMenu.Items[3].Caption := rsStrBtnExit;
 end;
 
 procedure TfrmMyCalculators.ppMenuArabClick(Sender: TObject);
@@ -933,7 +947,7 @@ end;
 
 function TfrmMyCalculators.CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
 var SWDay, SDay, SMonth, SYear : String;
-  WDay, NDay, NMonth, NYear : Word;
+    NDay, NMonth, NYear : Word;
 begin
      StTxtCalendarConversion.Caption := '';
      DecodeDate(Date, NYear, NMonth, NDay);
@@ -962,67 +976,16 @@ begin
         end;
 
      // Final string
-     Date := EncodeDate(NYear, NMonth, NDay);
-     WDay := DayOfWeek(Date);
-     SWDay := IntToStr(WDay);
-     case WDay of
-          1 : SWDay := rsSunday;
-          2 : SWDay := rsMonday;
-          3 : SWDay := rsTuesday;
-          4 : SWDay := rsWednesday;
-          5 : SWDay := rsThursday;
-          6 : SWDay := rsFriday;
-          7 : SWDay := rsSaturday;
-     end;
-     case NDay of
-           1  : SDay := rsOne;
-           2  : SDay := rsTwo;
-           3  : SDay := rsThree;
-           4  : SDay := rsFour;
-           5  : SDay := rsFive;
-           6  : SDay := rsSix;
-           7  : SDay := rsSeven;
-           8  : SDay := rsEight;
-           9  : SDay := rsNine;
-           10 : SDay := rsTen;
-           11 : SDay := rsEleven;
-           12 : SDay := rsTwelve;
-           13 : SDay := rsThirteen;
-           14 : SDay := rsFourteen;
-           15 : SDay := rsFifteen;
-           16 : SDay := rsSixteen;
-           17 : SDay := rsSeventeen;
-           18 : SDay := rsEighteen;
-           19 : SDay := rsNineteen;
-           20 : SDay := rsTwenty;
-           21 : SDay := rsTwentyOne;
-           22 : SDay := rsTwentyTwo;
-           23 : SDay := rsTwentyThree;
-           24 : SDay := rsTwentyFour;
-           25 : SDay := rsTwentyFive;
-           26 : SDay := rsTwentySix;
-           27 : SDay := rsTwentySeven;
-           28 : SDay := rsTwentyEight;
-           29 : SDay := rsTwentyNine;
-           30 : SDay := rsThirty;
-           31 : SDay := rsThirtyOne;
-     end;
-     case NMonth of
-            1  : SMonth := rsJanuary;
-            2  : SMonth := rsFebruary;
-            3  : SMonth := rsMarch;
-            4  : SMonth := rsApril;
-            5  : SMonth := rsMay;
-            6  : SMonth := rsJune;
-            7  : SMonth := rsJuly;
-            8  : SMonth := rsAugust;
-            9  : SMonth := rsSeptember;
-            10 : SMonth := rsOctober;
-            11 : SMonth := rsNovember;
-            12 : SMonth := rsDecember;
-     end;
+     SWDay := ConvertWDayToStr(DayOfWeek(Date));
+     SDay := ConvertNDayToStr(NDay);
+     SMonth := ConvertMonthToStr(NMonth);
      SYear := IntToStr(NYear);
 
+     { Is this needed?
+          If 'FormatDateTime' works AND DTPickerPresent uses the chosen language format
+          only one string should be needed!
+          How to do it?
+     }
      case CurrentLang of
           'de' : CalendarConversion := SWDay + ', ' + SDay + ' ' + SMonth + ' ' + SYear;
           'en' : CalendarConversion := SWDay + ', ' + SMonth + ', ' + SDay + ', ' + SYear;
@@ -1051,11 +1014,10 @@ begin
               lblEndDate.Caption := rsStrDateEndDate;
          end;
      PeriodBetween(firstDate, secondDate, firstYear, firstMonth, firstDay);
-     years := IntToStr(firstYear);
-     months := IntToStr(firstMonth);
      days := IntToStr(firstDay);
-     if (days = '0') and (months = '0') and (years = '0') then DateDifference
-         := years + rsDatesAreEqual
+     months := IntToStr(firstMonth);
+     years := IntToStr(firstYear);
+     if (days = '0') and (months = '0') and (years = '0') then DateDifference := years + rsDatesAreEqual
      else if (days = '0') and (months = '0') and (years = '1')
          then DateDifference := years + rsYear
           else if (days = '0') and (months = '0') and (years > '1')
@@ -1156,18 +1118,100 @@ begin
       begin
         if po[1] = '.' then Delete(po, 1, 1);
         // Create a submenu item for this language
-        mnu := TMenuItem.Create(mainMenu);
+        mnu := TMenuItem.Create(ppMainMenu);
         mnu.Caption := po;
         mnu.RadioItem := true;
         mnu.OnClick := @LanguageClick;
         // Add the item as a submenu to the mnuPrefLang item.
-        mnuPrefLang.Add(mnu);
+        ppMnuMainSettings.Add(mnu);
       end;
     end;
   finally
     L. Free;
   end;
 end;
+
+function TfrmMyCalculators.ConvertWDayToStr(Day : Integer) : String;
+begin
+  case Day of
+          1 : Result := rsSunday;
+          2 : Result := rsMonday;
+          3 : Result := rsTuesday;
+          4 : Result := rsWednesday;
+          5 : Result := rsThursday;
+          6 : Result := rsFriday;
+          7 : Result := rsSaturday;
+          else Result := '';
+     end;
+end;
+
+function TfrmMyCalculators.ConvertNDayToStr(NumberOfDay : Integer) : String;
+begin
+  case NumberOfDay of
+           1  : Result := rsOne;
+           2  : Result := rsTwo;
+           3  : Result := rsThree;
+           4  : Result := rsFour;
+           5  : Result := rsFive;
+           6  : Result := rsSix;
+           7  : Result := rsSeven;
+           8  : Result := rsEight;
+           9  : Result := rsNine;
+           10 : Result := rsTen;
+           11 : Result := rsEleven;
+           12 : Result := rsTwelve;
+           13 : Result := rsThirteen;
+           14 : Result := rsFourteen;
+           15 : Result := rsFifteen;
+           16 : Result := rsSixteen;
+           17 : Result := rsSeventeen;
+           18 : Result := rsEighteen;
+           19 : Result := rsNineteen;
+           20 : Result := rsTwenty;
+           21 : Result := rsTwentyOne;
+           22 : Result := rsTwentyTwo;
+           23 : Result := rsTwentyThree;
+           24 : Result := rsTwentyFour;
+           25 : Result := rsTwentyFive;
+           26 : Result := rsTwentySix;
+           27 : Result := rsTwentySeven;
+           28 : Result := rsTwentyEight;
+           29 : Result := rsTwentyNine;
+           30 : Result := rsThirty;
+           31 : Result := rsThirtyOne;
+           else Result := '';
+     end;
+end;
+
+function TfrmMyCalculators.ConvertMonthToStr(Month : Integer) : String;
+begin
+     case Month of
+            1  : Result := rsJanuary;
+            2  : Result := rsFebruary;
+            3  : Result := rsMarch;
+            4  : Result := rsApril;
+            5  : Result := rsMay;
+            6  : Result := rsJune;
+            7  : Result := rsJuly;
+            8  : Result := rsAugust;
+            9  : Result := rsSeptember;
+            10 : Result := rsOctober;
+            11 : Result := rsNovember;
+            12 : Result := rsDecember;
+            else Result := '';
+     end;
+end;
+
+procedure TfrmMyCalculators.SpBtnMainMenuClick(Sender: TObject);
+begin
+     ppMainMenu.PopUp;
+end;
+
+procedure TfrmMyCalculators.SpBtnMainMenuMouseLeave(Sender: TObject);
+begin
+     ppMainMenu.Close;
+end;
+
 procedure TfrmMyCalculators.InitializeCaptions;
 begin
      frmMyCalculators.InitializeCalculatorTypePanelCaptions;
@@ -1179,10 +1223,14 @@ end;
 
 procedure TfrmMyCalculators.InitializeCalculatorTypePanelCaptions;
 begin
-     frmMyCalculators.rdBtnSimpleCalculator.Caption := rsStrSimple;
-     frmMyCalculators.rdBtnFunctions.Caption := 'f(xxx)';
+     frmMyCalculators.rdBtnSimpleCalculator.Caption := rsStrSimpleCaption;
+     frmMyCalculators.rdBtnSimpleCalculator.Hint := rsStrSimpleHint;
+     frmMyCalculators.rdBtnFunctions.Caption := 'f(x)';
+     frmMyCalculators.rdBtnFunctions.Hint := rsStrMiscHint;
      frmMyCalculators.rdBtnTrigonometry.Caption := 'Trig';
-     frmMyCalculators.rdBtnDateCalculator.Caption := rsStrDateCalc;
+     frmMyCalculators.rdBtnTrigonometry.Hint := rsStrTrigonometricHint;
+     frmMyCalculators.rdBtnDateCalculator.Caption := rsStrDateCalcCaption;
+     frmMyCalculators.rdBtnDateCalculator.Hint := rsStrDateCalcHint;
 end;
 
 procedure TfrmMyCalculators.InitializeSimplePanelCaptions;

@@ -2,13 +2,13 @@ inherited frmMyCalculators: TfrmMyCalculators
   Left = 488
   Height = 552
   Top = 250
-  Width = 634
+  Width = 942
   HelpType = htKeyword
   HelpKeyword = 'simpleHlp'
   HelpContext = 1
   Caption = 'Calculators'
   ClientHeight = 552
-  ClientWidth = 634
+  ClientWidth = 942
   DefaultMonitor = dmMainForm
   Font.CharSet = ANSI_CHARSET
   Font.Color = clBlack
@@ -17,15 +17,14 @@ inherited frmMyCalculators: TfrmMyCalculators
   Font.Quality = fqDraft
   Font.Style = [fsBold]
   HelpFile = 'MyCalculatorsHlp.txt'
-  Menu = mainMenu
   Position = poDesktopCenter
   ShowHint = True
   OnCreate = FormCreate
   object txtFieldResult: TEdit[0]
-    Left = 2
+    Left = 8
     Height = 38
-    Top = 8
-    Width = 286
+    Top = 24
+    Width = 288
     Alignment = taRightJustify
     AutoSize = False
     AutoSelect = False
@@ -42,59 +41,24 @@ inherited frmMyCalculators: TfrmMyCalculators
     TabOrder = 0
   end
   object pnlCalculatorType: TPanel[1]
-    Left = 2
+    Left = 8
     Height = 24
-    Top = 48
-    Width = 280
+    Top = 64
+    Width = 288
     BevelOuter = bvNone
     ClientHeight = 24
-    ClientWidth = 280
+    ClientWidth = 288
     ParentBackground = False
+    ParentShowHint = False
     TabOrder = 1
-    object rdBtnSimpleCalculator: TRadioButton
-      Left = 0
-      Height = 21
-      Hint = 'Display the simple calculator'
-      Top = 0
-      Width = 70
-      AutoSize = False
-      Checked = True
-      Font.CharSet = ANSI_CHARSET
-      Font.Height = -13
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 1
-      TabStop = True
-      OnClick = rdBtnSimpleCalculatorClick
-    end
-    object rdBtnFunctions: TRadioButton
-      Left = 72
-      Height = 21
-      Hint = 'Display miscelaneous functions'
-      Top = 0
-      Width = 70
-      AutoSize = False
-      Font.CharSet = ANSI_CHARSET
-      Font.Height = -13
-      Font.Name = 'Segoe UI'
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 0
-      TabStop = True
-      OnClick = rdBtnFunctionsClick
-    end
     object rdBtnTrigonometry: TRadioButton
       Left = 144
       Height = 21
-      Hint = 'Display the trigonometric calculator'
       Top = 0
       Width = 70
       AutoSize = False
       Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
       Font.Height = -13
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
@@ -107,7 +71,6 @@ inherited frmMyCalculators: TfrmMyCalculators
     object rdBtnDateCalculator: TRadioButton
       Left = 216
       Height = 21
-      Hint = 'Display the date calculator'
       Top = 0
       Width = 70
       AutoSize = False
@@ -117,15 +80,51 @@ inherited frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
+      ParentShowHint = False
       TabOrder = 3
       TabStop = True
       OnClick = rdBtnDateCalculatorClick
     end
+    object rdBtnFunctions: TRadioButton
+      Left = 72
+      Height = 21
+      Top = 0
+      Width = 70
+      AutoSize = False
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      TabStop = True
+      OnClick = rdBtnFunctionsClick
+    end
+    object rdBtnSimpleCalculator: TRadioButton
+      Left = 0
+      Height = 21
+      Top = 0
+      Width = 70
+      AutoSize = False
+      Checked = True
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      TabStop = True
+      OnClick = rdBtnSimpleCalculatorClick
+    end
   end
   object pnlSimple: TPanel[2]
-    Left = 2
+    Left = 8
     Height = 312
-    Top = 72
+    Top = 88
     Width = 288
     BevelOuter = bvNone
     ClientHeight = 312
@@ -640,9 +639,9 @@ inherited frmMyCalculators: TfrmMyCalculators
     end
   end
   object pnlFunctions: TPanel[4]
-    Left = 2
+    Left = 8
     Height = 264
-    Top = 312
+    Top = 352
     Width = 288
     BevelOuter = bvNone
     ClientHeight = 264
@@ -1085,67 +1084,25 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = BtnActualCalendarClick
     end
   end
-  object mainMenu: TMainMenu[6]
-    AutoLineReduction = maManual
+  object SpBtnMainMenu: TSpeedButton[6]
+    Left = 8
+    Height = 22
+    Top = 0
+    Width = 23
+    Flat = True
     Images = ImageList
-    OwnerDraw = True
-    Left = 24
-    Top = 256
-    object mnuHamburger: TMenuItem
-      Hint = 'Click to open the menu'
-      ImageIndex = 17
-      ShortCut = 32845
-      object mnuPreferences: TMenuItem
-        Caption = 'Preferences'
-        Hint = 'Change application language and/or colours'
-        ImageIndex = 8
-        ShortCut = 32848
-        object mnuPrefLang: TMenuItem
-          Caption = 'Language'
-          OnClick = mnuPrefLangClick
-        end
-        object mnuPrefTheme: TMenuItem
-          Caption = 'Theme'
-          Hint = 'Choose a theme, dark or light'
-          ShortCut = 32852
-          object mnuPrefThemeDark: TMenuItem
-            Caption = 'Dark'
-            Hint = 'Dark Theme, easier on the eyes'
-            ShortCut = 32836
-          end
-          object mnuPrefThemeLight: TMenuItem
-            Caption = 'Light'
-            Hint = 'Light, more visibility'
-            ShortCut = 32844
-          end
-        end
-      end
-      object mnuHelp: TMenuItem
-        Caption = '&Help'
-        ImageIndex = 9
-        ShortCut = 32840
-        OnClick = mnuHelpClick
-      end
-      object mnuCredits: TMenuItem
-        Caption = '&Credits'
-        Hint = 'Contributors, translators, etc.'
-        ImageIndex = 7
-        ShortCut = 32835
-        OnClick = mnuCreditsClick
-      end
-      object mnuExit: TMenuItem
-        Caption = 'Ex&it'
-        Hint = 'Close the calculator'
-        ImageIndex = 12
-        ShortCut = 32841
-        OnClick = mnuExitClick
-      end
-    end
+    ImageIndex = 17
+    Spacing = 1
+    ShowCaption = False
+    ParentShowHint = False
+    PopupMenu = ppMainMenu
+    OnMouseEnter = SpBtnMainMenuClick
+    OnMouseLeave = SpBtnMainMenuMouseLeave
   end
   object ppMenuCalendars: TPopupMenu[7]
     Images = ImageList
-    Left = 112
-    Top = 256
+    Left = 456
+    Top = 8
     object ppMenuGregorian: TMenuItem
       Caption = 'Gregorian'
       ImageIndex = 0
@@ -1182,8 +1139,8 @@ inherited frmMyCalculators: TfrmMyCalculators
     end
   end
   object ImageList: TImageList[8]
-    Left = 192
-    Top = 256
+    Left = 600
+    Top = 8
     Bitmap = {
       4C7A1200000010000000100000000E1B00000000000078DAED9A07541449D7F7
       5B862861A687216710C30202828A0A8228822B625E13AE983083098C88011557
@@ -1404,5 +1361,28 @@ inherited frmMyCalculators: TfrmMyCalculators
       7B7E92D29F44E327F94FA77BFF61847E929F4D7C3FC9CFCE9FF09FE43F9AFE07
       ECCA375E
     }
+  end
+  object ppMainMenu: TPopupMenu[9]
+    Images = ImageList
+    AutoPopup = False
+    OnPopup = ppMainMenuPopup
+    Left = 536
+    Top = 8
+    object ppMnuMainSettings: TMenuItem
+      ShortCut = 32851
+      OnClick = mnuPrefLangClick
+    end
+    object ppMnuMainHelp: TMenuItem
+      Caption = 'ppMnuMainHelp'
+      OnClick = mnuHelpClick
+    end
+    object ppMnuMainCredits: TMenuItem
+      Caption = 'ppMnuMainCredits'
+      OnClick = mnuCreditsClick
+    end
+    object ppMnuMainExit: TMenuItem
+      Caption = 'ppMnuMainExit'
+      OnClick = mnuExitClick
+    end
   end
 end

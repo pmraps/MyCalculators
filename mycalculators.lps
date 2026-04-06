@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="5" Y="21"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="56"/>
       </Unit>
       <Unit>
         <Filename Value="maincalculators.pas"/>
@@ -20,9 +20,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="1159"/>
-        <CursorPos X="53" Y="1183"/>
-        <UsageCount Value="40"/>
+        <TopLine Value="404"/>
+        <CursorPos X="37" Y="407"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -34,9 +34,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Help"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="229"/>
-        <CursorPos X="20" Y="254"/>
-        <UsageCount Value="40"/>
+        <TopLine Value="84"/>
+        <CursorPos X="27" Y="100"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -45,9 +45,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="myResourceStrings"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="103"/>
-        <CursorPos X="45" Y="118"/>
-        <UsageCount Value="40"/>
+        <TopLine Value="105"/>
+        <CursorPos X="48" Y="148"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -60,7 +60,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="179"/>
         <CursorPos X="3" Y="205"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -72,9 +72,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Preferences"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="51"/>
-        <CursorPos X="11" Y="49"/>
-        <UsageCount Value="40"/>
+        <TopLine Value="30"/>
+        <CursorPos X="36" Y="49"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -88,6 +88,12 @@
     <Watches>
       <Item>
         <Expression Value="CurrentLang"/>
+      </Item>
+      <Item>
+        <Expression Value="Result"/>
+      </Item>
+      <Item>
+        <Expression Value="p"/>
       </Item>
     </Watches>
   </Debugging>

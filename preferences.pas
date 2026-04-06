@@ -46,7 +46,7 @@ end;
 
 procedure TfrmPreferences.FormActivate(Sender: TObject);
 begin
-     btnOK.Caption := rsBtnOK;
+     btnOK.Caption := rsStrBtnClose;
      cBoxPrefLang.Font.Color := clGray;
      cBoxPrefLang.Text := CurrentLang;
      // cBoxPrefTheme.Font.Color := clGray;

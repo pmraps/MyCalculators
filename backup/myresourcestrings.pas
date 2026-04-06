@@ -112,10 +112,20 @@ uses
         rsHelpSettingsLine0 = 'Click on the down arrow of the first list to select a language.';
         rsHelpSettingsLine2 = 'Click on the down arrow of the second list and select a theme, dark or light.';
         // COMMON BUTTONS
-        rsBtnOK = 'OK';
+        rsStrBtnOK = 'OK';
+        rsStrBtnClose = 'Close';
+        rsStrBtnExit = 'Exit';
+        // COMMON DIALOGS
+        rsStrSettingsDialog = 'Settings';
+        rsStrHelpDialog = 'Help';
+        rsStrCreditsDialog = 'Credits';
         // RADIO BUTTONS
-        rsStrSimple = 'Simple';
-        rsStrDateCalc = 'Datex';
+        rsStrSimpleCaption = 'Simple';
+        rsStrSimpleHint = 'Display the simple calculator';
+        rsStrMiscHint = 'Display miscellaneous functions';
+        rsStrTrigonometricHint = 'Display the trigonometric calculator';
+        rsStrDateCalcCaption = 'Date';
+        rsStrDateCalcHint = 'Display the date calculator';
         // CALCULATOR BUTTONS
         rsStrRemainder = 'Remdr';
         rsStrCycToRad = 'Cyc-Rad';
@@ -136,7 +146,11 @@ uses
         rsStrDateEndDate = 'End Date';
         rsOf = ' of ';
         rsDatesAreEqual = 'Dates are the same';
-
+        // MAIN MENU STRINGS
+        rsStrMainMenuSettings = 'Settings';
+        rsStrMainMenuHelp = 'Help';
+        rsStrMainMenuCredits = 'Credits';
+        rsStrMainMenuExit = 'Exit';
 
 implementation
 
