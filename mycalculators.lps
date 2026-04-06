@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="46" Y="14"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="77"/>
       </Unit>
       <Unit>
         <Filename Value="maincalculators.pas"/>
@@ -19,9 +19,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
-        <TopLine Value="942"/>
-        <CursorPos X="21" Y="969"/>
-        <UsageCount Value="62"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="459"/>
+        <CursorPos X="28" Y="464"/>
+        <UsageCount Value="77"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -33,9 +34,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Help"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="22"/>
+        <TopLine Value="31"/>
         <CursorPos X="27" Y="100"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="77"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -44,9 +45,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="myResourceStrings"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="4"/>
-        <CursorPos X="48" Y="148"/>
-        <UsageCount Value="62"/>
+        <TopLine Value="52"/>
+        <CursorPos X="27" Y="71"/>
+        <UsageCount Value="77"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -57,9 +58,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MyCredits"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="132"/>
+        <TopLine Value="46"/>
         <CursorPos X="62" Y="143"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="77"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -71,8 +72,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Preferences"/>
         <EditorIndex Value="2"/>
+        <TopLine Value="13"/>
         <CursorPos X="47" Y="15"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="77"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -83,18 +85,16 @@
         <EditorIndex Value="5"/>
         <TopLine Value="4"/>
         <CursorPos X="5" Y="13"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="datefunctions.pas"/>
+        <Filename Value="mydatefunctions.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="DateFunctions"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="23"/>
-        <CursorPos X="33" Y="36"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="43"/>
+        <CursorPos X="43" Y="8"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
@@ -104,15 +104,6 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="datefunctions.pas"/>
-        <Line Value="47"/>
-      </Item>
-    </BreakPoints>
     <Watches>
       <Item>
         <Expression Value="NYear"/>

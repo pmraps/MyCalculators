@@ -8,7 +8,7 @@ uses LazLogger,
      SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
      Graphics, Classes, Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math,
      baseConvert, MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator,
-     LocalizedForms, myResourceStrings, gettext, ErrorCatching, DateFunctions,
+     LocalizedForms, myResourceStrings, gettext, ErrorCatching, mydatefunctions,
      FileUtil;
 
 type
@@ -132,7 +132,6 @@ type
       procedure btnACosClick(Sender: TObject);
       procedure btnACosHClick(Sender: TObject);
       procedure btnACotClick(Sender: TObject);
-      procedure BtnCalendarToClick(Sender: TObject);
       procedure btnAddClick(Sender: TObject);
       procedure btnASinClick(Sender: TObject);
       procedure btnASinHClick(Sender: TObject);
@@ -140,6 +139,8 @@ type
       procedure btnATanHClick(Sender: TObject);
       procedure btnBackspaceClick(Sender: TObject);
       procedure btnBinToBaseClick(Sender: TObject);
+      procedure BtnCalendarFromClick(Sender: TObject);
+      procedure BtnCalendarToClick(Sender: TObject);
       procedure btnCelsiusClick(Sender: TObject);
       procedure btnCosecantClick(Sender: TObject);
       procedure btnCosHClick(Sender: TObject);
@@ -212,12 +213,7 @@ type
       procedure mnuHelpClick(Sender: TObject);
       procedure mnuPrefLangClick(Sender: TObject);
       procedure ppMainMenuPopup(Sender: TObject);
-      procedure ppMenuArabClick(Sender: TObject);
-      procedure ppMenuChineseClick(Sender: TObject);
-      procedure ppMenuFrenchClick(Sender: TObject);
       procedure ppMenuGregorianClick(Sender: TObject);
-      procedure ppMenuHebrewClick(Sender: TObject);
-      procedure ppMenuJulianClick(Sender: TObject);
       procedure rdBtnDateCalculatorClick(Sender: TObject);
       procedure rdBtnFunctionsClick(Sender: TObject);
       procedure rdBtnSimpleCalculatorClick(Sender: TObject);
@@ -229,12 +225,9 @@ type
       procedure InitializeDateCaptions;
       procedure InitializeCaptions;
       procedure FormCreate(Sender: TObject);
-      function ConvertWDayToStr(Day : Integer) : String;
-      function ConvertNDayToStr(NumberOfDay : Integer) : String;
-      function ConvertMonthToStr(Month : Integer) : String;
       procedure SpBtnMainMenuClick(Sender: TObject);
   private
-      Num1, Num2, Result, Operators : String;
+      Num1, Num2, Result, Operators, CurrentLang : String;
       Memory : extended;
 
       function GetSystemLanguage : String;
@@ -244,8 +237,7 @@ type
       procedure ReturnToSimplePanel;
 
   public
-      function CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
-      function DateDifference(firstDate, secondDate : TDate) : String;
+
   end;
 
 var
@@ -267,7 +259,7 @@ begin
      CurrentLang := GetSystemLanguage;
      InitializeCaptions;                       // Avoid button captions in translation .po files
      ReturnToSimplePanel;
-     StTxtCalendarConversion.Caption := CalendarConversion(Now(), 'G', 'G');
+     StTxtCalendarConversion.Caption := '';    // Clear the final string field
 
      InitLanguagesMenu;            // wp: Added
 end;
@@ -412,37 +404,6 @@ begin
      ppMainMenu.Items[3].Caption := rsStrBtnExit;
 end;
 
-procedure TfrmMyCalculators.ppMenuArabClick(Sender: TObject);
-begin
-    BtnCalendarTo.ImageIndex := 5;
-end;
-
-procedure TfrmMyCalculators.ppMenuChineseClick(Sender: TObject);
-begin
-    BtnCalendarTo.ImageIndex := 4;
-end;
-
-procedure TfrmMyCalculators.ppMenuFrenchClick(Sender: TObject);
-begin
-    BtnCalendarTo.ImageIndex := 2;
-end;
-
-procedure TfrmMyCalculators.ppMenuGregorianClick(Sender: TObject);
-begin
-    BtnCalendarTo.ImageIndex := 0;
-end;
-
-procedure TfrmMyCalculators.ppMenuHebrewClick(Sender: TObject);
-begin
-    BtnCalendarTo.ImageIndex := 3;
-end;
-
-procedure TfrmMyCalculators.ppMenuJulianClick(Sender: TObject);
-begin
-    BtnCalendarTo.ImageIndex := 1;
-    StTxtCalendarConversion.Caption := CalendarConversion(DTPickerPresent.Date, 'G', 'J');
-end;
-
 procedure TfrmMyCalculators.rdBtnDateCalculatorClick(Sender: TObject);
 begin
     pnlSimple.Visible := false;
@@ -496,6 +457,29 @@ begin
     Operators := 'B>N';
     txtFieldResult.Text := '';
     ReturnToSimplePanel;
+end;
+
+procedure TfrmMyCalculators.BtnCalendarFromClick(Sender: TObject);
+begin
+    ppMenuCalendars.PopUp;
+{   CalendarConversion(DTPickerPresent.Date,
+                        Copy(firstButton.Caption, 1, 1),
+                        Copy(secondButton.Caption, 1, 1),
+                        CurrentLang);}
+end;
+
+procedure TfrmMyCalculators.BtnCalendarToClick(Sender: TObject);
+begin
+    ppMenuCalendars.PopUp;
+    {   CalendarConversion(DTPickerPresent.Date,
+                        Copy(firstButton.Caption, 1, 1),
+                        Copy(secondButton.Caption, 1, 1),
+                        CurrentLang);}
+end;
+
+procedure TfrmMyCalculators.ppMenuGregorianClick(Sender: TObject);
+begin
+     Copy(ppMenuGregorian.Caption, 1, 1);
 end;
 
 procedure TfrmMyCalculators.btnCelsiusClick(Sender: TObject);
@@ -565,11 +549,6 @@ procedure TfrmMyCalculators.btnATanHClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(ArcTanH(StrToFloat(txtFieldResult.Text)));
     ReturnToSimplePanel;
-end;
-
-procedure TfrmMyCalculators.BtnCalendarToClick(Sender: TObject);
-begin
-    ppMenuCalendars.PopUp;
 end;
 
 procedure TfrmMyCalculators.btnACosClick(Sender: TObject);
@@ -944,103 +923,6 @@ begin
     ReturnToSimplePanel;
 end;
 
-function TfrmMyCalculators.CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
-var SWDay, SDay, SMonth, SYear : String;
-    CalendarChar : Char;
-    NDay, NMonth, NYear : Word;
-begin
-     StTxtCalendarConversion.Caption := '';
-     // Choose calendar from
-     case BtnCalendarFrom.ImageIndex of
-               0 : begin
-                    if BtnCalendarTo.ImageIndex = 1 then
-                       begin
-                         CalendarChar := 'J';
-                         DecodeDate(GregorianConversion(Date, CalendarChar), NYear, NMonth, NDay);
-                       end;
-               end;
-               1 : ;
-               2 : ;
-               3 : ;
-               4 : ;
-               5 : ;
-     end;
-
-     // Final string
-
-     SWDay := ConvertWDayToStr(DayOfWeek(Date));
-     SDay := ConvertNDayToStr(NDay);
-     SMonth := ConvertMonthToStr(NMonth);
-     SYear := IntToStr(NYear);
-
-     { Is this needed?
-          If 'FormatDateTime' works AND DTPickerPresent uses the chosen language format
-          only one string should be needed!
-          How to do it?
-     }
-     case CurrentLang of
-          'de' : CalendarConversion := SWDay + ', ' + SDay + ' ' + SMonth + ' ' + SYear;
-          'en' : CalendarConversion := SWDay + ', ' + SMonth + ', ' + SDay + ', ' + SYear;
-          'es' : CalendarConversion := SWDay + ', el ' + SDay + rsOf + SMonth + rsOf + SYear;
-          'fr' : CalendarConversion := 'Le ' + SWDay + ' ' + SDay + SMonth + SYear;
-          'it' : CalendarConversion := SWDay + ', il ' + SDay + rsOf + SMonth + rsOf + SYear;
-          'pt' : CalendarConversion := SWDay + ', ' + FormatDateTime(DefaultFormatSettings.LongDateFormat, DTPickerPresent.Date);
-     end;
-
-end;
-
-function TfrmMyCalculators.DateDifference(firstDate, secondDate : TDate) : String;
-var firstDay, firstMonth, firstYear : Word;
-    years, months, days : String;
-begin
-     if firstDate > secondDate then
-         begin
-              lblStartDate.Caption := rsStrDateEndDate;         // Flag the inversion of order
-              lblStartDate.Font.Color := clRed;                 // with a red label
-              lblEndDate.Caption := rsStrDateStartDate;
-         end
-     else
-         begin
-              lblStartDate.Font.Color := clDefault;             // Return labels to default colour
-              lblStartDate.Caption := rsStrDateStartDate;
-              lblEndDate.Caption := rsStrDateEndDate;
-         end;
-     PeriodBetween(firstDate, secondDate, firstYear, firstMonth, firstDay);
-     days := IntToStr(firstDay);
-     months := IntToStr(firstMonth);
-     years := IntToStr(firstYear);
-     if (days = '0') and (months = '0') and (years = '0') then DateDifference := years + rsDatesAreEqual
-     else if (days = '0') and (months = '0') and (years = '1')
-         then DateDifference := years + rsYear
-          else if (days = '0') and (months = '0') and (years > '1')
-              then DateDifference := years + rsYears
-               else if (days = '0') and (months = '1') and (years = '0')
-                   then DateDifference := months + ' '+ rsMonth
-                    else if (days = '0') and (months = '1') and (years = '1')
-                        then DateDifference := months + rsMonthAnd + years + rsYear
-                         else if (days = '0') and (months = '1') and (years > '1') then DateDifference := months + rsMonthAnd + years + rsYears
-                              else if (days = '0') and (months > '1') and (years = '0') then DateDifference := months + rsMonthAnd + years + rsYear
-                                   else if (days = '0') and (months > '1') and (years = '1') then DateDifference := months + rsMonthAnd + years + rsYear
-                                        else if (days = '0') and (months > '1') and (years > '1') then DateDifference := months + rsMonthAnd + years + rsYears
-                                             else if (days = '1') and (months = '0') and (years = '0') then DateDifference := days + rsDay
-                                                  else if (days = '1') and (months = '0') and (years = '1') then DateDifference := days + rsDayAnd + years + rsYear
-                                                       else if (days = '1') and (months = '0') and (years > '1') then DateDifference := days + rsDayAnd + years + rsYears
-                                                            else if (days = '1') and (months = '1') and (years = '0') then DateDifference := days + rsDayAnd + months + rsMonth
-                                                                 else if (days = '1') and (months = '1') and (years = '1') then DateDifference := days + rsDay2 + months + rsMonthAnd + years + rsYear
-                                                                      else if (days = '1') and (months = '1') and (years > '1') then DateDifference := days + rsDay2 + months + rsMonthAnd + years + rsYears
-                                                                           else if (days = '1') and (months > '1') and (years = '0') then DateDifference := days + rsDayAnd +  months + rsMonths
-                                                                                else if (days = '1') and (months > '1') and (years = '1') then DateDifference := days + rsDay2 + months + rsMonthAnd + years + rsYear
-                                                                                     else if (days = '1') and (months > '1') and (years > '1') then DateDifference := days + rsDay2 + months + rsMonthAnd + years + rsYears
-                                                                                          else if (days > '1') and (months = '0') and (years = '0') then DateDifference := days + rsDays2                                                                                               else if (days > '1') and (months = '0') and (years = '1') then DateDifference :=  days + rsDaysAnd + years  + rsYear
-                                                                                                    else if (days > '1') and (months = '0') and (years > '1') then DateDifference := days + rsDaysAnd + years + rsYears
-                                                                                                         else if (days > '1') and (months = '1') and (years = '0') then DateDifference := days + rsDaysAnd + months + rsMonth
-                                                                                                              else if (days > '1') and (months = '1') and (years = '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYear
-                                                                                                                   else if (days > '1') and (months = '1') and (years > '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYears
-                                                                                                                        else if (days > '1') and (months > '1') and (years = '0') then DateDifference := days + rsDaysAnd + months + rsMonths
-                                                                                                                             else if (days > '1') and (months > '1') and (years = '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYear
-                                                                                                                                  else if (days > '1') and (months > '1') and (years > '1') then DateDifference := days + rsDays + months + rsMonthAnd + years + rsYears
-end;
-
 function TfrmMyCalculators.GetSystemLanguage : String;
 var
   Lang, FallbackLang: String;
@@ -1121,77 +1003,6 @@ begin
   finally
     L. Free;
   end;
-end;
-
-function TfrmMyCalculators.ConvertWDayToStr(Day : Integer) : String;
-begin
-  case Day of
-          1 : Result := rsSunday;
-          2 : Result := rsMonday;
-          3 : Result := rsTuesday;
-          4 : Result := rsWednesday;
-          5 : Result := rsThursday;
-          6 : Result := rsFriday;
-          7 : Result := rsSaturday;
-          else Result := '';
-     end;
-end;
-
-function TfrmMyCalculators.ConvertNDayToStr(NumberOfDay : Integer) : String;
-begin
-  case NumberOfDay of
-           1  : Result := rsOne;
-           2  : Result := rsTwo;
-           3  : Result := rsThree;
-           4  : Result := rsFour;
-           5  : Result := rsFive;
-           6  : Result := rsSix;
-           7  : Result := rsSeven;
-           8  : Result := rsEight;
-           9  : Result := rsNine;
-           10 : Result := rsTen;
-           11 : Result := rsEleven;
-           12 : Result := rsTwelve;
-           13 : Result := rsThirteen;
-           14 : Result := rsFourteen;
-           15 : Result := rsFifteen;
-           16 : Result := rsSixteen;
-           17 : Result := rsSeventeen;
-           18 : Result := rsEighteen;
-           19 : Result := rsNineteen;
-           20 : Result := rsTwenty;
-           21 : Result := rsTwentyOne;
-           22 : Result := rsTwentyTwo;
-           23 : Result := rsTwentyThree;
-           24 : Result := rsTwentyFour;
-           25 : Result := rsTwentyFive;
-           26 : Result := rsTwentySix;
-           27 : Result := rsTwentySeven;
-           28 : Result := rsTwentyEight;
-           29 : Result := rsTwentyNine;
-           30 : Result := rsThirty;
-           31 : Result := rsThirtyOne;
-           else Result := '';
-     end;
-end;
-
-function TfrmMyCalculators.ConvertMonthToStr(Month : Integer) : String;
-begin
-     case Month of
-            1  : Result := rsJanuary;
-            2  : Result := rsFebruary;
-            3  : Result := rsMarch;
-            4  : Result := rsApril;
-            5  : Result := rsMay;
-            6  : Result := rsJune;
-            7  : Result := rsJuly;
-            8  : Result := rsAugust;
-            9  : Result := rsSeptember;
-            10 : Result := rsOctober;
-            11 : Result := rsNovember;
-            12 : Result := rsDecember;
-            else Result := '';
-     end;
 end;
 
 procedure TfrmMyCalculators.SpBtnMainMenuClick(Sender: TObject);

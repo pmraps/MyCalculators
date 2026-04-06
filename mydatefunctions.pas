@@ -1,11 +1,11 @@
-unit DateFunctions;
+unit mydatefunctions;
 
 {$mode ObjFPC}{$H+}
 
 interface
 
 uses
-    Classes, SysUtils, Crt,
+    Classes, SysUtils, Graphics, DateUtils,
     ErrorCatching, myResourceStrings;
 
     function CalendarConversion(DateFrom : TDate; CalendarFrom, CalendarTo : Char; CurrentLang : String) : String;

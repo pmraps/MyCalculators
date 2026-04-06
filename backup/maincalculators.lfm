@@ -1,14 +1,14 @@
 inherited frmMyCalculators: TfrmMyCalculators
   Left = 488
-  Height = 552
+  Height = 410
   Top = 250
-  Width = 942
+  Width = 302
   HelpType = htKeyword
   HelpKeyword = 'simpleHlp'
   HelpContext = 1
   Caption = 'Calculators'
-  ClientHeight = 552
-  ClientWidth = 942
+  ClientHeight = 410
+  ClientWidth = 302
   DefaultMonitor = dmMainForm
   Font.CharSet = ANSI_CHARSET
   Font.Color = clBlack
@@ -74,6 +74,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Top = 0
       Width = 70
       AutoSize = False
+      Caption = 'Date'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -108,6 +109,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Top = 0
       Width = 70
       AutoSize = False
+      Caption = 'Simple'
       Checked = True
       Font.CharSet = ANSI_CHARSET
       Font.Color = clBlack
@@ -211,6 +213,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Division remainder'
       Top = 30
       Width = 70
+      Caption = 'REM'
       TabOrder = 7
       OnClick = btnRemainderClick
     end
@@ -374,6 +377,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Calculate the sin'
       Top = 0
       Width = 70
+      Caption = 'Sin'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
@@ -385,6 +389,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Calculate the hyperbolic sine'
       Top = 30
       Width = 70
+      Caption = 'SinH'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
@@ -396,6 +401,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Calculate the arch sine'
       Top = 60
       Width = 70
+      Caption = 'ASin'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
@@ -416,6 +422,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Calculate the hyperbolic arch sine'
       Top = 90
       Width = 70
+      Caption = 'AsinH'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
@@ -481,6 +488,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Convert degrees to radians'
       Top = 120
       Width = 70
+      Caption = 'Deg-Rad'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -496,6 +504,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Convert degrees to gradians'
       Top = 150
       Width = 70
+      Caption = 'Deg-Grad'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -565,6 +574,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Convert radians to degrees'
       Top = 120
       Width = 70
+      Caption = 'Rad-Deg'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -613,6 +623,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Convert gradians to degrees'
       Top = 120
       Width = 70
+      Caption = 'Grad-Deg'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -855,6 +866,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Convert cycles to radians'
       Top = 120
       Width = 70
+      Caption = 'Cyc-Rad'
       TabOrder = 17
       OnClick = btnCyclesToRadiansClick
     end
@@ -864,6 +876,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Hint = 'Convert radians to cycles'
       Top = 150
       Width = 70
+      Caption = 'RadCyc'
       TabOrder = 18
       OnClick = btnRadiansToCyclesClick
     end
@@ -912,7 +925,7 @@ inherited frmMyCalculators: TfrmMyCalculators
     ParentBackground = False
     TabOrder = 5
     object DTPickerPresent: TDateTimePicker
-      Left = 120
+      Left = 128
       Height = 25
       Top = 0
       Width = 93
@@ -986,6 +999,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Top = 80
       Width = 170
       AutoSize = False
+      Caption = 'Start date'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1029,6 +1043,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Top = 112
       Width = 170
       AutoSize = False
+      Caption = 'End date'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1041,8 +1056,9 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Top = 0
-      Width = 88
+      Width = 96
       AutoSize = False
+      Caption = 'Convert'
       Layout = tlCenter
     end
     object StTxtCalendarConversion: TStaticText
@@ -1063,16 +1079,17 @@ inherited frmMyCalculators: TfrmMyCalculators
       TabOrder = 5
     end
     object lblToCalendar: TLabel
-      Left = 216
+      Left = 224
       Height = 25
       Top = 0
-      Width = 48
+      Width = 40
       Alignment = taCenter
       AutoSize = False
+      Caption = 'to'
       Layout = tlCenter
     end
     object BtnCalendarFrom: TBitBtn
-      Left = 88
+      Left = 96
       Height = 25
       Hint = 'Click to select the calendar to convert from'
       Top = 0
@@ -1081,7 +1098,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       ImageIndex = 0
       PopupMenu = ppMenuCalendars
       TabOrder = 6
-      OnClick = BtnCalendarToClick
+      OnClick = BtnCalendarFromClick
     end
   end
   object SpBtnMainMenu: TSpeedButton[6]
@@ -1110,31 +1127,26 @@ inherited frmMyCalculators: TfrmMyCalculators
     object ppMenuJulian: TMenuItem
       Caption = 'Julian'
       ImageIndex = 1
-      OnClick = ppMenuJulianClick
     end
     object ppMenuFrench: TMenuItem
       Caption = 'French Republican'
       Enabled = False
       ImageIndex = 2
-      OnClick = ppMenuFrenchClick
     end
     object ppMenuHebrew: TMenuItem
       Caption = 'Hebrew'
       Enabled = False
       ImageIndex = 3
-      OnClick = ppMenuHebrewClick
     end
     object ppMenuChinese: TMenuItem
       Caption = 'Chinese'
       Enabled = False
       ImageIndex = 4
-      OnClick = ppMenuChineseClick
     end
     object ppMenuArab: TMenuItem
       Caption = 'Arab'
       Enabled = False
       ImageIndex = 5
-      OnClick = ppMenuArabClick
     end
   end
   object ImageList: TImageList[8]
@@ -1368,7 +1380,6 @@ inherited frmMyCalculators: TfrmMyCalculators
     Left = 152
     Top = 360
     object ppMnuMainSettings: TMenuItem
-      ShortCut = 32851
       OnClick = mnuPrefLangClick
     end
     object ppMnuMainHelp: TMenuItem

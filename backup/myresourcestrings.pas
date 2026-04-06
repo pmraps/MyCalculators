@@ -146,11 +146,6 @@ uses
         rsStrDateEndDate = 'End Date';
         rsOf = ' of ';
         rsDatesAreEqual = 'Dates are the same';
-        // MAIN MENU STRINGS
-        rsStrMainMenuSettings = 'Settings';
-        rsStrMainMenuHelp = 'Help';
-        rsStrMainMenuCredits = 'Credits';
-        rsStrMainMenuExit = 'Exit';
 
 implementation
 

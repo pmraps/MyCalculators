@@ -21,29 +21,29 @@ msgctxt "myresourcestrings.rsday"
 msgid " day."
 msgstr ""
 
-#: myresourcestrings.rsday2
-msgctxt "myresourcestrings.rsday2"
-msgid " day, "
-msgstr ""
-
 #: myresourcestrings.rsdayand
 msgctxt "myresourcestrings.rsdayand"
 msgid " day and "
 msgstr ""
 
-#: myresourcestrings.rsdays
-msgctxt "myresourcestrings.rsdays"
-msgid " days, "
+#: myresourcestrings.rsdaymonth
+msgctxt "myresourcestrings.rsdaymonth"
+msgid " day, "
 msgstr ""
 
-#: myresourcestrings.rsdays2
-msgctxt "myresourcestrings.rsdays2"
+#: myresourcestrings.rsdays
+msgctxt "myresourcestrings.rsdays"
 msgid " days."
 msgstr ""
 
 #: myresourcestrings.rsdaysand
 msgctxt "myresourcestrings.rsdaysand"
 msgid " days and "
+msgstr ""
+
+#: myresourcestrings.rsdaysmonth
+msgctxt "myresourcestrings.rsdaysmonth"
+msgid " days, "
 msgstr ""
 
 #: myresourcestrings.rsdecember
@@ -242,6 +242,10 @@ msgctxt "myresourcestrings.rsmonths"
 msgid " months."
 msgstr ""
 
+#: myresourcestrings.rsmonthsand
+msgid " meses e "
+msgstr ""
+
 #: myresourcestrings.rsnine
 msgctxt "myresourcestrings.rsnine"
 msgid "nine"
@@ -332,6 +336,7 @@ msgid "Credits"
 msgstr ""
 
 #: myresourcestrings.rsstrcyctorad
+msgctxt "myresourcestrings.rsstrcyctorad"
 msgid "Cyc-Rad"
 msgstr ""
 
@@ -346,6 +351,7 @@ msgid "Display the date calculator"
 msgstr ""
 
 #: myresourcestrings.rsstrdateconvert
+msgctxt "myresourcestrings.rsstrdateconvert"
 msgid "Convert"
 msgstr ""
 
@@ -359,6 +365,7 @@ msgid "Start date"
 msgstr ""
 
 #: myresourcestrings.rsstrdateto
+msgctxt "myresourcestrings.rsstrdateto"
 msgid "to"
 msgstr ""
 
@@ -690,8 +697,17 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+#: tfrmmycalculators.btnasin.caption
+msgctxt "tfrmmycalculators.btnasin.caption"
+msgid "ASin"
+msgstr ""
+
 #: tfrmmycalculators.btnasin.hint
 msgid "Calculate the arch sine"
+msgstr ""
+
+#: tfrmmycalculators.btnasinh.caption
+msgid "AsinH"
 msgstr ""
 
 #: tfrmmycalculators.btnasinh.hint
@@ -757,6 +773,11 @@ msgstr ""
 msgid "Calculate the hyperbolic cotangent"
 msgstr ""
 
+#: tfrmmycalculators.btncyclestoradians.caption
+msgctxt "tfrmmycalculators.btncyclestoradians.caption"
+msgid "Cyc-Rad"
+msgstr ""
+
 #: tfrmmycalculators.btncyclestoradians.hint
 msgctxt "tfrmmycalculators.btncyclestoradians.hint"
 msgid "Convert cycles to radians"
@@ -766,8 +787,18 @@ msgstr ""
 msgid "Convert decimal to different base"
 msgstr ""
 
+#: tfrmmycalculators.btndegreesgradians.caption
+msgctxt "tfrmmycalculators.btndegreesgradians.caption"
+msgid "Deg-Grad"
+msgstr ""
+
 #: tfrmmycalculators.btndegreesgradians.hint
 msgid "Convert degrees to gradians"
+msgstr ""
+
+#: tfrmmycalculators.btndegreesradians.caption
+msgctxt "tfrmmycalculators.btndegreesradians.caption"
+msgid "Deg-Rad"
 msgstr ""
 
 #: tfrmmycalculators.btndegreesradians.hint
@@ -808,6 +839,11 @@ msgstr ""
 
 #: tfrmmycalculators.btnfraction.hint
 msgid "Calculate the fraction of 1"
+msgstr ""
+
+#: tfrmmycalculators.btngradiansdegrees.caption
+msgctxt "tfrmmycalculators.btngradiansdegrees.caption"
+msgid "Grad-Deg"
 msgstr ""
 
 #: tfrmmycalculators.btngradiansdegrees.hint
@@ -883,6 +919,11 @@ msgstr ""
 msgid "Invert the signal"
 msgstr ""
 
+#: tfrmmycalculators.btnradiansdegrees.caption
+msgctxt "tfrmmycalculators.btnradiansdegrees.caption"
+msgid "Rad-Deg"
+msgstr ""
+
 #: tfrmmycalculators.btnradiansdegrees.hint
 msgid "Convert radians to degrees"
 msgstr ""
@@ -891,12 +932,20 @@ msgstr ""
 msgid "Convert radians to gradians"
 msgstr ""
 
+#: tfrmmycalculators.btnradianstocycles.caption
+msgid "RadCyc"
+msgstr ""
+
 #: tfrmmycalculators.btnradianstocycles.hint
 msgid "Convert radians to cycles"
 msgstr ""
 
 #: tfrmmycalculators.btnraisedto.hint
 msgid "Raise x to the power of y"
+msgstr ""
+
+#: tfrmmycalculators.btnremainder.caption
+msgid "REM"
 msgstr ""
 
 #: tfrmmycalculators.btnremainder.hint
@@ -915,8 +964,18 @@ msgstr ""
 msgid "Seven"
 msgstr ""
 
+#: tfrmmycalculators.btnsin.caption
+msgctxt "tfrmmycalculators.btnsin.caption"
+msgid "Sin"
+msgstr ""
+
 #: tfrmmycalculators.btnsin.hint
 msgid "Calculate the sin"
+msgstr ""
+
+#: tfrmmycalculators.btnsinh.caption
+msgctxt "tfrmmycalculators.btnsinh.caption"
+msgid "SinH"
 msgstr ""
 
 #: tfrmmycalculators.btnsinh.hint
@@ -959,6 +1018,25 @@ msgstr ""
 msgid "Calculators"
 msgstr ""
 
+#: tfrmmycalculators.lblconvertto.caption
+msgctxt "tfrmmycalculators.lblconvertto.caption"
+msgid "Convert"
+msgstr ""
+
+#: tfrmmycalculators.lblenddate.caption
+msgid "End date"
+msgstr ""
+
+#: tfrmmycalculators.lblstartdate.caption
+msgctxt "tfrmmycalculators.lblstartdate.caption"
+msgid "Start date"
+msgstr ""
+
+#: tfrmmycalculators.lbltocalendar.caption
+msgctxt "tfrmmycalculators.lbltocalendar.caption"
+msgid "to"
+msgstr ""
+
 #: tfrmmycalculators.ppmenuarab.caption
 msgid "Arab"
 msgstr ""
@@ -981,6 +1059,16 @@ msgstr ""
 
 #: tfrmmycalculators.ppmenujulian.caption
 msgid "Julian"
+msgstr ""
+
+#: tfrmmycalculators.rdbtndatecalculator.caption
+msgctxt "tfrmmycalculators.rdbtndatecalculator.caption"
+msgid "Date"
+msgstr ""
+
+#: tfrmmycalculators.rdbtnsimplecalculator.caption
+msgctxt "tfrmmycalculators.rdbtnsimplecalculator.caption"
+msgid "Simple"
 msgstr ""
 
 #: tfrmpreferences.btnok.hint
