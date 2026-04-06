@@ -16,9 +16,9 @@ inherited frmCredits: TfrmCredits
     Height = 332
     Top = 0
     Width = 360
-    ActivePage = TbShtCreditsTodoList
+    ActivePage = TbShtCreditsCredits
     Images = frmMyCalculators.ImageList
-    TabIndex = 3
+    TabIndex = 0
     TabOrder = 0
     object TbShtCreditsCredits: TTabSheet
       Cursor = crNone
@@ -66,6 +66,16 @@ inherited frmCredits: TfrmCredits
         TabOrder = 2
         OnClick = StTxtCredits8Click
         OnMouseEnter = StTxtCredits8MouseEnter
+      end
+      object StTxtCredits12: TStaticText
+        Left = 0
+        Height = 17
+        Top = 76
+        Width = 562
+        Caption = 'Tartu Ülikool - A Collection of Delphi/Lazarus Tips & Tricks'
+        TabOrder = 3
+        OnClick = StTxtCredits12Click
+        OnMouseEnter = StTxtCredits12MouseEnter
       end
     end
     object TbShtCreditsContributors: TTabSheet

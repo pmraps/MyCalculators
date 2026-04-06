@@ -6,7 +6,7 @@ inherited frmCredits: TfrmCredits
   VertScrollBar.Page = 240
   AutoScroll = True
   Caption = 'Credits'
-  ClientWidth = 379
+  ClientWidth = 362
   DefaultMonitor = dmMainForm
   ParentFont = True
   Position = poOwnerFormCenter
@@ -66,6 +66,16 @@ inherited frmCredits: TfrmCredits
         TabOrder = 2
         OnClick = StTxtCredits8Click
         OnMouseEnter = StTxtCredits8MouseEnter
+      end
+      object StTxtCredits12: TStaticText
+        Left = 0
+        Height = 17
+        Top = 76
+        Width = 562
+        Caption = 'Tartu Ülikool - A Collection of Delphi/Lazarus Tips & Tricks'
+        TabOrder = 3
+        OnClick = StTxtCredits12Click
+        OnMouseEnter = StTxtCredits12MouseEnter
       end
     end
     object TbShtCreditsContributors: TTabSheet

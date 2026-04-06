@@ -610,6 +610,10 @@ msgstr "SVG repo"
 msgid "Hamburger icon"
 msgstr "Ícone de hamburger"
 
+#: tfrmcredits.sttxtcredits12.caption
+msgid "Tartu Ülikool - A Collection of Delphi/Lazarus Tips & Tricks"
+msgstr ""
+
 #: tfrmcredits.sttxtcredits2.caption
 msgid "FreePascal Wiki"
 msgstr "FreePascal Wiki"
@@ -693,14 +697,6 @@ msgstr "Calcular o arco cosseno hiperbólico"
 msgid "Calculate the arch cotangent"
 msgstr "Calcular o arco cotangente"
 
-#: tfrmmycalculators.btnactualcalendar.hint
-msgid "Click to select the calendar to convert to"
-msgstr "Clique para seleccionar o calendário para onde converter"
-
-#: tfrmmycalculators.btnactualcalendar1.hint
-msgid "Click to select the calendar to convert from"
-msgstr "Clique para seleccionar o calendário de onde converter"
-
 #: tfrmmycalculators.btnadd.hint
 msgid "Add"
 msgstr "Adicionar"
@@ -728,6 +724,18 @@ msgstr "Apagar um algarismo"
 #: tfrmmycalculators.btnbintobase.hint
 msgid "Convert binary to different base"
 msgstr "Converter binários entre diferentes bases"
+
+#: tfrmmycalculators.btncalendarfrom.hint
+#, fuzzy
+msgctxt "tfrmmycalculators.btncalendarfrom.hint"
+msgid "Click to select the calendar to convert from"
+msgstr "Clique para seleccionar o calendário de onde converter"
+
+#: tfrmmycalculators.btncalendarto.hint
+#, fuzzy
+msgctxt "tfrmmycalculators.btncalendarto.hint"
+msgid "Click to select the calendar to convert to"
+msgstr "Clique para seleccionar o calendário para onde converter"
 
 #: tfrmmycalculators.btncelsius.hint
 msgid "Convert to Celsius"

@@ -16,6 +16,7 @@ type
         PgCtrlCredits: TPageControl;
         StTxtContributorsWP: TStaticText;
         StTxtCredits11: TStaticText;
+        StTxtCredits12: TStaticText;
         StTxtCredits8: TStaticText;
         StTxtCredits9: TStaticText;
         StTxtCredits10: TStaticText;
@@ -37,6 +38,8 @@ type
         procedure StTxtContributorsWPMouseEnter(Sender: TObject);
         procedure StTxtCredits11Click(Sender: TObject);
         procedure StTxtCredits11MouseEnter(Sender: TObject);
+        procedure StTxtCredits12Click(Sender: TObject);
+        procedure StTxtCredits12MouseEnter(Sender: TObject);
         procedure StTxtCredits9Click(Sender: TObject);
         procedure StTxtCredits9MouseEnter(Sender: TObject);
         procedure StTxtCredits10Click(Sender: TObject);
@@ -135,6 +138,16 @@ begin
     StTxtCredits11.Cursor := crHandPoint;
 end;
 
+procedure TfrmCredits.StTxtCredits12Click(Sender: TObject);
+begin
+    OpenURL('https://kodu.ut.ee/~kiisk/Delphi-tips-tricks.pdf');
+end;
+
+procedure TfrmCredits.StTxtCredits12MouseEnter(Sender: TObject);
+begin
+    StTxtCredits12.Cursor := crHandPoint;
+end;
+
 procedure TfrmCredits.StTxtCredits2Click(Sender: TObject);
 begin
     OpenURL('https://wiki.freepascal.org/Base_converting');
@@ -204,14 +217,8 @@ procedure TfrmCredits.UpdateTranslation(ALang: String);
 begin
   inherited;
 
-  { Items that are are not translated automatically: }
-{  with RadioGroup do begin
-    Items[0] := rsOne;
-    Items[1] := rsTwo;
-    Items[2] := rsThree;
-  end;}
+  { Items that are are not translated automatically }
 
-  { We should translate CheckGroup here also. Probably also list strings, etc.. }
 end;
 
 end.

@@ -8,7 +8,7 @@ uses LazLogger,
      SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
      Graphics, Classes, Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math,
      baseConvert, MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator,
-     LocalizedForms, myResourceStrings, gettext,
+     LocalizedForms, myResourceStrings, gettext, ErrorCatching, DateFunctions,
      FileUtil;
 
 type
@@ -22,8 +22,8 @@ type
       btnACos: TButton;
       btnACosH: TButton;
       btnACot: TButton;
-      BtnActualCalendar: TBitBtn;
-      BtnActualCalendar1: TBitBtn;
+      BtnCalendarTo: TBitBtn;
+      BtnCalendarFrom: TBitBtn;
       btnAdd: TButton;
       btnASin: TButton;
       btnASinH: TButton;
@@ -132,7 +132,7 @@ type
       procedure btnACosClick(Sender: TObject);
       procedure btnACosHClick(Sender: TObject);
       procedure btnACotClick(Sender: TObject);
-      procedure BtnActualCalendarClick(Sender: TObject);
+      procedure BtnCalendarToClick(Sender: TObject);
       procedure btnAddClick(Sender: TObject);
       procedure btnASinClick(Sender: TObject);
       procedure btnASinHClick(Sender: TObject);
@@ -233,7 +233,6 @@ type
       function ConvertNDayToStr(NumberOfDay : Integer) : String;
       function ConvertMonthToStr(Month : Integer) : String;
       procedure SpBtnMainMenuClick(Sender: TObject);
-      procedure SpBtnMainMenuMouseLeave(Sender: TObject);
   private
       Num1, Num2, Result, Operators : String;
       Memory : extended;
@@ -415,32 +414,32 @@ end;
 
 procedure TfrmMyCalculators.ppMenuArabClick(Sender: TObject);
 begin
-    BtnActualCalendar.ImageIndex := 5;
+    BtnCalendarTo.ImageIndex := 5;
 end;
 
 procedure TfrmMyCalculators.ppMenuChineseClick(Sender: TObject);
 begin
-    BtnActualCalendar.ImageIndex := 4;
+    BtnCalendarTo.ImageIndex := 4;
 end;
 
 procedure TfrmMyCalculators.ppMenuFrenchClick(Sender: TObject);
 begin
-    BtnActualCalendar.ImageIndex := 2;
+    BtnCalendarTo.ImageIndex := 2;
 end;
 
 procedure TfrmMyCalculators.ppMenuGregorianClick(Sender: TObject);
 begin
-    BtnActualCalendar.ImageIndex := 0;
+    BtnCalendarTo.ImageIndex := 0;
 end;
 
 procedure TfrmMyCalculators.ppMenuHebrewClick(Sender: TObject);
 begin
-    BtnActualCalendar.ImageIndex := 3;
+    BtnCalendarTo.ImageIndex := 3;
 end;
 
 procedure TfrmMyCalculators.ppMenuJulianClick(Sender: TObject);
 begin
-    BtnActualCalendar.ImageIndex := 1;
+    BtnCalendarTo.ImageIndex := 1;
     StTxtCalendarConversion.Caption := CalendarConversion(DTPickerPresent.Date, 'G', 'J');
 end;
 
@@ -568,7 +567,7 @@ begin
     ReturnToSimplePanel;
 end;
 
-procedure TfrmMyCalculators.BtnActualCalendarClick(Sender: TObject);
+procedure TfrmMyCalculators.BtnCalendarToClick(Sender: TObject);
 begin
     ppMenuCalendars.PopUp;
 end;
@@ -947,35 +946,28 @@ end;
 
 function TfrmMyCalculators.CalendarConversion(Date : TDate; CalendarFrom, CalendarTo : Char) : String;
 var SWDay, SDay, SMonth, SYear : String;
+    CalendarChar : Char;
     NDay, NMonth, NYear : Word;
 begin
      StTxtCalendarConversion.Caption := '';
-     DecodeDate(Date, NYear, NMonth, NDay);
-     if (CalendarFrom = 'G') and (CalendarTo = 'J') then                  // Gregorian to Julian
-        begin
-            if NDay > 13 then NDay := NDay - 13
-            else begin
-                   if NMonth = 2 then
-                        if IsLeapYear(NYear) then NDay := NDay + 16
-                        else NDay := NDay + 15
-                   else NDay := NDay + 18;
-                   NMonth := NMonth - 1;
-                 end;
-        end;
-
-     if (CalendarFrom = 'J') and (CalendarTo = 'G') then                  // Julian to Gregorian
-        begin
-            if NDay <= 13 then NDay := NDay + 13
-            else begin
-                   if NMonth = 2 then
-                        if IsLeapYear(NYear) then NDay := NDay + 15
-                        else NDay := NDay + 14
-                   else NDay := NDay + 17;
-                   NMonth := NMonth - 1;
-                 end;
-        end;
+     // Choose calendar from
+     case BtnCalendarFrom.ImageIndex of
+               0 : begin
+                    if BtnCalendarTo.ImageIndex = 1 then
+                       begin
+                         CalendarChar := 'J';
+                         DecodeDate(GregorianConversion(Date, CalendarChar), NYear, NMonth, NDay);
+                       end;
+               end;
+               1 : ;
+               2 : ;
+               3 : ;
+               4 : ;
+               5 : ;
+     end;
 
      // Final string
+
      SWDay := ConvertWDayToStr(DayOfWeek(Date));
      SDay := ConvertNDayToStr(NDay);
      SMonth := ConvertMonthToStr(NMonth);
@@ -1097,7 +1089,7 @@ begin
 end;
 
 { wp: Iterate over all po files and add a sub-menu item for each language to the
-  mnuPrefLang menu item. }
+  ppMnuMainSettings menu item. }
 procedure TfrmMyCalculators.InitLanguagesMenu;
 var
   L: TStringList;
@@ -1205,11 +1197,6 @@ end;
 procedure TfrmMyCalculators.SpBtnMainMenuClick(Sender: TObject);
 begin
      ppMainMenu.PopUp;
-end;
-
-procedure TfrmMyCalculators.SpBtnMainMenuMouseLeave(Sender: TObject);
-begin
-     ppMainMenu.Close;
 end;
 
 procedure TfrmMyCalculators.InitializeCaptions;

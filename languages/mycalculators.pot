@@ -599,6 +599,10 @@ msgstr ""
 msgid "Hamburger icon"
 msgstr ""
 
+#: tfrmcredits.sttxtcredits12.caption
+msgid "Tartu Ülikool - A Collection of Delphi/Lazarus Tips & Tricks"
+msgstr ""
+
 #: tfrmcredits.sttxtcredits2.caption
 msgid "FreePascal Wiki"
 msgstr ""
@@ -682,14 +686,6 @@ msgstr ""
 msgid "Calculate the arch cotangent"
 msgstr ""
 
-#: tfrmmycalculators.btnactualcalendar.hint
-msgid "Click to select the calendar to convert to"
-msgstr ""
-
-#: tfrmmycalculators.btnactualcalendar1.hint
-msgid "Click to select the calendar to convert from"
-msgstr ""
-
 #: tfrmmycalculators.btnadd.hint
 msgid "Add"
 msgstr ""
@@ -716,6 +712,16 @@ msgstr ""
 
 #: tfrmmycalculators.btnbintobase.hint
 msgid "Convert binary to different base"
+msgstr ""
+
+#: tfrmmycalculators.btncalendarfrom.hint
+msgctxt "tfrmmycalculators.btncalendarfrom.hint"
+msgid "Click to select the calendar to convert from"
+msgstr ""
+
+#: tfrmmycalculators.btncalendarto.hint
+msgctxt "tfrmmycalculators.btncalendarto.hint"
+msgid "Click to select the calendar to convert to"
 msgstr ""
 
 #: tfrmmycalculators.btncelsius.hint

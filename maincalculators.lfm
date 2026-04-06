@@ -64,7 +64,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 3
       TabStop = True
       OnClick = rdBtnTrigonometryClick
     end
@@ -81,7 +81,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Font.Style = [fsBold]
       ParentFont = False
       ParentShowHint = False
-      TabOrder = 3
+      TabOrder = 2
       TabStop = True
       OnClick = rdBtnDateCalculatorClick
     end
@@ -359,9 +359,9 @@ inherited frmMyCalculators: TfrmMyCalculators
     end
   end
   object pnlTrigonometry: TPanel[3]
-    Left = 334
+    Left = 8
     Height = 208
-    Top = 312
+    Top = 88
     Width = 288
     BevelOuter = bvNone
     ClientHeight = 208
@@ -641,7 +641,7 @@ inherited frmMyCalculators: TfrmMyCalculators
   object pnlFunctions: TPanel[4]
     Left = 8
     Height = 264
-    Top = 352
+    Top = 88
     Width = 288
     BevelOuter = bvNone
     ClientHeight = 264
@@ -838,7 +838,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 216
       Height = 25
       Hint = 'Convert hexadecimal to different base'
-      Top = 90
+      Top = 88
       Width = 70
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
@@ -902,19 +902,19 @@ inherited frmMyCalculators: TfrmMyCalculators
     end
   end
   object pnlDatulator: TPanel[5]
-    Left = 336
-    Height = 256
-    Top = 48
-    Width = 286
+    Left = 8
+    Height = 232
+    Top = 88
+    Width = 288
     BevelOuter = bvNone
-    ClientHeight = 256
-    ClientWidth = 286
+    ClientHeight = 232
+    ClientWidth = 288
     ParentBackground = False
     TabOrder = 5
     object DTPickerPresent: TDateTimePicker
-      Left = 128
+      Left = 120
       Height = 25
-      Top = 54
+      Top = 0
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -940,9 +940,9 @@ inherited frmMyCalculators: TfrmMyCalculators
       MonthNames = 'Long'
     end
     object DTPickerStartDate: TDateTimePicker
-      Left = 193
+      Left = 191
       Height = 25
-      Top = 112
+      Top = 80
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -968,22 +968,22 @@ inherited frmMyCalculators: TfrmMyCalculators
       MonthNames = 'Long'
       OnChange = DTPickerStartDateChange
     end
-    object BtnActualCalendar: TBitBtn
+    object BtnCalendarTo: TBitBtn
       Left = 261
       Height = 25
       Hint = 'Click to select the calendar to convert to'
-      Top = 54
+      Top = 0
       Width = 25
       Images = ImageList
       ImageIndex = 0
       PopupMenu = ppMenuCalendars
       TabOrder = 0
-      OnClick = BtnActualCalendarClick
+      OnClick = BtnCalendarToClick
     end
     object lblStartDate: TLabel
       Left = 0
       Height = 25
-      Top = 112
+      Top = 80
       Width = 170
       AutoSize = False
       Font.CharSet = ANSI_CHARSET
@@ -995,9 +995,9 @@ inherited frmMyCalculators: TfrmMyCalculators
       ParentFont = False
     end
     object DTPickerEndDate: TDateTimePicker
-      Left = 193
+      Left = 191
       Height = 25
-      Top = 144
+      Top = 112
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -1026,7 +1026,7 @@ inherited frmMyCalculators: TfrmMyCalculators
     object lblEndDate: TLabel
       Left = 0
       Height = 25
-      Top = 144
+      Top = 112
       Width = 170
       AutoSize = False
       Font.CharSet = ANSI_CHARSET
@@ -1040,7 +1040,7 @@ inherited frmMyCalculators: TfrmMyCalculators
     object lblConvertTo: TLabel
       Left = 0
       Height = 25
-      Top = 54
+      Top = 0
       Width = 88
       AutoSize = False
       Layout = tlCenter
@@ -1048,7 +1048,7 @@ inherited frmMyCalculators: TfrmMyCalculators
     object StTxtCalendarConversion: TStaticText
       Left = 0
       Height = 25
-      Top = 84
+      Top = 40
       Width = 286
       Alignment = taCenter
       BorderStyle = sbsSunken
@@ -1057,7 +1057,7 @@ inherited frmMyCalculators: TfrmMyCalculators
     object StTxtDateCalculation: TStaticText
       Left = 0
       Height = 25
-      Top = 174
+      Top = 144
       Width = 286
       BorderStyle = sbsSunken
       TabOrder = 5
@@ -1065,23 +1065,23 @@ inherited frmMyCalculators: TfrmMyCalculators
     object lblToCalendar: TLabel
       Left = 216
       Height = 25
-      Top = 54
+      Top = 0
       Width = 48
       Alignment = taCenter
       AutoSize = False
       Layout = tlCenter
     end
-    object BtnActualCalendar1: TBitBtn
-      Left = 96
+    object BtnCalendarFrom: TBitBtn
+      Left = 88
       Height = 25
       Hint = 'Click to select the calendar to convert from'
-      Top = 54
+      Top = 0
       Width = 25
       Images = ImageList
       ImageIndex = 0
       PopupMenu = ppMenuCalendars
       TabOrder = 6
-      OnClick = BtnActualCalendarClick
+      OnClick = BtnCalendarToClick
     end
   end
   object SpBtnMainMenu: TSpeedButton[6]
@@ -1096,13 +1096,12 @@ inherited frmMyCalculators: TfrmMyCalculators
     ShowCaption = False
     ParentShowHint = False
     PopupMenu = ppMainMenu
-    OnMouseEnter = SpBtnMainMenuClick
-    OnMouseLeave = SpBtnMainMenuMouseLeave
+    OnClick = SpBtnMainMenuClick
   end
   object ppMenuCalendars: TPopupMenu[7]
     Images = ImageList
-    Left = 456
-    Top = 8
+    Left = 40
+    Top = 360
     object ppMenuGregorian: TMenuItem
       Caption = 'Gregorian'
       ImageIndex = 0
@@ -1139,8 +1138,8 @@ inherited frmMyCalculators: TfrmMyCalculators
     end
   end
   object ImageList: TImageList[8]
-    Left = 600
-    Top = 8
+    Left = 232
+    Top = 360
     Bitmap = {
       4C7A1200000010000000100000000E1B00000000000078DAED9A07541449D7F7
       5B862861A687216710C30202828A0A8228822B625E13AE983083098C88011557
@@ -1366,8 +1365,8 @@ inherited frmMyCalculators: TfrmMyCalculators
     Images = ImageList
     AutoPopup = False
     OnPopup = ppMainMenuPopup
-    Left = 536
-    Top = 8
+    Left = 152
+    Top = 360
     object ppMnuMainSettings: TMenuItem
       ShortCut = 32851
       OnClick = mnuPrefLangClick
