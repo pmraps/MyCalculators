@@ -16,9 +16,9 @@ inherited frmCredits: TfrmCredits
     Height = 332
     Top = 0
     Width = 360
-    ActivePage = TbShtCreditsCredits
+    ActivePage = TbShtCreditsTodoList
     Images = frmMyCalculators.ImageList
-    TabIndex = 0
+    TabIndex = 3
     TabOrder = 0
     object TbShtCreditsCredits: TTabSheet
       Cursor = crNone

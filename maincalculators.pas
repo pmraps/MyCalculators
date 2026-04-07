@@ -4,12 +4,11 @@ unit mainCalculators;
 
 interface
 
-uses LazLogger,
-     SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
-     Graphics, Classes, Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math,
-     baseConvert, MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator,
-     LocalizedForms, myResourceStrings, gettext, ErrorCatching, mydatefunctions,
-     FileUtil;
+uses LazLogger, SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
+    Graphics, Classes, Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math,
+    baseConvert, MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator,
+    LocalizedForms, myResourceStrings, gettext,
+    ErrorCatching, mydatefunctions, FileUtil;
 
 type
     { procedure ColourChange;
@@ -22,8 +21,7 @@ type
       btnACos: TButton;
       btnACosH: TButton;
       btnACot: TButton;
-      BtnCalendarTo: TBitBtn;
-      BtnCalendarFrom: TBitBtn;
+      btnToCalendar: TBitBtn;
       btnAdd: TButton;
       btnASin: TButton;
       btnASinH: TButton;
@@ -85,6 +83,7 @@ type
       btnTanH: TButton;
       btnTAU: TButton;
       btnThree: TButton;
+      btnFromCalendar: TBitBtn;
       btnTwo: TButton;
       btnXRoot: TButton;
       btnZero: TButton;
@@ -94,6 +93,7 @@ type
       btnLbsToKg: TButton;
       btnLToGal: TButton;
       btnGalToL: TButton;
+      btnConvertDate: TButton;
       DTPickerStartDate: TDateTimePicker;
       DTPickerEndDate: TDateTimePicker;
       DtTPickerEndDate: TDateTimePicker;
@@ -104,6 +104,13 @@ type
       lblConvertTo: TLabel;
       lblStartDate: TLabel;
       lblEndDate: TLabel;
+      ppMenuArab1: TMenuItem;
+      ppMenuCalFrom: TPopupMenu;
+      ppMenuChinese1: TMenuItem;
+      ppMenuFrench1: TMenuItem;
+      ppMenuGregorian1: TMenuItem;
+      ppMenuHebrew1: TMenuItem;
+      ppMenuJulian1: TMenuItem;
       ppMnuMainSettings: TMenuItem;
       ppMnuMainHelp: TMenuItem;
       ppMnuMainCredits: TMenuItem;
@@ -120,7 +127,7 @@ type
       pnlFunctions: TPanel;
       pnlSimple: TPanel;
       pnlTrigonometry: TPanel;
-      ppMenuCalendars: TPopupMenu;
+      ppMenuCalTo: TPopupMenu;
       rdBtnDateCalculator: TRadioButton;
       rdBtnTrigonometry: TRadioButton;
       rdBtnFunctions: TRadioButton;
@@ -139,8 +146,6 @@ type
       procedure btnATanHClick(Sender: TObject);
       procedure btnBackspaceClick(Sender: TObject);
       procedure btnBinToBaseClick(Sender: TObject);
-      procedure BtnCalendarFromClick(Sender: TObject);
-      procedure BtnCalendarToClick(Sender: TObject);
       procedure btnCelsiusClick(Sender: TObject);
       procedure btnCosecantClick(Sender: TObject);
       procedure btnCosHClick(Sender: TObject);
@@ -157,6 +162,7 @@ type
       procedure btnFactorialClick(Sender: TObject);
       procedure btnFahrenheitClick(Sender: TObject);
       procedure btnFractionClick(Sender: TObject);
+      procedure btnFromCalendarClick(Sender: TObject);
       procedure btnGalToLClick(Sender: TObject);
       procedure btnGradiansDegreesClick(Sender: TObject);
       procedure btnGradiansRadiansClick(Sender: TObject);
@@ -201,11 +207,13 @@ type
       procedure btnTAUClick(Sender: TObject);
       procedure btnTenRaisedTo1Click(Sender: TObject);
       procedure btnThreeClick(Sender: TObject);
+      procedure btnToCalendarClick(Sender: TObject);
       procedure btnTwoClick(Sender: TObject);
       procedure btnXRootClick(Sender: TObject);
       procedure btnZeroClick(Sender: TObject);
       procedure btnCyclesToRadiansClick(Sender: TObject);
       procedure btnRadiansToCyclesClick(Sender: TObject);
+      procedure btnConvertDateClick(Sender: TObject);
       procedure DTPickerEndDateChange(Sender: TObject);
       procedure DTPickerStartDateChange(Sender: TObject);
       procedure mnuCreditsClick(Sender: TObject);
@@ -213,7 +221,18 @@ type
       procedure mnuHelpClick(Sender: TObject);
       procedure mnuPrefLangClick(Sender: TObject);
       procedure ppMainMenuPopup(Sender: TObject);
+      procedure ppMenuArab1Click(Sender: TObject);
+      procedure ppMenuArabClick(Sender: TObject);
+      procedure ppMenuChinese1Click(Sender: TObject);
+      procedure ppMenuChineseClick(Sender: TObject);
+      procedure ppMenuFrench1Click(Sender: TObject);
+      procedure ppMenuFrenchClick(Sender: TObject);
+      procedure ppMenuGregorian1Click(Sender: TObject);
       procedure ppMenuGregorianClick(Sender: TObject);
+      procedure ppMenuHebrew1Click(Sender: TObject);
+      procedure ppMenuHebrewClick(Sender: TObject);
+      procedure ppMenuJulian1Click(Sender: TObject);
+      procedure ppMenuJulianClick(Sender: TObject);
       procedure rdBtnDateCalculatorClick(Sender: TObject);
       procedure rdBtnFunctionsClick(Sender: TObject);
       procedure rdBtnSimpleCalculatorClick(Sender: TObject);
@@ -330,6 +349,11 @@ begin
     else txtFieldResult.Text := txtFieldResult.Text + '3';
 end;
 
+procedure TfrmMyCalculators.btnToCalendarClick(Sender: TObject);
+begin
+    ppMenuCalTo.PopUp;
+end;
+
 procedure TfrmMyCalculators.btnTwoClick(Sender: TObject);
 begin
     if txtFieldResult.Text = '' then txtFieldResult.Text := '2'
@@ -360,6 +384,14 @@ procedure TfrmMyCalculators.btnRadiansToCyclesClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(RadToCycle(StrToFloat(txtFieldResult.Text)));
     ReturnToSimplePanel;
+end;
+
+procedure TfrmMyCalculators.btnConvertDateClick(Sender: TObject);
+begin
+     StTxtCalendarConversion.Caption := CalendarConversion(DTPickerPresent.Date,
+                                                           btnFromCalendar.ImageIndex,
+                                                           btnToCalendar.ImageIndex,
+                                                           CurrentLang);
 end;
 
 procedure TfrmMyCalculators.DTPickerEndDateChange(Sender: TObject);
@@ -402,6 +434,41 @@ begin
      ppMainMenu.Items[2].Caption := rsStrCreditsDialog;
      ppMainMenu.Items[3].ImageIndex := 12;
      ppMainMenu.Items[3].Caption := rsStrBtnExit;
+end;
+
+procedure TfrmMyCalculators.ppMenuArab1Click(Sender: TObject);
+begin
+    btnFromCalendar.ImageIndex := 5;
+end;
+
+procedure TfrmMyCalculators.ppMenuArabClick(Sender: TObject);
+begin
+     btnToCalendar.ImageIndex := 5;
+end;
+
+procedure TfrmMyCalculators.ppMenuChinese1Click(Sender: TObject);
+begin
+    btnFromCalendar.ImageIndex := 4;
+end;
+
+procedure TfrmMyCalculators.ppMenuChineseClick(Sender: TObject);
+begin
+     btnToCalendar.ImageIndex := 4;
+end;
+
+procedure TfrmMyCalculators.ppMenuFrench1Click(Sender: TObject);
+begin
+    btnFromCalendar.ImageIndex := 2;
+end;
+
+procedure TfrmMyCalculators.ppMenuFrenchClick(Sender: TObject);
+begin
+     btnToCalendar.ImageIndex := 2;
+end;
+
+procedure TfrmMyCalculators.ppMenuGregorian1Click(Sender: TObject);
+begin
+    btnFromCalendar.ImageIndex := 0;
 end;
 
 procedure TfrmMyCalculators.rdBtnDateCalculatorClick(Sender: TObject);
@@ -459,27 +526,29 @@ begin
     ReturnToSimplePanel;
 end;
 
-procedure TfrmMyCalculators.BtnCalendarFromClick(Sender: TObject);
-begin
-     ppMenuCalendars.PopUp;
-     CalendarConversion(DTPickerPresent.Date,
-                        Copy(firstButton.Caption, 1, 1),
-                        Copy(secondButton.Caption, 1, 1),
-                        CurrentLang);}
-end;
-
-procedure TfrmMyCalculators.BtnCalendarToClick(Sender: TObject);
-begin
-    ppMenuCalendars.PopUp;
-    {   CalendarConversion(DTPickerPresent.Date,
-                        Copy(firstButton.Caption, 1, 1),
-                        Copy(secondButton.Caption, 1, 1),
-                        CurrentLang);}
-end;
-
 procedure TfrmMyCalculators.ppMenuGregorianClick(Sender: TObject);
 begin
-     Copy(ppMenuGregorian.Caption, 1, 1);
+     btnToCalendar.ImageIndex := 0;
+end;
+
+procedure TfrmMyCalculators.ppMenuHebrew1Click(Sender: TObject);
+begin
+    btnFromCalendar.ImageIndex := 3;
+end;
+
+procedure TfrmMyCalculators.ppMenuHebrewClick(Sender: TObject);
+begin
+     btnToCalendar.ImageIndex := 3;
+end;
+
+procedure TfrmMyCalculators.ppMenuJulian1Click(Sender: TObject);
+begin
+    btnFromCalendar.ImageIndex := 1;
+end;
+
+procedure TfrmMyCalculators.ppMenuJulianClick(Sender: TObject);
+begin
+     btnToCalendar.ImageIndex := 1;
 end;
 
 procedure TfrmMyCalculators.btnCelsiusClick(Sender: TObject);
@@ -657,6 +726,11 @@ procedure TfrmMyCalculators.btnFractionClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(1 / StrToInt(txtFieldResult.Text));
     ReturnToSimplePanel;
+end;
+
+procedure TfrmMyCalculators.btnFromCalendarClick(Sender: TObject);
+begin
+    ppMenuCalFrom.PopUp;
 end;
 
 procedure TfrmMyCalculators.btnGalToLClick(Sender: TObject);
@@ -1120,8 +1194,6 @@ begin
      frmMyCalculators.lblEndDate.Caption := rsStrDateEndDate;
      frmMyCalculators.lblConvertTo.Caption := rsStrDateConvert;
      frmMyCalculators.lblToCalendar.Caption := rsStrDateTo;
-     frmMyCalculators.BtnCalendarFrom.Caption := 'G';
-     frmMyCalculators.BtnCalendarTo.Caption := 'G';
 end;
 
 end.

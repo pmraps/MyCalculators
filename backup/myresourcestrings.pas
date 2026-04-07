@@ -63,17 +63,16 @@ uses
         rsNovember = 'November';
         rsDecember = 'December';
         // MISC DATE STRINGS
-        rsYear = ' year.';
-        rsYears = ' years.';
-        rsMonth = ' month.';
+        rsDayPeriod = ' day.';
+        rsDaysPeriod = ' days.';
+        rsMonthPeriod = ' month.';
+        rsMonthsPeriod = ' months.';
         rsMonthAnd = ' month and ';
-        rsDay = ' day.';
-        rsDayAnd = ' day and ';
-        rsDay2 = ' day, ';
-        rsMonths = ' months.';
-        rsDaysAnd = ' days and ';
-        rsDays = ' days, ';
-        rsDays2 = ' days.';
+        rsMonthsAnd = ' months and ';
+        rsYearPeriod = ' year.';
+        rsYearsPeriod = ' years.';
+        rsYearAnd = ' year and ';
+        rsYearsAnd = ' years and ';
         //TREEVIEW NAMES
         rsTrViewDesc = 'Description';
         rsTrViewSimple = 'Simple calculator';

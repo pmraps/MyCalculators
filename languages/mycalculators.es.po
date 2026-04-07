@@ -26,35 +26,15 @@ msgctxt "myresourcestrings.rsdatesareequal"
 msgid "Dates are the same"
 msgstr "Las fechas son las mismas"
 
-#: myresourcestrings.rsday
-msgctxt "myresourcestrings.rsday"
+#: myresourcestrings.rsdayperiod
+msgctxt "myresourcestrings.rsdayperiod"
 msgid " day."
-msgstr " dia."
+msgstr " día."
 
-#: myresourcestrings.rsdayand
-msgctxt "myresourcestrings.rsdayand"
-msgid " day and "
-msgstr " dia y "
-
-#: myresourcestrings.rsdaymonth
-msgctxt "myresourcestrings.rsdaymonth"
-msgid " day, "
-msgstr " día, "
-
-#: myresourcestrings.rsdays
-msgctxt "myresourcestrings.rsdays"
+#: myresourcestrings.rsdaysperiod
+msgctxt "myresourcestrings.rsdaysperiod"
 msgid " days."
 msgstr " días."
-
-#: myresourcestrings.rsdaysand
-msgctxt "myresourcestrings.rsdaysand"
-msgid " days and "
-msgstr " dias y "
-
-#: myresourcestrings.rsdaysmonth
-msgctxt "myresourcestrings.rsdaysmonth"
-msgid " days, "
-msgstr " días, "
 
 #: myresourcestrings.rsdecember
 msgctxt "myresourcestrings.rsdecember"
@@ -237,24 +217,24 @@ msgctxt "myresourcestrings.rsmonday"
 msgid "Monday"
 msgstr "Lunes"
 
-#: myresourcestrings.rsmonth
-msgctxt "myresourcestrings.rsmonth"
-msgid " month."
-msgstr " mês."
-
 #: myresourcestrings.rsmonthand
 msgctxt "myresourcestrings.rsmonthand"
 msgid " month and "
 msgstr " mês y "
 
-#: myresourcestrings.rsmonths
-msgctxt "myresourcestrings.rsmonths"
-msgid " months."
-msgstr " meses."
+#: myresourcestrings.rsmonthperiod
+msgctxt "myresourcestrings.rsmonthperiod"
+msgid " month."
+msgstr " mês."
 
 #: myresourcestrings.rsmonthsand
-msgid " meses e "
+msgid " months and "
 msgstr " meses e "
+
+#: myresourcestrings.rsmonthsperiod
+msgctxt "myresourcestrings.rsmonthsperiod"
+msgid " months."
+msgstr " meses."
 
 #: myresourcestrings.rsnine
 msgctxt "myresourcestrings.rsnine"
@@ -581,13 +561,29 @@ msgctxt "myresourcestrings.rswednesday"
 msgid "Wednesday"
 msgstr "Miércoles"
 
-#: myresourcestrings.rsyear
-msgctxt "myresourcestrings.rsyear"
+#: myresourcestrings.rsyearand
+msgid " year and "
+msgstr " año y "
+
+#: myresourcestrings.rsyearcomma
+msgid " year, "
+msgstr " año, "
+
+#: myresourcestrings.rsyearperiod
+msgctxt "myresourcestrings.rsyearperiod"
 msgid " year."
 msgstr " año."
 
-#: myresourcestrings.rsyears
-msgctxt "myresourcestrings.rsyears"
+#: myresourcestrings.rsyearsand
+msgid " years and "
+msgstr " años y "
+
+#: myresourcestrings.rsyearscomma
+msgid " years, "
+msgstr " años, "
+
+#: myresourcestrings.rsyearsperiod
+msgctxt "myresourcestrings.rsyearsperiod"
 msgid " years."
 msgstr " años."
 
@@ -740,16 +736,6 @@ msgstr "Borrar un dígito"
 msgid "Convert binary to different base"
 msgstr "Convertir un número binario a otra base"
 
-#: tfrmmycalculators.btncalendarfrom.hint
-msgctxt "tfrmmycalculators.btncalendarfrom.hint"
-msgid "Click to select the calendar to convert from"
-msgstr "Haz clic para seleccionar el calendario desde el que deseas realizar la conversión"
-
-#: tfrmmycalculators.btncalendarto.hint
-msgctxt "tfrmmycalculators.btncalendarto.hint"
-msgid "Click to select the calendar to convert to"
-msgstr "Haz clic para seleccionar el calendario al que deseas convertir"
-
 #: tfrmmycalculators.btncelsius.hint
 msgid "Convert to Celsius"
 msgstr "Convertir a grados Celsius"
@@ -761,6 +747,11 @@ msgstr "Borrar todas las entradas"
 #: tfrmmycalculators.btncomma.hint
 msgid "Decimal point"
 msgstr "Punto decimal"
+
+#: tfrmmycalculators.btnconvertdate.caption
+msgctxt "tfrmmycalculators.btnconvertdate.caption"
+msgid "Convert"
+msgstr "Convertir"
 
 #: tfrmmycalculators.btncos.hint
 msgid "Calculate the cosine"
@@ -850,6 +841,11 @@ msgstr "Cuatro"
 #: tfrmmycalculators.btnfraction.hint
 msgid "Calculate the fraction of 1"
 msgstr "Calcular la fracción de 1"
+
+#: tfrmmycalculators.btnfromcalendar.hint
+msgctxt "tfrmmycalculators.btnfromcalendar.hint"
+msgid "Click to select the calendar to convert from"
+msgstr "Haz clic para seleccionar el calendario desde el que deseas realizar la conversión"
 
 #: tfrmmycalculators.btngradiansdegrees.caption
 msgctxt "tfrmmycalculators.btngradiansdegrees.caption"
@@ -1012,6 +1008,13 @@ msgstr "El número Tau"
 msgid "Three"
 msgstr "Tres"
 
+#: tfrmmycalculators.btntocalendar.hint
+#, fuzzy
+#| msgid "Click to select the calendar to convert from"
+msgctxt "tfrmmycalculators.btntocalendar.hint"
+msgid "Click to select the calendar to convert to"
+msgstr "Haz clic para seleccionar el calendario desde el que deseas realizar la conversión"
+
 #: tfrmmycalculators.btntwo.hint
 msgid "Two"
 msgstr "Dos"
@@ -1030,8 +1033,8 @@ msgstr "Calculadoras"
 
 #: tfrmmycalculators.lblconvertto.caption
 msgctxt "tfrmmycalculators.lblconvertto.caption"
-msgid "Convert"
-msgstr "Convertir"
+msgid "From"
+msgstr "De"
 
 #: tfrmmycalculators.lblenddate.caption
 msgid "End date"
@@ -1048,26 +1051,62 @@ msgid "to"
 msgstr "para"
 
 #: tfrmmycalculators.ppmenuarab.caption
+msgctxt "tfrmmycalculators.ppmenuarab.caption"
+msgid "Arab"
+msgstr "Árabe"
+
+#: tfrmmycalculators.ppmenuarab1.caption
+msgctxt "tfrmmycalculators.ppmenuarab1.caption"
 msgid "Arab"
 msgstr "Árabe"
 
 #: tfrmmycalculators.ppmenuchinese.caption
+msgctxt "tfrmmycalculators.ppmenuchinese.caption"
+msgid "Chinese"
+msgstr "Chino"
+
+#: tfrmmycalculators.ppmenuchinese1.caption
+msgctxt "tfrmmycalculators.ppmenuchinese1.caption"
 msgid "Chinese"
 msgstr "Chino"
 
 #: tfrmmycalculators.ppmenufrench.caption
+msgctxt "tfrmmycalculators.ppmenufrench.caption"
+msgid "French Republican"
+msgstr "Republicano francés"
+
+#: tfrmmycalculators.ppmenufrench1.caption
+msgctxt "tfrmmycalculators.ppmenufrench1.caption"
 msgid "French Republican"
 msgstr "Republicano francés"
 
 #: tfrmmycalculators.ppmenugregorian.caption
+msgctxt "tfrmmycalculators.ppmenugregorian.caption"
+msgid "Gregorian"
+msgstr "Gregoriano"
+
+#: tfrmmycalculators.ppmenugregorian1.caption
+msgctxt "tfrmmycalculators.ppmenugregorian1.caption"
 msgid "Gregorian"
 msgstr "Gregoriano"
 
 #: tfrmmycalculators.ppmenuhebrew.caption
+msgctxt "tfrmmycalculators.ppmenuhebrew.caption"
+msgid "Hebrew"
+msgstr "Hebreo"
+
+#: tfrmmycalculators.ppmenuhebrew1.caption
+msgctxt "tfrmmycalculators.ppmenuhebrew1.caption"
 msgid "Hebrew"
 msgstr "Hebreo"
 
 #: tfrmmycalculators.ppmenujulian.caption
+msgctxt "tfrmmycalculators.ppmenujulian.caption"
+msgid "Julian"
+msgstr "Juliano"
+
+#: tfrmmycalculators.ppmenujulian1.caption
+msgctxt "tfrmmycalculators.ppmenujulian1.caption"
 msgid "Julian"
 msgstr "Juliano"
 
@@ -1107,3 +1146,4 @@ msgstr "Idioma"
 msgctxt "tfrmpreferences.lbltheme.caption"
 msgid "Theme"
 msgstr "Tema"
+

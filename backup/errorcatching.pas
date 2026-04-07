@@ -9,12 +9,17 @@ uses
 
 type
     //create unique index for each error message
-    TErrMsgID = (emWrongDate, emFileNotFound, emDivZero, emConvert, emCantOpen);
+    TErrMsgID = (emWrongJulianDate, emWrongGregorianDate, emWrongFrenchDate,
+                 emDivZero, emConvert, emCantOpen);
+
+    function ErrMsg(id: TErrMsgID; params: array of const): integer; overload;
+    function ErrMsg(id: TErrMsgID): integer; overload;
 
 const
      ErrMsgFmt : array[Low(TErrMsgID)..High(TErrMsgID)] of string = (
-               'The date does''t exist!',
-               'File not found: %s',
+               'Wrong julian date! Must be between 46 BC and October 15, 1582',
+               'Wrong gregorian date! Must be after October 15, 1582',
+               'Wrong french republican date! Must be between 22/09/1793 and 01/01/1800',
                'Division by zero',
                'Conversion error: %s',
                'Cannot open file: %s'
@@ -22,12 +27,14 @@ const
 
      //array of corresponding dialog buttons
      ErrMsgBtns : array[Low(TErrMsgID)..High(TErrMsgID)] of TMsgDlgButtons = (
-                mbOKCancel,
+                [mbOK],
+                [mbOK],
                 [mbOK],
                 [mbOK],
                 [mbOK],
                 [mbRetry,mbCancel]
                 );
+
 
 implementation
 
