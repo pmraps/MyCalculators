@@ -1,13 +1,13 @@
 inherited frmMyCalculators: TfrmMyCalculators
   Left = 488
-  Height = 410
+  Height = 520
   Top = 250
   Width = 302
   HelpType = htKeyword
   HelpKeyword = 'simpleHlp'
   HelpContext = 1
   Caption = 'Calculators'
-  ClientHeight = 410
+  ClientHeight = 520
   ClientWidth = 302
   DefaultMonitor = dmMainForm
   Font.CharSet = ANSI_CHARSET
@@ -916,18 +916,18 @@ inherited frmMyCalculators: TfrmMyCalculators
   end
   object pnlDatulator: TPanel[5]
     Left = 8
-    Height = 232
+    Height = 392
     Top = 88
     Width = 288
     BevelOuter = bvNone
-    ClientHeight = 232
+    ClientHeight = 392
     ClientWidth = 288
     ParentBackground = False
     TabOrder = 5
-    object DTPickerPresent: TDateTimePicker
-      Left = 2
+    object DTPickerStartDate: TDateTimePicker
+      Left = 192
       Height = 25
-      Top = 0
+      Top = 120
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -951,11 +951,27 @@ inherited frmMyCalculators: TfrmMyCalculators
       UseDefaultSeparators = True
       HideDateTimeParts = []
       MonthNames = 'Long'
+      OnChange = DTPickerStartDateChange
     end
-    object DTPickerStartDate: TDateTimePicker
+    object lblStartDate: TLabel
+      Left = 0
+      Height = 25
+      Top = 120
+      Width = 170
+      AutoSize = False
+      Caption = 'Start date'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentFont = False
+    end
+    object DTPickerEndDate: TDateTimePicker
       Left = 192
       Height = 25
-      Top = 112
+      Top = 150
       Width = 93
       CenturyFrom = 1941
       MaxDate = 2958465
@@ -979,56 +995,12 @@ inherited frmMyCalculators: TfrmMyCalculators
       UseDefaultSeparators = True
       HideDateTimeParts = []
       MonthNames = 'Long'
-      OnChange = DTPickerStartDateChange
-    end
-    object lblStartDate: TLabel
-      Left = 0
-      Height = 25
-      Top = 112
-      Width = 170
-      AutoSize = False
-      Caption = 'Start date'
-      Font.CharSet = ANSI_CHARSET
-      Font.Height = -13
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      Layout = tlCenter
-      ParentFont = False
-    end
-    object DTPickerEndDate: TDateTimePicker
-      Left = 191
-      Height = 25
-      Top = 144
-      Width = 93
-      CenturyFrom = 1941
-      MaxDate = 2958465
-      MinDate = -53780
-      Font.CharSet = ANSI_CHARSET
-      Font.Height = -13
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 2
-      TrailingSeparator = False
-      TextForNullDate = ''
-      LeadingZeros = True
-      Kind = dtkDate
-      TimeFormat = tf24
-      TimeDisplay = tdHMS
-      DateMode = dmComboBox
-      Date = 46107
-      Time = 0.325277129632013
-      UseDefaultSeparators = True
-      HideDateTimeParts = []
-      MonthNames = 'Long'
       OnChange = DTPickerEndDateChange
     end
     object lblEndDate: TLabel
       Left = 0
       Height = 25
-      Top = 144
+      Top = 150
       Width = 170
       AutoSize = False
       Caption = 'End date'
@@ -1052,13 +1024,13 @@ inherited frmMyCalculators: TfrmMyCalculators
     object StTxtCalendarConversion: TStaticText
       Left = 0
       Height = 25
-      Top = 64
+      Top = 88
       Width = 286
       Alignment = taCenter
       BorderStyle = sbsSunken
       Color = clGreen
       ParentColor = False
-      TabOrder = 3
+      TabOrder = 2
     end
     object StTxtDateCalculation: TStaticText
       Left = 0
@@ -1066,7 +1038,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Top = 176
       Width = 286
       BorderStyle = sbsSunken
-      TabOrder = 4
+      TabOrder = 3
     end
     object lblToCalendar: TLabel
       Left = 224
@@ -1087,7 +1059,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Images = ImageList
       ImageIndex = 0
       PopupMenu = ppMenuCalTo
-      TabOrder = 5
+      TabOrder = 4
       OnClick = btnToCalendarClick
     end
     object btnFromCalendar: TBitBtn
@@ -1099,17 +1071,47 @@ inherited frmMyCalculators: TfrmMyCalculators
       Images = ImageList
       ImageIndex = 0
       PopupMenu = ppMenuCalTo
-      TabOrder = 6
+      TabOrder = 5
       OnClick = btnFromCalendarClick
     end
     object btnConvertDate: TButton
-      Left = 101
+      Left = 114
       Height = 25
-      Top = 30
+      Top = 60
       Width = 75
       Caption = 'Convert'
-      TabOrder = 7
+      TabOrder = 6
       OnClick = btnConvertDateClick
+    end
+    object dtEditPresent: TDateEdit
+      Left = 0
+      Height = 25
+      Top = 0
+      Width = 120
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DefaultToday = True
+      DateOrder = doDMY
+      DateFormat = 'DD/MM/YYYY'
+      ButtonWidth = 23
+      Alignment = taCenter
+      AutoSize = False
+      NumGlyphs = 1
+      Images = ImageList
+      MaxLength = 10
+      TabOrder = 7
+      Spacing = 0
+      Text = '08/04/2026'
+    end
+    object StTxtCalendarConversion1: TStaticText
+      Left = -1
+      Height = 25
+      Top = 30
+      Width = 286
+      Alignment = taCenter
+      BorderStyle = sbsSunken
+      Color = clGreen
+      ParentColor = False
+      TabOrder = 8
     end
   end
   object SpBtnMainMenu: TSpeedButton[6]

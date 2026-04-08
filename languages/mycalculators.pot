@@ -1019,6 +1019,10 @@ msgstr ""
 msgid "Calculators"
 msgstr ""
 
+#: tfrmmycalculators.dteditpresent.text
+msgid "08/04/2026"
+msgstr ""
+
 #: tfrmmycalculators.lblconvertto.caption
 msgctxt "tfrmmycalculators.lblconvertto.caption"
 msgid "From"

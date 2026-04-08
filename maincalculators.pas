@@ -7,8 +7,8 @@ interface
 uses LazLogger, SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
     Graphics, Classes, Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math,
     baseConvert, MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator,
-    LocalizedForms, myResourceStrings, gettext,
-    ErrorCatching, mydatefunctions, FileUtil;
+    EditBtn, LocalizedForms, myResourceStrings, gettext, ErrorCatching,
+    mydatefunctions, FileUtil;
 
 type
     { procedure ColourChange;
@@ -94,10 +94,10 @@ type
       btnLToGal: TButton;
       btnGalToL: TButton;
       btnConvertDate: TButton;
+      dtEditPresent: TDateEdit;
       DTPickerStartDate: TDateTimePicker;
       DTPickerEndDate: TDateTimePicker;
       DtTPickerEndDate: TDateTimePicker;
-      DTPickerPresent: TDateTimePicker;
       DTPickerToCalendar: TDateTimePicker;
       ImageList: TImageList;
       lblToCalendar: TLabel;
@@ -134,6 +134,7 @@ type
       rdBtnSimpleCalculator: TRadioButton;
       SpBtnMainMenu: TSpeedButton;
       StTxtCalendarConversion: TStaticText;
+      StTxtCalendarConversion1: TStaticText;
       StTxtDateCalculation: TStaticText;
       txtFieldResult: TEdit;
       procedure btnACosClick(Sender: TObject);
@@ -271,7 +272,7 @@ implementation
 {$R *.lfm}
 procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
-     DTPickerPresent.Date := Now();
+     DTEditPresent.Date := Now();
      DTPickerStartDate.Date := Now();
      DTPickerEndDate.Date := Now();
      UpdateTranslation(GetSystemLanguage);     // Default to system language
@@ -388,7 +389,7 @@ end;
 
 procedure TfrmMyCalculators.btnConvertDateClick(Sender: TObject);
 begin
-     StTxtCalendarConversion.Caption := CalendarConversion(DTPickerPresent.Date,
+     StTxtCalendarConversion.Caption := CalendarConversion(DTEditPresent.Date,
                                                            btnFromCalendar.ImageIndex,
                                                            btnToCalendar.ImageIndex,
                                                            CurrentLang);

@@ -14,37 +14,37 @@ msgstr ""
 #: myresourcestrings.rsapril
 msgctxt "myresourcestrings.rsapril"
 msgid "April"
-msgstr ""
+msgstr "Avril"
 
 #: myresourcestrings.rsaugust
 msgctxt "myresourcestrings.rsaugust"
 msgid "August"
-msgstr ""
+msgstr "Aout"
 
 #: myresourcestrings.rsdatesareequal
 msgctxt "myresourcestrings.rsdatesareequal"
 msgid "Dates are the same"
-msgstr ""
+msgstr "Les dates sont les mêmes"
 
 #: myresourcestrings.rsdayperiod
 msgctxt "myresourcestrings.rsdayperiod"
 msgid " day."
-msgstr ""
+msgstr " jour."
 
 #: myresourcestrings.rsdaysperiod
 msgctxt "myresourcestrings.rsdaysperiod"
 msgid " days."
-msgstr ""
+msgstr " jours."
 
 #: myresourcestrings.rsdecember
 msgctxt "myresourcestrings.rsdecember"
 msgid "December"
-msgstr ""
+msgstr "Décembre"
 
 #: myresourcestrings.rseight
 msgctxt "myresourcestrings.rseight"
 msgid "eight"
-msgstr ""
+msgstr "huit"
 
 #: myresourcestrings.rseighteen
 msgctxt "myresourcestrings.rseighteen"
@@ -1027,6 +1027,10 @@ msgstr ""
 
 #: tfrmmycalculators.caption
 msgid "Calculators"
+msgstr ""
+
+#: tfrmmycalculators.dteditpresent.text
+msgid "08/04/2026"
 msgstr ""
 
 #: tfrmmycalculators.lblconvertto.caption

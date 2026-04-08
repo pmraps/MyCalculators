@@ -17,7 +17,7 @@ type
 
 const
      ErrMsgFmt : array[Low(TErrMsgID)..High(TErrMsgID)] of string = (
-               'Wrong julian date! Must be between 46 BC and October 15, 1582',
+               'Wrong julian date! Must be between January 1 45 BC and October 15, 1582',
                'Wrong gregorian date! Must be after October 15, 1582',
                'Wrong french republican date! Must be between 22/09/1793 and 01/01/1800',
                'Division by zero',

@@ -19,7 +19,7 @@ const
      ErrMsgFmt : array[Low(TErrMsgID)..High(TErrMsgID)] of string = (
                'Wrong julian date! Must be between January 1 45 BC and October 15, 1582',
                'Wrong gregorian date! Must be after October 15, 1582',
-               'Wrong french republican date! Must be between 22/09/1793 and 01/01/1800',
+               'Wrong french republican date! Must be between 22/09/1792 and 31/12/1805',
                'Division by zero',
                'Conversion error: %s',
                'Cannot open file: %s'

@@ -5,7 +5,7 @@ unit mydatefunctions;
 interface
 
 uses
-    Classes, SysUtils, Graphics, DateUtils, Math,
+    Classes, SysUtils, Graphics, DateUtils, Math, Dialogs,
     ErrorCatching, myResourceStrings;
 
     function CalendarConversion(DateFrom : TDate; CalendarFrom, CalendarTo : Byte; CurrentLang : String) : String;
@@ -14,18 +14,18 @@ uses
 
     function GregorianToJulian (DateFrom : TDate) : TDate;
     function GregorianToFrench (DateFrom : TDate) : TDate;
+    function FindFrenchYear(DateFrom : TDate) : Word;
+    function FindFrenchExtraDays(FYear : Integer) : Integer;
     function GregorianToHebrew (DateFrom : TDate) : TDate;
     function GregorianToArab (DateFrom : TDate) : TDate;
     function GregorianToChinese (DateFrom : TDate) : TDate;
 
     function JulianToGregorian (DateFrom : TDate) : TDate;
-    function JulianToFrench (DateFrom : TDate) : TDate;
     function JulianToHebrew (DateFrom : TDate) : TDate;
     function JulianToArab (DateFrom : TDate) : TDate;
     function JulianToChinese (DateFrom : TDate) : TDate;
 
     function FrenchToGregorian (DateFrom : TDate) : TDate;
-    function FrenchToJulian (DateFrom : TDate) : TDate;
     function FrenchToHebrew (DateFrom : TDate) : TDate;
     function FrenchToArab (DateFrom : TDate) : TDate;
     function FrenchToChinese (DateFrom : TDate) : TDate;
@@ -69,17 +69,15 @@ begin
                end;
                1 : begin
                           if CalendarTo = 0 then Result := formatDateString(JulianToGregorian(DateFrom), CurrentLang)
-                          else if CalendarTo = 2 then Result := formatDateString(JulianToFrench(DateFrom), CurrentLang)
-                               else if CalendarTo = 3 then Result := formatDateString(JulianToHebrew(DateFrom), CurrentLang)
-                                    else if CalendarTo = 4 then Result := formatDateString(JulianToArab(DateFrom), CurrentLang)
-                                         else Result := formatDateString(JulianToChinese(DateFrom), CurrentLang)
+                          else if CalendarTo = 3 then Result := formatDateString(JulianToHebrew(DateFrom), CurrentLang)
+                               else if CalendarTo = 4 then Result := formatDateString(JulianToArab(DateFrom), CurrentLang)
+                                    else Result := formatDateString(JulianToChinese(DateFrom), CurrentLang)
                end;
                2 : begin
                           if CalendarTo = 0 then Result := formatDateString(FrenchToGregorian(DateFrom), CurrentLang)
-                          else if CalendarTo = 1 then Result := formatDateString(FrenchToJulian(DateFrom), CurrentLang)
-                               else if CalendarTo = 3 then Result := formatDateString(FrenchToHebrew(DateFrom), CurrentLang)
-                                    else if CalendarTo = 4 then Result := formatDateString(FrenchToArab(DateFrom), CurrentLang)
-                                         else Result := formatDateString(FrenchToChinese(DateFrom), CurrentLang)
+                          else if CalendarTo = 3 then Result := formatDateString(FrenchToHebrew(DateFrom), CurrentLang)
+                               else if CalendarTo = 4 then Result := formatDateString(FrenchToArab(DateFrom), CurrentLang)
+                                    else Result := formatDateString(FrenchToChinese(DateFrom), CurrentLang)
                end;
                3 : begin
                           if CalendarTo = 0 then Result := formatDateString(HebrewToGregorian(DateFrom), CurrentLang)
@@ -176,14 +174,6 @@ begin
                                                                                                                                   else if (days > '1') and (months > '1') and (years > '1') then DateDifference := years + rsYearsComma + months + rsMonthsAnd + days + rsDaysPeriod
 end;
 
-function fInt(d : Double) : Integer;
-begin
-     if d > 0 then
-        Result := floor(d)
-     else if d = floor(d) then Result := floor(d)
-          else Result := floor(d)-1;
-end;
-
 function GregorianToJulian(DateFrom : TDate) : TDate;
 begin
      if DateFrom < StrToDate('15/10/1582', 'DD/MM/YYYY') then
@@ -192,17 +182,78 @@ begin
 end;
 
 function GregorianToFrench (DateFrom : TDate) : TDate;
-var frenchMonths : TStringArray;
+var frenchMonths, frenchSansCulottides : TStringArray;
+    daysBefore, daysAfter, SansCulottides : Integer;
+    GYear, GMonth, GDay : Word;
+    FYear, FMonth, FDay : Word;
+
 begin
      frenchMonths := TStringArray.Create('Vendémiaire', 'Brumaire', 'Frimaire', 'Nivôse',
                                          'Pluviôse', 'Ventose', 'Germinal', 'Floreal',
                                          'Prairial', 'Messidor', 'Thermidor', 'Fructidor',
                                          'Complémentaire');
-    frenchCalendar = array[1..30, 1..12] of String;);
-    if (DateFrom < StrToDate('22/09/1793', 'DD/MM/YYYY')) or
-       (DateFrom >= StrToDate('01/01/1806', 'DD/MM/YYYY')) then
+     frenchSansCulottides := TStringArray.Create('Fete de la vertu', 'Fete du genie', 'Fete du travail',
+	                          'Fete de l''opinion', 'Fete des recompenses', 'Fete de la Revolution');
+
+    if (DateFrom < StrToDate('22/09/1792', 'DD/MM/YYYY')) or
+       (DateFrom >= StrToDate('31/12/1805', 'DD/MM/YYYY')) then
                  ErrMsg(emWrongFrenchDate)
-    else Result := 0; //FrenchDate(DateFrom);
+    else
+      begin
+           DecodeDate(DateFrom, GYear, GMonth, GDay);
+           daysBefore := DaysBetween(StrToDate('31/12/1805', 'DD/MM/YYY'), DateFrom);
+           daysAfter := DaysBetween(DateFrom, StrToDate('22/09/192', 'DD/MM/YYY'));
+           if (daysBefore < 0) or (daysAfter < 0) then
+               ErrMsg(emWrongFrenchDate);
+           FYear := (daysAfter + 366) div 365;
+           FDay := (daysAfter + 366) mod 365 - FindFrenchExtraDays(FYear);
+           if FDay < 1 then
+               begin
+                    Dec(FYear);
+                    Inc(FDay, 366);
+               end;
+      end;
+    Result := EncodeDate(FYear, FMonth, FDay);
+end;
+
+function FindFrenchYear(DateFrom : TDate) : Word;
+begin
+     if (DateFrom < StrToDate('21/09/1793', 'DD/MM/YYYY')) then
+        Result := 1
+     else if (DateFrom >= StrToDate('22/09/1793', 'DD/MM/YYYY')) and
+             (DateFrom < StrToDate('21/09/1794', 'DD/MM/YYYY')) then
+             Result := 2
+          else if (DateFrom >= StrToDate('22/09/1794', 'DD/MM/YYYY')) and
+                  (DateFrom < StrToDate('21/09/1795', 'DD/MM/YYYY')) then
+                  Result := 3
+               else if (DateFrom >= StrToDate('22/09/1795', 'DD/MM/YYYY')) and
+                        (DateFrom < StrToDate('21/09/1796', 'DD/MM/YYYY')) then
+                        Result := 4
+                    else if (DateFrom >= StrToDate('22/09/1796', 'DD/MM/YYYY')) and
+                            (DateFrom < StrToDate('21/09/1797', 'DD/MM/YYYY')) then
+                            Result := 5
+                         else if (DateFrom >= StrToDate('22/09/1797', 'DD/MM/YYYY')) and
+                                 (DateFrom < StrToDate('21/09/1798', 'DD/MM/YYYY')) then
+                                 Result := 6
+                              else if (DateFrom >= StrToDate('22/09/1798', 'DD/MM/YYYY')) and
+                                      (DateFrom < StrToDate('21/09/1799', 'DD/MM/YYYY')) then
+                                      Result := 7
+                                   else if (DateFrom >= StrToDate('22/09/1800', 'DD/MM/YYYY')) and
+                                           (DateFrom < StrToDate('21/09/1801', 'DD/MM/YYYY')) then
+                                           Result := 8
+                                        else if (DateFrom >= StrToDate('22/09/1801', 'DD/MM/YYYY')) and
+                                                (DateFrom < StrToDate('21/09/1802', 'DD/MM/YYYY')) then
+                                                Result := 9
+                                             else if (DateFrom >= StrToDate('22/09/1802', 'DD/MM/YYYY')) and
+                                                     (DateFrom < StrToDate('21/09/1803', 'DD/MM/YYYY')) then
+                                                     Result := 10
+                                                       else if (DateFrom >= StrToDate('22/09/1803', 'DD/MM/YYYY')) and
+                                                               (DateFrom < StrToDate('21/09/1804', 'DD/MM/YYYY')) then
+                                                               Result := 11
+                                                                 else if (DateFrom >= StrToDate('22/09/1804', 'DD/MM/YYYY')) and
+                                                                         (DateFrom < StrToDate('21/09/1805', 'DD/MM/YYYY')) then
+                                                                         Result := 12
+                                                                         else Result := 13;
 end;
 
 function GregorianToHebrew (DateFrom : TDate) : TDate;
@@ -245,14 +296,29 @@ end;
 
         end;
 
-    function FrenchToGregorian (DateFrom : TDate) : TDate;
-        begin
-             // From 22 Sep 1792 = 24/11/1793
-             if (DateFrom >= StrToDate('05/10/1793', 'DD/MM/YYYY')) or
-                (DateFrom >= StrToDate('01/01/1806', 'DD/MM/YYYY')) then
-                ErrMsg(emWrongFrenchDate)
-             else Result := 0; //FrenchDate(DateFrom);
-        end;
+function FindFrenchExtraDays(FYear : Integer) : Integer;
+begin
+     if FYear > 11 then Result := 3
+     else if FYear > 7 then Result := 2
+          else if FYear > 3 then Result := 1
+               else Result := 0;
+end;
+
+function FrenchToGregorian (DateFrom : TDate) : TDate;
+const STARTDATE = '22/09/1792';
+var FYear, FMonth, FDay : word;
+    days : Integer;
+begin
+     if (DateFrom < StrToDate('01/01/0001', 'DD/MM/YYYY')) or
+        (DateFrom > StrToDate('30/12/0014', 'DD/MM/YYYY')) then
+        ErrMsg(emWrongFrenchDate)
+     else
+       begin
+         DecodeDate(DateFrom, FYear, FMonth, FDay);
+         days := ( FYear - 1 ) * 365 + FindFrenchExtraDays(FYear) + ( FMonth - 1 ) * 30 + FDay - 1;
+		 result := StrToDate(STARTDATE) + days;
+       end;
+end;
 
     function FrenchToJulian (DateFrom : TDate) : TDate;
         begin
