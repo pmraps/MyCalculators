@@ -730,7 +730,8 @@ msgstr ""
 msgid "Convert to Celsius"
 msgstr ""
 
-#: tfrmmycalculators.btnclearentry.hint
+#: tfrmmycalculators.btnclearall.hint
+msgctxt "tfrmmycalculators.btnclearall.hint"
 msgid "Clear all entries"
 msgstr ""
 
@@ -998,6 +999,11 @@ msgstr ""
 msgid "Three"
 msgstr ""
 
+#: tfrmmycalculators.btntime.caption
+msgctxt "tfrmmycalculators.btntime.caption"
+msgid "Time"
+msgstr ""
+
 #: tfrmmycalculators.btntocalendar.hint
 msgctxt "tfrmmycalculators.btntocalendar.hint"
 msgid "Click to select the calendar to convert to"
@@ -1017,10 +1023,6 @@ msgstr ""
 
 #: tfrmmycalculators.caption
 msgid "Calculators"
-msgstr ""
-
-#: tfrmmycalculators.dteditpresent.text
-msgid "08/04/2026"
 msgstr ""
 
 #: tfrmmycalculators.lblconvertto.caption

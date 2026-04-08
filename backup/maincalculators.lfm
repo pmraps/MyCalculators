@@ -1,14 +1,14 @@
 inherited frmMyCalculators: TfrmMyCalculators
   Left = 488
-  Height = 520
+  Height = 581
   Top = 250
-  Width = 302
+  Width = 941
   HelpType = htKeyword
   HelpKeyword = 'simpleHlp'
   HelpContext = 1
   Caption = 'Calculators'
-  ClientHeight = 520
-  ClientWidth = 302
+  ClientHeight = 581
+  ClientWidth = 941
   DefaultMonitor = dmMainForm
   Font.CharSet = ANSI_CHARSET
   Font.Color = clBlack
@@ -137,7 +137,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 144
       Height = 25
       Hint = 'Equals'
-      Top = 150
+      Top = 180
       Width = 142
       TabOrder = 0
       OnClick = btnResultClick
@@ -171,22 +171,22 @@ inherited frmMyCalculators: TfrmMyCalculators
       TabOrder = 3
       OnClick = btnMemoryMinus3Click
     end
-    object btnClearEntry: TButton
+    object btnClearAll: TButton
       Left = 0
       Height = 25
       Hint = 'Clear all entries'
-      Top = 0
+      Top = 30
       Width = 70
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
-      OnClick = btnClearEntryClick
+      OnClick = btnClearAllClick
     end
     object btnBackspace: TButton
       Left = 0
       Height = 25
       Hint = 'Erase a digit'
-      Top = 30
+      Top = 60
       Width = 70
       Font.CharSet = SYMBOL_CHARSET
       Font.Height = -16
@@ -202,7 +202,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 72
       Height = 25
       Hint = 'Invert the signal'
-      Top = 30
+      Top = 60
       Width = 70
       TabOrder = 6
       OnClick = btnPlusMinusClick
@@ -211,7 +211,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 144
       Height = 25
       Hint = 'Division remainder'
-      Top = 30
+      Top = 60
       Width = 70
       Caption = 'REM'
       TabOrder = 7
@@ -221,7 +221,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 216
       Height = 25
       Hint = 'Subtract'
-      Top = 60
+      Top = 90
       Width = 70
       TabOrder = 8
       OnClick = btnMinusClick
@@ -230,7 +230,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 216
       Height = 25
       Hint = 'Add'
-      Top = 30
+      Top = 60
       Width = 70
       TabOrder = 9
       OnClick = btnAddClick
@@ -239,7 +239,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 144
       Height = 25
       Hint = 'Nine'
-      Top = 60
+      Top = 90
       Width = 70
       TabOrder = 10
       OnClick = btnNineClick
@@ -248,7 +248,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 72
       Height = 25
       Hint = 'Eight'
-      Top = 60
+      Top = 90
       Width = 70
       TabOrder = 11
       OnClick = btnEightClick
@@ -257,7 +257,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Hint = 'Seven'
-      Top = 60
+      Top = 90
       Width = 70
       ParentShowHint = False
       ShowHint = True
@@ -268,7 +268,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Hint = 'Four'
-      Top = 90
+      Top = 120
       Width = 70
       ParentShowHint = False
       ShowHint = True
@@ -279,7 +279,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 72
       Height = 25
       Hint = 'Five'
-      Top = 90
+      Top = 120
       Width = 70
       TabOrder = 14
       OnClick = btnFiveClick
@@ -288,7 +288,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 144
       Height = 25
       Hint = 'Six'
-      Top = 90
+      Top = 120
       Width = 70
       TabOrder = 15
       OnClick = btnSixClick
@@ -297,7 +297,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 216
       Height = 25
       Hint = 'Multiply'
-      Top = 90
+      Top = 120
       Width = 70
       TabOrder = 16
       OnClick = btnMultiplyClick
@@ -306,7 +306,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Hint = 'One'
-      Top = 120
+      Top = 150
       Width = 70
       ParentShowHint = False
       ShowHint = True
@@ -317,7 +317,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 72
       Height = 25
       Hint = 'Two'
-      Top = 120
+      Top = 150
       Width = 70
       TabOrder = 18
       OnClick = btnTwoClick
@@ -326,7 +326,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 144
       Height = 25
       Hint = 'Three'
-      Top = 120
+      Top = 150
       Width = 70
       TabOrder = 19
       OnClick = btnThreeClick
@@ -335,7 +335,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 216
       Height = 25
       Hint = 'Divide'
-      Top = 120
+      Top = 150
       Width = 70
       TabOrder = 20
       OnClick = btnDivideClick
@@ -344,7 +344,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Hint = 'Zero'
-      Top = 150
+      Top = 180
       Width = 70
       ParentShowHint = False
       ShowHint = True
@@ -355,16 +355,47 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 72
       Height = 25
       Hint = 'Decimal point'
-      Top = 150
+      Top = 180
       Width = 70
       TabOrder = 22
       OnClick = btnCommaClick
+    end
+    object btnTime: TButton
+      Left = 0
+      Height = 25
+      Top = 0
+      Width = 70
+      Caption = 'Time'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 23
+      OnClick = btnTimeClick
+    end
+    object btnClearLastEntry: TButton
+      Left = 72
+      Height = 25
+      Top = 30
+      Width = 70
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 24
+      OnClick = btnClearLastEntryClick
     end
   end
   object pnlTrigonometry: TPanel[3]
     Left = 8
     Height = 208
-    Top = 88
+    Top = 344
     Width = 288
     BevelOuter = bvNone
     ClientHeight = 208
@@ -384,10 +415,10 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnSinClick
     end
     object btnSinH: TButton
-      Left = 2
+      Left = 72
       Height = 25
       Hint = 'Calculate the hyperbolic sine'
-      Top = 30
+      Top = 0
       Width = 70
       Caption = 'SinH'
       ParentShowHint = False
@@ -396,10 +427,10 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnSinHClick
     end
     object btnASin: TButton
-      Left = 2
+      Left = 144
       Height = 25
       Hint = 'Calculate the arch sine'
-      Top = 60
+      Top = 0
       Width = 70
       Caption = 'ASin'
       ParentShowHint = False
@@ -408,19 +439,19 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnASinClick
     end
     object btnCos: TButton
-      Left = 72
+      Left = 2
       Height = 25
       Hint = 'Calculate the cosine'
-      Top = 0
+      Top = 30
       Width = 70
       TabOrder = 3
       OnClick = btnCosClick
     end
     object btnASinH: TButton
-      Left = 2
+      Left = 216
       Height = 25
       Hint = 'Calculate the hyperbolic arch sine'
-      Top = 90
+      Top = 0
       Width = 70
       Caption = 'AsinH'
       ParentShowHint = False
@@ -429,7 +460,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnASinHClick
     end
     object btnSecant: TButton
-      Left = 2
+      Left = 0
       Height = 25
       Hint = 'Calculate the secant'
       Top = 120
@@ -440,10 +471,10 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnSecantClick
     end
     object btnCosecant: TButton
-      Left = 2
+      Left = 72
       Height = 25
       Hint = 'Calculte the cosecant'
-      Top = 150
+      Top = 120
       Width = 70
       TabOrder = 6
       OnClick = btnCosecantClick
@@ -465,19 +496,19 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnCosHClick
     end
     object btnACos: TButton
-      Left = 72
+      Left = 144
       Height = 25
       Hint = 'Calculate the arch cosine'
-      Top = 60
+      Top = 30
       Width = 70
       TabOrder = 8
       OnClick = btnACosClick
     end
     object btnACosH: TButton
-      Left = 72
+      Left = 216
       Height = 25
       Hint = 'Calculate the hyperbolic arch cosine'
-      Top = 90
+      Top = 30
       Width = 70
       TabOrder = 9
       OnClick = btnACosHClick
@@ -486,7 +517,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 72
       Height = 25
       Hint = 'Convert degrees to radians'
-      Top = 120
+      Top = 150
       Width = 70
       Caption = 'Deg-Rad'
       Font.CharSet = ANSI_CHARSET
@@ -499,7 +530,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnDegreesRadiansClick
     end
     object btnDegreesGradians: TButton
-      Left = 72
+      Left = 144
       Height = 25
       Hint = 'Convert degrees to gradians'
       Top = 150
@@ -515,37 +546,37 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnDegreesGradiansClick
     end
     object btnTan: TButton
-      Left = 144
+      Left = 0
       Height = 25
       Hint = 'Calculate the tangent'
-      Top = 0
+      Top = 60
       Width = 70
       TabOrder = 12
       OnClick = btnTanClick
     end
     object btnCot: TButton
-      Left = 216
+      Left = 0
       Height = 25
       Hint = 'Calculate the cotangent'
-      Top = 0
+      Top = 90
       Width = 70
       TabOrder = 13
       OnClick = btnCotClick
     end
     object btnTanH: TButton
-      Left = 144
+      Left = 72
       Height = 25
       Hint = 'Calculate the hyperbolic tangent'
-      Top = 30
+      Top = 60
       Width = 70
       TabOrder = 14
       OnClick = btnTanHClick
     end
     object btnCotH: TButton
-      Left = 216
+      Left = 72
       Height = 25
       Hint = 'Calculate the hyperbolic cotangent'
-      Top = 30
+      Top = 90
       Width = 70
       TabOrder = 15
       OnClick = btnCotHClick
@@ -560,19 +591,19 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnATanClick
     end
     object btnATanH: TButton
-      Left = 144
+      Left = 216
       Height = 25
       Hint = 'Calculte the hyperbolic arch tangent'
-      Top = 88
+      Top = 60
       Width = 70
       TabOrder = 17
       OnClick = btnATanHClick
     end
     object btnRadiansDegrees: TButton
-      Left = 144
+      Left = 72
       Height = 25
       Hint = 'Convert radians to degrees'
-      Top = 120
+      Top = 180
       Width = 70
       Caption = 'Rad-Deg'
       Font.CharSet = ANSI_CHARSET
@@ -585,7 +616,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnRadiansDegreesClick
     end
     object btnRadiansGradians: TButton
-      Left = 144
+      Left = 216
       Height = 25
       Hint = 'Convert radians to gradians'
       Top = 150
@@ -600,10 +631,10 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = btnRadiansGradiansClick
     end
     object btnACot: TButton
-      Left = 216
+      Left = 144
       Height = 25
       Hint = 'Calculate the arch cotangent'
-      Top = 60
+      Top = 90
       Width = 70
       TabOrder = 20
       OnClick = btnACotClick
@@ -612,16 +643,16 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 216
       Height = 25
       Hint = 'Calculate the hypothenuse of a right triangle'
-      Top = 88
+      Top = 90
       Width = 70
       TabOrder = 21
       OnClick = btnHypothenuseClick
     end
     object btnGradiansDegrees: TButton
-      Left = 216
+      Left = 144
       Height = 25
       Hint = 'Convert gradians to degrees'
-      Top = 120
+      Top = 180
       Width = 70
       Caption = 'Grad-Deg'
       Font.CharSet = ANSI_CHARSET
@@ -637,7 +668,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 216
       Height = 25
       Hint = 'Convert gradians to radians'
-      Top = 150
+      Top = 180
       Width = 70
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
@@ -648,9 +679,29 @@ inherited frmMyCalculators: TfrmMyCalculators
       TabOrder = 23
       OnClick = btnGradiansRadiansClick
     end
+    object btnCyclesToRadians: TButton
+      Left = 0
+      Height = 25
+      Hint = 'Convert cycles to radians'
+      Top = 150
+      Width = 70
+      Caption = 'Cyc-Rad'
+      TabOrder = 24
+      OnClick = btnCyclesToRadiansClick
+    end
+    object btnRadiansToCycles: TButton
+      Left = 0
+      Height = 25
+      Hint = 'Convert radians to cycles'
+      Top = 180
+      Width = 70
+      Caption = 'RadCyc'
+      TabOrder = 25
+      OnClick = btnRadiansToCyclesClick
+    end
   end
   object pnlFunctions: TPanel[4]
-    Left = 8
+    Left = 648
     Height = 264
     Top = 88
     Width = 288
@@ -765,7 +816,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Hint = 'Convert to Celsius'
-      Top = 120
+      Top = 150
       Width = 70
       ParentShowHint = False
       ShowHint = True
@@ -792,7 +843,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Hint = 'Calculate the exponential'
-      Top = 88
+      Top = 90
       Width = 70
       TabOrder = 11
       OnClick = btnExponentialClick
@@ -801,7 +852,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 72
       Height = 25
       Hint = 'Calculate logarythms in different bases'
-      Top = 88
+      Top = 90
       Width = 70
       TabOrder = 12
       OnClick = btnLogClick
@@ -810,7 +861,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 0
       Height = 25
       Hint = 'Convert to Fahrenheit'
-      Top = 150
+      Top = 180
       Width = 70
       TabOrder = 13
       OnClick = btnFahrenheitClick
@@ -849,7 +900,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 216
       Height = 25
       Hint = 'Convert hexadecimal to different base'
-      Top = 88
+      Top = 90
       Width = 70
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
@@ -860,99 +911,50 @@ inherited frmMyCalculators: TfrmMyCalculators
       TabOrder = 16
       OnClick = btnHexToBaseClick
     end
-    object btnCyclesToRadians: TButton
-      Left = 72
-      Height = 25
-      Hint = 'Convert cycles to radians'
-      Top = 120
-      Width = 70
-      Caption = 'Cyc-Rad'
-      TabOrder = 17
-      OnClick = btnCyclesToRadiansClick
-    end
-    object btnRadiansToCycles: TButton
-      Left = 72
-      Height = 25
-      Hint = 'Convert radians to cycles'
-      Top = 150
-      Width = 70
-      Caption = 'RadCyc'
-      TabOrder = 18
-      OnClick = btnRadiansToCyclesClick
-    end
     object btnKgToLbs: TButton
-      Left = 144
+      Left = 72
       Height = 25
       Hint = 'Convert Kilograms to Pounds'
-      Top = 120
+      Top = 150
       Width = 70
-      TabOrder = 19
+      TabOrder = 17
       OnClick = btnKgToLbsClick
     end
     object btnLbsToKg: TButton
+      Left = 72
+      Height = 25
+      Top = 180
+      Width = 70
+      TabOrder = 18
+      OnClick = btnLbsToKgClick
+    end
+    object btnLToGal: TButton
       Left = 144
       Height = 25
       Top = 150
       Width = 70
-      TabOrder = 20
-      OnClick = btnLbsToKgClick
-    end
-    object btnLToGal: TButton
-      Left = 216
-      Height = 25
-      Top = 120
-      Width = 70
-      TabOrder = 21
+      TabOrder = 19
       OnClick = btnLToGalClick
     end
     object btnGalToL: TButton
-      Left = 216
+      Left = 144
       Height = 25
-      Top = 150
+      Top = 180
       Width = 70
-      TabOrder = 22
+      TabOrder = 20
       OnClick = btnGalToLClick
     end
   end
   object pnlDatulator: TPanel[5]
-    Left = 8
-    Height = 392
+    Left = 320
+    Height = 256
     Top = 88
     Width = 288
     BevelOuter = bvNone
-    ClientHeight = 392
+    ClientHeight = 256
     ClientWidth = 288
     ParentBackground = False
     TabOrder = 5
-    object DTPickerStartDate: TDateTimePicker
-      Left = 192
-      Height = 25
-      Top = 120
-      Width = 93
-      CenturyFrom = 1941
-      MaxDate = 2958465
-      MinDate = -53780
-      Font.CharSet = ANSI_CHARSET
-      Font.Height = -13
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 0
-      TrailingSeparator = False
-      TextForNullDate = ''
-      LeadingZeros = True
-      Kind = dtkDate
-      TimeFormat = tf24
-      TimeDisplay = tdHMS
-      DateMode = dmComboBox
-      Date = 46107
-      Time = 0.325277129632013
-      UseDefaultSeparators = True
-      HideDateTimeParts = []
-      MonthNames = 'Long'
-      OnChange = DTPickerStartDateChange
-    end
     object lblStartDate: TLabel
       Left = 0
       Height = 25
@@ -968,40 +970,11 @@ inherited frmMyCalculators: TfrmMyCalculators
       Layout = tlCenter
       ParentFont = False
     end
-    object DTPickerEndDate: TDateTimePicker
-      Left = 192
-      Height = 25
-      Top = 150
-      Width = 93
-      CenturyFrom = 1941
-      MaxDate = 2958465
-      MinDate = -53780
-      Font.CharSet = ANSI_CHARSET
-      Font.Height = -13
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 1
-      TrailingSeparator = False
-      TextForNullDate = ''
-      LeadingZeros = True
-      Kind = dtkDate
-      TimeFormat = tf24
-      TimeDisplay = tdHMS
-      DateMode = dmComboBox
-      Date = 46107
-      Time = 0.325277129632013
-      UseDefaultSeparators = True
-      HideDateTimeParts = []
-      MonthNames = 'Long'
-      OnChange = DTPickerEndDateChange
-    end
     object lblEndDate: TLabel
       Left = 0
       Height = 25
       Top = 150
-      Width = 170
+      Width = 162
       AutoSize = False
       Caption = 'End date'
       Font.CharSet = ANSI_CHARSET
@@ -1021,24 +994,24 @@ inherited frmMyCalculators: TfrmMyCalculators
       Caption = 'From'
       Layout = tlCenter
     end
-    object StTxtCalendarConversion: TStaticText
+    object StTxtCalendarOutput: TStaticText
       Left = 0
       Height = 25
-      Top = 88
+      Top = 90
       Width = 286
       Alignment = taCenter
       BorderStyle = sbsSunken
       Color = clGreen
       ParentColor = False
-      TabOrder = 2
+      TabOrder = 0
     end
     object StTxtDateCalculation: TStaticText
       Left = 0
       Height = 25
-      Top = 176
+      Top = 180
       Width = 286
       BorderStyle = sbsSunken
-      TabOrder = 3
+      TabOrder = 1
     end
     object lblToCalendar: TLabel
       Left = 224
@@ -1059,7 +1032,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Images = ImageList
       ImageIndex = 0
       PopupMenu = ppMenuCalTo
-      TabOrder = 4
+      TabOrder = 2
       OnClick = btnToCalendarClick
     end
     object btnFromCalendar: TBitBtn
@@ -1071,7 +1044,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Images = ImageList
       ImageIndex = 0
       PopupMenu = ppMenuCalTo
-      TabOrder = 5
+      TabOrder = 3
       OnClick = btnFromCalendarClick
     end
     object btnConvertDate: TButton
@@ -1080,7 +1053,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Top = 60
       Width = 75
       Caption = 'Convert'
-      TabOrder = 6
+      TabOrder = 4
       OnClick = btnConvertDateClick
     end
     object dtEditPresent: TDateEdit
@@ -1090,20 +1063,17 @@ inherited frmMyCalculators: TfrmMyCalculators
       Width = 120
       CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
       DefaultToday = True
-      DateOrder = doDMY
-      DateFormat = 'DD/MM/YYYY'
+      DateOrder = doNone
       ButtonWidth = 23
       Alignment = taCenter
       AutoSize = False
       NumGlyphs = 1
-      Images = ImageList
-      MaxLength = 10
-      TabOrder = 7
+      MaxLength = 0
+      TabOrder = 5
       Spacing = 0
-      Text = '08/04/2026'
     end
-    object StTxtCalendarConversion1: TStaticText
-      Left = -1
+    object StTxtCalendarInput: TStaticText
+      Left = 0
       Height = 25
       Top = 30
       Width = 286
@@ -1111,7 +1081,36 @@ inherited frmMyCalculators: TfrmMyCalculators
       BorderStyle = sbsSunken
       Color = clGreen
       ParentColor = False
+      TabOrder = 6
+    end
+    object dtEditStartDate: TDateEdit
+      Left = 166
+      Height = 25
+      Top = 120
+      Width = 120
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 7
+      Spacing = 0
+      OnChange = dtEditStartDateChange
+    end
+    object dtEditEndDate: TDateEdit
+      Left = 166
+      Height = 25
+      Top = 150
+      Width = 120
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DateOrder = doNone
+      ButtonWidth = 23
+      AutoSize = False
+      NumGlyphs = 1
+      MaxLength = 0
       TabOrder = 8
+      Spacing = 0
+      OnChange = dtEditEndDateChange
     end
   end
   object SpBtnMainMenu: TSpeedButton[6]
@@ -1130,8 +1129,8 @@ inherited frmMyCalculators: TfrmMyCalculators
   end
   object ppMenuCalTo: TPopupMenu[7]
     Images = ImageList
-    Left = 8
-    Top = 360
+    Left = 328
+    Top = 32
     object ppMenuGregorian: TMenuItem
       Caption = 'Gregorian'
       ImageIndex = 0
@@ -1164,8 +1163,8 @@ inherited frmMyCalculators: TfrmMyCalculators
     end
   end
   object ImageList: TImageList[8]
-    Left = 232
-    Top = 360
+    Left = 576
+    Top = 32
     Bitmap = {
       4C7A1200000010000000100000000E1B00000000000078DAED9A07541449D7F7
       5B862861A687216710C30202828A0A8228822B625E13AE983083098C88011557
@@ -1391,8 +1390,8 @@ inherited frmMyCalculators: TfrmMyCalculators
     Images = ImageList
     AutoPopup = False
     OnPopup = ppMainMenuPopup
-    Left = 152
-    Top = 360
+    Left = 504
+    Top = 32
     object ppMnuMainSettings: TMenuItem
       OnClick = mnuPrefLangClick
     end
@@ -1408,8 +1407,8 @@ inherited frmMyCalculators: TfrmMyCalculators
   end
   object ppMenuCalFrom: TPopupMenu[10]
     Images = ImageList
-    Left = 80
-    Top = 360
+    Left = 416
+    Top = 32
     object ppMenuGregorian1: TMenuItem
       Caption = 'Gregorian'
       ImageIndex = 0

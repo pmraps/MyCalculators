@@ -741,7 +741,8 @@ msgstr "Converter binários entre diferentes bases"
 msgid "Convert to Celsius"
 msgstr "Converter para centígrados"
 
-#: tfrmmycalculators.btnclearentry.hint
+#: tfrmmycalculators.btnclearall.hint
+msgctxt "tfrmmycalculators.btnclearall.hint"
 msgid "Clear all entries"
 msgstr "Limpar todas as entradas"
 
@@ -1009,9 +1010,12 @@ msgstr "Constante TAU"
 msgid "Three"
 msgstr "Três"
 
+#: tfrmmycalculators.btntime.caption
+msgctxt "tfrmmycalculators.btntime.caption"
+msgid "Time"
+msgstr "Horas"
+
 #: tfrmmycalculators.btntocalendar.hint
-#, fuzzy
-#| msgid "Click to select the calendar to convert from"
 msgctxt "tfrmmycalculators.btntocalendar.hint"
 msgid "Click to select the calendar to convert to"
 msgstr "Clique para seleccionar o calendário de onde converter"
@@ -1031,10 +1035,6 @@ msgstr "Zero"
 #: tfrmmycalculators.caption
 msgid "Calculators"
 msgstr "Calculadoras"
-
-#: tfrmmycalculators.dteditpresent.text
-msgid "08/04/2026"
-msgstr ""
 
 #: tfrmmycalculators.lblconvertto.caption
 msgctxt "tfrmmycalculators.lblconvertto.caption"
@@ -1151,4 +1151,3 @@ msgstr "Idioma"
 msgctxt "tfrmpreferences.lbltheme.caption"
 msgid "Theme"
 msgstr "Tema"
-

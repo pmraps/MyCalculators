@@ -8,7 +8,7 @@ uses LazLogger, SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
     Graphics, Classes, Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math,
     baseConvert, MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator,
     EditBtn, LocalizedForms, myResourceStrings, gettext, ErrorCatching,
-    mydatefunctions, FileUtil;
+    mydatefunctions, FileUtil, Dos;
 
 type
     { procedure ColourChange;
@@ -28,7 +28,7 @@ type
       btnATan: TButton;
       btnATanH: TButton;
       btnBackspace: TButton;
-      btnClearEntry: TButton;
+      btnClearAll: TButton;
       btnCos: TButton;
       btnCosecant: TButton;
       btnCosH: TButton;
@@ -94,11 +94,11 @@ type
       btnLToGal: TButton;
       btnGalToL: TButton;
       btnConvertDate: TButton;
+      btnTime: TButton;
+      btnClearLastEntry: TButton;
+      dtEditEndDate: TDateEdit;
+      dtEditStartDate: TDateEdit;
       dtEditPresent: TDateEdit;
-      DTPickerStartDate: TDateTimePicker;
-      DTPickerEndDate: TDateTimePicker;
-      DtTPickerEndDate: TDateTimePicker;
-      DTPickerToCalendar: TDateTimePicker;
       ImageList: TImageList;
       lblToCalendar: TLabel;
       lblConvertTo: TLabel;
@@ -133,8 +133,8 @@ type
       rdBtnFunctions: TRadioButton;
       rdBtnSimpleCalculator: TRadioButton;
       SpBtnMainMenu: TSpeedButton;
-      StTxtCalendarConversion: TStaticText;
-      StTxtCalendarConversion1: TStaticText;
+      StTxtCalendarOutput: TStaticText;
+      StTxtCalendarInput: TStaticText;
       StTxtDateCalculation: TStaticText;
       txtFieldResult: TEdit;
       procedure btnACosClick(Sender: TObject);
@@ -148,12 +148,13 @@ type
       procedure btnBackspaceClick(Sender: TObject);
       procedure btnBinToBaseClick(Sender: TObject);
       procedure btnCelsiusClick(Sender: TObject);
+      procedure btnClearLastEntryClick(Sender: TObject);
       procedure btnCosecantClick(Sender: TObject);
       procedure btnCosHClick(Sender: TObject);
       procedure btnCotHClick(Sender: TObject);
       procedure btnCotClick(Sender: TObject);
       procedure btnDecToBaseClick(Sender: TObject);
-      procedure btnClearEntryClick(Sender: TObject);
+      procedure btnClearAllClick(Sender: TObject);
       procedure btnCommaClick(Sender: TObject);
       procedure btnCosClick(Sender: TObject);
       procedure btnCubeNum1Click(Sender: TObject);
@@ -208,6 +209,7 @@ type
       procedure btnTAUClick(Sender: TObject);
       procedure btnTenRaisedTo1Click(Sender: TObject);
       procedure btnThreeClick(Sender: TObject);
+      procedure btnTimeClick(Sender: TObject);
       procedure btnToCalendarClick(Sender: TObject);
       procedure btnTwoClick(Sender: TObject);
       procedure btnXRootClick(Sender: TObject);
@@ -215,8 +217,8 @@ type
       procedure btnCyclesToRadiansClick(Sender: TObject);
       procedure btnRadiansToCyclesClick(Sender: TObject);
       procedure btnConvertDateClick(Sender: TObject);
-      procedure DTPickerEndDateChange(Sender: TObject);
-      procedure DTPickerStartDateChange(Sender: TObject);
+      procedure dtEditEndDateChange(Sender: TObject);
+      procedure dtEditStartDateChange(Sender: TObject);
       procedure mnuCreditsClick(Sender: TObject);
       procedure mnuExitClick(Sender: TObject);
       procedure mnuHelpClick(Sender: TObject);
@@ -273,13 +275,16 @@ implementation
 procedure TfrmMyCalculators.FormCreate(Sender: TObject);
 begin
      DTEditPresent.Date := Now();
-     DTPickerStartDate.Date := Now();
-     DTPickerEndDate.Date := Now();
+     dtEditPresent.Text := DateToStr(dtEditPresent.Date);
+     dtEditStartDate.Date := Now();
+     dtEditStartDate.Text := DateToStr(dtEditStartDate.Date);
+     dtEditEndDate.Date := Now();
+     dtEditEndDate.Text := DateToStr(dtEditEndDate.Date);
      UpdateTranslation(GetSystemLanguage);     // Default to system language
      CurrentLang := GetSystemLanguage;
      InitializeCaptions;                       // Avoid button captions in translation .po files
      ReturnToSimplePanel;
-     StTxtCalendarConversion.Caption := '';    // Clear the final string field
+     StTxtCalendarOutput.Caption := '';    // Clear the final string field
 
      InitLanguagesMenu;            // wp: Added
 end;
@@ -350,6 +355,13 @@ begin
     else txtFieldResult.Text := txtFieldResult.Text + '3';
 end;
 
+procedure TfrmMyCalculators.btnTimeClick(Sender: TObject);
+var Hour, Minute, Second, Milisec : word;
+begin
+    GetTime(Hour, Minute);
+    txtFieldResult.Text := Hour.ToString + ':' + Minute.ToString;
+end;
+
 procedure TfrmMyCalculators.btnToCalendarClick(Sender: TObject);
 begin
     ppMenuCalTo.PopUp;
@@ -389,20 +401,20 @@ end;
 
 procedure TfrmMyCalculators.btnConvertDateClick(Sender: TObject);
 begin
-     StTxtCalendarConversion.Caption := CalendarConversion(DTEditPresent.Date,
+     StTxtCalendarOutput.Caption := CalendarConversion(DTEditPresent.Date,
                                                            btnFromCalendar.ImageIndex,
                                                            btnToCalendar.ImageIndex,
                                                            CurrentLang);
 end;
 
-procedure TfrmMyCalculators.DTPickerEndDateChange(Sender: TObject);
+procedure TfrmMyCalculators.dtEditEndDateChange(Sender: TObject);
 begin
-    StTxtDateCalculation.Caption := DateDifference(DTPickerStartDate.Date, DTPickerEndDate.Date);
+    StTxtDateCalculation.Caption := DateDifference(dtEditStartDate.Date, dtEditEndDate.Date);
 end;
 
-procedure TfrmMyCalculators.DTPickerStartDateChange(Sender: TObject);
+procedure TfrmMyCalculators.dtEditStartDateChange(Sender: TObject);
 begin
-    StTxtDateCalculation.Caption := DateDifference(DTPickerStartDate.Date, DTPickerEndDate.Date);
+    StTxtDateCalculation.Caption := DateDifference(dtEditStartDate.Date, dtEditEndDate.Date);
 end;
 
 procedure TfrmMyCalculators.mnuCreditsClick(Sender: TObject);
@@ -558,6 +570,11 @@ begin
      ReturnToSimplePanel;
 end;
 
+procedure TfrmMyCalculators.btnClearLastEntryClick(Sender: TObject);
+begin
+    txtFieldResult.Text := '';
+end;
+
 procedure TfrmMyCalculators.btnCosecantClick(Sender: TObject);
 begin
     txtFieldResult.Text := FloatToStr(coSecant(StrToFloat(txtFieldResult.Text)));
@@ -646,12 +663,13 @@ begin
   ReturnToSimplePanel;
 end;
 
-procedure TfrmMyCalculators.btnClearEntryClick(Sender: TObject);
+procedure TfrmMyCalculators.btnClearAllClick(Sender: TObject);
 { To clear only the latest entry, another button should be added }
 begin
     txtFieldResult.Text := '';
     Num1 := '0';
     Num2 := '0';
+    Operators := '';
     Result := '0';
 end;
 
@@ -1112,7 +1130,8 @@ begin
      frmMyCalculators.btnMemoryClear.Caption := 'MC';
      frmMyCalculators.btnMemoryPlus.Caption := 'M+';
      frmMyCalculators.btnMemoryMinus.Caption := 'M-';
-     frmMyCalculators.btnClearEntry.Caption := 'CA';
+     frmMyCalculators.btnClearAll.Caption := 'CA';
+     frmMyCalculators.btnClearLastEntry.Caption := 'CE';
      frmMyCalculators.btnBackspace.Caption := '';
      frmMyCalculators.btnPlusMinus.Caption := '±';
      frmMyCalculators.btnRemainder.Caption := rsStrRemainder;

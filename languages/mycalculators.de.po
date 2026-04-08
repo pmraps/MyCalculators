@@ -740,7 +740,8 @@ msgstr "Binärzahlen in eine andere Zahlensystem umrechnen"
 msgid "Convert to Celsius"
 msgstr "Nach Grad Celsius umrechnen"
 
-#: tfrmmycalculators.btnclearentry.hint
+#: tfrmmycalculators.btnclearall.hint
+msgctxt "tfrmmycalculators.btnclearall.hint"
 msgid "Clear all entries"
 msgstr "Alle Einträge löschen"
 
@@ -1008,9 +1009,12 @@ msgstr "Konstante TAU"
 msgid "Three"
 msgstr "Drei"
 
+#: tfrmmycalculators.btntime.caption
+msgctxt "tfrmmycalculators.btntime.caption"
+msgid "Time"
+msgstr "Heuer"
+
 #: tfrmmycalculators.btntocalendar.hint
-#, fuzzy
-#| msgid "Click to select the calendar to convert from"
 msgctxt "tfrmmycalculators.btntocalendar.hint"
 msgid "Click to select the calendar to convert to"
 msgstr "Klicken Sie hier, um den Kalender auszuwählen, aus dem konvertiert werden soll"
@@ -1030,10 +1034,6 @@ msgstr "Null"
 #: tfrmmycalculators.caption
 msgid "Calculators"
 msgstr "Rechner"
-
-#: tfrmmycalculators.dteditpresent.text
-msgid "08/04/2026"
-msgstr ""
 
 #: tfrmmycalculators.lblconvertto.caption
 msgctxt "tfrmmycalculators.lblconvertto.caption"
@@ -1150,4 +1150,3 @@ msgstr "Sprache"
 msgctxt "tfrmpreferences.lbltheme.caption"
 msgid "Theme"
 msgstr "Thema"
-
