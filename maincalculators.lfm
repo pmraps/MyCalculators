@@ -17,9 +17,11 @@ inherited frmMyCalculators: TfrmMyCalculators
   Font.Quality = fqDraft
   Font.Style = [fsBold]
   HelpFile = 'MyCalculatorsHlp.txt'
+  KeyPreview = True
   Position = poDesktopCenter
   ShowHint = True
   OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
   object txtFieldResult: TEdit[0]
     Left = 8
     Height = 38
@@ -133,14 +135,14 @@ inherited frmMyCalculators: TfrmMyCalculators
     ClientWidth = 288
     ParentBackground = False
     TabOrder = 2
-    object btnResult: TButton
+    object btnCalculatorEquals: TButton
       Left = 144
       Height = 25
       Hint = 'Equals'
       Top = 180
       Width = 142
       TabOrder = 0
-      OnClick = btnResultClick
+      OnClick = btnCalculatorEqualsClick
     end
     object btnMemoryClear: TButton
       Left = 72
@@ -365,7 +367,6 @@ inherited frmMyCalculators: TfrmMyCalculators
       Height = 25
       Top = 0
       Width = 70
-      Caption = 'Time'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clRed
       Font.Height = -13
@@ -374,7 +375,6 @@ inherited frmMyCalculators: TfrmMyCalculators
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 23
-      OnClick = btnTimeClick
     end
     object btnClearLastEntry: TButton
       Left = 72
@@ -1127,7 +1127,38 @@ inherited frmMyCalculators: TfrmMyCalculators
     PopupMenu = ppMainMenu
     OnClick = SpBtnMainMenuClick
   end
-  object ppMenuCalTo: TPopupMenu[7]
+  object lblClock: TLabel[7]
+    Left = 216
+    Height = 25
+    Top = 0
+    Width = 80
+    Alignment = taRightJustify
+    AutoSize = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Layout = tlCenter
+    ParentFont = False
+  end
+  object lblDate: TLabel[8]
+    Left = 72
+    Height = 25
+    Top = 0
+    Width = 136
+    AutoSize = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Layout = tlCenter
+    ParentFont = False
+  end
+  object ppMenuCalTo: TPopupMenu[9]
     Images = ImageList
     OnPopup = ppMenuCalToPopup
     Left = 328
@@ -1157,7 +1188,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = ppMenuArabClick
     end
   end
-  object ImageList: TImageList[8]
+  object ImageList: TImageList[10]
     Left = 576
     Top = 32
     Bitmap = {
@@ -1381,7 +1412,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       ECCA375E
     }
   end
-  object ppMainMenu: TPopupMenu[9]
+  object ppMainMenu: TPopupMenu[11]
     Images = ImageList
     AutoPopup = False
     OnPopup = ppMainMenuPopup
@@ -1400,7 +1431,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       OnClick = mnuExitClick
     end
   end
-  object ppMenuCalFrom: TPopupMenu[10]
+  object ppMenuCalFrom: TPopupMenu[12]
     Images = ImageList
     OnPopup = ppMenuCalFromPopup
     Left = 416
@@ -1429,5 +1460,10 @@ inherited frmMyCalculators: TfrmMyCalculators
       ImageIndex = 5
       OnClick = ppMenuArab1Click
     end
+  end
+  object Timer1: TTimer[13]
+    OnTimer = Timer1Timer
+    Left = 376
+    Top = 32
   end
 end

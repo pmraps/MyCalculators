@@ -764,6 +764,11 @@ msgstr ""
 msgid "Convert binary to different base"
 msgstr ""
 
+#: tfrmmycalculators.btncalculatorequals.hint
+msgctxt "tfrmmycalculators.btncalculatorequals.hint"
+msgid "Equals"
+msgstr ""
+
 #: tfrmmycalculators.btncelsius.hint
 msgid "Convert to Celsius"
 msgstr ""
@@ -987,10 +992,6 @@ msgstr ""
 msgid "Division remainder"
 msgstr ""
 
-#: tfrmmycalculators.btnresult.hint
-msgid "Equals"
-msgstr ""
-
 #: tfrmmycalculators.btnsecant.hint
 msgid "Calculate the secant"
 msgstr ""
@@ -1035,11 +1036,6 @@ msgstr ""
 
 #: tfrmmycalculators.btnthree.hint
 msgid "Three"
-msgstr ""
-
-#: tfrmmycalculators.btntime.caption
-msgctxt "tfrmmycalculators.btntime.caption"
-msgid "Time"
 msgstr ""
 
 #: tfrmmycalculators.btntocalendar.hint

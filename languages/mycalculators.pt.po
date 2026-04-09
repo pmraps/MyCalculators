@@ -775,6 +775,12 @@ msgstr "Apagar um algarismo"
 msgid "Convert binary to different base"
 msgstr "Converter binários entre diferentes bases"
 
+#: tfrmmycalculators.btncalculatorequals.hint
+#, fuzzy
+msgctxt "tfrmmycalculators.btncalculatorequals.hint"
+msgid "Equals"
+msgstr "Igual a"
+
 #: tfrmmycalculators.btncelsius.hint
 msgid "Convert to Celsius"
 msgstr "Converter para centígrados"
@@ -998,10 +1004,6 @@ msgstr "Resto"
 msgid "Division remainder"
 msgstr "Resto da divisão"
 
-#: tfrmmycalculators.btnresult.hint
-msgid "Equals"
-msgstr "Igual a"
-
 #: tfrmmycalculators.btnsecant.hint
 msgid "Calculate the secant"
 msgstr "Calcular a secante"
@@ -1047,11 +1049,6 @@ msgstr "Constante TAU"
 #: tfrmmycalculators.btnthree.hint
 msgid "Three"
 msgstr "Três"
-
-#: tfrmmycalculators.btntime.caption
-msgctxt "tfrmmycalculators.btntime.caption"
-msgid "Time"
-msgstr "Horas"
 
 #: tfrmmycalculators.btntocalendar.hint
 msgctxt "tfrmmycalculators.btntocalendar.hint"
@@ -1124,3 +1121,4 @@ msgstr "Idioma"
 msgctxt "tfrmpreferences.lbltheme.caption"
 msgid "Theme"
 msgstr "Tema"
+

@@ -8,7 +8,7 @@ uses LazLogger, SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
     Graphics, Classes, Crt, LCLType, ExtCtrls, Buttons, DateTimePicker, Math,
     baseConvert, MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator,
     EditBtn, LocalizedForms, myResourceStrings, gettext, ErrorCatching,
-    mydatefunctions, FileUtil, Dos;
+    mydatefunctions, FileUtil, Dos, LCLIntF, Windows, StrUtils;
 
 type
     { procedure ColourChange;
@@ -71,7 +71,7 @@ type
       btnRadiansDegrees: TButton;
       btnRadiansGradians: TButton;
       btnRemainder: TButton;
-      btnResult: TButton;
+      btnCalculatorEquals: TButton;
       btnResult1: TButton;
       btnRaisedTo: TButton;
       btnSecant: TButton;
@@ -100,6 +100,8 @@ type
       dtEditStartDate: TDateEdit;
       dtEditPresent: TDateEdit;
       ImageList: TImageList;
+      lblDate: TLabel;
+      lblClock: TLabel;
       lblToCalendar: TLabel;
       lblConvertTo: TLabel;
       lblStartDate: TLabel;
@@ -136,6 +138,7 @@ type
       StTxtCalendarOutput: TStaticText;
       StTxtCalendarInput: TStaticText;
       StTxtDateCalculation: TStaticText;
+      Timer1: TTimer;
       txtFieldResult: TEdit;
       procedure btnACosClick(Sender: TObject);
       procedure btnACosHClick(Sender: TObject);
@@ -195,7 +198,7 @@ type
       procedure btnPlusMinusClick(Sender: TObject);
       procedure btnDegreesRadiansClick(Sender: TObject);
       procedure btnRemainderClick(Sender: TObject);
-      procedure btnResultClick(Sender: TObject);
+      procedure btnCalculatorEqualsClick(Sender: TObject);
       procedure btnRaisedToClick(Sender: TObject);
       procedure btnSecantClick(Sender: TObject);
       procedure btnSevenClick(Sender: TObject);
@@ -219,6 +222,7 @@ type
       procedure btnConvertDateClick(Sender: TObject);
       procedure dtEditEndDateChange(Sender: TObject);
       procedure dtEditStartDateChange(Sender: TObject);
+      procedure FormKeyPress(Sender: TObject; var Key: word);
       procedure mnuCreditsClick(Sender: TObject);
       procedure mnuExitClick(Sender: TObject);
       procedure mnuHelpClick(Sender: TObject);
@@ -250,8 +254,11 @@ type
       procedure InitializeCaptions;
       procedure FormCreate(Sender: TObject);
       procedure SpBtnMainMenuClick(Sender: TObject);
+      procedure Timer1Timer(Sender: TObject);
+      procedure KeypadInput(Key: Word);
   private
-      Num1, Num2, Result, Operators, CurrentLang : String;
+      Num1, Num2, Operators, CurrentLang : String;
+      CalcDone : Boolean;
       Memory : extended;
 
       function GetSystemLanguage : String;
@@ -275,8 +282,10 @@ implementation
 
 {$R *.lfm}
 procedure TfrmMyCalculators.FormCreate(Sender: TObject);
+var KeyState: TKeyboardState;
 begin
-     DTEditPresent.Date := Now();
+     CalcDone := false;
+     dTEditPresent.Date := Now();
      dtEditPresent.Text := DateToStr(dtEditPresent.Date);
      dtEditStartDate.Date := Now();
      dtEditStartDate.Text := DateToStr(dtEditStartDate.Date);
@@ -289,6 +298,17 @@ begin
      StTxtCalendarOutput.Caption := '';        // Clear the final string field
 
      InitLanguagesMenu;            // wp: Added
+{$IFDEF WINDOWS}
+     GetKeyboardState(KeyState);
+     if KeyState[VK_NUMLOCK] = 0 then          // Check current NumLock state and toggle it on
+        begin
+          KeyState[VK_NUMLOCK] := 1;
+          SetKeyboardState(KeyState);
+          // Simulate key press and release to physically toggle the LED/state
+          keybd_event(VK_NUMLOCK, $45, KEYEVENTF_EXTENDEDKEY, 0);
+          keybd_event(VK_NUMLOCK, $45, KEYEVENTF_EXTENDEDKEY or KEYEVENTF_KEYUP, 0);
+        end;
+{$ENDIF}
 end;
 
 procedure TfrmMyCalculators.btnSevenClick(Sender: TObject);
@@ -358,10 +378,8 @@ begin
 end;
 
 procedure TfrmMyCalculators.btnTimeClick(Sender: TObject);
-var Hour, Minute, Second, Milisec : word;
 begin
-    GetTime(Hour, Minute, Second, Milisec);
-    txtFieldResult.Text := Hour.ToString + ':' + Minute.ToString;
+
 end;
 
 procedure TfrmMyCalculators.btnToCalendarClick(Sender: TObject);
@@ -417,6 +435,36 @@ end;
 procedure TfrmMyCalculators.dtEditStartDateChange(Sender: TObject);
 begin
     StTxtDateCalculation.Caption := DateDifference(dtEditStartDate.Date, dtEditEndDate.Date);
+end;
+
+procedure TfrmMyCalculators.FormKeyPress(Sender: TObject; var Key: word);
+begin
+     KeypadInput(Key);
+end;
+
+procedure TfrmMyCalculators.KeypadInput(Key: Word);
+begin
+  case Key of
+    48 : btnZero.Click;          // VK_NUMPAD0   Why doesn't it work?
+    49 : btnOne.Click;           // VK_NUMPAD1   Why doesn't it work?
+    50 : btnTwo.Click;           // VK_NUMPAD2   Why doesn't it work?
+    51 : btnThree.Click;         // VK_NUMPAD3   Why doesn't it work?
+    52 : btnFour.Click;          // VK_NUMPAD4   Why doesn't it work?
+    53 : btnFive.Click;          // VK_NUMPAD5   Why doesn't it work?
+    54 : btnSix.Click;           // VK_NUMPAD6   Why doesn't it work?
+    55 : btnSeven.Click;         // VK_NUMPAD7   Why doesn't it work?
+    56 : btnEight.Click;         // VK_NUMPAD8   Why doesn't it work?
+    57 : btnNine.Click;          // VK_NUMPAD9   Why doesn't it work?
+    43 : btnAdd.Click;           // VK_ADD       Why doesn't it work?
+    VK_SEPARATOR : ;             // VK_SEPARATOR
+    45 : btnMinus.Click;         // VK_SUBTRACT  Why doesn't it work?
+    42 : btnMultiply.Click;      // VK_MULTIPLY  Why doesn't it work?
+    47 : btnDivide.Click;        // VK_DIVIDE    Why doesn't it work?
+    46 : btnComma.Click;         // VK_DECIMAL   Why doesn't it work?
+    13 : btnCalculatorEquals.Click;        // VK_RETURN    Why doesn't it work?
+    27 : btnClearAll.Click;
+     8 : btnBackspace.Click;
+  end;
 end;
 
 procedure TfrmMyCalculators.mnuCreditsClick(Sender: TObject);
@@ -633,7 +681,8 @@ procedure TfrmMyCalculators.btnAddClick(Sender: TObject);
 begin
     Num1 := txtFieldResult.Text;
     Operators := '+';
-    txtFieldResult.Text := '0';
+    txtFieldResult.Text := Num1 + ' ' + Operators + ' ';
+    ReturnToSimplePanel;
 end;
 
 procedure TfrmMyCalculators.btnASinClick(Sender: TObject);
@@ -692,7 +741,7 @@ begin
     Num1 := '0';
     Num2 := '0';
     Operators := '';
-    Result := '0';
+    CalcDone := false;
 end;
 
 procedure TfrmMyCalculators.btnCommaClick(Sender: TObject);
@@ -885,7 +934,7 @@ procedure TfrmMyCalculators.btnDivideClick(Sender: TObject);
 begin
     Num1 := txtFieldResult.Text;
     Operators := '/';
-    txtFieldResult.Text := '';
+    txtFieldResult.Text := Num1 + ' ' + Operators + ' ';
 end;
 
 procedure TfrmMyCalculators.btnFiveClick(Sender: TObject);
@@ -910,14 +959,14 @@ procedure TfrmMyCalculators.btnMinusClick(Sender: TObject);
 begin
     Num1 := txtFieldResult.Text;
     Operators := '-';
-    txtFieldResult.Text := '';
+    txtFieldResult.Text := Num1 + ' ' + Operators + ' ';
 end;
 
 procedure TfrmMyCalculators.btnMultiplyClick(Sender: TObject);
 begin
     Num1 := txtFieldResult.Text;
     Operators := '*';
-    txtFieldResult.Text := '';
+    txtFieldResult.Text := Num1 + ' ' + Operators + ' ';
 end;
 
 procedure TfrmMyCalculators.btnNineClick(Sender: TObject);
@@ -959,69 +1008,80 @@ procedure TfrmMyCalculators.btnRemainderClick(Sender: TObject);
 begin
     Num1 := txtFieldResult.Text;
     Operators := 'mod';
-    txtFieldResult.Text := '';
+    txtFieldResult.Text := Num1 + ' ' + Operators + ' ';
 end;
 
-procedure TfrmMyCalculators.btnResultClick(Sender: TObject);
+procedure TfrmMyCalculators.btnCalculatorEqualsClick(Sender: TObject);
 var Number1, Number2 : extended;
-  begin
-    Num2 := txtFieldResult.Text;
-    try
-        case Operators of
-                  '+'   : Result := FloatToStr(StrToFloat(Num1) + StrToFloat(Num2));
-                  '-'   : Result := FloatToStr(StrToFloat(Num1) - StrToFloat(Num2));
-                  '*'   : Result := FloatToStr(StrToFloat(Num1) * StrToFloat(Num2));
-                  '/'   : Result := FloatToStr(StrToFloat(Num1) / StrToFloat(Num2));
-                  'mod' : Result := IntToStr(StrToInt(Num1) mod StrToInt(Num2));
-                  'x^y' :   begin
-                              Number1 := StrToFloat(Num1);
-                              Number2 := StrToFloat(Num2);
-                              Result := FloatToStr(Power(Number1, Number2));
-                            end;
-                  'D>N'   : Result := baseToBase(Num1, 10, StrToInt(Num2));
-                  'B>N'   : Result := baseToBase(Num1, 2, StrToInt(Num2));
-                  'O>N'   : Result := baseToBase(Num1, 8, StrToInt(Num2));
-                  'H>N'   : Result := baseToBase(Num1, 16, StrToInt(Num2));
-                  'NRoot' : begin
-                              Number1 := StrToFloat(Num1);
-                              Number2 := StrToFloat(Num2);
-                              Result := FloatToStr(Power(Number1, (1 / Number2)));
-                            end;
-                  'Log'   : begin
-                              Number1 := StrToFloat(Num1);
-                              Number2 := StrToFloat(Num2);
-                              Result := FloatToStr(LogN(Number2, Number1));
-                            end;
-                  'Exp'   : begin
-                              Number1 := StrToFloat(Num1);
-                              if Number1 > 0 then
-                                     begin
-                                       Number2 := StrToFloat(Num2);
-                                       Result := FloatToStr(Power(Number1, Number2));
-                                     end;
-                            end;
-                  'Hypo'  : begin
-                              Number1 := StrToFloat(Num1);
-                              Number2 := StrToFloat(Num2);
-                              Result := FloatToStr(Hypot(Number2, Number1));
-                            end
-        else
-          begin
-               Result := '';
-               MessageDlg(rsInvalidOperator, mtInformation, [mbYes], 0);
-               txtFieldResult.Text := '';
-               ReturnToSimplePanel;
-          end;
-        end;
-    except
-      On E: EConvertError Do
-         begin
-              Num1 := '';
-              Num2 := '';
-              Result := '';
-         end;
+    CalculatorEquals : Double;
+    Counter : Integer;
+    Spliter : TStringArray;
+    FinalStr, temp : String;
+begin
+    Spliter := SplitString(txtFieldResult.Text, ' ');
+    Num2 := Spliter[Length(Spliter) - 1];
+    if not IsNan(StrToFloat(Num1)) then
+       Number1 := StrToFloat(Num1);
+    if not IsNan(StrToFloat(Num2)) then
+       Number2 := StrToFloat(Num2);
+    if Number1 > 99999 then Num1 := FloatToStrF(Number1, ffexponent, 3, 1);
+    if Number2 > 99999 then Num1 := FloatToStrF(Number2, ffexponent, 2, 1);
+    txtFieldResult.Text := Num1 + ' ' + Operators + ' ' + Num2 + ' = ';
+    case Operators of
+              '+'     : CalculatorEquals := Number1 + Number2;
+              '-'     : CalculatorEquals := Number1 - Number2;
+              '*'     : CalculatorEquals := Number1 * Number2;
+              '/'     : CalculatorEquals := Number1 / Number2;
+              'mod'   : CalculatorEquals := Trunc(Number1 mod Number2);
+              'x^y'   : CalculatorEquals := Power(Number1, Number2);
+              'D>N'   : CalculatorEquals := StrToFloat(baseToBase(Num1, 10, StrToInt(Num2)));
+              'B>N'   : CalculatorEquals := StrToFloat(baseToBase(Num1, 2, StrToInt(Num2)));
+              'O>N'   : CalculatorEquals := StrToFloat(baseToBase(Num1, 8, StrToInt(Num2)));
+              'H>N'   : CalculatorEquals := StrToFloat(baseToBase(Num1, 16, StrToInt(Num2)));
+              'NRoot' : CalculatorEquals := Power(Number1, (1 / Number2));
+              'Log'   : CalculatorEquals := LogN(Number2, Number1);
+              'Exp'   : if Number1 > 0 then CalculatorEquals := Power(Number1, Number2)
+                        else
+                          begin
+                              ErrMsg(errmsgNegativePower);
+                              Operators := '';
+                              CalculatorEquals := 0;
+                              txtFieldResult.Text := '';
+                          end;
+              'Hypo'  : CalculatorEquals := Hypot(Number2, Number1);
+    else
+      begin
+           MessageDlg(rsInvalidOperator, mtInformation, [mbYes], 1);
+           CalculatorEquals := 0;
+           Operators := '';
+           Num1 := '';
+           Num2 := '';
+           txtFieldResult.Text := '';
+           ReturnToSimplePanel;
+      end;
     end;
-    txtFieldResult.Text := Result;
+    FinalStr := FloatToStr(CalculatorEquals);
+    if (Length(FinalStr) > 3) and not (FinalStr.Contains(',')) then
+       for Counter := Length(FinalStr) downto 1 do
+           begin
+                if ((Counter + 2) mod 3 = 0) and (Counter <> Length(FinalStr)) then
+                   FinalStr.Insert(Counter,'.');
+           end
+    else
+        begin
+             Spliter := SplitString(FinalStr, ',');       // Replace with system decimal point
+             temp := Spliter[0];
+             for Counter := Length(temp) downto 1 do
+                   begin
+                        if ((Counter + 2) mod 3 = 0) and (Counter <> Length(temp)) then
+                           temp.Insert(Counter,'.');
+                   end;
+             FinalStr := temp + ',' + Spliter[1];
+        end;
+    txtFieldResult.Text := txtFieldResult.Text + FinalStr;
+    Operators := '';
+    CalculatorEquals := 0;
+    CalcDone := true;
 end;
 
 procedure TfrmMyCalculators.btnRaisedToClick(Sender: TObject);
@@ -1125,6 +1185,13 @@ begin
      ppMainMenu.PopUp;
 end;
 
+procedure TfrmMyCalculators.Timer1Timer(Sender: TObject);
+begin
+    lblClock.Caption := FormatDateTime('hh:mm:ss', Time);
+    lblDate.Caption := FormatDateTime('DDD, DD/MM/YY', Now());
+//    txtFieldResult.Text := FormatDateTime('hh:mm:ss', Time);
+end;
+
 procedure TfrmMyCalculators.InitializeCaptions;
 begin
      frmMyCalculators.InitializeCalculatorTypePanelCaptions;
@@ -1148,7 +1215,7 @@ end;
 
 procedure TfrmMyCalculators.InitializeSimplePanelCaptions;
 begin
-     frmMyCalculators.btnResult.Caption := '=';
+     frmMyCalculators.btnCalculatorEquals.Caption := '=';
      frmMyCalculators.btnMemoryClear.Caption := 'MC';
      frmMyCalculators.btnMemoryPlus.Caption := 'M+';
      frmMyCalculators.btnMemoryMinus.Caption := 'M-';

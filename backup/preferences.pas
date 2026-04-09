@@ -49,9 +49,7 @@ begin
      frmPreferences.Caption := rsStrSettingsDialog;
      btnOK.Caption := rsStrBtnClose;
      cBoxPrefLang.Font.Color := clGray;
-     cBoxPrefLang.Caption := CurrentLang;
-     cBoxPrefTheme.Items.Add(rsStrDark);
-  //   cBoxPrefTheme.Items.Add(rsStrLight);
+     cBoxPrefLang.TextHint := CurrentLang;
      // cBoxPrefTheme.Font.Color := clGray;
      // cBoxPrefTheme.Text := CurrentTheme;
 end;

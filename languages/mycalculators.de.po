@@ -774,6 +774,12 @@ msgstr "Eine Ziffer löschen"
 msgid "Convert binary to different base"
 msgstr "Binärzahlen in eine andere Zahlensystem umrechnen"
 
+#: tfrmmycalculators.btncalculatorequals.hint
+#, fuzzy
+msgctxt "tfrmmycalculators.btncalculatorequals.hint"
+msgid "Equals"
+msgstr "Gleich"
+
 #: tfrmmycalculators.btncelsius.hint
 msgid "Convert to Celsius"
 msgstr "Nach Grad Celsius umrechnen"
@@ -997,10 +1003,6 @@ msgstr "Rest"
 msgid "Division remainder"
 msgstr "Rest bei der Division"
 
-#: tfrmmycalculators.btnresult.hint
-msgid "Equals"
-msgstr "Gleich"
-
 #: tfrmmycalculators.btnsecant.hint
 msgid "Calculate the secant"
 msgstr "Berechne die Sekante"
@@ -1046,11 +1048,6 @@ msgstr "Konstante TAU"
 #: tfrmmycalculators.btnthree.hint
 msgid "Three"
 msgstr "Drei"
-
-#: tfrmmycalculators.btntime.caption
-msgctxt "tfrmmycalculators.btntime.caption"
-msgid "Time"
-msgstr "Heuer"
 
 #: tfrmmycalculators.btntocalendar.hint
 msgctxt "tfrmmycalculators.btntocalendar.hint"
@@ -1123,3 +1120,4 @@ msgstr "Sprache"
 msgctxt "tfrmpreferences.lbltheme.caption"
 msgid "Theme"
 msgstr "Thema"
+

@@ -64,6 +64,10 @@ inherited frmPreferences: TfrmPreferences
     AutoSize = False
     Color = clWhite
     ItemHeight = 15
+    Items.Strings = (
+      'Dark'
+      'Light'
+    )
     TabOrder = 1
   end
 end
