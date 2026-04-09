@@ -14,7 +14,7 @@ type
 
     TfrmPreferences = class(TLocalizedForm)
         btnOK: TButton;
-        cBoxPrefLang: TComboBox;            // wp: why does cBoxPrefLang not exist?
+        cBoxPrefLang: TComboBox;
         cBoxPrefTheme: TComboBox;
         lblPrefLang: TLabel;
         lblPrefTheme: TLabel;
@@ -46,9 +46,10 @@ end;
 
 procedure TfrmPreferences.FormActivate(Sender: TObject);
 begin
+     frmPreferences.Caption := rsStrSettingsDialog;
      btnOK.Caption := rsStrBtnClose;
      cBoxPrefLang.Font.Color := clGray;
-     cBoxPrefLang.Text := CurrentLang;
+     cBoxPrefLang.TextHint := CurrentLang;
      // cBoxPrefTheme.Font.Color := clGray;
      // cBoxPrefTheme.Text := CurrentTheme;
 end;

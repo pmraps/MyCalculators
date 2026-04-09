@@ -87,17 +87,5 @@
 {"hash":1967,"name":"tfrmmycalculators.lbltocalendar.caption","sourcebytes":[116,111],"value":"to"},
 {"hash":206181999,"name":"tfrmmycalculators.btntocalendar.hint","sourcebytes":[67,108,105,99,107,32,116,111,32,115,101,108,101,99,116,32,116,104,101,32,99,97,108,101,110,100,97,114,32,116,111,32,99,111,110,118,101,114,116,32,116,111],"value":"Click to select the calendar to convert to"},
 {"hash":169284893,"name":"tfrmmycalculators.btnfromcalendar.hint","sourcebytes":[67,108,105,99,107,32,116,111,32,115,101,108,101,99,116,32,116,104,101,32,99,97,108,101,110,100,97,114,32,116,111,32,99,111,110,118,101,114,116,32,102,114,111,109],"value":"Click to select the calendar to convert from"},
-{"hash":174443732,"name":"tfrmmycalculators.btnconvertdate.caption","sourcebytes":[67,111,110,118,101,114,116],"value":"Convert"},
-{"hash":199672318,"name":"tfrmmycalculators.ppmenugregorian.caption","sourcebytes":[71,114,101,103,111,114,105,97,110],"value":"Gregorian"},
-{"hash":85733246,"name":"tfrmmycalculators.ppmenujulian.caption","sourcebytes":[74,117,108,105,97,110],"value":"Julian"},
-{"hash":41613646,"name":"tfrmmycalculators.ppmenufrench.caption","sourcebytes":[70,114,101,110,99,104,32,82,101,112,117,98,108,105,99,97,110],"value":"French Republican"},
-{"hash":82548935,"name":"tfrmmycalculators.ppmenuhebrew.caption","sourcebytes":[72,101,98,114,101,119],"value":"Hebrew"},
-{"hash":166743253,"name":"tfrmmycalculators.ppmenuchinese.caption","sourcebytes":[67,104,105,110,101,115,101],"value":"Chinese"},
-{"hash":297074,"name":"tfrmmycalculators.ppmenuarab.caption","sourcebytes":[65,114,97,98],"value":"Arab"},
-{"hash":199672318,"name":"tfrmmycalculators.ppmenugregorian1.caption","sourcebytes":[71,114,101,103,111,114,105,97,110],"value":"Gregorian"},
-{"hash":85733246,"name":"tfrmmycalculators.ppmenujulian1.caption","sourcebytes":[74,117,108,105,97,110],"value":"Julian"},
-{"hash":41613646,"name":"tfrmmycalculators.ppmenufrench1.caption","sourcebytes":[70,114,101,110,99,104,32,82,101,112,117,98,108,105,99,97,110],"value":"French Republican"},
-{"hash":82548935,"name":"tfrmmycalculators.ppmenuhebrew1.caption","sourcebytes":[72,101,98,114,101,119],"value":"Hebrew"},
-{"hash":166743253,"name":"tfrmmycalculators.ppmenuchinese1.caption","sourcebytes":[67,104,105,110,101,115,101],"value":"Chinese"},
-{"hash":297074,"name":"tfrmmycalculators.ppmenuarab1.caption","sourcebytes":[65,114,97,98],"value":"Arab"}
+{"hash":174443732,"name":"tfrmmycalculators.btnconvertdate.caption","sourcebytes":[67,111,110,118,101,114,116],"value":"Convert"}
 ]}

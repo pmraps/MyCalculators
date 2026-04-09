@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="46" Y="14"/>
-        <UsageCount Value="112"/>
+        <UsageCount Value="115"/>
       </Unit>
       <Unit>
         <Filename Value="maincalculators.pas"/>
@@ -19,10 +19,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainCalculators"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="345"/>
-        <CursorPos X="25" Y="361"/>
-        <UsageCount Value="112"/>
+        <TopLine Value="1088"/>
+        <CursorPos X="4" Y="1093"/>
+        <UsageCount Value="115"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -36,7 +35,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="211"/>
         <CursorPos X="27" Y="100"/>
-        <UsageCount Value="112"/>
+        <UsageCount Value="115"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -45,9 +44,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="myResourceStrings"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="121"/>
-        <CursorPos X="16" Y="77"/>
-        <UsageCount Value="112"/>
+        <TopLine Value="128"/>
+        <CursorPos X="30" Y="159"/>
+        <UsageCount Value="115"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -60,7 +59,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="46"/>
         <CursorPos X="62" Y="143"/>
-        <UsageCount Value="112"/>
+        <UsageCount Value="115"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -71,9 +70,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Preferences"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="47" Y="15"/>
-        <UsageCount Value="112"/>
+        <TopLine Value="31"/>
+        <CursorPos Y="53"/>
+        <UsageCount Value="115"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -83,16 +84,16 @@
         <UnitName Value="ErrorCatching"/>
         <EditorIndex Value="5"/>
         <CursorPos X="24" Y="32"/>
-        <UsageCount Value="75"/>
+        <UsageCount Value="78"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="mydatefunctions.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="42"/>
+        <TopLine Value="21"/>
         <CursorPos X="37" Y="59"/>
-        <UsageCount Value="72"/>
+        <UsageCount Value="75"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
@@ -129,6 +130,9 @@
       </Item>
       <Item>
         <Expression Value="daysafter"/>
+      </Item>
+      <Item>
+        <Expression Value="CurrentLang"/>
       </Item>
     </Watches>
   </Debugging>

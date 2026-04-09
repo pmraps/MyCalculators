@@ -73,6 +73,8 @@ uses
         rsYearsPeriod = ' years.';
         rsYearAnd = ' year and ';
         rsYearsAnd = ' years and ';
+        rsYearComma = ' year, ';
+        rsYearsComma = ' years, ';
         //TREEVIEW NAMES
         rsTrViewDesc = 'Description';
         rsTrViewSimple = 'Simple calculator';
@@ -111,9 +113,9 @@ uses
         rsHelpSettingsLine0 = 'Click on the down arrow of the first list to select a language.';
         rsHelpSettingsLine2 = 'Click on the down arrow of the second list and select a theme, dark or light.';
         // COMMON BUTTONS
-        rsStrBtnOK = 'OK';
-        rsStrBtnClose = 'Close';
-        rsStrBtnExit = 'Exit';
+        rsStrBtnOK = '&OK';
+        rsStrBtnClose = '&Close';
+        rsStrBtnExit = 'Ex&it';
         // COMMON DIALOGS
         rsStrSettingsDialog = 'Settings';
         rsStrHelpDialog = 'Help';
@@ -145,6 +147,13 @@ uses
         rsStrDateEndDate = 'End Date';
         rsOf = ' of ';
         rsDatesAreEqual = 'Dates are the same';
+        // CALENDAR STRINGS
+        rsStrGregorian = 'Gregorian';
+        rsStrJulian = 'Julian';
+        rsStrFrench = 'French Republican';
+        rsStrHebrew = 'Hebrew';
+        rsStrChinese = 'Chinese';
+        rsStrArab = 'Arab';
 
 implementation
 

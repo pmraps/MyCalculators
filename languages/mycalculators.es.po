@@ -296,6 +296,11 @@ msgctxt "myresourcestrings.rssixteen"
 msgid "sixteen"
 msgstr "dieciséis"
 
+#: myresourcestrings.rsstrarab
+msgctxt "myresourcestrings.rsstrarab"
+msgid "Arab"
+msgstr "Árabe"
+
 #: myresourcestrings.rsstrasin
 msgctxt "myresourcestrings.rsstrasin"
 msgid "ASin"
@@ -307,18 +312,23 @@ msgid "ASinH"
 msgstr "ASenH"
 
 #: myresourcestrings.rsstrbtnclose
-msgid "Close"
-msgstr "Fechar"
+msgid "&Close"
+msgstr "&Cerrar"
 
 #: myresourcestrings.rsstrbtnexit
 msgctxt "myresourcestrings.rsstrbtnexit"
-msgid "Exit"
+msgid "Ex&it"
 msgstr "Sal&ir"
 
 #: myresourcestrings.rsstrbtnok
 msgctxt "myresourcestrings.rsstrbtnok"
-msgid "OK"
-msgstr "Aceptar"
+msgid "&OK"
+msgstr "&Aceptar"
+
+#: myresourcestrings.rsstrchinese
+msgctxt "myresourcestrings.rsstrchinese"
+msgid "Chinese"
+msgstr "Chino"
 
 #: myresourcestrings.rsstrcreditsdialog
 msgctxt "myresourcestrings.rsstrcreditsdialog"
@@ -329,6 +339,10 @@ msgstr "Agradecimientos"
 msgctxt "myresourcestrings.rsstrcyctorad"
 msgid "Cyc-Rad"
 msgstr "Cic-Rad"
+
+#: myresourcestrings.rsstrdark
+msgid "Dark"
+msgstr "Oscuro"
 
 #: myresourcestrings.rsstrdatecalccaption
 msgctxt "myresourcestrings.rsstrdatecalccaption"
@@ -369,10 +383,25 @@ msgctxt "myresourcestrings.rsstrdegtorad"
 msgid "Deg-Rad"
 msgstr "Gra-Rad"
 
+#: myresourcestrings.rsstrfrench
+msgctxt "myresourcestrings.rsstrfrench"
+msgid "French Republican"
+msgstr "Republicano francés"
+
 #: myresourcestrings.rsstrgradtodeg
 msgctxt "myresourcestrings.rsstrgradtodeg"
 msgid "Grad-Deg"
 msgstr "Grad-Gra"
+
+#: myresourcestrings.rsstrgregorian
+msgctxt "myresourcestrings.rsstrgregorian"
+msgid "Gregorian"
+msgstr "Gregoriano"
+
+#: myresourcestrings.rsstrhebrew
+msgctxt "myresourcestrings.rsstrhebrew"
+msgid "Hebrew"
+msgstr "Hebreo"
 
 #: myresourcestrings.rsstrhelpdialog
 msgctxt "myresourcestrings.rsstrhelpdialog"
@@ -382,6 +411,15 @@ msgstr "A&yuda"
 #: myresourcestrings.rsstrhypothenuse
 msgid "Hyp"
 msgstr "Hip"
+
+#: myresourcestrings.rsstrjulian
+msgctxt "myresourcestrings.rsstrjulian"
+msgid "Julian"
+msgstr "Juliano"
+
+#: myresourcestrings.rsstrlight
+msgid "Light"
+msgstr "Claro"
 
 #: myresourcestrings.rsstrmischint
 msgid "Display miscellaneous functions"
@@ -1054,66 +1092,6 @@ msgctxt "tfrmmycalculators.lbltocalendar.caption"
 msgid "to"
 msgstr "para"
 
-#: tfrmmycalculators.ppmenuarab.caption
-msgctxt "tfrmmycalculators.ppmenuarab.caption"
-msgid "Arab"
-msgstr "Árabe"
-
-#: tfrmmycalculators.ppmenuarab1.caption
-msgctxt "tfrmmycalculators.ppmenuarab1.caption"
-msgid "Arab"
-msgstr "Árabe"
-
-#: tfrmmycalculators.ppmenuchinese.caption
-msgctxt "tfrmmycalculators.ppmenuchinese.caption"
-msgid "Chinese"
-msgstr "Chino"
-
-#: tfrmmycalculators.ppmenuchinese1.caption
-msgctxt "tfrmmycalculators.ppmenuchinese1.caption"
-msgid "Chinese"
-msgstr "Chino"
-
-#: tfrmmycalculators.ppmenufrench.caption
-msgctxt "tfrmmycalculators.ppmenufrench.caption"
-msgid "French Republican"
-msgstr "Republicano francés"
-
-#: tfrmmycalculators.ppmenufrench1.caption
-msgctxt "tfrmmycalculators.ppmenufrench1.caption"
-msgid "French Republican"
-msgstr "Republicano francés"
-
-#: tfrmmycalculators.ppmenugregorian.caption
-msgctxt "tfrmmycalculators.ppmenugregorian.caption"
-msgid "Gregorian"
-msgstr "Gregoriano"
-
-#: tfrmmycalculators.ppmenugregorian1.caption
-msgctxt "tfrmmycalculators.ppmenugregorian1.caption"
-msgid "Gregorian"
-msgstr "Gregoriano"
-
-#: tfrmmycalculators.ppmenuhebrew.caption
-msgctxt "tfrmmycalculators.ppmenuhebrew.caption"
-msgid "Hebrew"
-msgstr "Hebreo"
-
-#: tfrmmycalculators.ppmenuhebrew1.caption
-msgctxt "tfrmmycalculators.ppmenuhebrew1.caption"
-msgid "Hebrew"
-msgstr "Hebreo"
-
-#: tfrmmycalculators.ppmenujulian.caption
-msgctxt "tfrmmycalculators.ppmenujulian.caption"
-msgid "Julian"
-msgstr "Juliano"
-
-#: tfrmmycalculators.ppmenujulian1.caption
-msgctxt "tfrmmycalculators.ppmenujulian1.caption"
-msgid "Julian"
-msgstr "Juliano"
-
 #: tfrmmycalculators.rdbtndatecalculator.caption
 msgctxt "tfrmmycalculators.rdbtndatecalculator.caption"
 msgid "Date"
@@ -1127,11 +1105,6 @@ msgstr "Sencilla"
 #: tfrmpreferences.btnok.hint
 msgid "Save your choices and return to the calculator"
 msgstr "Guarda tus opciones y vuelve a la calculadora"
-
-#: tfrmpreferences.caption
-msgctxt "tfrmpreferences.caption"
-msgid "Preferences"
-msgstr "Preferencias"
 
 #: tfrmpreferences.cboxpreflang.hint
 msgid "Select your prefered language"

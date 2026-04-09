@@ -226,6 +226,8 @@ type
       procedure ppMainMenuPopup(Sender: TObject);
       procedure ppMenuArab1Click(Sender: TObject);
       procedure ppMenuArabClick(Sender: TObject);
+      procedure ppMenuCalFromPopup(Sender: TObject);
+      procedure ppMenuCalToPopup(Sender: TObject);
       procedure ppMenuChinese1Click(Sender: TObject);
       procedure ppMenuChineseClick(Sender: TObject);
       procedure ppMenuFrench1Click(Sender: TObject);
@@ -284,7 +286,7 @@ begin
      CurrentLang := GetSystemLanguage;
      InitializeCaptions;                       // Avoid button captions in translation .po files
      ReturnToSimplePanel;
-     StTxtCalendarOutput.Caption := '';    // Clear the final string field
+     StTxtCalendarOutput.Caption := '';        // Clear the final string field
 
      InitLanguagesMenu;            // wp: Added
 end;
@@ -358,7 +360,7 @@ end;
 procedure TfrmMyCalculators.btnTimeClick(Sender: TObject);
 var Hour, Minute, Second, Milisec : word;
 begin
-    GetTime(Hour, Minute);
+    GetTime(Hour, Minute, Second, Milisec);
     txtFieldResult.Text := Hour.ToString + ':' + Minute.ToString;
 end;
 
@@ -457,6 +459,26 @@ end;
 procedure TfrmMyCalculators.ppMenuArabClick(Sender: TObject);
 begin
      btnToCalendar.ImageIndex := 5;
+end;
+
+procedure TfrmMyCalculators.ppMenuCalFromPopup(Sender: TObject);
+begin
+    ppMenuGregorian.Caption := rsStrGregorian;
+    ppMenuJulian.Caption := rsStrJulian;
+    ppMenuFrench.Caption := rsStrFrench;
+    ppMenuHebrew.Caption := rsStrHebrew;
+    ppMenuChinese.Caption := rsStrChinese;
+    ppMenuArab.Caption := rsStrArab;
+end;
+
+procedure TfrmMyCalculators.ppMenuCalToPopup(Sender: TObject);
+begin
+    ppMenuGregorian1.Caption := rsStrGregorian;
+    ppMenuJulian1.Caption := rsStrJulian;
+    ppMenuFrench1.Caption := rsStrFrench;
+    ppMenuHebrew1.Caption := rsStrHebrew;
+    ppMenuChinese1.Caption := rsStrChinese;
+    ppMenuArab1.Caption := rsStrArab;
 end;
 
 procedure TfrmMyCalculators.ppMenuChinese1Click(Sender: TObject);
