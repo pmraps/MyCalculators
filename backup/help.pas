@@ -14,7 +14,7 @@ interface
 
 uses
     Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-    ComCtrls, LocalizedForms, myResourceStrings;
+    ComCtrls, LocalizedForms, resourcestrings;
 
 type
 

@@ -10,7 +10,7 @@ uses
 type
     //create unique index for each error message
     TErrMsgID = (emWrongJulianDate, emWrongGregorianDate, emWrongFrenchDate,
-                 emCalendarUnavailable, emDivisionByZero, emNegativePower, emNotANumber, emConvert, emCantOpen);
+                 emCalendarUnavailable, emDivisionByZero, emNegativePower, emNotANumber, emConvert);
 
     function ErrMsg(id: TErrMsgID; params: Array of Const): integer; overload;
     function ErrMsg(id: TErrMsgID): integer; overload;

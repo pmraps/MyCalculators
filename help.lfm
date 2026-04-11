@@ -19,7 +19,7 @@ inherited frmHelp: TfrmHelp
     Height = 200
     Top = 0
     Width = 330
-    PageIndex = 5
+    PageIndex = 0
     TabOrder = 0
     object pgDescription: TPage
       TabStop = True

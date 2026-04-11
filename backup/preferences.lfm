@@ -44,7 +44,7 @@ inherited frmPreferences: TfrmPreferences
     Hint = 'Save your choices and return to the calculator'
     Top = 72
     Width = 70
-    TabOrder = 2
+    TabOrder = 1
     OnClick = btnOKClick
   end
   object lblTheme: TLabel[3]
@@ -55,15 +55,12 @@ inherited frmPreferences: TfrmPreferences
     AutoSize = False
     Caption = 'Theme'
   end
-  object CBoxThemes: TComboBox[4]
+  object cBoxPrefTheme: TComboBox[4]
     Left = 136
     Height = 23
-    Hint = 'Select a theme, dark or light'
-    Top = 41
+    Top = 40
     Width = 144
-    AutoSize = False
-    Color = clWhite
     ItemHeight = 15
-    TabOrder = 1
+    TabOrder = 2
   end
 end

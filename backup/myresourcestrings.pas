@@ -159,7 +159,7 @@ uses
         rsStrLight = 'Light';
         // ERROR MESSAGES
         rsStrWrongJulian = 'Wrong julian date! Must be between January 1 45 BC and October 15, 1582!';
-        rsStrWrong Gregorian = 'Wrong gregorian date! Must be after October 15, 1582!';
+        rsStrWrongGregorian = 'Wrong gregorian date! Must be after October 15, 1582!';
         rsStrWrongFrench = 'Wrong french republican date! Must be between 22/09/1792 and 31/12/1805!';
         rsStrCalendarUnavailable = 'The calendar is not available! Please request it from the developer!';
         rsStrDivisionByZero = 'Division by zero is not possible';

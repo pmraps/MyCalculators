@@ -1119,6 +1119,7 @@ inherited frmMyCalculators: TfrmMyCalculators
     BevelOuter = bvLowered
     ClientHeight = 25
     ClientWidth = 288
+    ParentBackground = False
     TabOrder = 6
     object lblClock: TLabel
       Left = 206
@@ -1128,7 +1129,7 @@ inherited frmMyCalculators: TfrmMyCalculators
       Alignment = taRightJustify
       AutoSize = False
       Font.CharSet = ANSI_CHARSET
-      Font.Color = clBlack
+      Font.Color = clSilver
       Font.Height = -16
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
@@ -1140,15 +1141,16 @@ inherited frmMyCalculators: TfrmMyCalculators
       Left = 1
       Height = 25
       Top = 0
-      Width = 192
+      Width = 199
       AutoSize = False
       Font.CharSet = ANSI_CHARSET
-      Font.Color = clBlack
+      Font.Color = clSilver
       Font.Height = -16
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       Layout = tlCenter
+      ParentColor = False
       ParentFont = False
     end
   end

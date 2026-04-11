@@ -1,0 +1,17 @@
+? Adicionar sistema de ajuda offline (CHM? Funciona em Linux/macOS?
+
+? Mudança de tema durante a execução
+
+? ? Acrescentar unidade de testes (COMO? Investigar)
+--------------------------------------------------------------------------------
+? Corrigir a apresentação da ajuda - perguntado no fórum
+? Mudança de língua durante a execução
+? Adicionar conversores à miscelânea
+? Corrigido o formulário de ajuda no arranque
+? Obter a língua do sistema e usar como pré-definição
+? Mudar TDateTimePicker para TDateEdit (aceita qualquer data)
+? Adicionar atalhos via código
+? Tradução para italiano
+? Activar o teclado numérico
+? Mostrar operando1 operador operando2 = resultado
+? Adicionar ao resultado o separador de milhares

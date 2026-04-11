@@ -10,8 +10,8 @@ uses
     athreads,
     {$ENDIF}
     Interfaces, // this includes the LCL widgetset
-    Forms, datetimectrls, mainCalculators, MyCredits, Help, myResourceStrings,
-    Preferences, ErrorCatching;
+    Forms, datetimectrls, mainCalculators, MyCredits, Help, resourcestrings,
+    Preferences, ErrorCatching, mydatefunctions;
     { you can add units after this }
 
 {$R *.res}
@@ -22,6 +22,7 @@ begin
     {$PUSH}{$WARN 5044 OFF}
     Application.MainFormOnTaskbar:=True;
     {$POP}
+
     Application.Initialize;
     Application.CreateForm(TfrmMyCalculators, frmMyCalculators);
     Application.CreateForm(TfrmCredits, frmCredits);

@@ -3,6 +3,5 @@
 {"hash":109845829,"name":"tfrmpreferences.cboxpreflang.hint","sourcebytes":[83,101,108,101,99,116,32,121,111,117,114,32,112,114,101,102,101,114,101,100,32,108,97,110,103,117,97,103,101],"value":"Select your prefered language"},
 {"hash":139375349,"name":"tfrmpreferences.lblpreflang.caption","sourcebytes":[76,97,110,103,117,97,103,101],"value":"Language"},
 {"hash":244539618,"name":"tfrmpreferences.btnok.hint","sourcebytes":[83,97,118,101,32,121,111,117,114,32,99,104,111,105,99,101,115,32,97,110,100,32,114,101,116,117,114,110,32,116,111,32,116,104,101,32,99,97,108,99,117,108,97,116,111,114],"value":"Save your choices and return to the calculator"},
-{"hash":5958709,"name":"tfrmpreferences.lbltheme.caption","sourcebytes":[84,104,101,109,101],"value":"Theme"},
-{"hash":176595940,"name":"tfrmpreferences.cboxthemes.hint","sourcebytes":[83,101,108,101,99,116,32,97,32,116,104,101,109,101,44,32,100,97,114,107,32,111,114,32,108,105,103,104,116],"value":"Select a theme, dark or light"}
+{"hash":5958709,"name":"tfrmpreferences.lbltheme.caption","sourcebytes":[84,104,101,109,101],"value":"Theme"}
 ]}

@@ -26,7 +26,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <BuildNr Value="243"/>
+      <BuildNr Value="254"/>
       <Language Value="0816"/>
       <Attributes pvaDebug="True"/>
       <StringTable CompanyName="HBCB"/>
@@ -42,6 +42,9 @@
       <FormatVersion Value="2"/>
     </RunParams>
     <RequiredPackages>
+      <Item>
+        <PackageName Value="MetaDarkStyle"/>
+      </Item>
       <Item>
         <PackageName Value="DateTimeCtrlsDsgn"/>
       </Item>
@@ -77,9 +80,8 @@
         <UnitName Value="Help"/>
       </Unit>
       <Unit>
-        <Filename Value="myresourcestrings.pas"/>
+        <Filename Value="resourcestrings.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="myResourceStrings"/>
       </Unit>
       <Unit>
         <Filename Value="mycredits.pas"/>

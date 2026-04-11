@@ -1,6 +1,6 @@
-✓ ✗ Converter números acima de 1 milhão para notação ciéntifica (1e3) 
+✓ ✗ Converter números acima de 1 milhão para notação científica
 
-✗ Limpar o visor em nova operação
+✗ Limpar o visor em nova operação/calcular e novo operando
 
 ✗ Corrigir erro de conversão '' inválido 
 
@@ -11,7 +11,7 @@
 ✗ Verificar erros sem rebentar com o programa
 	Erros de conversão
 		✓ ✗ Criar mensagem para cada calendário
-        ✓ ✗ Criar mensagem para cada operador/função
+        ✓ ✗ Criar mensagem para cada operador
 	Erros de tipo
         ✗ Corrigir 0 em StTxtDateCalculation
         ✗ num1 operador num2 CE = dá erro EConvertError
