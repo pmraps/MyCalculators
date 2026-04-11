@@ -325,10 +325,19 @@ msgctxt "myresourcestrings.rsstrbtnok"
 msgid "&OK"
 msgstr "&OK"
 
+#: myresourcestrings.rsstrcalendarunavailable
+msgid "The calendar is not available! Please request it from the developer!"
+msgstr ""
+
 #: myresourcestrings.rsstrchinese
 msgctxt "myresourcestrings.rsstrchinese"
 msgid "Chinese"
 msgstr "Chinesisch"
+
+#: myresourcestrings.rsstrconverionerror
+#, object-pascal-format
+msgid "Conversion error: %s!"
+msgstr ""
 
 #: myresourcestrings.rsstrcreditsdialog
 msgctxt "myresourcestrings.rsstrcreditsdialog"
@@ -383,6 +392,10 @@ msgctxt "myresourcestrings.rsstrdegtorad"
 msgid "Deg-Rad"
 msgstr "Gra-Rad"
 
+#: myresourcestrings.rsstrdivisionbyzero
+msgid "Division by zero is not possible"
+msgstr ""
+
 #: myresourcestrings.rsstrfrench
 msgctxt "myresourcestrings.rsstrfrench"
 msgid "French Republican"
@@ -424,6 +437,15 @@ msgstr "Licht"
 #: myresourcestrings.rsstrmischint
 msgid "Display miscellaneous functions"
 msgstr "Verschiedene Funktionen anzeigen"
+
+#: myresourcestrings.rsstrnegativeexponential
+msgid "It's impossible to calculate a zero or negative exponential!"
+msgstr ""
+
+#: myresourcestrings.rsstrnotanumber
+#, object-pascal-format
+msgid "%s is not a number!"
+msgstr ""
 
 #: myresourcestrings.rsstrradtocyc
 msgid "Rad-Cyc"
@@ -468,6 +490,18 @@ msgstr "SinH"
 msgctxt "myresourcestrings.rsstrtrigonometrichint"
 msgid "Display the trigonometric calculator"
 msgstr "Den trigonometrischen Rechner anzeigen"
+
+#: myresourcestrings.rsstrwrongfrench
+msgid "Wrong french republican date! Must be between 22/09/1792 and 31/12/1805!"
+msgstr ""
+
+#: myresourcestrings.rsstrwronggregorian
+msgid "Wrong gregorian date! Must be after October 15, 1582!"
+msgstr ""
+
+#: myresourcestrings.rsstrwrongjulian
+msgid "Wrong julian date! Must be between January 1 45 BC and October 15, 1582!"
+msgstr ""
 
 #: myresourcestrings.rssunday
 msgctxt "myresourcestrings.rssunday"
@@ -775,7 +809,6 @@ msgid "Convert binary to different base"
 msgstr "Binärzahlen in eine andere Zahlensystem umrechnen"
 
 #: tfrmmycalculators.btncalculatorequals.hint
-#, fuzzy
 msgctxt "tfrmmycalculators.btncalculatorequals.hint"
 msgid "Equals"
 msgstr "Gleich"

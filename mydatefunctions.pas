@@ -5,28 +5,19 @@ unit mydatefunctions;
 interface
 
 uses
-    Classes, SysUtils, Graphics, DateUtils, Math, Dialogs,
+    Classes, SysUtils, Graphics, DateUtils, Dialogs,
     ErrorCatching, myResourceStrings;
 
     function CalendarConversion(DateFrom : TDate; CalendarFrom, CalendarTo : Byte; CurrentLang : String) : String;
     function DateDifference(firstDate, secondDate : TDate) : String;
-    function formatDateString (DateFrom : TDate; CurrentLang : String) : String;
+    function formatDateString (DateFrom : TDate; CurrentLang : String; Error : boolean) : String;
 
     function GregorianToJulian (DateFrom : TDate) : TDate;
     function GregorianToFrench (DateFrom : TDate) : TDate;
-    function GregorianToHebrew (DateFrom : TDate) : TDate;
-    function GregorianToArab (DateFrom : TDate) : TDate;
-    function GregorianToChinese (DateFrom : TDate) : TDate;
 
     function JulianToGregorian (DateFrom : TDate) : TDate;
 
     function FrenchToGregorian (DateFrom : TDate) : TDate;
-
-    function HebrewToGregorian (DateFrom : TDate) : TDate;
-
-    function ArabToGregorian (DateFrom : TDate) : TDate;
-
-    function ChineseToGregorian (DateFrom : TDate) : TDate;
 
     function FindFrenchYear(DateFrom : TDate) : Word;
     function FindFrenchExtraDays(FYear : Integer) : Integer;
@@ -35,6 +26,9 @@ uses
     function ConvertNDayToStr(NumberOfDay : Integer) : String;
     function ConvertMonthToStr(Month : Integer) : String;
 
+var
+    WrongDate : boolean = false;
+
 implementation
 
 uses mainCalculators;
@@ -42,55 +36,58 @@ uses mainCalculators;
 function CalendarConversion(DateFrom : TDate; CalendarFrom, CalendarTo : Byte; CurrentLang : String) : String;
 
 begin
-     frmMyCalculators.StTxtCalendarInput.Caption := formatDateString(DateFrom, CurrentLang);
+     frmMyCalculators.StTxtCalendarInput.Caption := formatDateString(DateFrom, CurrentLang, WrongDate);
      case CalendarFrom of
                0 : begin
-                          if CalendarTo = 1 then Result := formatDateString(GregorianToJulian(DateFrom), CurrentLang)
-                          else if CalendarTo = 2 then Result := formatDateString(GregorianToFrench(DateFrom), CurrentLang)
-                               else if CalendarTo = 3 then Result := formatDateString(GregorianToHebrew(DateFrom), CurrentLang)
+                          if CalendarTo = 1 then Result := formatDateString(GregorianToJulian(DateFrom), CurrentLang, WrongDate)
+                          else if CalendarTo = 2 then Result := formatDateString(GregorianToFrench(DateFrom), CurrentLang, WrongDate)
+{                               else if CalendarTo = 3 then Result := formatDateString(GregorianToHebrew(DateFrom), CurrentLang)
                                     else if CalendarTo = 4 then Result := formatDateString(GregorianToArab(DateFrom), CurrentLang)
-                                         else Result := formatDateString(GregorianToChinese(DateFrom), CurrentLang)
+                                         else Result := formatDateString(GregorianToChinese(DateFrom), CurrentLang)}
                end;
-               1 : if CalendarTo = 0 then Result := formatDateString(JulianToGregorian(DateFrom), CurrentLang);
-               2 : if CalendarTo = 0 then Result := formatDateString(FrenchToGregorian(DateFrom), CurrentLang);
-               3 : if CalendarTo = 0 then Result := formatDateString(HebrewToGregorian(DateFrom), CurrentLang);
+               1 : if CalendarTo = 0 then Result := formatDateString(JulianToGregorian(DateFrom), CurrentLang, WrongDate);
+               2 : if CalendarTo = 0 then Result := formatDateString(FrenchToGregorian(DateFrom), CurrentLang, WrongDate);
+{               3 : if CalendarTo = 0 then Result := formatDateString(HebrewToGregorian(DateFrom), CurrentLang);
                4 : if CalendarTo = 0 then Result := formatDateString(ArabToGregorian(DateFrom), CurrentLang);
-               5 : if CalendarTo = 0 then Result := formatDateString(ChineseToGregorian(DateFrom), CurrentLang);
+               5 : if CalendarTo = 0 then Result := formatDateString(ChineseToGregorian(DateFrom), CurrentLang);     }
                else ErrMsg(emCalendarUnavailable);
      end;
 end;
 
-function formatDateString (DateFrom : TDate; CurrentLang : String) : String;
+function formatDateString (DateFrom : TDate; CurrentLang : String; Error : boolean) : String;
 var frenchMonths, frenchSansCulottides : TStringArray;
     SWDay, SDay, SMonth, SYear : String;
     NDay, NMonth, NYear : Word;
     SansCulottides : Integer;
 begin
-     frenchMonths := TStringArray.Create('Vendémiaire', 'Brumaire', 'Frimaire', 'Nivôse',
-                                         'Pluviôse', 'Ventose', 'Germinal', 'Floreal',
-                                         'Prairial', 'Messidor', 'Thermidor', 'Fructidor',
-                                         'Complémentaire');
-     frenchSansCulottides := TStringArray.Create('Fete de la vertu', 'Fete du genie', 'Fete du travail',
-	                                             'Fete de l''opinion', 'Fete des recompenses',
-                                                 'Fete de la Revolution');
+     if not error then
+        begin
+             frenchMonths := TStringArray.Create('Vendémiaire', 'Brumaire', 'Frimaire', 'Nivôse',
+                                                 'Pluviôse', 'Ventose', 'Germinal', 'Floreal',
+                                                 'Prairial', 'Messidor', 'Thermidor', 'Fructidor',
+                                                 'Complémentaire');
+             frenchSansCulottides := TStringArray.Create('Fete de la vertu', 'Fete du genie', 'Fete du travail',
+	                                                     'Fete de l''opinion', 'Fete des recompenses',
+                                                         'Fete de la Revolution');
 
-     DecodeDate(DateFrom, NYear, NMonth, NDay);
-     SWDay := ConvertWDayToStr(DayOfWeek(DateFrom));
-     SDay := ConvertNDayToStr(NDay);
-     SMonth := ConvertMonthToStr(NMonth);
-     SYear := IntToStr(NYear);
+             DecodeDate(DateFrom, NYear, NMonth, NDay);
+             SWDay := ConvertWDayToStr(DayOfWeek(DateFrom));
+             SDay := ConvertNDayToStr(NDay);
+             SMonth := ConvertMonthToStr(NMonth);
+             SYear := IntToStr(NYear);
 
-     { Is this needed? If 'FormatDateTime' works AND DTPickerPresent uses the chosen language format
-       only one string should be needed! How to do it? }
-     case CurrentLang of
-          'de' : Result := SWDay + ', ' + SDay + ' ' + SMonth + ' ' + SYear;
-          'en' : Result := SWDay + ', ' + SMonth + ', ' + SDay + ', ' + SYear;
-          'es' : Result := SWDay + ', el ' + SDay + rsOf + SMonth + rsOf + SYear;
-          'fr' : Result := 'Le ' + SWDay + ' ' + SDay + SMonth + SYear;
-          'it' : Result := SWDay + ', il ' + SDay + rsOf + SMonth + rsOf + SYear;
-          'pt' : Result := SWDay + ', ' + SDay + rsOf + SMonth + rsOf + Syear
-          else Result := 'Invalid date';
-     end;
+             { Is this needed? If 'FormatDateTime' works AND DTPickerPresent uses the chosen language format
+               only one string should be needed! How to do it? }
+             case CurrentLang of
+                  'de' : Result := SWDay + ', ' + SDay + ' ' + SMonth + ' ' + SYear;
+                  'en' : Result := SWDay + ', ' + SMonth + ', ' + SDay + ', ' + SYear;
+                  'es' : Result := SWDay + ', el ' + SDay + rsOf + SMonth + rsOf + SYear;
+                  'fr' : Result := 'Le ' + SWDay + ' ' + SDay + SMonth + SYear;
+                  'it' : Result := SWDay + ', il ' + SDay + rsOf + SMonth + rsOf + SYear;
+                  'pt' : Result := SWDay + ', ' + SDay + rsOf + SMonth + rsOf + Syear
+                  else Result := 'Invalid date';
+             end;
+        end;
 end;
 
 function DateDifference(firstDate, secondDate : TDate) : String;
@@ -145,7 +142,12 @@ end;
 function GregorianToJulian(DateFrom : TDate) : TDate;
 begin
      if DateFrom < StrToDate('15/10/1582', 'DD/MM/YYYY') then
-     ErrMsg(emWrongGregorianDate)
+        begin
+             frmMyCalculators.StTxtCalendarInput.Caption := '';
+             frmMyCalculators.StTxtCalendarOutput.Caption := '';
+             ErrMsg(emWrongGregorianDate);
+             WrongDate := true;
+        end
      else Result := JulianDateToDateTime(DateTimeToJulianDate(DateFrom)-13);
 end;
 
@@ -216,45 +218,19 @@ begin
                                                                          else Result := 13;
 end;
 
-function GregorianToHebrew (DateFrom : TDate) : TDate;
-    begin
-
-    end;
-function GregorianToArab (DateFrom : TDate) : TDate;
-    begin
-
-     end;
-function GregorianToChinese (DateFrom : TDate) : TDate;
-    begin
-
-     end;
-
 function JulianToGregorian(DateFrom : TDate) : TDate;
 begin
-     // From 01 Jan -45 to 15 Oct 1582
+     // From 01 Jan -45 (MAGIC NUMBER 1704986.5) to 15 Oct 1582
      if (DateFrom < 1704986.5) or (DateFrom >= StrToDate('15/10/1582', 'DD/MM/YYYY')) then
-     ErrMsg(emWrongJulianDate)
-     else Result := JulianDateToDateTime(JulianDateToDateTime(DateFrom) + 13);
+        begin
+             frmMyCalculators.StTxtCalendarInput.Caption := '';
+             frmMyCalculators.StTxtCalendarOutput.Caption := '';
+             ErrMsg(emWrongJulianDate);
+             WrongDate := true;
+        end
+     else
+         Result := JulianDateToDateTime(DateFrom) + 13;
 end;
-
-    function JulianToFrench (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function JulianToHebrew (DateFrom : TDate) : TDate;
-         begin
-
-         end;
-
-    function JulianToArab (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-    function JulianToChinese (DateFrom : TDate) : TDate;
-        begin
-
-        end;
 
 function FindFrenchExtraDays(FYear : Integer) : Integer;
 begin
@@ -279,98 +255,6 @@ begin
 		 result := StrToDate(STARTDATE) + days;
        end;
 end;
-
-    function FrenchToJulian (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function FrenchToHebrew (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function FrenchToArab (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function FrenchToChinese (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function HebrewToGregorian (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function HebrewToJulian (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function HebrewToFrench (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function HebrewToArab (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function HebrewToChinese (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function ArabToGregorian (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function ArabToJulian (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function ArabToFrench (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function ArabToHebrew (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function ArabToChinese (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function ChineseToGregorian (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-    function ChineseToJulian (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-
-    function ChineseToFrench (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-    function ChineseToHebrew (DateFrom : TDate) : TDate;
-        begin
-
-        end;
-    function ChineseToArab (DateFrom : TDate) : TDate;
-        begin
-
-        end;
 
 function ConvertWDayToStr(Day : Integer) : String;
 begin

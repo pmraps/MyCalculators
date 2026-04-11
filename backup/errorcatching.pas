@@ -5,38 +5,38 @@ unit ErrorCatching;
 interface
 
 uses
-    Classes, SysUtils, Dialogs;
+    Classes, SysUtils, Dialogs, myResourceStrings;
 
 type
     //create unique index for each error message
     TErrMsgID = (emWrongJulianDate, emWrongGregorianDate, emWrongFrenchDate,
-                 emCalendarUnavailable, emDivZero, errmsgNegativePower, emConvert, emCantOpen);
+                 emCalendarUnavailable, emDivisionByZero, emNegativePower, emNotANumber, emConvert, emCantOpen);
 
-    function ErrMsg(id: TErrMsgID; params: array of const): integer; overload;
+    function ErrMsg(id: TErrMsgID; params: Array of Const): integer; overload;
     function ErrMsg(id: TErrMsgID): integer; overload;
 
 const
      ErrMsgFmt : array[Low(TErrMsgID)..High(TErrMsgID)] of string = (
-               'Wrong julian date! Must be between January 1 45 BC and October 15, 1582!',
-               'Wrong gregorian date! Must be after October 15, 1582!',
-               'Wrong french republican date! Must be between 22/09/1792 and 31/12/1805!',
-               'The calendar is not available! Please request it from the developer!',
-               'Division by zero!',
-               'Can''t calculate a zero or negative power!',
-               'Conversion error: %s!',
-               'Cannot open file: %s!'
+               rsStrWrongJulian,
+               rsStrWrongGregorian,
+               rsStrWrongFrench,
+               rsStrCalendarUnavailable,
+               rsStrDivisionByZero,
+               rsStrNegativeExponential,
+               rsStrNotANumber,
+               rsStrConverionError
                );
 
      //array of corresponding dialog buttons
      ErrMsgBtns : array[Low(TErrMsgID)..High(TErrMsgID)] of TMsgDlgButtons = (
                 [mbOK], [mbOK], [mbOK], [mbOK], [mbOK], [mbOK],
-                [mbOK], [mbRetry,mbCancel]
+                [mbOK], [mbOK]
                 );
 
 
 implementation
 
-function ErrMsg(id: TErrMsgID; params: array of const): integer; overload;
+function ErrMsg(id: TErrMsgID; params: Array of Const): integer; overload;
 //possible parameters (filename, etc) are contained in the open array parameter "params"
 begin
      result := MessageDlg(

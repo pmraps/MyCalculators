@@ -20,7 +20,6 @@ inherited frmCredits: TfrmCredits
     Images = frmMyCalculators.ImageList
     TabIndex = 3
     TabOrder = 0
-    Visible = False
     object TbShtCreditsCredits: TTabSheet
       Cursor = crNone
       Hint = 'Display a list of sources used in the program'
@@ -199,6 +198,7 @@ inherited frmCredits: TfrmCredits
       Caption = 'To Do List'
       ClientHeight = 304
       ClientWidth = 352
+      TabVisible = False
       object TViewTodoList: TTreeView
         Left = 0
         Height = 235

@@ -1,5 +1,7 @@
-✗ Adicionar ao resultado o separador de milhares
+✓ ✗ Converter números acima de 1 milhão para notação ciéntifica (1e3) 
+
 ✗ Limpar o visor em nova operação
+
 ✗ Corrigir erro de conversão '' inválido 
 
 ✓ ✗ Converter datas entre calendários
@@ -20,7 +22,7 @@
 ✗ Mudança de tema durante a execução
 
 ✓ ✗ Acrescentar unidade de testes (COMO? Investigar)
-
+--------------------------------------------------------------------------------
 ✓ Corrigir a apresentação da ajuda - perguntado no fórum
 ✓ Mudança de língua durante a execução
 ✓ Adicionar conversores à miscelânea
@@ -31,3 +33,4 @@
 ✓ Tradução para italiano
 ✓ Activar o teclado numérico
 ✓ Mostrar operando1 operador operando2 = resultado
+✓ Adicionar ao resultado o separador de milhares

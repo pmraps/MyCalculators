@@ -1,14 +1,14 @@
 inherited frmMyCalculators: TfrmMyCalculators
   Left = 488
-  Height = 581
+  Height = 327
   Top = 250
-  Width = 941
+  Width = 306
   HelpType = htKeyword
   HelpKeyword = 'simpleHlp'
   HelpContext = 1
   Caption = 'Calculators'
-  ClientHeight = 581
-  ClientWidth = 941
+  ClientHeight = 327
+  ClientWidth = 306
   DefaultMonitor = dmMainForm
   Font.CharSet = ANSI_CHARSET
   Font.Color = clBlack
@@ -30,7 +30,7 @@ inherited frmMyCalculators: TfrmMyCalculators
     Alignment = taRightJustify
     AutoSize = False
     AutoSelect = False
-    Color = 3947580
+    Color = 4473924
     Font.CharSet = ANSI_CHARSET
     Font.Color = clSilver
     Font.Height = -21
@@ -41,6 +41,7 @@ inherited frmMyCalculators: TfrmMyCalculators
     ReadOnly = True
     TabStop = False
     TabOrder = 0
+    OnChange = txtFieldResultChange
   end
   object pnlCalculatorType: TPanel[1]
     Left = 8
@@ -153,7 +154,6 @@ inherited frmMyCalculators: TfrmMyCalculators
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
-      OnClick = btnMemoryClear2Click
     end
     object btnMemoryPlus: TButton
       Left = 144
@@ -162,7 +162,6 @@ inherited frmMyCalculators: TfrmMyCalculators
       Top = 0
       Width = 70
       TabOrder = 2
-      OnClick = btnMemoryPlus2Click
     end
     object btnMemoryMinus: TButton
       Left = 216
@@ -171,7 +170,6 @@ inherited frmMyCalculators: TfrmMyCalculators
       Top = 0
       Width = 70
       TabOrder = 3
-      OnClick = btnMemoryMinus3Click
     end
     object btnClearAll: TButton
       Left = 0
@@ -362,20 +360,6 @@ inherited frmMyCalculators: TfrmMyCalculators
       TabOrder = 22
       OnClick = btnCommaClick
     end
-    object btnTime: TButton
-      Left = 0
-      Height = 25
-      Top = 0
-      Width = 70
-      Font.CharSet = ANSI_CHARSET
-      Font.Color = clRed
-      Font.Height = -13
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 23
-    end
     object btnClearLastEntry: TButton
       Left = 72
       Height = 25
@@ -388,14 +372,14 @@ inherited frmMyCalculators: TfrmMyCalculators
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 24
+      TabOrder = 23
       OnClick = btnClearLastEntryClick
     end
   end
   object pnlTrigonometry: TPanel[3]
-    Left = 8
+    Left = 7
     Height = 208
-    Top = 344
+    Top = 88
     Width = 288
     BevelOuter = bvNone
     ClientHeight = 208
@@ -701,7 +685,7 @@ inherited frmMyCalculators: TfrmMyCalculators
     end
   end
   object pnlFunctions: TPanel[4]
-    Left = 648
+    Left = 8
     Height = 264
     Top = 88
     Width = 288
@@ -946,7 +930,7 @@ inherited frmMyCalculators: TfrmMyCalculators
     end
   end
   object pnlDatulator: TPanel[5]
-    Left = 320
+    Left = 8
     Height = 256
     Top = 88
     Width = 288
@@ -1127,36 +1111,64 @@ inherited frmMyCalculators: TfrmMyCalculators
     PopupMenu = ppMainMenu
     OnClick = SpBtnMainMenuClick
   end
-  object lblClock: TLabel[7]
-    Left = 216
+  object pnlStatusBar: TPanel[7]
+    Left = 7
     Height = 25
-    Top = 0
-    Width = 80
-    Alignment = taRightJustify
-    AutoSize = False
-    Font.CharSet = ANSI_CHARSET
-    Font.Color = clBlack
-    Font.Height = -16
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    Font.Style = [fsBold]
-    Layout = tlCenter
-    ParentFont = False
+    Top = 296
+    Width = 288
+    BevelOuter = bvLowered
+    ClientHeight = 25
+    ClientWidth = 288
+    TabOrder = 6
+    object lblClock: TLabel
+      Left = 206
+      Height = 25
+      Top = 0
+      Width = 80
+      Alignment = taRightJustify
+      AutoSize = False
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentFont = False
+    end
+    object lblDate: TLabel
+      Left = 1
+      Height = 25
+      Top = 0
+      Width = 192
+      AutoSize = False
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentFont = False
+    end
   end
-  object lblDate: TLabel[8]
-    Left = 72
-    Height = 25
+  object stTxtBreadcrumbs: TStaticText[8]
+    Left = 32
+    Height = 23
     Top = 0
-    Width = 136
-    AutoSize = False
+    Width = 263
+    Alignment = taRightJustify
+    BorderStyle = sbsSunken
+    Color = 4473924
     Font.CharSet = ANSI_CHARSET
-    Font.Color = clBlack
+    Font.Color = clSilver
     Font.Height = -16
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
-    Layout = tlCenter
     ParentFont = False
+    ParentColor = False
+    TabOrder = 7
   end
   object ppMenuCalTo: TPopupMenu[9]
     Images = ImageList
