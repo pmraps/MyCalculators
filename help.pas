@@ -228,6 +228,8 @@ begin
   mmoDates.Lines.Add('');
   mmoDates.Lines.Add(rsHelpDateLine3);
   mmoDates.Lines.Add(rsHelpDateLine4);
+  mmoDates.Lines.Add('');
+  mmoDates.Lines.Add(rsHelpDateLine5);
 end;
 
 procedure TfrmHelp.PrepareSettingsMemo;

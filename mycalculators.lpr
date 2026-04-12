@@ -11,7 +11,7 @@ uses
     {$ENDIF}
     Interfaces, // this includes the LCL widgetset
     Forms, datetimectrls, mainCalculators, MyCredits, Help, resourcestrings,
-    Preferences, ErrorCatching, mydatefunctions;
+    Preferences, ErrorCatching, GregorianConversions;
     { you can add units after this }
 
 {$R *.res}

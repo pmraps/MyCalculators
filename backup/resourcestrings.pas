@@ -129,6 +129,8 @@ resourcestring
     'We can also calculate the difference between two dates using the appopriate selectors. The calculation is shown at the bottom.';
   rsHelpDateLine4 =
     'If the start date is later than the end date, the labels will switch position and the end date painted in red.';
+  rsHelpDateLine5 =
+    'Only dates in the correct time period can be converted. Meaning, e.g. a French Republican date can''t be converted to a julian date because the republican calendar started at 22/09/1792, whilst julian calendar ended at 15/10/1582';
   // SETTINGS HELP STRINGS
   rsHelpSettingsLine0 =
     'Click on the down arrow of the first list to select a language.';
@@ -184,7 +186,7 @@ resourcestring
     'Wrong julian date! Must be between January 1 45 BC and October 15, 1582!';
   rsStrWrongGregorian = 'Wrong gregorian date! Must be after October 15, 1582!';
   rsStrWrongFrench =
-    'Wrong french republican date! Must be between 22/09/1792 and 31/12/1805!';
+    'Wrong french republican date! Must be between 01/01/0001 and 11/04/14!';
   rsStrCalendarUnavailable =
     'The calendar is not available! Please request it from the developer!';
   rsStrDivisionByZero = 'Division by zero is not possible';
@@ -192,6 +194,17 @@ resourcestring
     'It''s impossible to calculate a zero or negative exponential!';
   rsStrNotANumber = '%s is not a number!';
   rsStrConverionError = 'Conversion error: %s!';
+  rsJan = 'Jan';
+  rsFeb = 'Feb';
+  rsMar = 'Mar';
+  rsApr = 'Apr';
+  rsJun = 'Jun';
+  rsJul = 'Jul';
+  rsAug = 'Aug';
+  rsSep = 'Sep';
+  rsOct = 'Oct';
+  rsNov = 'Nov';
+  rsDec = 'Dec';
 
 implementation
 

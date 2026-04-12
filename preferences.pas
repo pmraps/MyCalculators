@@ -47,13 +47,12 @@ uses MainCalculators;
 procedure TfrmPreferences.btnOKClick(Sender: TObject);
 begin
   UpdateLanguage(GetLanguage);
+  CurrentLang := GetLanguage;
   frmPreferences.Close;
 end;
 
 procedure TfrmPreferences.FormActivate(Sender: TObject);
 begin
-  if IsDarkTheme then
-    ShowMessage('Is dark: ');
   frmPreferences.Caption := rsStrSettingsDialog;
   btnOK.Caption := rsStrBtnClose;
   cBoxPrefLang.Font.Color := clGray;

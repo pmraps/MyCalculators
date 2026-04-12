@@ -96,6 +96,10 @@ msgctxt "resourcestrings.rshelpdateline4"
 msgid "If the start date is later than the end date, the labels will switch position and the end date painted in red."
 msgstr ""
 
+#: resourcestrings.rshelpdateline5
+msgid "Only dates in the correct time period can be converted. Meaning, e.g. a French Republican date can't be converted to a julian date because the republican calendar started at 22/09/1792, whilst julian calendar ended at 15/10/1582"
+msgstr ""
+
 #: resourcestrings.rshelpdescline0
 msgctxt "resourcestrings.rshelpdescline0"
 msgid "This is yet another multi-function calculator."
@@ -299,6 +303,66 @@ msgstr ""
 #: resourcestrings.rsseventeen
 msgctxt "resourcestrings.rsseventeen"
 msgid "seventeen"
+msgstr ""
+
+#: resourcestrings.rsshortapr
+msgctxt "resourcestrings.rsshortapr"
+msgid "Apr"
+msgstr ""
+
+#: resourcestrings.rsshortaug
+msgctxt "resourcestrings.rsshortaug"
+msgid "Aug"
+msgstr ""
+
+#: resourcestrings.rsshortdec
+msgctxt "resourcestrings.rsshortdec"
+msgid "Dec"
+msgstr ""
+
+#: resourcestrings.rsshortfeb
+msgctxt "resourcestrings.rsshortfeb"
+msgid "Feb"
+msgstr ""
+
+#: resourcestrings.rsshortjan
+msgctxt "resourcestrings.rsshortjan"
+msgid "Jan"
+msgstr ""
+
+#: resourcestrings.rsshortjul
+msgctxt "resourcestrings.rsshortjul"
+msgid "Jul"
+msgstr ""
+
+#: resourcestrings.rsshortjun
+msgctxt "resourcestrings.rsshortjun"
+msgid "Jun"
+msgstr ""
+
+#: resourcestrings.rsshortmar
+msgctxt "resourcestrings.rsshortmar"
+msgid "Mar"
+msgstr ""
+
+#: resourcestrings.rsshortmay
+msgctxt "resourcestrings.rsshortmay"
+msgid "May"
+msgstr ""
+
+#: resourcestrings.rsshortnov
+msgctxt "resourcestrings.rsshortnov"
+msgid "Nov"
+msgstr ""
+
+#: resourcestrings.rsshortoct
+msgctxt "resourcestrings.rsshortoct"
+msgid "Oct"
+msgstr ""
+
+#: resourcestrings.rsshortsep
+msgctxt "resourcestrings.rsshortsep"
+msgid "Sep"
 msgstr ""
 
 #: resourcestrings.rssix
@@ -520,7 +584,7 @@ msgstr ""
 
 #: resourcestrings.rsstrwrongfrench
 msgctxt "resourcestrings.rsstrwrongfrench"
-msgid "Wrong french republican date! Must be between 22/09/1792 and 31/12/1805!"
+msgid "Wrong french republican date! Must be between 01/01/0001 and 11/04/14!"
 msgstr ""
 
 #: resourcestrings.rsstrwronggregorian
@@ -1163,6 +1227,66 @@ msgstr ""
 #: tfrmmycalculators.lbltocalendar.caption
 msgctxt "tfrmmycalculators.lbltocalendar.caption"
 msgid "to"
+msgstr ""
+
+#: tfrmmycalculators.ppmenuarab.caption
+msgctxt "tfrmmycalculators.ppmenuarab.caption"
+msgid "Arab"
+msgstr ""
+
+#: tfrmmycalculators.ppmenuarab1.caption
+msgctxt "tfrmmycalculators.ppmenuarab1.caption"
+msgid "Arab"
+msgstr ""
+
+#: tfrmmycalculators.ppmenuchinese.caption
+msgctxt "tfrmmycalculators.ppmenuchinese.caption"
+msgid "Chinese"
+msgstr ""
+
+#: tfrmmycalculators.ppmenuchinese1.caption
+msgctxt "tfrmmycalculators.ppmenuchinese1.caption"
+msgid "Chinese"
+msgstr ""
+
+#: tfrmmycalculators.ppmenufrench.caption
+msgctxt "tfrmmycalculators.ppmenufrench.caption"
+msgid "French republican"
+msgstr ""
+
+#: tfrmmycalculators.ppmenufrench1.caption
+msgctxt "tfrmmycalculators.ppmenufrench1.caption"
+msgid "French republican"
+msgstr ""
+
+#: tfrmmycalculators.ppmenugregorian.caption
+msgctxt "tfrmmycalculators.ppmenugregorian.caption"
+msgid "Gregorian"
+msgstr ""
+
+#: tfrmmycalculators.ppmenugregorian1.caption
+msgctxt "tfrmmycalculators.ppmenugregorian1.caption"
+msgid "Gregorian"
+msgstr ""
+
+#: tfrmmycalculators.ppmenuhebrew.caption
+msgctxt "tfrmmycalculators.ppmenuhebrew.caption"
+msgid "Hebrew"
+msgstr ""
+
+#: tfrmmycalculators.ppmenuhebrew1.caption
+msgctxt "tfrmmycalculators.ppmenuhebrew1.caption"
+msgid "Hebrew"
+msgstr ""
+
+#: tfrmmycalculators.ppmenujulian.caption
+msgctxt "tfrmmycalculators.ppmenujulian.caption"
+msgid "Julian"
+msgstr ""
+
+#: tfrmmycalculators.ppmenujulian1.caption
+msgctxt "tfrmmycalculators.ppmenujulian1.caption"
+msgid "Julian"
 msgstr ""
 
 #: tfrmmycalculators.rdbtndatecalculator.caption

@@ -106,6 +106,10 @@ msgctxt "resourcestrings.rshelpdateline4"
 msgid "If the start date is later than the end date, the labels will switch position and the end date painted in red."
 msgstr "Se la data di inizio è successiva alla data di fine, le etichette si scambieranno di posto e la data di fine verrà evidenziata in rosso."
 
+#: resourcestrings.rshelpdateline5
+msgid "Only dates in the correct time period can be converted. Meaning, e.g. a French Republican date can't be converted to a julian date because the republican calendar started at 22/09/1792, whilst julian calendar ended at 15/10/1582"
+msgstr "È possibile convertire solo le date che rientrano nel periodo di riferimento corretto. Ciò significa, ad esempio, che una data del calendario repubblicano francese non può essere convertita in una data giuliana, poiché il calendario repubblicano ha avuto inizio il 22/09/1792, mentre il calendario giuliano è terminato il 15/10/1582"
+
 #: resourcestrings.rshelpdescline0
 msgctxt "resourcestrings.rshelpdescline0"
 msgid "This is yet another multi-function calculator."
@@ -310,6 +314,66 @@ msgstr "sette"
 msgctxt "resourcestrings.rsseventeen"
 msgid "seventeen"
 msgstr "diciassette"
+
+#: resourcestrings.rsshortapr
+msgctxt "resourcestrings.rsshortapr"
+msgid "Apr"
+msgstr "Apr"
+
+#: resourcestrings.rsshortaug
+msgctxt "resourcestrings.rsshortaug"
+msgid "Aug"
+msgstr "Ago"
+
+#: resourcestrings.rsshortdec
+msgctxt "resourcestrings.rsshortdec"
+msgid "Dec"
+msgstr "Dic"
+
+#: resourcestrings.rsshortfeb
+msgctxt "resourcestrings.rsshortfeb"
+msgid "Feb"
+msgstr "Feb"
+
+#: resourcestrings.rsshortjan
+msgctxt "resourcestrings.rsshortjan"
+msgid "Jan"
+msgstr "Gen"
+
+#: resourcestrings.rsshortjul
+msgctxt "resourcestrings.rsshortjul"
+msgid "Jul"
+msgstr "Lug"
+
+#: resourcestrings.rsshortjun
+msgctxt "resourcestrings.rsshortjun"
+msgid "Jun"
+msgstr "Giu"
+
+#: resourcestrings.rsshortmar
+msgctxt "resourcestrings.rsshortmar"
+msgid "Mar"
+msgstr "Mar"
+
+#: resourcestrings.rsshortmay
+msgctxt "resourcestrings.rsshortmay"
+msgid "May"
+msgstr "MagMaggio"
+
+#: resourcestrings.rsshortnov
+msgctxt "resourcestrings.rsshortnov"
+msgid "Nov"
+msgstr "Nov"
+
+#: resourcestrings.rsshortoct
+msgctxt "resourcestrings.rsshortoct"
+msgid "Oct"
+msgstr "Ott"
+
+#: resourcestrings.rsshortsep
+msgctxt "resourcestrings.rsshortsep"
+msgid "Sep"
+msgstr "Set"
 
 #: resourcestrings.rssix
 msgctxt "resourcestrings.rssix"
@@ -530,7 +594,7 @@ msgstr "Visualizza la calcolatrice trigonometrica"
 
 #: resourcestrings.rsstrwrongfrench
 msgctxt "resourcestrings.rsstrwrongfrench"
-msgid "Wrong french republican date! Must be between 22/09/1792 and 31/12/1805!"
+msgid "Wrong french republican date! Must be between 01/01/0001 and 11/04/14!"
 msgstr "Data repubblicana francese errata! Deve essere compresa tra il 22/09/1792 e il 31/12/1805!"
 
 #: resourcestrings.rsstrwronggregorian
@@ -771,7 +835,7 @@ msgstr "Icona del libro"
 
 #: tfrmcredits.sttxtcreditsdarktheme.caption
 msgid "Tidbits of mind leakage"
-msgstr ""
+msgstr "Tidbits of mind leakage"
 
 #: tfrmcredits.tbshtcreditscontributors.caption
 msgid "Contributors"
@@ -1175,6 +1239,66 @@ msgctxt "tfrmmycalculators.lbltocalendar.caption"
 msgid "to"
 msgstr "a"
 
+#: tfrmmycalculators.ppmenuarab.caption
+msgctxt "tfrmmycalculators.ppmenuarab.caption"
+msgid "Arab"
+msgstr "Arabo"
+
+#: tfrmmycalculators.ppmenuarab1.caption
+msgctxt "tfrmmycalculators.ppmenuarab1.caption"
+msgid "Arab"
+msgstr "Arabo"
+
+#: tfrmmycalculators.ppmenuchinese.caption
+msgctxt "tfrmmycalculators.ppmenuchinese.caption"
+msgid "Chinese"
+msgstr "Cinese"
+
+#: tfrmmycalculators.ppmenuchinese1.caption
+msgctxt "tfrmmycalculators.ppmenuchinese1.caption"
+msgid "Chinese"
+msgstr "Cinese"
+
+#: tfrmmycalculators.ppmenufrench.caption
+msgctxt "tfrmmycalculators.ppmenufrench.caption"
+msgid "French republican"
+msgstr "Repubblicano francese"
+
+#: tfrmmycalculators.ppmenufrench1.caption
+msgctxt "tfrmmycalculators.ppmenufrench1.caption"
+msgid "French republican"
+msgstr "Repubblicano francese"
+
+#: tfrmmycalculators.ppmenugregorian.caption
+msgctxt "tfrmmycalculators.ppmenugregorian.caption"
+msgid "Gregorian"
+msgstr "Gregoriano"
+
+#: tfrmmycalculators.ppmenugregorian1.caption
+msgctxt "tfrmmycalculators.ppmenugregorian1.caption"
+msgid "Gregorian"
+msgstr "Gregoriano"
+
+#: tfrmmycalculators.ppmenuhebrew.caption
+msgctxt "tfrmmycalculators.ppmenuhebrew.caption"
+msgid "Hebrew"
+msgstr "Ebraico"
+
+#: tfrmmycalculators.ppmenuhebrew1.caption
+msgctxt "tfrmmycalculators.ppmenuhebrew1.caption"
+msgid "Hebrew"
+msgstr "Ebraico"
+
+#: tfrmmycalculators.ppmenujulian.caption
+msgctxt "tfrmmycalculators.ppmenujulian.caption"
+msgid "Julian"
+msgstr "Juliano"
+
+#: tfrmmycalculators.ppmenujulian1.caption
+msgctxt "tfrmmycalculators.ppmenujulian1.caption"
+msgid "Julian"
+msgstr "Juliano"
+
 #: tfrmmycalculators.rdbtndatecalculator.caption
 msgctxt "tfrmmycalculators.rdbtndatecalculator.caption"
 msgid "Date"
@@ -1202,4 +1326,3 @@ msgstr "Lingua"
 msgctxt "tfrmpreferences.lbltheme.caption"
 msgid "Theme"
 msgstr "Tema"
-

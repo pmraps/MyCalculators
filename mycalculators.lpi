@@ -26,7 +26,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <BuildNr Value="254"/>
+      <BuildNr Value="277"/>
       <Language Value="0816"/>
       <Attributes pvaDebug="True"/>
       <StringTable CompanyName="HBCB"/>
@@ -105,8 +105,9 @@
         <UnitName Value="ErrorCatching"/>
       </Unit>
       <Unit>
-        <Filename Value="mydatefunctions.pas"/>
+        <Filename Value="gregorianconversions.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="GregorianConversions"/>
       </Unit>
     </Units>
   </ProjectOptions>

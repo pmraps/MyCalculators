@@ -1178,26 +1178,32 @@ inherited frmMyCalculators: TfrmMyCalculators
     Left = 328
     Top = 32
     object ppMenuGregorian: TMenuItem
+      Caption = 'Gregorian'
       ImageIndex = 0
       OnClick = ppMenuGregorianClick
     end
     object ppMenuJulian: TMenuItem
+      Caption = 'Julian'
       ImageIndex = 1
       OnClick = ppMenuJulianClick
     end
     object ppMenuFrench: TMenuItem
+      Caption = 'French republican'
       ImageIndex = 2
       OnClick = ppMenuFrenchClick
     end
     object ppMenuHebrew: TMenuItem
+      Caption = 'Hebrew'
       ImageIndex = 3
       OnClick = ppMenuHebrewClick
     end
     object ppMenuChinese: TMenuItem
+      Caption = 'Chinese'
       ImageIndex = 4
       OnClick = ppMenuChineseClick
     end
     object ppMenuArab: TMenuItem
+      Caption = 'Arab'
       ImageIndex = 5
       OnClick = ppMenuArabClick
     end
@@ -1451,26 +1457,32 @@ inherited frmMyCalculators: TfrmMyCalculators
     Left = 416
     Top = 32
     object ppMenuGregorian1: TMenuItem
+      Caption = 'Gregorian'
       ImageIndex = 0
       OnClick = ppMenuGregorian1Click
     end
     object ppMenuJulian1: TMenuItem
+      Caption = 'Julian'
       ImageIndex = 1
       OnClick = ppMenuJulian1Click
     end
     object ppMenuFrench1: TMenuItem
+      Caption = 'French republican'
       ImageIndex = 2
       OnClick = ppMenuFrench1Click
     end
     object ppMenuHebrew1: TMenuItem
+      Caption = 'Hebrew'
       ImageIndex = 3
       OnClick = ppMenuHebrew1Click
     end
     object ppMenuChinese1: TMenuItem
+      Caption = 'Chinese'
       ImageIndex = 4
       OnClick = ppMenuChinese1Click
     end
     object ppMenuArab1: TMenuItem
+      Caption = 'Arab'
       ImageIndex = 5
       OnClick = ppMenuArab1Click
     end

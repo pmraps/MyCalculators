@@ -5,16 +5,13 @@ unit mainCalculators;
 interface
 
 uses LazLogger, SysUtils, DateUtils, Forms, Controls, Dialogs, StdCtrls, Menus,
-  Graphics, Classes, Crt, LCLType, ExtCtrls, Buttons, Math,
+  Graphics, Classes, Crt, LCLType, ExtCtrls, Buttons, Math, Gettext,
   baseConvert, MyCredits, Preferences, Help, DefaultTranslator, LCLTranslator,
-  EditBtn, LocalizedForms, resourcestrings, gettext, ErrorCatching,
-  mydatefunctions, FileUtil, Dos, LCLIntF, ComCtrls, Windows;
+  EditBtn, LocalizedForms, FileUtil, Dos, LCLIntF, ComCtrls, Windows,
+  ResourceStrings, ErrorCatching, GregorianConversions;
 
 type
-    { procedure ColourChange;
-          background #45494A/697374
-          foreground #4A4645/747069
-    }
+
   { TfrmMyCalculators }
 
   TfrmMyCalculators = class(TLocalizedForm)
@@ -270,12 +267,15 @@ type
     procedure Timer1Timer(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: word);
     procedure KeypadInput(Key: word);
+    function CalendarConversion(DateFrom: TDate; CalendarFrom, CalendarTo: byte; CurrentLang: string): string;
+    function DateDifference(FirstDate, SecondDate: TDate): string;
+    function FormatDateString(DateFrom: TDate; CurrentLang: string; Error: boolean): string;
     procedure txtFieldResultChange(Sender: TObject);
   private
   const
     FINALCALC = True;
   var
-    Num1, Num2, Operators, CurrentLang: string;
+    Num1, Num2, Operators: string;
     CalculatorEquals: double;
     Memory: extended;
 
@@ -285,6 +285,7 @@ type
     procedure ReturnToSimplePanel;
     procedure CleanUp(Final: boolean);
   public
+    CurrentLang: string;
 
   end;
 
@@ -985,11 +986,10 @@ end;
 // Third line
 procedure TfrmMyCalculators.btnConvertDateClick(Sender: TObject);
 begin
+  ShowMessage(CurrentLang);
   StTxtCalendarOutput.Caption :=
-    CalendarConversion(dtEditPresent.Date,
-    btnFromCalendar.ImageIndex,
-    btnToCalendar.ImageIndex,
-    CurrentLang);
+    CalendarConversion(dtEditPresent.Date, btnFromCalendar.ImageIndex,
+    btnToCalendar.ImageIndex, CurrentLang);
 end;
 // Fifth line
 procedure TfrmMyCalculators.dtEditStartDateChange(Sender: TObject);
@@ -1136,25 +1136,35 @@ end;
 procedure TfrmMyCalculators.KeypadInput(Key: word);
 begin
   case Key of
-    48: btnZero.Click;          // VK_NUMPAD0   Why doesn't it work?
-    49: btnOne.Click;           // VK_NUMPAD1   Why doesn't it work?
-    50: btnTwo.Click;           // VK_NUMPAD2   Why doesn't it work?
-    51: btnThree.Click;         // VK_NUMPAD3   Why doesn't it work?
-    52: btnFour.Click;          // VK_NUMPAD4   Why doesn't it work?
-    53: btnFive.Click;          // VK_NUMPAD5   Why doesn't it work?
-    54: btnSix.Click;           // VK_NUMPAD6   Why doesn't it work?
-    55: btnSeven.Click;         // VK_NUMPAD7   Why doesn't it work?
-    56: btnEight.Click;         // VK_NUMPAD8   Why doesn't it work?
-    57: btnNine.Click;          // VK_NUMPAD9   Why doesn't it work?
-    43: btnAdd.Click;           // VK_ADD       Why doesn't it work?
-    VK_SEPARATOR: ;             // VK_SEPARATOR
-    45: btnMinus.Click;         // VK_SUBTRACT  Why doesn't it work?
-    42: btnMultiply.Click;      // VK_MULTIPLY  Why doesn't it work?
-    47: btnDivide.Click;        // VK_DIVIDE    Why doesn't it work?
-    46: btnComma.Click;         // VK_DECIMAL   Why doesn't it work?
-    13: btnCalculatorEquals.Click;        // VK_RETURN    Why doesn't it work?
-    27: btnClearAll.Click;
-    8: btnBackspace.Click;
+    48: btnZero.Click;                       // VK_NUMPAD0
+    49: btnOne.Click;                        // VK_NUMPAD1
+    50: btnTwo.Click;                        // VK_NUMPAD2
+    51: btnThree.Click;                      // VK_NUMPAD3
+    52: btnFour.Click;                       // VK_NUMPAD4
+    53: btnFive.Click;                       // VK_NUMPAD5
+    54: btnSix.Click;                        // VK_NUMPAD6
+    55: btnSeven.Click;                      // VK_NUMPAD7
+    56: btnEight.Click;                      // VK_NUMPAD8
+    57: btnNine.Click;                       // VK_NUMPAD9
+    43: if not rdBtnDateCalculator.Checked then
+      btnAdd.Click;                        // VK_ADD
+    VK_SEPARATOR: ;                          // VK_SEPARATOR
+    45: if not rdBtnDateCalculator.Checked then
+      btnMinus.Click;                      // VK_SUBTRACT
+    42: if not rdBtnDateCalculator.Checked then
+      btnMultiply.Click;                   // VK_MULTIPLY
+    47: begin
+      if not rdBtnDateCalculator.Checked then
+      btnDivide.Click;                       // VK_DIVIDE
+    end;
+    46: if not rdBtnDateCalculator.Checked then
+      btnComma.Click;                      // VK_DECIMAL
+    13: if not rdBtnDateCalculator.Checked then
+      btnCalculatorEquals.Click;           // VK_RETURN
+    27: if not rdBtnDateCalculator.Checked then
+      btnClearAll.Click;                   // ESCAPE
+    8: if not rdBtnDateCalculator.Checked then
+      btnBackspace.Click;                   // BACKSPACE
   end;
 end;
 
@@ -1162,6 +1172,168 @@ procedure TfrmMyCalculators.txtFieldResultChange(Sender: TObject);
 begin
   if rdBtnDateCalculator.Checked then txtFieldResult.Text := '';
 end;
+
+function TfrmMyCalculators.CalendarConversion(DateFrom: TDate; CalendarFrom, CalendarTo: byte;
+  CurrentLang: string): string;
+var
+  NYear, NMonth, NDay: word;
+begin
+  frmMyCalculators.StTxtCalendarInput.Caption :=
+    FormatDateString(DateFrom, CurrentLang, WrongDate);
+  ShowMessage(CurrentLang);
+  case CalendarFrom of
+    0: begin
+      if CalendarTo = 1 then
+      begin
+           Result := FormatDateString(GregorianToJulian(DateFrom, CurrentLang), CurrentLang, WrongDate)
+      end
+      else if CalendarTo = 2 then
+      begin
+        DecodeDate(DateFrom, NYear, NMonth, NDay);
+        Result := RepublicanDateToStr(GregorianToRepublican(NYear, NMonth, NDay));
+      end
+      else if CalendarTo = 3 then
+        Result := FormatHebrewDate(GregorianToHebrew(DateFrom), '%d %B %Y')
+      else if CalendarTo = 4 then
+        Result := FormatDateString(GregorianToArab(DateFrom), CurrentLang, WrongDate)
+      else
+        Result := FormatDateString(GregorianToChinese(DateFrom), CurrentLang, WrongDate);
+    end;
+{    1: if CalendarTo = 3 then
+        Result := FormatDateString(JulianToHebrew(DateFrom), CurrentLang, WrongDate);
+    2: if CalendarTo = 0 then
+        Result := FormatDateString(FrenchToGregorian(DateFrom), CurrentLang, WrongDate);
+    3: if CalendarTo = 0 then
+        Result := FormatDateString(HebrewToGregorian(DateFrom), CurrentLang, WrongDate);
+    4: if CalendarTo = 0 then
+        Result := FormatDateString(ArabToGregorian(DateFrom), CurrentLang, WrongDate);
+    5: if CalendarTo = 0 then
+        Result := FormatDateString(ChineseToGregorian(DateFrom), CurrentLang, WrongDate);}
+    else
+      ErrMsg(emCalendarUnavailable);
+  end;
+end;
+
+function TfrmMyCalculators.FormatDateString(DateFrom: TDate; CurrentLang: string; Error: boolean): string;
+var
+  SWDay, SDay, SMonth, SYear: string;
+  NDay, NMonth, NYear: word;
+begin
+  if not Error then
+  begin
+    DecodeDate(DateFrom, NYear, NMonth, NDay);
+    SWDay := ConvertWDayToStr(DayOfWeek(DateFrom));
+    SDay := ConvertNDayToStr(NDay);
+    SMonth := ConvertMonthToStr(NMonth);
+    SYear := IntToStr(NYear);
+
+             { Is this needed? If 'FormatDateTime' works AND DTPickerPresent uses the chosen language format
+               only one string should be needed! How to do it? }
+    case CurrentLang of
+      'de': Result := SWDay + ', ' + SDay + ' ' + SMonth + ' ' + SYear;
+      'en': Result := SWDay + ', ' + SMonth + ', ' + SDay + ', ' + SYear;
+      'es': Result := SWDay + ', el ' + SDay + rsOf + SMonth + rsOf + SYear;
+      'fr': Result := 'Le ' + SWDay + ' ' + SDay + SMonth + SYear;
+      'it': Result := SWDay + ', il ' + SDay + rsOf + SMonth + rsOf + SYear;
+      'pt': Result := SWDay + ', ' + SDay + rsOf + SMonth + rsOf + SYear
+      else
+        Result := 'Invalid date';
+    end;
+  end;
+end;
+
+function TfrmMyCalculators.DateDifference(FirstDate, SecondDate: TDate): string;
+var
+  firstDay, firstMonth, firstYear: word;
+  years, months, days: string;
+begin
+  if FirstDate > SecondDate then
+  begin
+    frmMyCalculators.lblStartDate.Caption := rsStrDateEndDate;
+    // Flag the inversion of order
+    frmMyCalculators.lblStartDate.Font.Color := clRed;
+    // with a red label
+    frmMyCalculators.lblEndDate.Caption := rsStrDateStartDate;
+  end
+  else
+  begin
+    frmMyCalculators.lblStartDate.Font.Color := clDefault;
+    // Return labels to default colour
+    frmMyCalculators.lblStartDate.Caption := rsStrDateStartDate;
+    frmMyCalculators.lblEndDate.Caption := rsStrDateEndDate;
+  end;
+  frmMyCalculators.StTxtDateCalculation.Caption := '';
+  PeriodBetween(FirstDate, SecondDate, firstYear, firstMonth, firstDay);
+  days := IntToStr(firstDay);
+  months := IntToStr(firstMonth);
+  years := IntToStr(firstYear);
+  if (days = '0') and (months = '0') and (years = '0') then
+    Result := rsDatesAreEqual
+  else if (days = '0') and (months = '0') and (years = '1') then
+    Result := years + rsYearPeriod
+  else if (days = '0') and (months = '0') and (years > '1') then
+    Result := years + rsYearsPeriod
+  else if (days = '0') and (months = '1') and (years = '0') then
+    Result := months + rsMonthPeriod
+  else if (days = '0') and (months = '1') and (years = '1') then
+    Result := years + rsYearAnd + months + rsMonthPeriod
+  else if (days = '0') and (months = '1') and (years > '1') then
+    Result := years + rsYearsAnd + months + rsMonthPeriod
+  else if (days = '0') and (months > '1') and (years = '0') then
+    Result := months + rsMonthsPeriod
+  else if (days = '0') and (months > '1') and (years = '1') then
+    Result := years + rsYearAnd + months + rsMonthsPeriod
+  else if (days = '0') and (months > '1') and (years > '1') then
+    Result := years + rsYearsAnd + months + rsMonthsPeriod
+  else if (days = '1') and (months = '0') and (years = '0') then
+    Result := days + rsDayPeriod
+  else if (days = '1') and (months = '0') and (years = '1') then
+    Result := years + rsYearAnd + days + rsDayPeriod
+  else if (days = '1') and (months = '0') and (years > '1') then
+    Result := years + rsYearsAnd + days + rsDayPeriod
+  else if (days = '1') and (months = '1') and (years = '0') then
+    Result := months + rsMonthAnd + days + rsDayPeriod
+  else if (days = '1') and (months = '1') and (years = '1') then
+    Result := years + rsYearComma + months + rsMonthAnd + days + rsDayPeriod
+  else if (days = '1') and (months = '1') and (years > '1') then
+    Result := years + rsYearsComma + months + rsMonthAnd + days + rsDayPeriod
+  else
+  if (days = '1') and (months > '1') and (years = '0') then
+    Result := months + rsMonthsAnd + days + rsDayPeriod
+  else
+  if (days = '1') and (months > '1') and (years = '1') then
+    Result := years + rsYearComma + months + rsMonthsAnd + days + rsDayPeriod
+  else
+  if (days = '1') and (months > '1') and (years > '1') then
+    Result := years + rsYearsComma + months + rsMonthsAnd + days + rsDayPeriod
+  else
+  if (days > '1') and (months = '0') and (years = '0') then Result := days + rsDaysPeriod
+  else
+  if (days > '1') and (months = '0') and (years = '1') then
+    Result := years + rsYearAnd + days + rsDaysPeriod
+  else
+  if (days > '1') and (months = '0') and (years > '1') then
+    Result := years + rsYearAnd + days + rsDaysPeriod
+  else
+  if (days > '1') and (months = '1') and (years = '0') then
+    Result := months + rsMonthAnd + days + rsDaysPeriod
+  else
+  if (days > '1') and (months = '1') and (years = '1') then
+    Result := years + rsYearComma + months + rsMonthAnd + days + rsDaysPeriod
+  else
+  if (days > '1') and (months = '1') and (years > '1') then
+    Result := years + rsYearsComma + months + rsMonthAnd + days + rsDaysPeriod
+  else
+  if (days > '1') and (months > '1') and (years = '0') then
+    Result := months + rsMonthsAnd + days + rsDaysPeriod
+  else
+  if (days > '1') and (months > '1') and (years = '1') then
+    Result := years + rsYearComma + months + rsMonthsAnd + days + rsDaysPeriod
+  else
+  if (days > '1') and (months > '1') and (years > '1') then
+    Result := years + rsYearsComma + months + rsMonthsAnd + days + rsDaysPeriod;
+end;
+
 
 // INITIALIZATIONS *************************************************************
 function TfrmMyCalculators.GetSystemLanguage: string;

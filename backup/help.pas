@@ -13,55 +13,54 @@ unit Help;
 interface
 
 uses
-    Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-    ComCtrls, LocalizedForms, resourcestrings;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  ComCtrls, LocalizedForms, resourcestrings;
 
 type
 
-    { TfrmHelp }
+  { TfrmHelp }
 
-    TfrmHelp = class(TLocalizedForm)
-        btnOK: TButton;
-        pgDates: TPage;
-        pgDescription: TPage;
-        mmoSettings: TMemo;
-        mmoDates: TMemo;
-        mmoTrigonometric: TMemo;
-        mmoMiscFunctions: TMemo;
-        mmoSimple: TMemo;
-        mmoDescription: TMemo;
-        pgMiscellaneous: TPage;
-        NtBookMainHelp: TNotebook;
-        pgSettings: TPage;
-        pgSimple: TPage;
-        pgTrigonometric: TPage;
-        TrViewHelpIndex: TTreeView;
-        procedure FormActivate(Sender: TObject);
-        procedure FormCreate(Sender: TObject);
-        procedure TrViewHelpIndexSelectionChanged(Sender: TObject);
+  TfrmHelp = class(TLocalizedForm)
+    btnOK: TButton;
+    pgDates: TPage;
+    pgDescription: TPage;
+    mmoSettings: TMemo;
+    mmoDates: TMemo;
+    mmoTrigonometric: TMemo;
+    mmoMiscFunctions: TMemo;
+    mmoSimple: TMemo;
+    mmoDescription: TMemo;
+    pgMiscellaneous: TPage;
+    NtBookMainHelp: TNotebook;
+    pgSettings: TPage;
+    pgSimple: TPage;
+    pgTrigonometric: TPage;
+    TrViewHelpIndex: TTreeView;
+    procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure TrViewHelpIndexSelectionChanged(Sender: TObject);
 
-    private
-        // wp
-        procedure PrepareDescriptionMemo;
-        procedure PrepareSimpleMemo;
-        procedure PrepareTrigMemo;
-        procedure PrepareMiscFunctionsMemo;
-        procedure PrepareDatesMemo;
-        procedure PrepareSettingsMemo;
+  private
+    // wp
+    procedure PrepareDescriptionMemo;
+    procedure PrepareSimpleMemo;
+    procedure PrepareTrigMemo;
+    procedure PrepareMiscFunctionsMemo;
+    procedure PrepareDatesMemo;
+    procedure PrepareSettingsMemo;
 
-    protected
-        // wp
-        procedure PopulateMemos;
-        procedure PopulateTreeView;
+  protected
+    // wp
+    procedure PopulateMemos;
+    procedure PopulateTreeView;
+  public
+    procedure UpdateTranslation(ALang: string); override;
+  public
 
-    public
-        procedure UpdateTranslation(ALang: String); override;
-    public
-
-    end;
+  end;
 
 var
-    frmHelp: TfrmHelp;
+  frmHelp: TfrmHelp;
 
 implementation
 
@@ -86,7 +85,7 @@ procedure TfrmHelp.FormCreate(Sender: TObject);
 begin
   { wp Hide the newly created help form. This is needed because you auto-create
    forms which would show the form immediately. }
-  Visible := false;
+  Visible := False;
   //frmHelp.Close;
 
   UpdateTranslation(CurrentLang);
@@ -97,7 +96,7 @@ end;
 
 procedure TfrmHelp.FormActivate(Sender: TObject);
 begin
-    btnOK.Caption := rsStrBtnOK;
+  btnOK.Caption := rsStrBtnOK;
 end;
 
 { wp This writes the help texts into the memos. This is done by code to facilitate
@@ -223,29 +222,29 @@ end;
 
 procedure TfrmHelp.PrepareDatesMemo;
 begin
-    mmoDates.Lines.Clear;
-    mmoDates.Lines.Add(rsHelpDateLine0);
-    mmoDates.Lines.Add(rsHelpDateLine1);
-    mmoDates.Lines.Add('');
-    mmoDates.Lines.Add(rsHelpDateLine3);
-    mmoDates.Lines.Add(rsHelpDateLine4);
+  mmoDates.Lines.Clear;
+  mmoDates.Lines.Add(rsHelpDateLine0);
+  mmoDates.Lines.Add(rsHelpDateLine1);
+  mmoDates.Lines.Add('');
+  mmoDates.Lines.Add(rsHelpDateLine3);
+  mmoDates.Lines.Add(rsHelpDateLine4);
 end;
 
 procedure TfrmHelp.PrepareSettingsMemo;
 begin
-    mmoSettings.Lines.Clear;
-    mmoSettings.Lines.Add(rsHelpSettingsLine0);
-    mmoSettings.Lines.Add('');
-    mmoSettings.Lines.Add(rsHelpSettingsLine2);
+  mmoSettings.Lines.Clear;
+  mmoSettings.Lines.Add(rsHelpSettingsLine0);
+  mmoSettings.Lines.Add('');
+  mmoSettings.Lines.Add(rsHelpSettingsLine2);
 end;
 
 procedure TfrmHelp.TrViewHelpIndexSelectionChanged(Sender: TObject);
 begin
   if TrViewHelpIndex.Selected <> nil then
-     NtBookMainHelp.PageIndex := TrViewHelpIndex.Selected.AbsoluteIndex;
+    NtBookMainHelp.PageIndex := TrViewHelpIndex.Selected.AbsoluteIndex;
 end;
 
-procedure TfrmHelp.UpdateTranslation(ALang: String);
+procedure TfrmHelp.UpdateTranslation(ALang: string);
 begin
   inherited;
 
@@ -258,4 +257,3 @@ begin
 end;
 
 end.
-

@@ -47,13 +47,12 @@ uses MainCalculators;
 procedure TfrmPreferences.btnOKClick(Sender: TObject);
 begin
   UpdateLanguage(GetLanguage);
+  ShowMessage(GetLanguage);
   frmPreferences.Close;
 end;
 
 procedure TfrmPreferences.FormActivate(Sender: TObject);
 begin
-  if IsDarkTheme then
-    ShowMessage('Is dark: ');
   frmPreferences.Caption := rsStrSettingsDialog;
   btnOK.Caption := rsStrBtnClose;
   cBoxPrefLang.Font.Color := clGray;
@@ -91,13 +90,20 @@ begin
     TLocalizedForm(Application.MainForm).UpdateTranslation(ALanguage);
 end;
 
-procedure TfrmPreferences.CBoxPrefThemeChange(Sender: TObject);
+procedure TfrmPreferences.CBoxPrefThemeChange(Sender: TObject);   // TODO: Choose and restart the app
 begin
   if not IsDarkTheme then
   begin
     frmMyCalculators.Color := clWindowFrame;
     case cBoxPrefTheme.ItemIndex of
-      0: PreferredAppMode := pamForceDark;
+      0: begin
+        { - DARK MODE START - }
+        // By default this is set to pamForceLight
+        PreferredAppMode := pamForceDark;
+        // This doesn't work if the above is set to pamForceLight
+        uMetaDarkStyle.ApplyMetaDarkStyle(DefaultDark);
+        { -  DARK MODE END  - }PreferredAppMode := pamForceDark;
+      end;
       1: PreferredAppMode := pamForceLight;
     end;
   end;

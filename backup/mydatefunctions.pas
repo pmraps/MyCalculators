@@ -8,13 +8,36 @@ uses
   Classes, SysUtils, Graphics, DateUtils, Dialogs,
   ErrorCatching, resourcestrings;
 
+type
+  TFrenchRepublicanDate = record
+    Year: integer;
+    Month: integer;  // 1-12 = regular months, 13 = complementary days
+    Day: integer;
+    MonthName: string;
+    DayName: string;
+  end;
+
+  THebrewDate = record
+    Year: integer;
+    Month: integer;
+    Day: integer;
+  end;
+
+function DaysInMonth(Month, Year: integer): integer;
+function GregorianToDayNumber(Day, Month, Year: integer): integer;
+function IsHebrewLeapYear(Year: integer): boolean;
+function HebrewDaysInMonth(Month, Year: integer): integer;
+function DayNumberToHebrew(DayNum: integer): THebrewDate;
 function CalendarConversion(DateFrom: TDate; CalendarFrom, CalendarTo: byte;
   CurrentLang: string): string;
 function DateDifference(FirstDate, SecondDate: TDate): string;
 function FormatDateString(DateFrom: TDate; CurrentLang: string; Error: boolean): string;
 
-function GregorianToFrench(DateFrom: TDate): TDate;
-function GregorianToHebrew(DateFrom: TDate): TDate;
+function GregorianToRepublican(AYear, AMonth, ADay: integer): TFrenchRepublicanDate;
+function RepublicanDateToStr(ADate: TFrenchRepublicanDate): string;
+function GregorianToHebrew(DateFrom: TDate): THebrewDate;
+function FormatHebrewDate(HebrewDate: THebrewDate; const DateFormat: string): string;
+//******************************************************************************
 function GregorianToArab(DateFrom: TDate): TDate;
 function GregorianToChinese(DateFrom: TDate): TDate;
 
@@ -26,7 +49,6 @@ function FrenchToGregorian(DateFrom: TDate): TDate;
 function FrenchToHebrew(DateFrom: TDate): TDate;
 function FrenchToArab(DateFrom: TDate): TDate;
 function FrenchToChinese(DateFrom: TDate): TDate;
-function FindFrenchYear(DateFrom: TDate): TDate;
 function FindFrenchExtraDays(FYear: integer): integer;
 
 function HebrewToGregorian(DateFrom: TDate): TDate;
@@ -58,17 +80,159 @@ implementation
 
 uses mainCalculators;
 
+const
+  REPUBLICAN_MONTHS: array[1..13] of string = (
+    'Vendémiaire', 'Brumaire', 'Frimaire',
+    'Nivôse', 'Pluviôse', 'Ventôse',
+    'Germinal', 'Floréal', 'Prairial',
+    'Messidor', 'Thermidor', 'Fructidor',
+    'Jours complémentaires'
+    );
+
+  COMPLEMENTARY_DAYS: array[1..6] of string = (
+    'Jour de la Vertu',
+    'Jour du Génie',
+    'Jour du Travail',
+    'Jour de l''Opinion',
+    'Jour des Récompenses',
+    'Jour de la Révolution'  // Only in Sansculottides years
+    );
+
+  HEBREWMONTHNAMES: array[1..13] of string = (
+    'Tishrei',
+    'Cheshvan',
+    'Kislev',
+    'Tevet',
+    'Shevat',
+    'Adar',
+    'Nisan',
+    'Iyar',
+    'Sivan',
+    'Tammuz',
+    'Av',
+    'Elul',
+    'Adar II'
+    );
+
+  HEBREWMONTHNAMESSHORT: array[1..13] of string = (
+    'Tis',
+    'Che',
+    'Kis',
+    'Tet',
+    'She',
+    'Ada',
+    'Nis',
+    'Iya',
+    'Siv',
+    'Tam',
+    'Av',
+    'Elu',
+    'Ad2'
+    );
+
+function DaysInMonth(Month, Year: integer): integer;
+const
+  DaysPerMonth: array[1..12] of integer =
+    (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+begin
+  Result := DaysPerMonth[Month];
+  if (Month = 2) and IsLeapYear(Year) then
+    Inc(Result);
+end;
+
+function GregorianToDayNumber(Day, Month, Year: integer): integer;
+var
+  i: integer;
+begin
+  Result := Day;
+  for i := 1 to Month - 1 do
+    Inc(Result, DaysInMonth(i, Year));                                        // Days in current year
+  Inc(Result, (Year - 1) * 365);                                              // Days in previous years from 0
+  Inc(Result, (Year - 1) div 4 - (Year - 1) div 100 + (Year - 1) div 400);
+end;
+
+function IsHebrewLeapYear(Year: integer): boolean;
+begin
+  Result := ((Year * 7 + 1) mod 19) < 7;
+end;
+
+function HebrewDaysInMonth(Month, Year: integer): integer;
+begin
+  case Month of
+    1, 3, 5, 7, 10: Result := 30;
+    2, 4, 6, 8, 9: Result := 29;
+    11: Result := 30;
+    12: if IsHebrewLeapYear(Year) then Result := 29 else Result := 29;
+    13: Result := 29;
+    else
+      Result := 0;
+  end;
+end;
+
+function DayNumberToHebrew(DayNum: integer): THebrewDate;
+const
+  HebrewEpoch = 347997; // Julian day number for Hebrew date 1/1/1
+  RABIHALAFTACOUNT = 3761;
+var
+  JulianDay: integer;
+  Year, Month, Day: integer;
+  DaysInYear: integer;
+begin
+  JulianDay := DayNum + HebrewEpoch;
+
+  // Estimate Hebrew year
+  Year := (JulianDay * 19 - 7) div 6939;
+  //Year := RABIHALAFTACOUNT + CurrentYear - 1;
+
+  // Refine year calculation
+  while True do
+  begin
+    DaysInYear := 0;
+    for Month := 1 to 13 do
+    begin
+      if (Month = 13) and not IsHebrewLeapYear(Year) then
+        Continue;
+      Inc(DaysInYear, HebrewDaysInMonth(Month, Year));
+    end;
+
+    if JulianDay >= Year * 365 + (Year div 19) * 7 then
+      Break;
+    Dec(Year);
+  end;
+
+  // Calculate month and day
+  Month := 1;
+  Day := JulianDay;
+
+  while Day > HebrewDaysInMonth(Month, Year) do
+  begin
+    Dec(Day, HebrewDaysInMonth(Month, Year));
+    Inc(Month);
+    if (Month = 13) and not IsHebrewLeapYear(Year) then
+      Inc(Month);
+  end;
+
+  Result.Year := Year;
+  Result.Month := Month;
+  Result.Day := Day;
+end;
+
 function CalendarConversion(DateFrom: TDate; CalendarFrom, CalendarTo: byte;
   CurrentLang: string): string;
+var
+  NYear, NMonth, NDay: word;
 begin
   frmMyCalculators.StTxtCalendarInput.Caption :=
     FormatDateString(DateFrom, CurrentLang, WrongDate);
   case CalendarFrom of
     0: begin
       if CalendarTo = 2 then
-        Result := FormatDateString(GregorianToFrench(DateFrom), CurrentLang, WrongDate)
+      begin
+        DecodeDate(DateFrom, NYear, NMonth, NDay);
+        Result := RepublicanDateToStr(GregorianToRepublican(NYear, NMonth, NDay));
+      end
       else if CalendarTo = 3 then
-        Result := FormatDateString(GregorianToHebrew(DateFrom), CurrentLang, WrongDate)
+        Result := FormatHebrewDate(GregorianToHebrew(DateFrom), '%d %B %Y')
       else if CalendarTo = 4 then
         Result := FormatDateString(GregorianToArab(DateFrom), CurrentLang, WrongDate)
       else
@@ -91,22 +255,11 @@ end;
 
 function FormatDateString(DateFrom: TDate; CurrentLang: string; Error: boolean): string;
 var
-  frenchMonths, frenchSansCulottides: TStringArray;
   SWDay, SDay, SMonth, SYear: string;
   NDay, NMonth, NYear: word;
-  SansCulottides: integer;
 begin
   if not Error then
   begin
-    frenchMonths := TStringArray.Create('Vendémiaire', 'Brumaire',
-      'Frimaire', 'Nivôse', 'Pluviôse', 'Ventose', 'Germinal',
-      'Floreal', 'Prairial', 'Messidor', 'Thermidor', 'Fructidor',
-      'Complémentaire');
-    frenchSansCulottides :=
-      TStringArray.Create('Fete de la vertu', 'Fete du genie',
-      'Fete du travail', 'Fete de l''opinion', 'Fete des recompenses',
-      'Fete de la Revolution');
-
     DecodeDate(DateFrom, NYear, NMonth, NDay);
     SWDay := ConvertWDayToStr(DayOfWeek(DateFrom));
     SDay := ConvertNDayToStr(NDay);
@@ -133,9 +286,7 @@ var
   firstDay, firstMonth, firstYear: word;
   years, months, days: string;
 begin
-  if FirstDate = SecondDate then
-  ShowMessage(rsDatesAreEqual)
-  else if FirstDate > SecondDate then
+  if FirstDate > SecondDate then
   begin
     frmMyCalculators.lblStartDate.Caption := rsStrDateEndDate;
     // Flag the inversion of order
@@ -156,7 +307,7 @@ begin
   months := IntToStr(firstMonth);
   years := IntToStr(firstYear);
   if (days = '0') and (months = '0') and (years = '0') then
-    Result := years + rsDatesAreEqual
+    Result := rsDatesAreEqual
   else if (days = '0') and (months = '0') and (years = '1') then
     Result := years + rsYearPeriod
   else if (days = '0') and (months = '0') and (years > '1') then
@@ -221,7 +372,7 @@ begin
   if (days > '1') and (months > '1') and (years > '1') then
     Result := years + rsYearsComma + months + rsMonthsAnd + days + rsDaysPeriod;
 end;
-
+// GREGORIAN TO OTHERS *********************************************************
 function GregorianToJulian(DateFrom: TDate): TDate;
 begin
   if DateFrom < StrToDate('15/10/1582', 'DD/MM/YYYY') then
@@ -235,76 +386,190 @@ begin
     Result := JulianDateToDateTime(DateTimeToJulianDate(DateFrom) - 13);
 end;
 
-function GregorianToFrench(DateFrom: TDate): TDate;
+// Compute Julian Day Number from Gregorian date
+function GregorianToJDN(Y, M, D: integer): int64;
 var
-  DaysBefore, DaysAfter: integer;
-  FYear, FDay: word;
+  A: int64;
 begin
-  if (DateFrom < StrToDate('22/09/1792', 'DD/MM/YYYY')) or
-    (DateFrom >= StrToDate('31/12/1805', 'DD/MM/YYYY')) then
-    ErrMsg(emWrongFrenchDate)
-  else
+  A := (14 - M) div 12;
+  Y := Y + 4800 - A;
+  M := M + 12 * A - 3;
+  Result := D + (153 * M + 2) div 5 + 365 * Y + Y div 4 - Y div
+    100 + Y div 400 - 32045;
+end;
+
+function GregorianToRepublican(AYear, AMonth, ADay: integer): TFrenchRepublicanDate;
+const
+  // JDN of 1 Vendémiaire An I = September 22, 1792
+  EPOCH_JDN = 2375840;
+var
+  JDN: int64;
+  DaysSinceEpoch: int64;
+  RepYear, DayOfYear: integer;
+  RepMonth, RepDay: integer;
+begin
+  JDN := GregorianToJDN(AYear, AMonth, ADay);
+  DaysSinceEpoch := JDN - EPOCH_JDN;
+
+  if DaysSinceEpoch < 0 then
+    ErrMsg(emWrongFrenchDate);
+
+  // Each Republican year has 365 or 366 days.
+  // Use an approximation then adjust.
+  RepYear := DaysSinceEpoch div 365;
+
+  // Adjust RepYear: find the actual start JDN of RepYear+1
+  // We iterate to find the correct year
+  while GregorianToJDN(1792 + RepYear + 1, 9, 22) - 1 < JDN do
+    Inc(RepYear);
+  while GregorianToJDN(1792 + RepYear, 9, 22) > JDN do
+    Dec(RepYear);
+
+  Inc(RepYear); // Republican years are 1-based
+
+  // Day within the Republican year (0-based)
+  DayOfYear := JDN - (GregorianToJDN(1792 + RepYear - 1, 9, 22));
+
+  // Months 1-12 have 30 days each; remaining days are complementary
+  RepMonth := DayOfYear div 30 + 1;
+  RepDay := DayOfYear mod 30 + 1;
+
+  if RepMonth > 12 then
   begin
-    DaysAfter := DaysBetween(DateFrom, StrToDate('31/12/1805', 'DD/MM/YYY'));
-    DaysBefore := DaysBetween(StrToDate('22/09/192', 'DD/MM/YYY'), DateFrom);
-    if (DaysBefore < 0) or (DaysAfter < 0) then
-      ErrMsg(emWrongFrenchDate);
-    FYear := ((DaysAfter + 366) div 365) - 13;
-    FDay := (DaysAfter + 366) mod 365 - FindFrenchExtraDays(FYear);
-    if FDay < 1 then
-    begin
-      Dec(FYear);
-      Inc(FDay, 366);
-    end;
-    if FDay < 361 then
-      Result := EncodeDate(FYear, FDay div 30, FDay mod 30)
-    else
-      Result := EncodeDate(FYear, 13, FDay - 360);
+    RepMonth := 13;
+    RepDay := DayOfYear - 360 + 1;
   end;
+
+  Result.Year := RepYear;
+  Result.Month := RepMonth;
+  Result.Day := RepDay;
+  Result.MonthName := REPUBLICAN_MONTHS[RepMonth];
+
+  if RepMonth = 13 then
+    Result.DayName := COMPLEMENTARY_DAYS[RepDay]
+  else
+    Result.DayName := '';
 end;
 
-function FindFrenchYear(DateFrom: TDate): TDate;
+function RepublicanDateToStr(ADate: TFrenchRepublicanDate): string;
 begin
-  if (DateFrom < StrToDate('21/09/1793', 'DD/MM/YYYY')) then
-    Result := 1
-  else if (DateFrom >= StrToDate('22/09/1793', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1794', 'DD/MM/YYYY')) then
-    Result := 2
-  else if (DateFrom >= StrToDate('22/09/1794', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1795', 'DD/MM/YYYY')) then
-    Result := 3
-  else if (DateFrom >= StrToDate('22/09/1795', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1796', 'DD/MM/YYYY')) then
-    Result := 4
-  else if (DateFrom >= StrToDate('22/09/1796', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1797', 'DD/MM/YYYY')) then
-    Result := 5
-  else if (DateFrom >= StrToDate('22/09/1797', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1798', 'DD/MM/YYYY')) then
-    Result := 6
-  else if (DateFrom >= StrToDate('22/09/1798', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1799', 'DD/MM/YYYY')) then
-    Result := 7
-  else if (DateFrom >= StrToDate('22/09/1800', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1801', 'DD/MM/YYYY')) then
-    Result := 8
-  else if (DateFrom >= StrToDate('22/09/1801', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1802', 'DD/MM/YYYY')) then
-    Result := 9
-  else if (DateFrom >= StrToDate('22/09/1802', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1803', 'DD/MM/YYYY')) then
-    Result := 10
-  else if (DateFrom >= StrToDate('22/09/1803', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1804', 'DD/MM/YYYY')) then
-    Result := 11
+  if ADate.Month = 13 then
+    Result := Format('%s An %d (%s)', [ADate.DayName, ADate.Year, ADate.MonthName])
   else
-  if (DateFrom >= StrToDate('22/09/1804', 'DD/MM/YYYY')) and
-    (DateFrom < StrToDate('21/09/1805', 'DD/MM/YYYY')) then
-    Result := 12
-  else
-    Result := 13;
+    Result := Format('%d %s An %d', [ADate.Day, ADate.MonthName, ADate.Year]);
 end;
 
+function GregorianToHebrew(DateFrom: TDate): THebrewDate;
+var
+  Year, Month, Day: word;
+  DayNum: integer;
+begin
+  DecodeDate(DateFrom, Year, Month, Day);
+  DayNum := GregorianToDayNumber(Day, Month, Year);
+  Result := DayNumberToHebrew(DayNum);
+end;
+
+function FormatHebrewDate(HebrewDate: THebrewDate; const DateFormat: string): string;
+var
+  i: integer;
+  Output: string;
+  Token: string;
+begin
+  Output := DateFormat;
+  i := 1;
+
+  while i <= Length(Output) do
+  begin
+    if Output[i] = '%' then
+    begin
+      if i < Length(Output) then
+      begin
+        case Output[i + 1] of
+          'd': // Day (1-30)
+          begin
+            Token := IntToStr(HebrewDate.Day);
+            Delete(Output, i, 2);
+            Insert(Token, Output, i);
+            Inc(i, Length(Token) - 1);
+          end;
+          'D': // Day zero-padded (01-30)
+          begin
+            Token := Format('%*d', [2, HebrewDate.Day]);
+            Delete(Output, i, 2);
+            Insert(Token, Output, i);
+            Inc(i, Length(Token) - 1);
+          end;
+          'm': // Month (1-13)
+          begin
+            Token := IntToStr(HebrewDate.Month);
+            Delete(Output, i, 2);
+            Insert(Token, Output, i);
+            Inc(i, Length(Token) - 1);
+          end;
+          'M': // Month zero-padded (01-13)
+          begin
+            Token := Format('%.*d', [2, HebrewDate.Month]);
+            Delete(Output, i, 2);
+            Insert(Token, Output, i);
+            Inc(i, Length(Token) - 1);
+          end;
+          'B': // Full month name
+          begin
+            Token := HEBREWMONTHNAMES[HebrewDate.Month];
+            Delete(Output, i, 2);
+            Insert(Token, Output, i);
+            Inc(i, Length(Token) - 1);
+          end;
+          'b': // Short month name
+          begin
+            Token := HEBREWMONTHNAMESSHORT[HebrewDate.Month];
+            Delete(Output, i, 2);
+            Insert(Token, Output, i);
+            Inc(i, Length(Token) - 1);
+          end;
+          'y': // Year (2 digits)
+          begin
+            Token := Format('%.*d', [2, HebrewDate.Year mod 100]);
+            Delete(Output, i, 2);
+            Insert(Token, Output, i);
+            Inc(i, Length(Token) - 1);
+          end;
+          'Y': // Year (4 digits)
+          begin
+            Token := IntToStr(HebrewDate.Year);
+            Delete(Output, i, 2);
+            Insert(Token, Output, i);
+            Inc(i, Length(Token) - 1);
+          end;
+          '%': // Literal %
+          begin
+            Delete(Output, i, 2);
+            Insert('%', Output, i);
+          end;
+          else
+            Inc(i);
+        end;
+      end
+      else
+        Inc(i);
+    end
+    else
+      Inc(i);
+  end;
+
+  Result := Output;
+end;
+
+function GregorianToArab(DateFrom: TDate): TDate;
+begin
+  Result := DateFrom;
+end;
+
+function GregorianToChinese(DateFrom: TDate): TDate;
+begin
+  Result := DateFrom;
+end;
+// JULIAN TO OTHERS ************************************************************
 function JulianToGregorian(DateFrom: TDate): TDate;
 begin
   // From 01 Jan -45 (MAGIC NUMBER 1704986.5) to 15 Oct 1582
@@ -320,6 +585,21 @@ begin
     Result := JulianDateToDateTime(DateFrom) + 13;
 end;
 
+function JulianToHebrew(DateFrom: TDate): TDate;
+begin
+  Result := DateFrom;
+end;
+
+function JulianToArab(DateFrom: TDate): TDate;
+begin
+  Result := DateFrom;
+end;
+
+function JulianToChinese(DateFrom: TDate): TDate;
+begin
+  Result := DateFrom;
+end;
+// FRENCH TO OTHERS ************************************************************
 function FindFrenchExtraDays(FYear: integer): integer;
 begin
   if FYear > 11 then Result := 3
@@ -348,36 +628,6 @@ begin
   end;
 end;
 
-function GregorianToHebrew(DateFrom: TDate): TDate;
-begin
-  Result := DateFrom;
-end;
-
-function GregorianToArab(DateFrom: TDate): TDate;
-begin
-  Result := DateFrom;
-end;
-
-function GregorianToChinese(DateFrom: TDate): TDate;
-begin
-  Result := DateFrom;
-end;
-
-function JulianToHebrew(DateFrom: TDate): TDate;
-begin
-  Result := DateFrom;
-end;
-
-function JulianToArab(DateFrom: TDate): TDate;
-begin
-  Result := DateFrom;
-end;
-
-function JulianToChinese(DateFrom: TDate): TDate;
-begin
-  Result := DateFrom;
-end;
-
 function FrenchToHebrew(DateFrom: TDate): TDate;
 begin
   Result := DateFrom;
@@ -392,6 +642,7 @@ function FrenchToChinese(DateFrom: TDate): TDate;
 begin
   Result := DateFrom;
 end;
+// HEBREW TO OTHERS ************************************************************
 
 function HebrewToGregorian(DateFrom: TDate): TDate;
 begin
@@ -417,7 +668,7 @@ function HebrewToChinese(DateFrom: TDate): TDate;
 begin
   Result := DateFrom;
 end;
-
+// ARAB TO OTHERS **************************************************************
 function ArabToGregorian(DateFrom: TDate): TDate;
 begin
   Result := DateFrom;
@@ -443,6 +694,7 @@ begin
   Result := DateFrom;
 end;
 
+// CHINESE TO OTHERS ***********************************************************
 function ChineseToGregorian(DateFrom: TDate): TDate;
 begin
   Result := DateFrom;
